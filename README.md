@@ -14,7 +14,7 @@ Current Topics:
 	- Virtual Environments
 - Command Line (Bash/zsh)
 - Good Coding Practices
-- Computational Modeling
+- [Computational Modeling](modeling.md)
 
 Contributions are welcome, especially if they fix my horrible typos :)
 
