@@ -8,3 +8,5 @@ pip freeze > requirements.txt
 ### Virtual Environments
 
 
+## Type Hints
+

@@ -12,7 +12,8 @@ Current Topics:
 - Python:
 	- Reproducible Code
 	- Virtual Environments
-- Command Line (Bash/zsh)
+	- Type Hints
+- [Command Line (Bash/zsh)](cli.md)
 - Good Coding Practices
 - [Computational Modeling](modeling.md)
 
