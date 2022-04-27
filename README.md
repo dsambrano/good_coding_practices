@@ -14,7 +14,8 @@ Current Topics:
 	- Virtual Environments
 	- Type Hints
 - [Command Line (Bash/zsh)](cli.md)
-- Good Coding Practices
+- [Good Coding Practices](good_practices.md)
+- [Intro to Markdown](markdown.md)
 - [Computational Modeling](modeling.md)
 
 Contributions are welcome, especially if they fix my horrible typos :)
