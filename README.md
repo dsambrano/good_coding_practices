@@ -9,14 +9,15 @@ In order to best utilize this resource, I reccommend the following:
 Current Topics:
 
 - [Git/GitHub/GitLab](git.md)
-- Python:
-	- Reproducible Code
-	- Virtual Environments
-	- Type Hints
+- [Python](python.md):
+	- [Reproducible Code](python.md#reproducible-code)
+	- [Virtual Environments](python.md#virtual-environments)
+	- [Type Hints](python.md#type-hints)
 - [Command Line (Bash/zsh)](cli.md)
 - [Good Coding Practices](good_practices.md)
 - [Intro to Markdown](markdown.md)
 - [Computational Modeling](modeling.md)
+- [Increase Your Productivity](productivity.md)
 
 Contributions are welcome, especially if they fix my horrible typos :)
 
