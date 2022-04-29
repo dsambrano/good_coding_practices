@@ -52,7 +52,7 @@ Show an example, can either be the `ls` command with -a/l above or move this sec
 
 ## Viewing Contents and Editing Files
 
-- `nano`: A simple to use text editor
+- `nano`: A simple to use text editor. You will likely hear about other editors like `vim` or `emacs`. Both are really good, but they have a really have learning curve, so I don't reccomend them when you start out. I personally use `vim` or `nano` depending on the context. 
 - `cat`: Concatenate
 - `less`: Less (is more... powerful)
 - `more`: More (of the content on screen)
