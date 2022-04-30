@@ -40,13 +40,15 @@ Story Time:
 
 
 ### Git Stages?
-There are 3(4?) basic stages of git. And any final can only be in one of them. 
+There are 3(4?) basic stages of git. And a file can be in any of these stages. 
 ![Stages of Git](imgs/git_stages.png)
 
 - `Untracked`: The first and easiest to understand is `Untracked` this is simply a file that you have specifically told git to ignore/not track any changes.
 - `Unmodified`: These are files that you asked git to track but they have not changed since you last made a commit (i.e., a checkpoint).
 - `Modified`: These are also files you asked git to track, but these have changed since the last commit.
 - `Staged`: Finally, you have files that you have told git to track, made changes to these files, AND you have already added them to the queue (via `git add FILENAME`) and are waiting for the commit and message (via `git commit -m "REALLY IMPORTANT MESSAGE"`). Once you have committed the changes, all staged files are now officially `unmodified`. Then the cycle continues. 
+
+### Why Can't I Just DropBox (or Google Drive)? Why do I Need Git?
 
 ### Git Example Time
 
@@ -120,9 +122,13 @@ This will clone the repo to your local machine, and importantly, it will also do
 
 ### GitHub Example
 
+#### GitHub Setup
+ There are two methods to give yourself GitHub access via git. The first is HTTPS and the second is SSH. These are two security protocols (details on SSH in a future post), but it doesnt really matter which one you pick, but you have to know which one you are using because there are some slight changes depending on which on you choose. 
+
 ## Common Errors and Hiccups
+- Initalizing a git repo on your whole Computer (or your home directory `~`)
 - Trying to download a HTML file from GitHub 
-- 
+
 
 ## Advanced Topics in Git
 We covered a lot today, thankfully, that is most of the important things you need. 
