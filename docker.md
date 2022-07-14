@@ -1,5 +1,17 @@
 # Docker
 
+## Takeaways
+
+**[Estimated Read Time 10 mins]**
+
+In this blog you will learn the basics of docker. Specifically you will learn:
+- What docker is used for and how it can benefit scientific research
+- How to create a docker container to move across computers and have identical environments
+
+Difficulty: <span style="color:red">Advanced</span>.
+
+Prerequisites:
+- None
 
 
 ## What is Docker and Why should I learn it?
@@ -11,9 +23,9 @@ Sometimes its a relatively simple fix; but sometimes it can take hours to figure
 Well if you set up everything in a docker container it is self contained, so you know for sure that it will work.
 Its like packaging together all of the requirements all into a single app that can be run on any computer. 
 
+Still a little confused here is a [SO post](https://stackoverflow.com/a/16048358), a [100 seconds fireship video](https://www.youtube.com/watch?v=Gjnup-PuquQ). And if you are getting the hang of it, but want a little more here is an excellent [resource](https://youtu.be/gAkwW2tuIqE) for intermediate users.
+
 
 ## Docker Example
-
-Execellent resource to understand the [basic concepts](https://youtu.be/gAkwW2tuIqE)
 
 [python docker example](https://docs.docker.com/language/python/build-images/)
