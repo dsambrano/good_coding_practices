@@ -8,7 +8,7 @@ In this blog you will learn the basics of docker. Specifically you will learn:
 - What docker is used for and how it can benefit scientific research
 - How to create a docker container to move across computers and have identical environments
 
-Difficulty: <span style="color:red">Advanced</span>.
+Difficulty: <span style="color:red">Advanced</span>
 
 Prerequisites:
 - None
@@ -27,5 +27,15 @@ Still a little confused here is a [SO post](https://stackoverflow.com/a/16048358
 
 
 ## Docker Example
+
+[docker basics for pythons devs](https://mherman.org/presentations/dockercon-2018/#2)
+
+[NginX config](https://www.patricksoftwareblog.com/how-to-configure-nginx-for-a-flask-web-application/) **not relevant need to move to either code samples or another md or nginx/servers/web servers**
+
+[arjan fast api example with auto reload and database](https://youtu.be/zkMRWDQV4Tg)
+
+Execellent blog [post](https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/) on how to combine flask with gunicorn, NginX and a database (postgres)
+
+Execellent resource to understand the [basic concepts](https://youtu.be/gAkwW2tuIqE)
 
 [python docker example](https://docs.docker.com/language/python/build-images/)
