@@ -21,8 +21,7 @@ else:
     exit()
 
 
-contents = f'''
-# {name.capitalize()}
+contents = f'''# {name.capitalize()}
 
 ## Takeaways
 
@@ -46,6 +45,7 @@ Prerequisites:
 ## Homework
 
 
+## References
 '''
 with open(f"{filename}.md", 'w') as f:
     f.write(contents)
