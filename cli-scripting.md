@@ -24,6 +24,14 @@ All the 3 `###` should be move to cli after the rename
 
 ## Shebang `#!`
 
+`#!` often called shebangs are use to indicate which interpreter the script should use. In other words, which language should be used. In the vast majority of cases you should use:
+
+```
+#!/usr/bin/env LANGUAGE
+```
+
+where language is replaced with the relevant language like `bash` or `python` etc. 
+
 ## Chmod to allow it to run
 
 ## Arguments
