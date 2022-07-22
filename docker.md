@@ -39,3 +39,13 @@ Execellent blog [post](https://testdriven.io/blog/dockerizing-flask-with-postgre
 Execellent resource to understand the [basic concepts](https://youtu.be/gAkwW2tuIqE)
 
 [python docker example](https://docs.docker.com/language/python/build-images/)
+
+
+## Common Docker Commands
+
+```
+docker run
+docker build 
+docker ps
+docker df
+```
