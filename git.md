@@ -287,3 +287,8 @@ However, there are a few advanced topics that I do think are useful to know, eve
 ## Homework
 I want you to take one of your projects and initialize it as a git project and store it remotely. 
 This can be as a private repo if need be
+
+
+## Additional Resources:
+
+[fireshipio](https://youtu.be/HkdAHXoRtos "Fireshipio: Git and Github")
