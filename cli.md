@@ -37,7 +37,7 @@ Most of the time if you get some CLI (command line interface) code it will assum
 
 Speaking of BASH it stands for Bourne Again SHell. 
 However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z shell). 
-This is essentially entirely compatible with BASH except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. 
+This is, for the most part, entirely compatible with BASH except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. 
 I will say that for Mac users specifically, I would reccomend you check out [iTerm2](https://iterm2.com/) as an alternative to the standard terminal and [oh my zsh](https://ohmyz.sh/) to add some amazing color theming for some general improvements. 
 But of course this is not necessary. *Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.*
 
