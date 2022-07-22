@@ -38,7 +38,7 @@ Still looking for more? Check out this [video][1] (part 2 of the video [here][2]
 
 ## Test Drive Development
 
-Test Driven Development ([TDD][])
+Test Driven Development ([TDD][]) is a method for generated good code. You start first by making the tests that need to pass for the function to be working properly. Then confirm that they don't work. Next, write the code and make it pass the tests. Finally, optimize the code. 
 
 [1]: https://youtu.be/ULxMQ57engo "Arjan Codes: Unit Tests Part 1"
 [2]: https://youtu.be/NI5IGAim8X "Arjan Codes: Unit Tests Part 2"
