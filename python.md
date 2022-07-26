@@ -30,7 +30,7 @@ There are several mechanisms for implementing virtual environments:
 - [Anaconda environments][condaenv] with `conda create`
 - [virtualenv][] with [vewrapper][]
 - [pipenv][]
-
+- [pyenv][]
 For beginners, I would say [anaconda environments][condaenv] are the easiest to use. 
 So I would recommend using those, and switching to one of the others if the project needs it because (conda environments can take a lot of space and are quite heavy).
 
@@ -179,6 +179,7 @@ For more information, you can check out this [video][a1] or this [blog post][a2]
 
 [1]: https://youtu.be/woIkysZytSs "Arjan Codes: 8 Python Coding Tips - From The Google Python Style Guide"
 
+
 ### Virtual Environmnts
 
 [pipenv]: https://github.com/pypa/pipenv "Pipenv Python Dev for Humans"
@@ -186,6 +187,8 @@ For more information, you can check out this [video][a1] or this [blog post][a2]
 [virtualenv]: https://pypi.org/project/virtualenv/ "Virtual Env"
 [condaenv]: https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html "Conda environments"
 [anaconda]: https://www.anaconda.com/products/distribution "Anaconda"
+[pyenv]: https://github.com/pyenv/pyenv "Pyenv for simple VE in python"
+
 
 ### f Strings
 
