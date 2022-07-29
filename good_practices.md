@@ -11,6 +11,8 @@ Prerequisites:
 
 ## No Hard Coding, Ever!
 
+## Separate Config File
+
 ## Modular Functions
 
 ## Modular Code
@@ -18,3 +20,30 @@ Prerequisites:
 ## Write Code for Humans not Machines
 
 ## Will you Remember this in XX Months?
+
+## Use a Syntax Style
+
+e.g., pep8, google style guide, black, etc. 
+
+- Using caps for static variables, use variables, never hard code, dont repeat code, functionalize, abstraction
+
+## Design Strategy
+
+Using a Design Pattern (not necessarily Design Pattern but there is also Solid from uncle bob)
+
+## Composition and Inheritence
+
+Composition over inheritence
+
+
+## Unit Tests
+
+
+## Test Driven Development
+
+
+## Automation
+
+Automate as much of your development (and testing) stack as possible
+
+## Dependency Injection / Inversion
