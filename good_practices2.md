@@ -38,6 +38,8 @@ Using a Design Pattern (not necessarily Design Pattern but there is also [SOLID]
 ## Test Driven Development
 
 
+Here is a [video][testing] which covers a variety of different testing methods
+
 ## Automation
 
 Automate as much of your development (and testing) stack as possible
@@ -60,3 +62,5 @@ here is a great [video][mCodingghactions] on how to automate your testing with G
 [cohcoup]: https://youtu.be/eiDyK_ofPPM "Arjan Codes: Cohesion and Coupling"
 [compinher]: https://youtu.be/0mcP8ZpUR38 "Arjan Codes: Composition over Inheritence"
 [mCodingghactions]: https://www.youtube.com/watch?v=DhUpxWjOhME "mCoding: GH testing"
+[testing]: https://youtu.be/K47pr6lPxsA "Arjan: Testing Methods"
+
