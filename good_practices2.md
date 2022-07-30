@@ -42,6 +42,8 @@ Using a Design Pattern (not necessarily Design Pattern but there is also [SOLID]
 
 Automate as much of your development (and testing) stack as possible
 
+here is a great [video][mCodingghactions] on how to automate your testing with GitHub.
+
 ## Dependency Injection / Inversion
 
 [source][depnjinv]
@@ -57,3 +59,4 @@ Automate as much of your development (and testing) stack as possible
 [depinjinv]: https://youtu.be/2ejbLVkCndI "Arjan Codes: Dependency Inversion and Injection"
 [cohcoup]: https://youtu.be/eiDyK_ofPPM "Arjan Codes: Cohesion and Coupling"
 [compinher]: https://youtu.be/0mcP8ZpUR38 "Arjan Codes: Composition over Inheritence"
+[mCodingghactions]: https://www.youtube.com/watch?v=DhUpxWjOhME "mCoding: GH testing"
