@@ -237,7 +237,7 @@ brew install git gh
 ```
 
 but again, if you don't want to you can just install the github command line tools from there [website](https://cli.github.com). 
-Once done you will need to set everything up with `git auth login` and follow the on screen prompt
+Once done you will need to set everything up with `gh auth login` and follow the on screen prompt
 
 <!-- ```
 gh auth login 
