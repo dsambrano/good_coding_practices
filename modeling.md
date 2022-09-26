@@ -9,5 +9,71 @@ A computational Model is just a mathematical equation, serving as a hypothesis, 
 ### My First Model
 Link to paper I send to RAs
 
+In order to give yourself a basic working example, I highly reccomend you read through this [paper](papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf).
+This is a pretty foundational paper for creating models of decision making and gives a pretty good walkthrough on the process. 
+For example, it describe how/why you typically want to add a noise term when modeling human decisions.
+Its also quick short only about 13 pages.
+
+Now that you have finished reading through that, we can go through <!--2--> an example<!--s--> for implementing a computational model on real data. 
+
+### Selecting a Model
+
+The first and most important part for computational modeling is the model that you select. 
+You should definitely take some time when selecting a model because this **IS YOUR PREDICTION** for how participants will make decisions in experiment. 
+Often times you will use a model that has already been used in other experiments, but occasionally, you will need to make your own (or much much more likely, you will have to adjust an existing one).
+With that in mind, I will go through a really basic example for adjusting models to improve them.
+This should give you a sense of how this process works, such that you can do it on your own when the time requires it. 
+
+Our example data is going to come from people making choices between different lotteries involving money.
+As such, expected value (EV) is quite literally an optimal starting point.
+For the uninitiated, EV is a mathematical formula for determining the value of a risking lottery. 
+So if you are acting perfectly rationally, you should choose the lottery with the highest EV. 
+The formula for EV is:
+
+$$EV = \sum{1}{i} p_i \times v_i$$
+
+where $p$ is the probablity of winning the lottery and $v$ is the value that you get and i potential option of the lottery. So if you have a lottery that was 50:50 and if you win you get $10 and if you lose you get $0 then you could solve with:
+
+$$ EV = .5 * 10 + .5 * 0 $$
+$$ EV = 5 + 0 $$
+$$ EV = 5 $$
+
+which is to simply say that, if you played this an infinite number of times, we would expect you to, on average, earn $5.
+This should make intuitive sense giving the options of the lottery.
+This formula is useful because it works no matter what the probabilities or winning amount are, and it doesnt matter how many of them their are. 
+
+### A Story of Individual Differences: Adding Parameters
+
+One thing you might have noticed, is that the EV model expects everyone to make the same choices. 
+The hypothesis is so absurd that is can be rejected outright.
+Instead, it is pretty obvious that people make different choices; for example, some people really don't like it if the odds of winning are not in their favor.
+In Psychology/Econoimics, we call this behavior risk aversion.
+And we can add this to the model as well. 
+Typically, this is done by adding a exponent to the $v$ term in EV. 
+For example:
+
+$$ SV(p, v) = \sum{1}{i} p_i \times v_i^{\alpha} $$
+
+There are a few things I want to point out.
+First I change the function from $EV$ to $SV$.
+This is to signify, that this is no longer an equation for expected value, but rather, for ***subjective value***, or the value a individual places on that lottery. 
+The second is that I have made it more clear that $p$ and $v$ are inputs to the model by including them in the parentheses on the left side. Finally, you can see the new term $\alpha$ which is unique to each individual.
+This allows us to be able to predict that people will make choices different from one another; however, importantly, we expect everyone to make choices with this specific structure in mind. 
+>>**Note**: Traditionally, individual specific parameters typically use greek letters. This can help you identify what parts of the model is an input versus participant specific. 
+
+
+| Option A                    | Option B                      | EV difference|
+----------------------------------------------------------------------------
+|1/10 of $2.00, 9/10 of $1.60 | 1/10 of $3.85, 9/10 of $0.10  |  $1.17 |
+|2/10 of $2.00, 8/10 of $1.60 | 2/10 of $3.85, 8/10 of $0.10  |  $0.83 | 
+|3/10 of $2.00, 7/10 of $1.60 | 3/10 of $3.85, 7/10 of $0.10  |  $0.50 | 
+|4/10 of $2.00, 6/10 of $1.60 | 4/10 of $3.85, 6/10 of $0.10  |  $0.16 |
+|5/10 of $2.00, 5/10 of $1.60 | 5/10 of $3.85, 5/10 of $0.10  | -$0.18 | 
+|6/10 of $2.00, 4/10 of $1.60 | 6/10 of $3.85, 4/10 of $0.10  | -$0.51 |
+|7/10 of $2.00, 3/10 of $1.60 | 7/10 of $3.85, 3/10 of $0.10  | -$0.85 | 
+|8/10 of $2.00, 2/10 of $1.60 | 8/10 of $3.85, 2/10 of $0.10  | -$1.18 |
+|9/10 of $2.00, 1/10 of $1.60 | 9/10 of $3.85, 1/10 of $0.10  | -$1.52 |
+|10/10 of $2.00, 0/10 of $1.60| 10/10 of $3.85, 0/10 of $0.10 | -$1.85 |
+
 
 ### Estimating Parameters
