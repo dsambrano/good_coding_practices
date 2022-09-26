@@ -59,21 +59,21 @@ First I change the function from $EV$ to $SV$.
 This is to signify, that this is no longer an equation for expected value, but rather, for ***subjective value***, or the value a individual places on that lottery. 
 The second is that I have made it more clear that $p$ and $v$ are inputs to the model by including them in the parentheses on the left side. Finally, you can see the new term $\alpha$ which is unique to each individual.
 This allows us to be able to predict that people will make choices different from one another; however, importantly, we expect everyone to make choices with this specific structure in mind. 
->>**Note**: Traditionally, individual specific parameters typically use greek letters. This can help you identify what parts of the model is an input versus participant specific. 
+>**Note**: Traditionally, individual specific parameters typically use greek letters. This can help you identify what parts of the model is an input versus participant specific. 
 
 
 | Option A                    | Option B                      | EV difference|
-----------------------------------------------------------------------------
-|1/10 of $2.00, 9/10 of $1.60 | 1/10 of $3.85, 9/10 of $0.10  |  $1.17 |
-|2/10 of $2.00, 8/10 of $1.60 | 2/10 of $3.85, 8/10 of $0.10  |  $0.83 | 
-|3/10 of $2.00, 7/10 of $1.60 | 3/10 of $3.85, 7/10 of $0.10  |  $0.50 | 
-|4/10 of $2.00, 6/10 of $1.60 | 4/10 of $3.85, 6/10 of $0.10  |  $0.16 |
-|5/10 of $2.00, 5/10 of $1.60 | 5/10 of $3.85, 5/10 of $0.10  | -$0.18 | 
-|6/10 of $2.00, 4/10 of $1.60 | 6/10 of $3.85, 4/10 of $0.10  | -$0.51 |
-|7/10 of $2.00, 3/10 of $1.60 | 7/10 of $3.85, 3/10 of $0.10  | -$0.85 | 
-|8/10 of $2.00, 2/10 of $1.60 | 8/10 of $3.85, 2/10 of $0.10  | -$1.18 |
-|9/10 of $2.00, 1/10 of $1.60 | 9/10 of $3.85, 1/10 of $0.10  | -$1.52 |
-|10/10 of $2.00, 0/10 of $1.60| 10/10 of $3.85, 0/10 of $0.10 | -$1.85 |
+|----------------------------------------------------------------------------|
+|1/10 of \$2.00, 9/10 of \$1.60 | 1/10 of \$3.85, 9/10 of \$0.10  |  $1.17 |
+|2/10 of \$2.00, 8/10 of \$1.60 | 2/10 of \$3.85, 8/10 of \$0.10  |  $0.83 | 
+|3/10 of \$2.00, 7/10 of \$1.60 | 3/10 of \$3.85, 7/10 of \$0.10  |  $0.50 | 
+|4/10 of \$2.00, 6/10 of \$1.60 | 4/10 of \$3.85, 6/10 of \$0.10  |  $0.16 |
+|5/10 of \$2.00, 5/10 of \$1.60 | 5/10 of \$3.85, 5/10 of \$0.10  | -$0.18 | 
+|6/10 of \$2.00, 4/10 of \$1.60 | 6/10 of \$3.85, 4/10 of \$0.10  | -$0.51 |
+|7/10 of \$2.00, 3/10 of \$1.60 | 7/10 of \$3.85, 3/10 of \$0.10  | -$0.85 | 
+|8/10 of \$2.00, 2/10 of \$1.60 | 8/10 of \$3.85, 2/10 of \$0.10  | -$1.18 |
+|9/10 of \$2.00, 1/10 of \$1.60 | 9/10 of \$3.85, 1/10 of \$0.10  | -$1.52 |
+|10/10 of \$2.00, 0/10 of \$1.60| 10/10 of \$3.85, 0/10 of \$0.10 | -$1.85 |
 
 
 ### Estimating Parameters
