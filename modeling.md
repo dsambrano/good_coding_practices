@@ -1,3 +1,9 @@
+<style>
+    table {
+        width: 100%;
+    }
+</style>
+
 ## Why Should You Use A Computational Model
 Pull from Prospectus (Utlity and generalization)
 
