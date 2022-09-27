@@ -21,6 +21,11 @@ Prerequisites:
 - Read through this [paper][holt] or have some basic background on behavioral economics / learning literature (e.g., reinforcement learning)
 
 
+## What Even is a Computational Model
+
+A computational Model is just a mathematical equation, serving as a hypothesis, for some psychological phenomenon. We use models all the time. Most commonly with the linear model in regression. A computational model just adds flexibility in that it is not predefined so you can adjust it to your specific situations. So you can make allow it have some non linearity or have only partial linearity. 
+
+
 ## Why Should You Use A Computational Model
 Pull from Prospectus (Utlity and generalization)
 
@@ -50,11 +55,6 @@ Additionally, since a computational model is essentially a mathematical formula,
 By design, the model’s formula describes the magnitude for the effects, whether they be linear, exponential, etc.
 Together, these features help improved the scientific discourse around emotion and decision making.
 --> 
-
-
-## What Even is a Computational Model
-
-A computational Model is just a mathematical equation, serving as a hypothesis, for some psychological phenomenon. We use models all the time. Most commonly with the linear model in regression. A computational model just adds flexibility in that it is not predefined so you can adjust it to your specific situations. So you can make allow it have some non linearity or have only partial linearity. 
 
 
 ### My First Model
@@ -114,8 +114,8 @@ This allows us to be able to predict that people will make choices different fro
 
 <center>
 
-| Option A                    | Option B                      | EV difference|
-|-----------------------------|:-----------------------------:|-------------:|
+| Option A                       | Option B                    | EV difference|
+|--------------------------------|:---------------------------:|-------------:|
 |1/10 of \$2.00, 9/10 of \$1.60  | 1/10 of \$3.85, 9/10 of \$0.10  |  $1.17 |
 |2/10 of \$2.00, 8/10 of \$1.60  | 2/10 of \$3.85, 8/10 of \$0.10  |  $0.83 | 
 |3/10 of \$2.00, 7/10 of \$1.60  | 3/10 of \$3.85, 7/10 of \$0.10  |  $0.50 | 
