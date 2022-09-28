@@ -39,6 +39,7 @@ plot = ggplot(exp_data,
        theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
              panel.background = element_blank(), axis.line = element_line(colour = "black"))
 plot
+ggsave("ev_plot.png", plot, device="png")
 
 
 
@@ -68,6 +69,8 @@ choices = ifelse(probs > runif(length(probs)), 1, 0)
 
 plot = plot + geom_line(aes(x=1:10,y=rowMeans(choices))) + geom_point(aes(x=1:10,y=rowMeans(choices)))
 plot
+ggsave("part_data_plot.png", plot, device="png")
+
 # Subjective Value Model -----------
 ## Now that we have seen that the data doesn't really fit our EV model, we can make adjustments to have a more accurate model.
 ## In practice you should either make adjustments before seeing data, or collect a new dataset to prevent you from "overfitting"
@@ -97,6 +100,7 @@ sv_diff = data.frame(diff=c(sva_alphas - svb_alphas),
 )
 plot = plot + geom_line(aes(x, (sign(diff) + 1) / 2, color=alpha), data=sv_diff)
 plot
+ggsave("sv_plot.png", plot, device="png")
 
 ## Need to make a decision here. Am I going to analyze it as a group or as individuals?
 
