@@ -1,5 +1,15 @@
 # Expected Value -----------
+require(ggplot2)
+library(latex2exp)
 
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+create_plot_dir = function(path=file.path('plots')){
+    if (! file.exists(path)){
+        dir.create(path)
+    }
+    return(path)
+}
+plot_dir = create_plot_dir()
 ## Experimental Data ======
 # Below we are creating a dataframe of the lotteries described in the Table
 ## The first letter represents the lottery: either A or B
@@ -30,16 +40,16 @@ exp_data$ev_diff = ev(exp_data[,c("A1W", "A2W")], exp_data[,c("A1P", "A2P")]) -
 
 # Plotting the decision, for Expected value, you simply choose the one that is higher.
 ## Note that once Lottery b was better we predict that you stop choosing A.
-require(ggplot2)
 plot = ggplot(exp_data,
               aes(1:10, (sign(ev_diff) + 1) / 2)) + 
        geom_line(linetype='dashed') + 
        ylab("P(Choosing A)") +
        scale_x_discrete(name ="Decision #", limits=factor(1:10)) + 
        theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-             panel.background = element_blank(), axis.line = element_line(colour = "black"))
+             panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
+       theme(text = element_text(size = 24)) 
 plot
-ggsave("ev_plot.png", plot, device="png")
+ggsave(file.path(plot_dir,"ev_plot.png"), plot, device="png")
 
 
 
@@ -69,7 +79,7 @@ choices = ifelse(probs > runif(length(probs)), 1, 0)
 
 plot = plot + geom_line(aes(x=1:10,y=rowMeans(choices))) + geom_point(aes(x=1:10,y=rowMeans(choices)))
 plot
-ggsave("part_data_plot.png", plot, device="png")
+ggsave(file.path(plot_dir,"part_data_plot.png"), plot, device="png")
 
 # Subjective Value Model -----------
 ## Now that we have seen that the data doesn't really fit our EV model, we can make adjustments to have a more accurate model.
@@ -98,12 +108,19 @@ sv_diff = data.frame(diff=c(sva_alphas - svb_alphas),
                      alpha=as.factor(sort(rep(alphas, n_trials))),
                      x=rep(1:n_trials, n_alphas)
 )
-plot = plot + geom_line(aes(x, (sign(diff) + 1) / 2, color=alpha), data=sv_diff)
-plot
-ggsave("sv_plot.png", plot, device="png")
+plot_alpha = plot + geom_line(aes(x, (sign(diff) + 1) / 2, color=alpha), data=sv_diff) +
+    labs(color=TeX("$\\alpha$")) + 
+    guides(color=guide_legend(override.aes=list(fill=NA)))
+plot_alpha
+ggsave(file.path(plot_dir,"sv_plot.png"), plot_alpha, device="png")
 
 ## Need to make a decision here. Am I going to analyze it as a group or as individuals?
 
 # Missing Noise -----------
+prob2 = function(sv_delta, gamma){
+    return(1/(1 + exp(gamma*(sv_delta))))
+}
+selected_alpha = .7
+prob2(-sv_diff[sv_diff$alpha==selected_alpha,"diff"], 2)
 
-optim(par=initial_theta1,fn=cost, control = list(maxit=1000))
+#optim(par=initial_theta1,fn=cost, control = list(maxit=1000))

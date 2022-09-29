@@ -14,6 +14,9 @@ In this blog you will learn the basics of computational modeling. Specifically y
 - What is a computational model?
 - Why you should use computational models?
 - How to implement a computational model with an example.
+  - Model Selection
+  - Ammedding a Model to suit your needs
+  - Decision Rules
 
 Difficulty: <span style="color:yellow">Intermediate</span>
 
@@ -81,9 +84,34 @@ Link to paper I send to RAs
 In order to give yourself a basic working example, I highly reccomend you read through this [paper][holt].
 This is a pretty foundational paper for creating models of decision making and gives a pretty good walkthrough on the process. 
 For example, it describe how/why you typically want to add a noise term when modeling human decisions.
-Its also quick short only about 13 pages.
+Its also quite short, only about 13 pages.
 
-Now that you have finished reading through that, we can go through <!--2--> an example<!--s--> for implementing a computational model on real data. 
+... Don't worry I 'll wait. 😂
+
+Now that you have finished reading through that, we can go through <!--2--> an example<!--s--> for implementing a computational model on simulated data.
+The data will be generated from an experiment were the participant need to decide between two lotteries.
+The lotteries are shown below in the table. 
+I want you to look at each lottery and without looking at the column on the right, decided which lottery you would choose: Option A or Option B.
+Do this for all 10 lotteries.
+
+
+<center>
+
+| Option A                       | Option B                    | EV difference|
+|--------------------------------|:---------------------------:|-------------:|
+|1/10 of $2.00, 9/10 of $1.60  | 1/10 of $3.85, 9/10 of $0.10  |  $1.17 |
+|2/10 of $2.00, 8/10 of $1.60  | 2/10 of $3.85, 8/10 of $0.10  |  $0.83 |
+|3/10 of $2.00, 7/10 of $1.60  | 3/10 of $3.85, 7/10 of $0.10  |  $0.50 |
+|4/10 of $2.00, 6/10 of $1.60  | 4/10 of $3.85, 6/10 of $0.10  |  $0.16 |
+|5/10 of $2.00, 5/10 of $1.60  | 5/10 of $3.85, 5/10 of $0.10  | -$0.18 |
+|6/10 of $2.00, 4/10 of $1.60  | 6/10 of $3.85, 4/10 of $0.10  | -$0.51 |
+|7/10 of $2.00, 3/10 of $1.60  | 7/10 of $3.85, 3/10 of $0.10  | -$0.85 |
+|8/10 of $2.00, 2/10 of $1.60  | 8/10 of $3.85, 2/10 of $0.10  | -$1.18 |
+|9/10 of $2.00, 1/10 of $1.60  | 9/10 of $3.85, 1/10 of $0.10  | -$1.52 |
+|10/10 of $2.00, 0/10 of $1.60 | 10/10 of $3.85, 0/10 of $0.10 | -$1.85 |
+
+</center>
+
 
 ### Selecting a Model
 
@@ -99,17 +127,42 @@ For the uninitiated, EV is a mathematical formula for determining the value of a
 So if you are acting perfectly rationally, you should choose the lottery with the highest EV. 
 The formula for EV is:
 
-$$EV = \sum_{1}^{i} p_i \times v_i$$
+$$EV = \sum_{i=1}^{k} p_i \times v_i$$
 
-where $p$ is the probablity of winning the lottery and $v$ is the value that you get and i potential option of the lottery. So if you have a lottery that was 50:50 and if you win you get $10 and if you lose you get $0 then you could solve with:
+where $p$ is the probablity of winning the lottery and $v$ is the value that you get if you win that lottery. $k$ represents the total number of options for the lottery. So if you have a lottery that was 50:50 and if you win you get $10 and if you lose you get $0 then you could solve with:
 
 $$ EV = .5 * 10 + .5 * 0 $$
 $$ EV = 5 + 0 $$
 $$ EV = 5 $$
 
-which is to simply say that, if you played this an infinite number of times, we would expect you to, on average, earn $5.
+which is to simply say that, if you played this lottery an infinite number of times, we would expect you to, on average, earn $5.
 This should make intuitive sense giving the options of the lottery.
 This formula is useful because it works no matter what the probabilities or winning amount are, and it doesnt matter how many of them their are. 
+
+We can apply that same formula to all the lottery options shown in the table above. 
+And then we will take the difference in EV between the two options (see right most column).
+Finally, we can implement a decision rule, that is a rule to decide which option to pick. 
+For EV, you should pick the option that has a higher expected value. 
+In the figure below, we plotted the probability of choosing the first option (Option A) against the different options. 
+
+![EV Model Predictions](code/plots/ev_plot.png)
+
+Notice that this model predicts that people would select option A for the first 4, and then select B for the remaining ones. 
+As described above, this is mathematically optimal.
+But the question is, how would you expect people to decide to their lotteries?
+Which did you choose when you picked between them?
+
+Here is some simulated data to use as a comparison:
+![EV Model Predictions with Simulated Data](code/plots/part_data_plot.png)
+
+Again the dotted line indicates that EV models predictions, and the new solid line with dots indicates the average response for 50 simulated people. 
+What are your thoughts? 
+Is this model any good?
+You might think, no, its pretty bad, which it is, but there is something important that it gets right.
+Notice that the simulated data has a similar structure as the prediction.
+That is to say pretty much everyone chooses Option A for the first 4 and everyone selects Option B for the final 3.
+So in reality, it only gets the middle ones wrong. 
+So maybe we can adjust this model to account for that as opposed to come up with a entirely new model. 
 
 ### A Story of Individual Differences: Adding Parameters
 
@@ -118,40 +171,50 @@ The hypothesis is so absurd that is can be rejected outright.
 Instead, it is pretty obvious that people make different choices; for example, some people really don't like it if the odds of winning are not in their favor.
 In Psychology/Econoimics, we call this behavior risk aversion.
 And we can add this to the model as well. 
-Typically, this is done by adding a exponent to the $v$ term in EV. 
+Continuing with our example, this can be done by adding a exponent to the $v$ term in EV. 
 For example:
 
-$$ SV(p, v) = \sum_{1}^{i} p_i \times v_i^{\alpha} $$
+$$ SV(p, v) = \sum_{i=1}^{k} p_i \times v_i^{\alpha} $$
 
 There are a few things I want to point out.
-First I change the function from $EV$ to $SV$.
-This is to signify, that this is no longer an equation for expected value, but rather, for ***subjective value***, or the value a individual places on that lottery. 
+First I changed the function from $EV$ to $SV$.
+This is to signify, that this is no longer an equation for expected value, but rather, for **subjective value**, or the value a individual places on that lottery. 
 The second is that I have made it more clear that $p$ and $v$ are inputs to the model by including them in the parentheses on the left side. Finally, you can see the new term $\alpha$ which is unique to each individual.
 This allows us to be able to predict that people will make choices different from one another; however, importantly, we expect everyone to make choices with this specific structure in mind. 
 >**Note**: Traditionally, individual specific parameters typically use greek letters. This can help you identify what parts of the model is an input versus participant specific. 
 
-<center>
+Now we can use this model to predict the participants decisions.
+But which $\alpha$ should we use?
+Well since we are just exploring, let's pick a few to see which ones look more accurate.
 
-| Option A                       | Option B                    | EV difference|
-|--------------------------------|:---------------------------:|-------------:|
-|1/10 of \$2.00, 9/10 of \$1.60  | 1/10 of \$3.85, 9/10 of \$0.10  |  $1.17 |
-|2/10 of \$2.00, 8/10 of \$1.60  | 2/10 of \$3.85, 8/10 of \$0.10  |  $0.83 | 
-|3/10 of \$2.00, 7/10 of \$1.60  | 3/10 of \$3.85, 7/10 of \$0.10  |  $0.50 | 
-|4/10 of \$2.00, 6/10 of \$1.60  | 4/10 of \$3.85, 6/10 of \$0.10  |  $0.16 |
-|5/10 of \$2.00, 5/10 of \$1.60  | 5/10 of \$3.85, 5/10 of \$0.10  | -$0.18 | 
-|6/10 of \$2.00, 4/10 of \$1.60  | 6/10 of \$3.85, 4/10 of \$0.10  | -$0.51 |
-|7/10 of \$2.00, 3/10 of \$1.60  | 7/10 of \$3.85, 3/10 of \$0.10  | -$0.85 | 
-|8/10 of \$2.00, 2/10 of \$1.60  | 8/10 of \$3.85, 2/10 of \$0.10  | -$1.18 |
-|9/10 of \$2.00, 1/10 of \$1.60  | 9/10 of \$3.85, 1/10 of \$0.10  | -$1.52 |
-|10/10 of \$2.00, 0/10 of \$1.60 | 10/10 of \$3.85, 0/10 of \$0.10 | -$1.85 |
 
-</center>
+![SV Model Predictions](code/plots/sv_plot.png)
 
-### Use the Data: Estimating Parameters
+Now we added the colored lines.
+What you should notice is that it seems like that blue (.7) and green (.5) lines seem to improve on the EV model in that it gets the threshold a littel bit more accurate. 
+This is a good sign, it lets us know we are on the right track. 
+> **Note**: These are similated data and not necessarily representive of real data. Some values have been intensionally exaggerated for pedogological reasons.
+
+But there is something still bothering me, and hopefully you as well. 
+The thresholds are really sharp; the data has a gradual decline as a opposed to be completely instantaneous. 
+Let's fix that by adjusted the decision rule. 
+
+
+### Decision Rules
+
+We are going to add another equation to serve as a rule for making the choice.
+So instead of simply choosing the option with the higher EV or SV we will have a more graded response. 
+As with most things, there are a few different equations you could use. 
+For this tutorial, we will use an inverse logit function: 
+
+$$p(Option A, SV_a, SV_b) = \frac{1}{1 + e^{\gamma(SV_b - SV_a)}}$$
+
+
 
 
 ## Advanced Topics:
 
+- Param Estimation: Use the Data: Estimating Parameters
 - Simulation
 - Model Comparison
 
