@@ -120,7 +120,24 @@ ggsave(file.path(plot_dir,"sv_plot.png"), plot_alpha, device="png")
 prob2 = function(sv_delta, gamma){
     return(1/(1 + exp(gamma*(sv_delta))))
 }
-selected_alpha = .7
-prob2(-sv_diff[sv_diff$alpha==selected_alpha,"diff"], 2)
+gammas = c(2,4,6,8)
+n_gammas = length(gammas)
+selected_alpha = .5
+min_sv = min(-sv_diff[sv_diff$alpha==selected_alpha,"diff"])
+probs = c(); probs_test = c()
+for (i in gammas){
+    probs = c(probs, prob2(-sv_diff[sv_diff$alpha==selected_alpha,"diff"], i))
+    #probs_test = c(probs_test, prob2(seq(min_sv,-min_sv,.01), 8))
+}
+sv_prob = data.frame(prob=probs,
+                     gamma=as.factor(sort(rep(gammas, n_trials))),
+                     x=rep(1:10, n_gammas)
+)
+
+plot = plot + geom_line(aes(x=x, y=prob, color=gamma), data=sv_prob) +
+    labs(color=TeX("$\\gamma$"))
+plot
+ggsave(file.path(plot_dir,"sv_prob_plot.png"), plot, device="png")
+
 
 #optim(par=initial_theta1,fn=cost, control = list(maxit=1000))
