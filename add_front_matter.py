@@ -45,9 +45,9 @@ def main(file: Path):
         print("Already Has Front Matter")
 
 if __name__ == "__main__":
-    file = sys.argv[1] if len(sys.argv) == 2 else Path("2022-10-03-markdown.md")
+    file = Path("_posts", sys.argv[1]) if len(sys.argv) == 2 else Path("_posts", "2022-10-03-markdown.md")
     if file.exists():
         print(f"Editing File: {file}")
-        main()
+        main(file)
     else:
         print(f"{file} does not exist. To create from the new template use 'python create_template.py'")
