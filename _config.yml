@@ -61,6 +61,7 @@ exclude:
   - README.md
   - speaker_notes.md
   - add_front_matter.py
+  - development.md
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
