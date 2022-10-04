@@ -30,7 +30,7 @@ There are several mechanisms for implementing virtual environments:
 - [Anaconda environments][condaenv] with `conda create`
 - [virtualenv][] with [vewrapper][]
 - [pipenv][]
-
+- [pyenv][]
 For beginners, I would say [anaconda environments][condaenv] are the easiest to use. 
 So I would recommend using those, and switching to one of the others if the project needs it because (conda environments can take a lot of space and are quite heavy).
 
@@ -50,6 +50,12 @@ To leave the environment just use:
 conda deactivate
 ```
 
+Using the builtin virutalenv you can use:
+
+```bash
+python3 -m venv name_of_virtual_env # Creation
+. name_of_virtual_env/bin/activate # Activation
+```
 
 ## f strings
 
@@ -178,6 +184,10 @@ For more information, you can check out this [video][a1] or this [blog post][a2]
 ## References
 
 [1]: https://youtu.be/woIkysZytSs "Arjan Codes: 8 Python Coding Tips - From The Google Python Style Guide"
+[2]: https://youtu.be/LrtnLEkOwFE "Arjan Codes: Code Smells Part 1"
+[3]: https://youtu.be/zmWf_cHyo8s "Arjan Codes: Code Smells Part 2"
+[4]: https://youtu.be/Kl3_Gmn4Ujg "Arjan Codes: Code Smells Part 3"
+[5]: https://www.geeksforgeeks.org/abstract-classes-in-python/ "Abstract Classes in Python"
 
 ### Virtual Environmnts
 
@@ -186,6 +196,8 @@ For more information, you can check out this [video][a1] or this [blog post][a2]
 [virtualenv]: https://pypi.org/project/virtualenv/ "Virtual Env"
 [condaenv]: https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html "Conda environments"
 [anaconda]: https://www.anaconda.com/products/distribution "Anaconda"
+[pyenv]: https://github.com/pyenv/pyenv "Pyenv for simple VE in python"
+
 
 ### f Strings
 

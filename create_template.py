@@ -2,18 +2,23 @@
 
 filename = input("File Name: ").replace(" ", "_")
 name = filename.replace("_", " ")
+name = "_".join(name.split(".")[:-1])
 
 difficulty = input("Difficulty level: [Beginner]/Intermediate/Advanced ").lower()
 
-if difficulty=="beginner" or difficulty=='b' or difficulty=='':
+beginner = ["beginner", "b", ""]
+intermediate = ["intermediate", "i"]
+advanced = ["advanced", "a"]
+
+if difficulty in beginner:
     diff_text = '<span style="color:green">Beginning</span>'
     diff_time = 10
     h2 = f'{name.capitalize()} Basics'
-elif difficulty=="intermediate" or difficulty=='i':
+elif difficulty in intermediate:
     diff_text = '<span style="color:yellow">Intermediate</span>'
     diff_time = 20
     h2 = f'What is {name.capitalize()}?'
-elif difficulty=="advanced" or difficulty=='a':
+elif difficulty in advanced:
     diff_text = '<span style="color:red">Advanced</span>'
     diff_time = 30
     h2 = f'What is {name.capitalize()}?'
@@ -42,7 +47,7 @@ Prerequisites:
 
 
 
-## Homework
+## Now it Your Turn!
 
 
 ## References
