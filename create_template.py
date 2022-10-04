@@ -37,6 +37,9 @@ date: {date}
 author: Deshawn Sambrano
 categories: 
 permalink: 
+draft: true
+time: {diff_time}
+excerpt_separator: <!--more-->
 usemathjax: true
 series: false
 #part_number: 1
@@ -46,7 +49,7 @@ series: false
 
 ## Takeaways
 
-**[Estimated Read Time {diff_time} mins]**
+**[Estimated Read Time {{post.time}} mins]**
 
 In this blog you will learn the basics of {name}. Specifically you will learn:
 - 
@@ -60,7 +63,7 @@ Prerequisites:
 
 
 ## {h2}
-
+<!--more-->
 
 
 ## Now it Your Turn!
