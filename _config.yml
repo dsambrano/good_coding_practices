@@ -21,14 +21,13 @@
 title: Your Coding Buddy
 email: dsambrano@g.harvard.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Learning all the gaps in your coding knowledge. You Coding Buddy 
-  is hear to save the day!
+  Learning all the gaps in your coding knowledge. Your Coding Buddy 
+  is here to save the day!
 #baseurl: "blog.dsambrano.com" # the subpath of your site, e.g. /blogurl
 #url: "https://blog.dsambrano.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: DeshawnSambrano
 github_username: dsambrano
-youtube: test
-youtube_channel: hello
+youtube_username: Dbrano3
 show_excerpts: true
 
 # Build settings
