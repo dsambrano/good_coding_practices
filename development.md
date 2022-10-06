@@ -25,3 +25,9 @@ Solved the Clustering (for the perma link)
 - Move everything to a tag then have the groupings be folder clusters exclusively
 - Make a new Page about the clusters which for the layout it only selects the clusters in normal ordering
 - Add page to do the same thing for the sample and symlink it from code samples move all to samples folder and then symlink
+
+
+Use this for inspiration especially on the Lesson the home page and what really counts as beginner
+Also see the home page for a python to get some infor about a setup
+finally look at the index.html file for image ideas on the posts/organization strategies
+https://www.mikedane.com/programming-languages/python/
