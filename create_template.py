@@ -39,6 +39,7 @@ categories:
 permalink: 
 draft: true
 time: {diff_time}
+diff: "{{site.data.difficulty.expert.name}}"
 excerpt_separator: <!--more-->
 usemathjax: true
 series: false
