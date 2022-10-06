@@ -282,4 +282,10 @@ table td { border: 1px solid #e8e8e8; }
 
 img { display: block; margin-left: auto; margin-right: auto; }
 
+.Beginner { color: green; }
+
+.Intermediate { color: yellow; }
+
+.Expert { color: red; }
+
 /*# sourceMappingURL=main.css.map */
