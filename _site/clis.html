@@ -20,7 +20,45 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"Takeaways","headline":"What are Command Line Interface (CLIs)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/clis"},"url":"http://localhost:4000/clis"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
+  
+  <!-- <script type="text/x-mathjax-config">
+      // From: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
+      // MathJax.Hub.Config({
+      // TeX: { equationNumbers: { autoNumber: "AMS" } }
+      // });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true
+        },
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?con
+fig=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+        // Below config from: https://stackoverflow.com/a/54373640
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            config: ["MMLorHTML.js"],
+            jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+            extensions: ["MathMenu.js", "MathZoom.js"]
+        });
+    </script>
+  
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
@@ -55,7 +93,7 @@
 <p>In this blog you will learn basic bash commands. By the end of this you will know:</p>
 <ul>
   <li>Basic commands to traverse your computer from the terminal</li>
-  <li>The structure or commands, arguments, and options in BASH</li>
+  <li>The structure or commands, arguments, and options in <code class="language-plaintext highlighter-rouge">bash</code></li>
   <li>How to edit, create, move and delete files</li>
   <li>Create a script to make a folder structure for each new project you are working on.</li>
 </ul>
@@ -84,19 +122,19 @@ So it sounds like a joke, but seriously take some time to have a nice looking co
 <h2 id="know-your-os">Know your OS</h2>
 
 <p>Knowing what OS you are on is super important as the commands change across them. 
-Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of BASH before). 
+Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of <code class="language-plaintext highlighter-rouge">bash</code> before). 
 This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with the shell via using MacOS is very valuable. 
 In contrast, Windows uses CMD or Powershell which has a differnt syntax and command list. 
-Luckily for you, there is a project to give Windows BASH commands called <a href="https://gitforwindows.org/">gitbash</a>, and I highly reccomand you use that to be able to follow along. 
+Luckily for you, there is a project to give Windows <code class="language-plaintext highlighter-rouge">bash</code> commands called <a href="https://gitforwindows.org/" title="Git for Windows">gitbash</a>, and I highly reccomand you use that to be able to follow along. 
 Most of the time if you get some CLI (command line interface) code it will assume bash so its just a good skill to have.</p>
 
-<p>Speaking of BASH it stands for Bourne Again SHell. 
-However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z shell). 
-This is, for the most part, entirely compatible with BASH except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. 
-I will say that for Mac users specifically, I would reccomend you check out <a href="https://iterm2.com/">iTerm2</a> as an alternative to the standard terminal and <a href="https://ohmyz.sh/">oh my zsh</a> to add some amazing color theming for some general improvements. 
+<p>Speaking of <code class="language-plaintext highlighter-rouge">bash</code> it stands for Bourne Again SHell. 
+However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to <code class="language-plaintext highlighter-rouge">zsh</code> (or The Z shell). 
+This is, for the most part, entirely compatible with <code class="language-plaintext highlighter-rouge">bash</code> except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. 
+I will say that for Mac users specifically, I would reccomend you check out <a href="https://iterm2.com/" title="iTerm2: Terminal Emulator for MacOS">iTerm2</a> as an alternative to the standard terminal and <a href="https://ohmyz.sh/" title="Oh My Zsh: Prettify you Terminal">oh my zsh</a> to add some amazing color theming for some general improvements. 
 But of course this is not necessary. <em>Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.</em></p>
 
-<h2 id="knowing-your-way-around-with-bash">Knowing Your Way Around with BASH</h2>
+<h2 id="knowing-your-way-around-with-bash">Knowing Your Way Around with <code class="language-plaintext highlighter-rouge">bash</code></h2>
 
 <p>First, thing open up your terminal. 
 If you are using MacOS or Linux you can expect it to look something like this:</p>
@@ -121,116 +159,142 @@ Instead you have to give precise directions either from were you are currently o
 Now let’s see these in action.</p>
 
 <h3 id="pwd"><code class="language-plaintext highlighter-rouge">pwd</code></h3>
-<p><br />
-&lt;!– ```bash
-~ pwd <em>instert example</em> with color if possible*
-/User/Deshawn</p>
-<pre><code class="language---&gt;">&lt;img src="imgs/pwd.png" alt="pwd" width="150"/&gt;
-&lt;br&gt;&lt;br&gt;
-The `pwd` command return where were are currently looking and is equivalent to `getwd()` in R or `os.getcwd()` in python. 
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ <span class="nb">pwd</span> 
+/user/deshawn
+</code></pre></div></div>
+<p><img src="assets/imgs/pwd.png" alt="pwd" /></p>
+
+<!-- <img src="assets/imgs/pwd.png" alt="pwd" width="150"/> -->
+
+<p>the <code class="language-plaintext highlighter-rouge">pwd</code> command return where were are currently looking and is equivalent to <code class="language-plaintext highlighter-rouge">getwd()</code> in r or <code class="language-plaintext highlighter-rouge">os.getcwd()</code> in python. 
 As you can see I am in my users home directory. 
-This is a super common place, so it has a shortcut that can be accessed with `~` called the tilde and its above tab and to the left of the 1 on the keyboard. 
-&lt;br&gt;&lt;br&gt;
+This is a super common place, so it has a shortcut that can be accessed with <code class="language-plaintext highlighter-rouge">~</code> called the tilde and its above tab and to the left of the 1 on the keyboard. 
+<br /><br /></p>
 
-&gt; **Hint**: Capitalization matters so make sure you keep that in mind. 
+<blockquote>
+  <p><strong>Hint</strong>: Capitalization matters so make sure you keep that in mind. 
 I personally always have my folders names lowercase to make this easier. 
-Simlarly spaces require an espace `\`, so I also avoid spaces in repo names (typically using `_`'s.
+Simlarly spaces require an espace <code class="language-plaintext highlighter-rouge">\</code>, so I also avoid spaces in repo names (typically using <code class="language-plaintext highlighter-rouge">_</code>’s.</p>
+</blockquote>
 
-### `cd`
-&lt;br&gt;
-&lt;img src="imgs/cd.png" alt="pwd" width="150"/&gt;
-&lt;br&gt;&lt;br&gt;
-The `cd` command allows you to change your current working directory similar to `os.setwd` in R and `os.chdir()` in python. 
-Unlike most programming languages you are probably familiar with in BASH you don't have parentheses. 
+<h3 id="cd"><code class="language-plaintext highlighter-rouge">cd</code></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ <span class="nb">cd </span>Desktop
+~/Desktop
+</code></pre></div></div>
+
+<p><img src="assets/imgs/cd.png" alt="cd" /></p>
+
+<!-- <img src="assets/imgs/cd.png" alt="cd" width="150"/> -->
+
+<p>The <code class="language-plaintext highlighter-rouge">cd</code> command allows you to change your current working directory similar to <code class="language-plaintext highlighter-rouge">os.setwd</code> in R and <code class="language-plaintext highlighter-rouge">os.chdir()</code> in python. 
+Unlike most programming languages you are probably familiar with in <code class="language-plaintext highlighter-rouge">bash</code> you don’t have parentheses. 
 The arguments are just placed after the command separated by a space. 
-For more info about the structure of BASH scripting [see below](#the-form-of-commands)
+For more info about the structure of <code class="language-plaintext highlighter-rouge">bash</code> scripting <a href="#the-form-of-commands" title="The Structure of a Bash Command">see below</a></p>
 
-&gt; **Hint**: Before finishing the location you want to go, you can hit tab to autocomplete the argument. 
+<blockquote>
+  <p><strong>Hint</strong>: Before finishing the location you want to go, you can hit tab to autocomplete the argument. 
 This is invaluable and will save so much time to working memeory capcity so definitely try it out. 
-Also for `zsh` users you can even type out partial directories and have your shell complete e.g., `cd De/git` will give `cd` to my `Desktop/github_repo` directory. 
+Also for <code class="language-plaintext highlighter-rouge">zsh</code> users you can even type out partial directories and have your shell complete e.g., <code class="language-plaintext highlighter-rouge">cd De/git</code> will give <code class="language-plaintext highlighter-rouge">cd</code> to my <code class="language-plaintext highlighter-rouge">Desktop/github_repo</code> directory.</p>
+</blockquote>
 
+<h3 id="ls"><code class="language-plaintext highlighter-rouge">ls</code></h3>
 
-### `ls`
-&lt;br&gt;
-&lt;img src="imgs/ls.png" alt="pwd" width="650"/&gt;
-&lt;!-- ```bash
-➜  good_coding_practices git:(main) ✗ ls
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  <span class="nb">ls </span>git_repos/good_coding_practices
 README.md         git.md            imgs              modeling.md       pwd.png
 cli.md            good_practices.md markdown.md       productivity.md   python.md
-``` --&gt;
-&lt;br&gt;&lt;br&gt;
+</code></pre></div></div>
 
-The `ls` lists all directories and files inside the specified directory (defaults to your current working directory if no directory path is specified). 
-I have mine set up to give different colors to folder, which you can ignore for now. 
-But separate from that I will teach you about the optional argument `-a`:
-&lt;br&gt;&lt;br&gt;
-&lt;img src="imgs/ls-a.png" alt="pwd" width="650"/&gt; 
-&lt;br&gt;&lt;br&gt;
-`ls -a` (a for all) shows all hidden files and directories in addition to the nonhidden ones. 
-A hidden file is just one that starts with a `.`. 
-In out case, the `.git` folder is one example. 
+<p><img src="assets/imgs/ls.png" alt="ls" /></p>
 
+<!-- <img src="assets/imgs/ls.png" alt="pwd" width="650"/> -->
 
-## The form of Commands
+<p>The <code class="language-plaintext highlighter-rouge">ls</code> lists all directories and files inside the specified directory (defaults to your current working directory if no directory path is specified). 
+I have mine set up to give different colors to folder, which you can ignore for now.</p>
+<blockquote>
+  <p><strong>Hint</strong>: This command works for me because I have a folder on my computer called <code class="language-plaintext highlighter-rouge">git_repos/good_coding_practices</code>, but you probably do not. You can either make one to follow along or even better use a different folder to see the files there. 
+But separate from that I will teach you about the optional argument <code class="language-plaintext highlighter-rouge">-a</code>:</p>
+</blockquote>
 
-A command is just a mini program that executes when you call it from  a terminal. 
+<p><img src="assets/imgs/ls-a.png" alt="lsa" />
+<!-- <img src="assets/imgs/ls-a.png" alt="pwd" width="650"/> --></p>
+
+<p><code class="language-plaintext highlighter-rouge">ls -a</code> (a for all) shows all hidden files and directories in addition to the nonhidden ones. 
+A hidden file is just one that starts with a <code class="language-plaintext highlighter-rouge">.</code>. 
+In out case, the <code class="language-plaintext highlighter-rouge">.git</code> folder is one example.</p>
+
+<h2 id="the-form-of-commands">The form of Commands</h2>
+
+<p>A command is just a mini program that executes when you call it from  a terminal. 
 But in order to best understand terminal commands its useful to know how they are structured. 
-
 Every command has 3 basic (potential) parts. 
-The command itself, any options you can apply, and finally any arguments. 
+The command itself, any options you can apply, and finally any arguments.</p>
 
-As you saw above with the `cd` command, we had an argument (the new directory to change to). 
+<p>As you saw above with the <code class="language-plaintext highlighter-rouge">cd</code> command, we had an argument (the new directory to change to). 
 Again the argument is separated only by a space (no parenteses as you may be used to from other programming languages) and any additional arugment is also separated by a space. 
-For the `ls` command we learned about the `-a` option again separated by a space. Options in bash start with a `-`. 
-It is common practice for single letter options to have a single `-` and full word arguments have two `--`. 
-Now that you know how commands are structure the next couple sections will list a bunch of useful basic commands before we end by showing you a way to learn the ins and outs of a command (like its options) and how to find a comand to perform a task you suspect exists. 
+For the <code class="language-plaintext highlighter-rouge">ls</code> command we learned about the <code class="language-plaintext highlighter-rouge">-a</code> option again separated by a space. Options in bash start with a <code class="language-plaintext highlighter-rouge">-</code>. 
+It is common practice for single letter options to have a single <code class="language-plaintext highlighter-rouge">-</code> and full word arguments have two <code class="language-plaintext highlighter-rouge">--</code>. 
+Now that you know how commands are structure the next couple sections will list a bunch of useful basic commands before we end by showing you a way to learn the ins and outs of a command (like its options) and how to find a comand to perform a task you suspect exists.</p>
 
-### Creating/Deleting/Removing New Folders and Files
+<h3 id="creatingdeletingremoving-new-folders-and-files">Creating/Deleting/Removing New Folders and Files</h3>
 
-For all the commands the relevant arguments will be in `[]`
+<p>For all the commands the relevant arguments will be in <code class="language-plaintext highlighter-rouge">[]</code></p>
 
-- `mkdir`: Make Directory (folder) [`name_of_folder_to_make`; use the `-p` if you want to make multiple nested folders simultaneously]
-- `touch`: Make an Empty File [`name_of_file_to_make`]
-- `cp`: Copy [`name_of_file_to_copy`; `name_of_location_to_copy_to`]
-- `mv`: Move [`name_of_file_to_move`; `name_of_location_to_move_to`; can also be used to change a files name if you move it to the same location with a new name]
-- `rm`: Remove a file [`name_of_file_to_remove`]
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">mkdir</code>: Make Directory (folder) [<code class="language-plaintext highlighter-rouge">name_of_folder_to_make</code>; use the <code class="language-plaintext highlighter-rouge">-p</code> (for make parent directories) if you want to make multiple nested folders simultaneously]</li>
+  <li><code class="language-plaintext highlighter-rouge">touch</code>: Make an Empty File [<code class="language-plaintext highlighter-rouge">name_of_file_to_make</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">cp</code>: Copy [<code class="language-plaintext highlighter-rouge">name_of_file_to_copy</code>; <code class="language-plaintext highlighter-rouge">name_of_location_to_copy_to</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">mv</code>: Move [<code class="language-plaintext highlighter-rouge">name_of_file_to_move</code>; <code class="language-plaintext highlighter-rouge">name_of_location_to_move_to</code>; can also be used to change a files name if you move it to the same location with a new name]</li>
+  <li><code class="language-plaintext highlighter-rouge">rm</code>: Remove a file [<code class="language-plaintext highlighter-rouge">name_of_file_to_remove</code>]</li>
+</ul>
 
-### Viewing Contents and Editing Files
+<h3 id="viewing-contents-and-editing-files">Viewing Contents and Editing Files</h3>
 
-- `nano`: A simple to use text editor. You will likely hear about other editors like `vim` or `emacs`. Both are really good, but they have a really have learning curve, so I don't reccomend them when you start out. I personally use `vim` or `nano` depending on the context. [`name_of_file_to_edit`]
-- `cat`: Concatenate (prints out files contents) [`name_of_file_to_print`]
-- `less`: Less (is more... powerful). Useful for printing out really long docs becuse you can scroll through them [`name_of_file_to_print`]
-- `more`: More (of the content on screen) Useful for printing out really long docs but not as good as `less` [`name_of_file_to_print`]
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">nano</code>: A simple to use text editor. You will likely hear about other editors like <code class="language-plaintext highlighter-rouge">vim</code> or <code class="language-plaintext highlighter-rouge">emacs</code>. Both are really good, but they have a really hard learning curve, so I don’t reccomend them when you start out. I personally use <code class="language-plaintext highlighter-rouge">nvim</code>, which is a modern replacement for <code class="language-plaintext highlighter-rouge">vim</code>. [<code class="language-plaintext highlighter-rouge">name_of_file_to_edit</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">cat</code>: Concatenate (prints out files contents) [<code class="language-plaintext highlighter-rouge">name_of_file_to_print</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">less</code>: Less (is more… powerful). Useful for printing out really long docs becuse you can scroll through them [<code class="language-plaintext highlighter-rouge">name_of_file_to_print</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">more</code>: More (of the content on screen) Useful for printing out really long docs but not as good as <code class="language-plaintext highlighter-rouge">less</code> [<code class="language-plaintext highlighter-rouge">name_of_file_to_print</code>]</li>
+</ul>
 
-## How to Learn About New Commands
+<h2 id="how-to-learn-about-new-commands">How to Learn About New Commands</h2>
 
-These commands are more important to remember because they let you find a command to do perform and actiona as well as learn how to use that command:
+<p>These commands are more important to remember because they let you find a command to do perform and actiona as well as learn how to use that command:</p>
 
-- `apropos`: à propos (meaning with regard to). This command allows you to search for all commands the perform function/have anything in their name/description about a topic. [`descriptiion_or_name` you want to search for]
-  &gt;***If you only remember one command this is the one to remember***
-- `man`: (Pull up the) Manual (for the respective command so you can learn all the options available) [`command` you want to know more about similar to `help()` or `??` in most languages] 
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">apropos</code>: à propos (meaning with regard to). This command allows you to search for all commands the perform function/have anything in their name/description about a topic. [<code class="language-plaintext highlighter-rouge">descriptiion_or_name</code> you want to search for]
+    <blockquote>
+      <p><strong><em>If you only remember one command this is the one to remember</em></strong></p>
+    </blockquote>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">man</code>: (Pull up the) Manual (for the respective command so you can learn all the options available) [<code class="language-plaintext highlighter-rouge">command</code> you want to know more about similar to <code class="language-plaintext highlighter-rouge">help()</code> or <code class="language-plaintext highlighter-rouge">??</code> in most languages]</li>
+</ul>
 
-## Homework
+<h2 id="further-exploration">Further Exploration</h2>
 
-Try to make a new folder called `git_repos` somewhere on your computer and either move or copy a file into. 
-Then make `README.md` file (for advanced users try `nano` or `vim` to edit it and say something). 
+<p>As you can imagine, this is just a taste of the command line. You can do so so much more. Hopefully this was just enough to wet your appetite, and make you eager to explore more. One great place to start is with <a href="https://github.com/ibraheemdev/modern-unix" title="Modern Unix">Modern Unix</a>. This is a project that has upgrades many of the commands we just talked about to fit with the modern world, (e.g., adding colors, speed, etc.). Another way to speed things up is to make alias which you can write short hand for really long commands.</p>
 
-Finally, make a file that can setup a folder structure for all new projects (we didnt discuss how to make workable scripts, but thats ok you can just copy and paste for now). 
-Inside the newly created folder you should you should have a the following structure:
+<h2 id="homework">Homework</h2>
 
-</code></pre>
-<p>my_first_bash_script/
-  |– analyses/
-      |– plots/
-  |– expriment/
-      |– data/
-  |– lit_review/
-  |– supporting_docs/
-      |– scales/
-      |– irb_docs/<br />
-  |– DEVELOPEMENT_DECISIONS.md
-  |– README.md
-```</p>
+<p>Try to make a new folder called <code class="language-plaintext highlighter-rouge">git_repos</code> somewhere on your computer and either move or copy a file into. 
+Then make <code class="language-plaintext highlighter-rouge">README.md</code> file (for advanced users try <code class="language-plaintext highlighter-rouge">nano</code> or <code class="language-plaintext highlighter-rouge">vim</code> to edit it and say something).</p>
+
+<p>Finally, make a file that can setup a folder structure for all new projects (we didnt discuss how to make workable scripts, but thats ok you can just copy and paste for now). 
+Inside the newly created folder you should you should have a the following structure:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_first_bash_script/
+  |-- analyses/
+      |-- plots/
+  |-- expriment/
+      |-- data/
+  |-- lit_review/
+  |-- supporting_docs/
+      |-- scales/
+      |-- irb_docs/  
+  |-- DEVELOPEMENT_DECISIONS.md
+  |-- README.md
+</code></pre></div></div>
 
 <p>Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. 
 I highly highly reccommend two separate <code class="language-plaintext highlighter-rouge">.md</code> files. 
@@ -258,11 +322,11 @@ This file can also be private and not actually published anywhere if you prefer,
           <li class="p-name">Your Coding Buddy</li><li><a class="u-email" href="mailto:dsambrano@g.harvard.edu">dsambrano@g.harvard.edu</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li></ul>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li><li><a href="https://youtube.com/Dbrano3"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">Dbrano3</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>Learning all the gaps in your coding knowledge. You Coding Buddy  is hear to save the day!</p>
+        <p>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</p>
       </div>
     </div>
 
