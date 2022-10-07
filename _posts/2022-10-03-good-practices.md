@@ -4,6 +4,7 @@ title:  "Good Coding Practices: Instantly improve your Coding Skills with these 
 date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding
+time: 
 permalink: /good-coding-practices
 draft: true
 usemathjax: true
