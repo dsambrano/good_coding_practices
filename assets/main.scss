@@ -61,3 +61,18 @@ img {
     font-weight: bold;
 }
 
+// Using numbers instead of bullets for listing
+#markdown-toc {
+    color: black;
+}
+
+#markdown-toc {
+    background-color: #ddd;
+    padding: 1.5em;
+    display: block;
+    border-radius: .5em;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 1em;
+}
+
