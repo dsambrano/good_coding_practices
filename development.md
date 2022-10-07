@@ -4,12 +4,13 @@
 
 # Required for launch
 
-- TOC As sidebar and moves with you (https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp)
+- TOC As sidebar and moves with you (https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp) (https://github.com/allejo/jekyll-toc)
 - Categories flushed out to multi-part ones
   - Meaning permalinks as well as next/previous (could be in sidebar?) ordering required
 - Review content for typos and formatting issues (e.g., image names, line breaks, all links, Date)
 - about page gets revamped
 - add my website(/CV?) to footer
+- Reassess Skill Level (probs none of what I have so far is beginner, since I assume variables so probs adjust)
 
 ---
 after launch:
@@ -20,6 +21,7 @@ after launch:
 - Adding different post types
   - See text for types. Each type can just change the color of the link, with type color key combo in sidebar? or just in content above posts. The latter being slightly easier, probs
 - Dark Mode (https://medium.com/@derekkedziora/how-to-add-a-dark-mode-toggle-to-a-jekyll-site-a76dac00128d)
+- Have a menu with drop down called categores with either Topics, Blog Series, Samples, or Skill Level (https://thinkshout.com/blog/2014/12/creating-dynamic-menus-in-jekyll/)
 
 
 
