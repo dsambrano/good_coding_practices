@@ -30,6 +30,11 @@ github_username: dsambrano
 youtube_username: Dbrano3
 show_excerpts: true
 
+
+# https://stackoverflow.com/a/38419441
+kramdown:
+  parse_block_html: true
+
 # Build settings
 theme: minima
 plugins:
