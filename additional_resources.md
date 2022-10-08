@@ -28,11 +28,14 @@ Still looking for more?!?! Here are a few youtube channels and blog posts that I
 - Websites: [DigitalOcean][]
 
 ## Linux
-- YouTube Channels: [Linode][], [Learn Linux TV][linuxtv], [The Linux Experiment][linuxexperiment],[Chris Titus Tech][CTT]
+- YouTube Channels: [Linode][], [Learn Linux TV][linuxtv], [The Linux Experiment][linuxexperiment], [Chris Titus Tech][CTT]
 
 ## Webserver/Webdev
 - YouTube Channels: [fireship][fireyt], [Network Chuck][]
 - Websites: [DigitalOcean][]
+
+## R and General Stats
+- Websites: [UCLA's Statical Method and Data Analysis Website][SMDA], and there [R specific section][uclaR]
 
 ## Vim/NVim:
 - YouTube Channels [primeagen][primeagenyt]
@@ -72,3 +75,6 @@ Still looking for more?!?! Here are a few youtube channels and blog posts that I
 [primeagenyt]: https://www.youtube.com/c/ThePrimeagen "YT: The Primeagen; Blazingly Fast"
 [Socratica]: https://www.youtube.com/c/Socratica "YT: Socratica Python Coding"
 [gh-pages]: https://pages.github.com/ "GitHub Pages for Free Webhosting for Static Sites"
+
+[SMDA]: https://stats.oarc.ucla.edu/other/dae/ "UCLA Statical Methods and Data Analytics Examples"
+[uclaR]: https://stats.oarc.ucla.edu/R/ "UCLA SMDA: R Specific Section"
