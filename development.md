@@ -57,3 +57,9 @@ Use this for inspiration especially on the Lesson the home page and what really 
 Also see the home page for a python to get some infor about a setup
 finally look at the index.html file for image ideas on the posts/organization strategies
 https://www.mikedane.com/programming-languages/python/
+
+
+
+Other Themes that I think are worth writing down somewhere:
+- https://github.com/poole/hyde
+- https://github.com/alshedivat/al-folio
