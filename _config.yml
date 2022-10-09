@@ -29,6 +29,7 @@ twitter_username: DeshawnSambrano
 github_username: dsambrano
 youtube_username: Dbrano3
 show_excerpts: true
+excerpt_separator: "<!-- excerpt-end -->"
 
 
 # https://stackoverflow.com/a/38419441

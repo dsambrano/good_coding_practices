@@ -28,7 +28,8 @@ Prerequisites:
 
 
 ## My First Model
-Link to paper I send to RAs
+
+<!-- excerpt-start -->
 
 In order to give yourself a basic working example, I highly reccomend you read through this [paper][holt].
 This is a pretty foundational paper for creating models of decision making and gives a pretty good walkthrough on the process. 

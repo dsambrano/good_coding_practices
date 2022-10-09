@@ -21,6 +21,16 @@ In this blog you will learn a variety of helpful Coding Practices to improve the
 Prerequisites:
 - None
 
+## Having A Gamplan
+
+<!-- excerpt-start -->
+
+Code is for Humans not for Computers, so you should write code with that in mind. 
+Prioritize readable code over all else.
+Second, you want to always make sure you are being consistent, this helps improve future development. 
+
+<!-- excerpt-end -->
+
 ## Imports First
 
 ## No Hard Coding, Ever!
