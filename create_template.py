@@ -47,6 +47,7 @@ series: false
 #series-name: computational-modeling
 ---
 
+{% include sidebar.html %}
 
 ## Takeaways
 
