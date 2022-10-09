@@ -36,15 +36,13 @@ title:  "{name.capitalize()}"
 date: {date}
 author: Deshawn Sambrano
 tags: 
-permalink: 
-draft: true
 time: {diff_time}
+series: false
+permalink: 
 diff: "{{site.data.difficulty.expert.name}}"
+draft: true
 excerpt_separator: <!--more-->
 usemathjax: true
-series: false
-#part_number: 1
-#series-name: computational-modeling
 ---
 
 {% include sidebar.html %}
