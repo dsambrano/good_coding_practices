@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-07T23:17:52-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Coding Buddy</title><subtitle>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</subtitle><entry><title type="html">New Post</title><link href="http://localhost:4000/posts/2" rel="alternate" type="text/html" title="New Post" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/New_Post</id><content type="html" xml:base="http://localhost:4000/posts/2"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-09T10:46:32-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Coding Buddy</title><subtitle>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</subtitle><entry><title type="html">New Post</title><link href="http://localhost:4000/posts/2" rel="alternate" type="text/html" title="New Post" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/New_Post</id><content type="html" xml:base="http://localhost:4000/posts/2"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -16,10 +16,44 @@
 <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre>
 </figure>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>Deshawn Sambrano</name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Computation Modeling</title><link href="http://localhost:4000/computation-modeling" rel="alternate" type="text/html" title="Computation Modeling" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/modeling</id><content type="html" xml:base="http://localhost:4000/computation-modeling"><![CDATA[<p>diff: Expert</p>
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>Deshawn Sambrano</name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Computation Modeling</title><link href="http://localhost:4000/computation-modeling" rel="alternate" type="text/html" title="Computation Modeling" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/modeling</id><content type="html" xml:base="http://localhost:4000/computation-modeling"><![CDATA[<nav id="sidebar">
+  <div class="toc-wrapper">
+    <h4>Table of Contents</h4>
+    <aside class="toc">
+<ul id="markdown-toc">
+  <li><a href="#takeaways" id="markdown-toc-takeaways">Takeaways</a></li>
+  <li><a href="#what-even-is-a-computational-model" id="markdown-toc-what-even-is-a-computational-model">What Even is a Computational Model</a></li>
+  <li><a href="#why-should-you-use-a-computational-model" id="markdown-toc-why-should-you-use-a-computational-model">Why Should You Use A Computational Model</a>    <ul>
+      <li><a href="#my-first-model" id="markdown-toc-my-first-model">My First Model</a></li>
+      <li><a href="#selecting-a-model" id="markdown-toc-selecting-a-model">Selecting a Model</a></li>
+      <li><a href="#a-story-of-individual-differences-adding-parameters" id="markdown-toc-a-story-of-individual-differences-adding-parameters">A Story of Individual Differences: Adding Parameters</a></li>
+      <li><a href="#decision-rules" id="markdown-toc-decision-rules">Decision Rules</a></li>
+    </ul>
+  </li>
+  <li><a href="#advanced-topics" id="markdown-toc-advanced-topics">Advanced Topics:</a></li>
+  <li><a href="#homework" id="markdown-toc-homework">Homework</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
 
-<p>{{site.data.difficulty.expert.name}}
-Expert</p>
+    </aside>
+  </div>
+  <aside class="series">
+    <h4>This post is part of the series <em>Computational Modeling</em></h4>
+    <ol start="1">
+    
+    
+    <li>
+      
+      <strong>Computation Modeling</strong>
+      
+    </li>
+    
+  </ol>
+
+    <p>More posts coming soon!</p>
+
+  </aside>
+</nav>
 
 <h2 id="takeaways">Takeaways</h2>
 
@@ -305,7 +339,7 @@ Specifically, you will learn how to estimate the parameters of your model instea
 
 <h2 id="homework">Homework</h2>
 
-<h2 id="references">References</h2>]]></content><author><name>Deshawn Sambrano</name></author><category term="Math" /><category term="Computational-Modeling" /><category term="R" /><category term="Python" /><summary type="html"><![CDATA[diff: Expert {{site.data.difficulty.expert.name}} Expert Takeaways [Estimated Read Time 20 mins] In this blog you will learn the basics of computational modeling. Specifically you will learn: What is a computational model? Why you should use computational models? How to implement a computational model with an example. Model Selection Ammedding a Model to suit your needs Decision Rules Difficulty: Expert Prerequisites: Read through this paper or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning) What Even is a Computational Model A Computational Model is just a mathematical equation, serving as a hypothesis, for some psychological phenomenon. We use models all the time. Most commonly with the linear model in regression. A computational model just adds flexibility in that it is not predefined so you can adjust it to your specific situation. So you can allow it have some non linearity or have only partial linearity. Note: When you use linear (or logistic) regression to prediction choices, you are using a model for how people are making those choices. Whatever you include in this model is all that it knows; and importantly, these models assume a particular structure for how choices are made. Is it the right structure for your data, maybe, maybe not? That is when computational models come in. You get to specific the structure.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/posts/1" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/posts/1"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<h2 id="references">References</h2>]]></content><author><name>Deshawn Sambrano</name></author><category term="Math" /><category term="Computational-Modeling" /><category term="R" /><category term="Python" /><summary type="html"><![CDATA[Table of Contents Takeaways What Even is a Computational Model This post is part of the series Computational Modeling Computation Modeling More posts coming soon! Takeaways [Estimated Read Time 20 mins] In this blog you will learn the basics of computational modeling. Specifically you will learn: What is a computational model? Why you should use computational models? How to implement a computational model with an example. Model Selection Ammedding a Model to suit your needs Decision Rules Difficulty: Expert Prerequisites: Read through this paper or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning) What Even is a Computational Model A Computational Model is just a mathematical equation, serving as a hypothesis, for some psychological phenomenon. We use models all the time. Most commonly with the linear model in regression. A computational model just adds flexibility in that it is not predefined so you can adjust it to your specific situation. So you can allow it have some non linearity or have only partial linearity. Note: When you use linear (or logistic) regression to prediction choices, you are using a model for how people are making those choices. Whatever you include in this model is all that it knows; and importantly, these models assume a particular structure for how choices are made. Is it the right structure for your data, maybe, maybe not? That is when computational models come in. You get to specific the structure.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/posts/1" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/posts/1"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">)</span>

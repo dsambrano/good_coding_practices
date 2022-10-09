@@ -12,7 +12,12 @@ layout: default
       </time>
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+      {%- endif -%}
+      {% if page.time %}
+      • <span class="read-time"> Estimated Read Time: {{page.time}}</span>
+      {% endif %} 
+    </p>
+
   </header>
   
     {% if page.series and page.series != "" and page.series != "false" and page.series != "False" %}
