@@ -22,8 +22,6 @@ In this blog you will learn the basics of computational modeling. Specifically y
   - Ammedding a Model to suit your needs
   - Decision Rules
 
-Difficulty: <span class="{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}">{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}</span>
-
 Prerequisites:
 - Read through this [paper][holt] or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)
 

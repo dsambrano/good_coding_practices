@@ -14,7 +14,11 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
       {% if page.time %}
-      • <span class="read-time"> Estimated Read Time: {{page.time}}</span>
+      • <span class="read-time"> Estimated Read Time: {{page.time}} mins</span>
+      {% endif %} 
+      {% if page.diff %}
+      • <span class="page-diff"> Difficulty: <span class="{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}">{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}</span>
+      </span>
       {% endif %} 
     </p>
 
