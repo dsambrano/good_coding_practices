@@ -1,10 +1,10 @@
-beginner:
+- id: beginner
   name: Beginner
   color: green
-intermediate:
+- id: intermediate
   name: Intermediate
   color: yellow
-expert:
+- id: expert
   name: Expert
   color: red
 

@@ -28,9 +28,8 @@ img {
 
 // Setting Colors for the Difficulties
 {% for i in site.data.difficulty %}
-{% assign diff = i[1] %}
-.{{diff['name']}} {
-    color: {{diff['color']}};
+.{{i['name']}} {
+    color: {{i['color']}};
 }
 {% endfor %}
 
