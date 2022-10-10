@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Bash em, I don’t even know em | Your Coding Buddy</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Bash em, I don’t even know em" />
+<meta name="author" content="Deshawn Sambrano" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Takeaways Apperance is Important Know your OS Knowing Your Way Around with bash pwd cd ls The form of Commands Creating/Deleting/Removing New Folders and Files Viewing Contents and Editing Files How to Learn About New Commands Further Exploration Homework &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;Bash em, I don&#39;t even know em&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What are Command-Line Interface (CLIs)&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; Takeaways [Estimated Read Time 10 mins] In this blog you will learn basic bash commands. By the end of this you will know: Basic commands to traverse your computer from the terminal The structure or commands, arguments, and options in bash How to edit, create, move and delete files Create a script to make a folder structure for each new project you are working on. Prerequisites: None; Although it may be helpful to have read through the series intro Use this link to set up the Takeaways as a section to have it be bubbly and etc https://github.com/jekyll/jekyll/issues/246#issuecomment-583053 Apperance is Important Change your Default Terminal Colors NOW! The happier you are when you look at your terminal the happier you will be when coding. More Happy means more coding. More Coding means more practice. More practice means Great Coder! This same principle applies for all text editors/IDEs (integrated developer environment) by the way. It sounds like a joke, but seriously, take some time to have a nice looking coding environment. In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc. Know your OS Knowing what OS you are on is super important as the commands change across them. Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of bash before). This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with the shell via using MacOS is very valuable. In contrast, Windows uses CMD or Powershell which has a differnt syntax and command list. Luckily for you, there is a project to give Windows bash commands called gitbash, and I highly reccomand you use that to be able to follow along. Most of the time if you get some CLI (command line interface) code it will assume bash, so its just a good skill to have. Speaking of bash it stands for Bourne Again SHell. However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z shell). This is, for the most part, entirely compatible with bash except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. I will say that for Mac users specifically, I would reccomend you check out iTerm2 as an alternative to the standard terminal and oh my zsh to add some amazing color theming for some general improvements. But of course this is not necessary. Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here. Knowing Your Way Around with bash First, thing open up your terminal. If you are using MacOS or Linux you can expect it to look something like this: NEED to show example can be replaced with an image Explain what each piece means There are three really important commands to know to navigate around the your file system: pwd: Print working Directory cd: Change Directory ls: List (Contents) One analogy for these commands is imaging you are on a random street in a US city that you don’t know. The pwd command is like looking up your current address. It will tell you were you are. The ls command would be like looking around the street (or on your map) to see what restruants are on the street. And cd would be like moving to a new location. In keeping the analogy, you can’t just move to an arbritrary new street because you don’t know this city. Instead you have to give precise directions either from were you are currently or relative to some clearly visable space (say a big colorful building you can see from anywhere in the city). Now let’s see these in action. pwd ~ pwd /user/deshawn the pwd command return where were are currently looking and is equivalent to getwd() in r or os.getcwd() in python. As you can see I am in my users home directory. This is a super common place, so it has a shortcut that can be accessed with ~ called the tilde and its above tab and to the left of the 1 on the keyboard. Hint: Capitalization matters so make sure you keep that in mind. I personally always have my folders names lowercase to make this easier. Simlarly spaces require an espace \, so I also avoid spaces in repo names (typically using _’s. cd ~ cd Desktop ~/Desktop The cd command allows you to change your current working directory similar to os.setwd in R and os.chdir() in python. Unlike most programming languages you are probably familiar with in bash you don’t have parentheses. The arguments are just placed after the command separated by a space. For more info about the structure of bash scripting see below Hint: Before finishing the location you want to go, you can hit tab to autocomplete the argument. This is invaluable and will save so much time to working memeory capcity so definitely try it out. Also for zsh users you can even type out partial directories and have your shell complete e.g., cd De/git will give cd to my Desktop/github_repo directory. ls ➜ ls git_repos/good_coding_practices README.md git.md imgs modeling.md pwd.png cli.md good_practices.md markdown.md productivity.md python.md The ls lists all directories and files inside the specified directory (defaults to your current working directory if no directory path is specified). I have mine set up to give different colors to folder, which you can ignore for now. Hint: This command works for me because I have a folder on my computer called git_repos/good_coding_practices, but you probably do not. You can either make one to follow along or even better use a different folder to see the files there. But separate from that I will teach you about the optional argument -a: ls -a (a for all) shows all hidden files and directories in addition to the nonhidden ones. A hidden file is just one that starts with a .. In out case, the .git folder is one example. The form of Commands A command is just a mini program that executes when you call it from a terminal. But in order to best understand terminal commands its useful to know how they are structured. Every command has 3 basic (potential) parts. The command itself, any options you can apply, and finally any arguments. As you saw above with the cd command, we had an argument (the new directory to change to). Again the argument is separated only by a space (no parenteses as you may be used to from other programming languages) and any additional arugment is also separated by a space. For the ls command we learned about the -a option again separated by a space. Options in bash start with a -. It is common practice for single letter options to have a single - and full word arguments have two --. Now that you know how commands are structure the next couple sections will list a bunch of useful basic commands before we end by showing you a way to learn the ins and outs of a command (like its options) and how to find a comand to perform a task you suspect exists. Creating/Deleting/Removing New Folders and Files For all the commands the relevant arguments will be in [] mkdir: Make Directory (folder) [name_of_folder_to_make; use the -p (for make parent directories) if you want to make multiple nested folders simultaneously] touch: Make an Empty File [name_of_file_to_make] cp: Copy [name_of_file_to_copy; name_of_location_to_copy_to] mv: Move [name_of_file_to_move; name_of_location_to_move_to; can also be used to change a files name if you move it to the same location with a new name] rm: Remove a file [name_of_file_to_remove] Viewing Contents and Editing Files nano: A simple to use text editor. You will likely hear about other editors like vim or emacs. Both are really good, but they have a really hard learning curve, so I don’t reccomend them when you start out. I personally use nvim, which is a modern replacement for vim. [name_of_file_to_edit] cat: Concatenate (prints out files contents) [name_of_file_to_print] less: Less (is more… powerful). Useful for printing out really long docs becuse you can scroll through them [name_of_file_to_print] more: More (of the content on screen) Useful for printing out really long docs but not as good as less [name_of_file_to_print] How to Learn About New Commands These commands are more important to remember because they let you find a command to do perform and actiona as well as learn how to use that command: apropos: à propos (meaning with regard to). This command allows you to search for all commands the perform function/have anything in their name/description about a topic. [descriptiion_or_name you want to search for] If you only remember one command this is the one to remember man: (Pull up the) Manual (for the respective command so you can learn all the options available) [command you want to know more about similar to help() or ?? in most languages] Further Exploration As you can imagine, this is just a taste of the command line. You can do so so much more. Hopefully this was just enough to wet your appetite, and make you eager to explore more. One great place to start is with Modern Unix. This is a project that has upgrades many of the commands we just talked about to fit with the modern world, (e.g., adding colors, speed, etc.). Another way to speed things up is to make alias which you can write short hand for really long commands. Homework Try to make a new folder called git_repos somewhere on your computer and either move or copy a file into. Then make README.md file (for advanced users try nano or vim to edit it and say something). Finally, make a file that can setup a folder structure for all new projects (we didnt discuss how to make workable scripts, but thats ok you can just copy and paste for now). Inside the newly created folder you should you should have a the following structure: my_first_bash_script/ |-- analyses/ |-- plots/ |-- expriment/ |-- data/ |-- lit_review/ |-- supporting_docs/ |-- scales/ |-- irb_docs/ |-- DEVELOPEMENT_DECISIONS.md |-- README.md Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. I highly highly reccommend two separate .md files. The README is for anyone first coming to the project on how/why to run this code and what is found were (this can be updated at the very end of the project when it is read to be published). In contrast the DEVELOPMENT file is a place where you should write down every decision you made for the project. Why did you use this library instead of that on, why did you have 60 trials instead of 90, why did you exclude a subject etc. I personally also leave a ton of links to stack[exchange/overflow] for how I came up with code or to justify certain things to myself. This file can also be private and not actually published anywhere if you prefer, but trust me, especially when writing a methods sections this is invaluable." />
+<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Takeaways Apperance is Important Know your OS Knowing Your Way Around with bash pwd cd ls The form of Commands Creating/Deleting/Removing New Folders and Files Viewing Contents and Editing Files How to Learn About New Commands Further Exploration Homework &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;Bash em, I don&#39;t even know em&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What are Command-Line Interface (CLIs)&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; Takeaways [Estimated Read Time 10 mins] In this blog you will learn basic bash commands. By the end of this you will know: Basic commands to traverse your computer from the terminal The structure or commands, arguments, and options in bash How to edit, create, move and delete files Create a script to make a folder structure for each new project you are working on. Prerequisites: None; Although it may be helpful to have read through the series intro Use this link to set up the Takeaways as a section to have it be bubbly and etc https://github.com/jekyll/jekyll/issues/246#issuecomment-583053 Apperance is Important Change your Default Terminal Colors NOW! The happier you are when you look at your terminal the happier you will be when coding. More Happy means more coding. More Coding means more practice. More practice means Great Coder! This same principle applies for all text editors/IDEs (integrated developer environment) by the way. It sounds like a joke, but seriously, take some time to have a nice looking coding environment. In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc. Know your OS Knowing what OS you are on is super important as the commands change across them. Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of bash before). This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with the shell via using MacOS is very valuable. In contrast, Windows uses CMD or Powershell which has a differnt syntax and command list. Luckily for you, there is a project to give Windows bash commands called gitbash, and I highly reccomand you use that to be able to follow along. Most of the time if you get some CLI (command line interface) code it will assume bash, so its just a good skill to have. Speaking of bash it stands for Bourne Again SHell. However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z shell). This is, for the most part, entirely compatible with bash except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. I will say that for Mac users specifically, I would reccomend you check out iTerm2 as an alternative to the standard terminal and oh my zsh to add some amazing color theming for some general improvements. But of course this is not necessary. Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here. Knowing Your Way Around with bash First, thing open up your terminal. If you are using MacOS or Linux you can expect it to look something like this: NEED to show example can be replaced with an image Explain what each piece means There are three really important commands to know to navigate around the your file system: pwd: Print working Directory cd: Change Directory ls: List (Contents) One analogy for these commands is imaging you are on a random street in a US city that you don’t know. The pwd command is like looking up your current address. It will tell you were you are. The ls command would be like looking around the street (or on your map) to see what restruants are on the street. And cd would be like moving to a new location. In keeping the analogy, you can’t just move to an arbritrary new street because you don’t know this city. Instead you have to give precise directions either from were you are currently or relative to some clearly visable space (say a big colorful building you can see from anywhere in the city). Now let’s see these in action. pwd ~ pwd /user/deshawn the pwd command return where were are currently looking and is equivalent to getwd() in r or os.getcwd() in python. As you can see I am in my users home directory. This is a super common place, so it has a shortcut that can be accessed with ~ called the tilde and its above tab and to the left of the 1 on the keyboard. Hint: Capitalization matters so make sure you keep that in mind. I personally always have my folders names lowercase to make this easier. Simlarly spaces require an espace \, so I also avoid spaces in repo names (typically using _’s. cd ~ cd Desktop ~/Desktop The cd command allows you to change your current working directory similar to os.setwd in R and os.chdir() in python. Unlike most programming languages you are probably familiar with in bash you don’t have parentheses. The arguments are just placed after the command separated by a space. For more info about the structure of bash scripting see below Hint: Before finishing the location you want to go, you can hit tab to autocomplete the argument. This is invaluable and will save so much time to working memeory capcity so definitely try it out. Also for zsh users you can even type out partial directories and have your shell complete e.g., cd De/git will give cd to my Desktop/github_repo directory. ls ➜ ls git_repos/good_coding_practices README.md git.md imgs modeling.md pwd.png cli.md good_practices.md markdown.md productivity.md python.md The ls lists all directories and files inside the specified directory (defaults to your current working directory if no directory path is specified). I have mine set up to give different colors to folder, which you can ignore for now. Hint: This command works for me because I have a folder on my computer called git_repos/good_coding_practices, but you probably do not. You can either make one to follow along or even better use a different folder to see the files there. But separate from that I will teach you about the optional argument -a: ls -a (a for all) shows all hidden files and directories in addition to the nonhidden ones. A hidden file is just one that starts with a .. In out case, the .git folder is one example. The form of Commands A command is just a mini program that executes when you call it from a terminal. But in order to best understand terminal commands its useful to know how they are structured. Every command has 3 basic (potential) parts. The command itself, any options you can apply, and finally any arguments. As you saw above with the cd command, we had an argument (the new directory to change to). Again the argument is separated only by a space (no parenteses as you may be used to from other programming languages) and any additional arugment is also separated by a space. For the ls command we learned about the -a option again separated by a space. Options in bash start with a -. It is common practice for single letter options to have a single - and full word arguments have two --. Now that you know how commands are structure the next couple sections will list a bunch of useful basic commands before we end by showing you a way to learn the ins and outs of a command (like its options) and how to find a comand to perform a task you suspect exists. Creating/Deleting/Removing New Folders and Files For all the commands the relevant arguments will be in [] mkdir: Make Directory (folder) [name_of_folder_to_make; use the -p (for make parent directories) if you want to make multiple nested folders simultaneously] touch: Make an Empty File [name_of_file_to_make] cp: Copy [name_of_file_to_copy; name_of_location_to_copy_to] mv: Move [name_of_file_to_move; name_of_location_to_move_to; can also be used to change a files name if you move it to the same location with a new name] rm: Remove a file [name_of_file_to_remove] Viewing Contents and Editing Files nano: A simple to use text editor. You will likely hear about other editors like vim or emacs. Both are really good, but they have a really hard learning curve, so I don’t reccomend them when you start out. I personally use nvim, which is a modern replacement for vim. [name_of_file_to_edit] cat: Concatenate (prints out files contents) [name_of_file_to_print] less: Less (is more… powerful). Useful for printing out really long docs becuse you can scroll through them [name_of_file_to_print] more: More (of the content on screen) Useful for printing out really long docs but not as good as less [name_of_file_to_print] How to Learn About New Commands These commands are more important to remember because they let you find a command to do perform and actiona as well as learn how to use that command: apropos: à propos (meaning with regard to). This command allows you to search for all commands the perform function/have anything in their name/description about a topic. [descriptiion_or_name you want to search for] If you only remember one command this is the one to remember man: (Pull up the) Manual (for the respective command so you can learn all the options available) [command you want to know more about similar to help() or ?? in most languages] Further Exploration As you can imagine, this is just a taste of the command line. You can do so so much more. Hopefully this was just enough to wet your appetite, and make you eager to explore more. One great place to start is with Modern Unix. This is a project that has upgrades many of the commands we just talked about to fit with the modern world, (e.g., adding colors, speed, etc.). Another way to speed things up is to make alias which you can write short hand for really long commands. Homework Try to make a new folder called git_repos somewhere on your computer and either move or copy a file into. Then make README.md file (for advanced users try nano or vim to edit it and say something). Finally, make a file that can setup a folder structure for all new projects (we didnt discuss how to make workable scripts, but thats ok you can just copy and paste for now). Inside the newly created folder you should you should have a the following structure: my_first_bash_script/ |-- analyses/ |-- plots/ |-- expriment/ |-- data/ |-- lit_review/ |-- supporting_docs/ |-- scales/ |-- irb_docs/ |-- DEVELOPEMENT_DECISIONS.md |-- README.md Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. I highly highly reccommend two separate .md files. The README is for anyone first coming to the project on how/why to run this code and what is found were (this can be updated at the very end of the project when it is read to be published). In contrast the DEVELOPMENT file is a place where you should write down every decision you made for the project. Why did you use this library instead of that on, why did you have 60 trials instead of 90, why did you exclude a subject etc. I personally also leave a ton of links to stack[exchange/overflow] for how I came up with code or to justify certain things to myself. This file can also be private and not actually published anywhere if you prefer, but trust me, especially when writing a methods sections this is invaluable." />
+<link rel="canonical" href="http://localhost:4000/cli/bash" />
+<meta property="og:url" content="http://localhost:4000/cli/bash" />
+<meta property="og:site_name" content="Your Coding Buddy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Bash em, I don’t even know em" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Takeaways Apperance is Important Know your OS Knowing Your Way Around with bash pwd cd ls The form of Commands Creating/Deleting/Removing New Folders and Files Viewing Contents and Editing Files How to Learn About New Commands Further Exploration Homework &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;Bash em, I don&#39;t even know em&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What are Command-Line Interface (CLIs)&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; Takeaways [Estimated Read Time 10 mins] In this blog you will learn basic bash commands. By the end of this you will know: Basic commands to traverse your computer from the terminal The structure or commands, arguments, and options in bash How to edit, create, move and delete files Create a script to make a folder structure for each new project you are working on. Prerequisites: None; Although it may be helpful to have read through the series intro Use this link to set up the Takeaways as a section to have it be bubbly and etc https://github.com/jekyll/jekyll/issues/246#issuecomment-583053 Apperance is Important Change your Default Terminal Colors NOW! The happier you are when you look at your terminal the happier you will be when coding. More Happy means more coding. More Coding means more practice. More practice means Great Coder! This same principle applies for all text editors/IDEs (integrated developer environment) by the way. It sounds like a joke, but seriously, take some time to have a nice looking coding environment. In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc. Know your OS Knowing what OS you are on is super important as the commands change across them. Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of bash before). This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with the shell via using MacOS is very valuable. In contrast, Windows uses CMD or Powershell which has a differnt syntax and command list. Luckily for you, there is a project to give Windows bash commands called gitbash, and I highly reccomand you use that to be able to follow along. Most of the time if you get some CLI (command line interface) code it will assume bash, so its just a good skill to have. Speaking of bash it stands for Bourne Again SHell. However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z shell). This is, for the most part, entirely compatible with bash except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. I will say that for Mac users specifically, I would reccomend you check out iTerm2 as an alternative to the standard terminal and oh my zsh to add some amazing color theming for some general improvements. But of course this is not necessary. Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here. Knowing Your Way Around with bash First, thing open up your terminal. If you are using MacOS or Linux you can expect it to look something like this: NEED to show example can be replaced with an image Explain what each piece means There are three really important commands to know to navigate around the your file system: pwd: Print working Directory cd: Change Directory ls: List (Contents) One analogy for these commands is imaging you are on a random street in a US city that you don’t know. The pwd command is like looking up your current address. It will tell you were you are. The ls command would be like looking around the street (or on your map) to see what restruants are on the street. And cd would be like moving to a new location. In keeping the analogy, you can’t just move to an arbritrary new street because you don’t know this city. Instead you have to give precise directions either from were you are currently or relative to some clearly visable space (say a big colorful building you can see from anywhere in the city). Now let’s see these in action. pwd ~ pwd /user/deshawn the pwd command return where were are currently looking and is equivalent to getwd() in r or os.getcwd() in python. As you can see I am in my users home directory. This is a super common place, so it has a shortcut that can be accessed with ~ called the tilde and its above tab and to the left of the 1 on the keyboard. Hint: Capitalization matters so make sure you keep that in mind. I personally always have my folders names lowercase to make this easier. Simlarly spaces require an espace \\, so I also avoid spaces in repo names (typically using _’s. cd ~ cd Desktop ~/Desktop The cd command allows you to change your current working directory similar to os.setwd in R and os.chdir() in python. Unlike most programming languages you are probably familiar with in bash you don’t have parentheses. The arguments are just placed after the command separated by a space. For more info about the structure of bash scripting see below Hint: Before finishing the location you want to go, you can hit tab to autocomplete the argument. This is invaluable and will save so much time to working memeory capcity so definitely try it out. Also for zsh users you can even type out partial directories and have your shell complete e.g., cd De/git will give cd to my Desktop/github_repo directory. ls ➜ ls git_repos/good_coding_practices README.md git.md imgs modeling.md pwd.png cli.md good_practices.md markdown.md productivity.md python.md The ls lists all directories and files inside the specified directory (defaults to your current working directory if no directory path is specified). I have mine set up to give different colors to folder, which you can ignore for now. Hint: This command works for me because I have a folder on my computer called git_repos/good_coding_practices, but you probably do not. You can either make one to follow along or even better use a different folder to see the files there. But separate from that I will teach you about the optional argument -a: ls -a (a for all) shows all hidden files and directories in addition to the nonhidden ones. A hidden file is just one that starts with a .. In out case, the .git folder is one example. The form of Commands A command is just a mini program that executes when you call it from a terminal. But in order to best understand terminal commands its useful to know how they are structured. Every command has 3 basic (potential) parts. The command itself, any options you can apply, and finally any arguments. As you saw above with the cd command, we had an argument (the new directory to change to). Again the argument is separated only by a space (no parenteses as you may be used to from other programming languages) and any additional arugment is also separated by a space. For the ls command we learned about the -a option again separated by a space. Options in bash start with a -. It is common practice for single letter options to have a single - and full word arguments have two --. Now that you know how commands are structure the next couple sections will list a bunch of useful basic commands before we end by showing you a way to learn the ins and outs of a command (like its options) and how to find a comand to perform a task you suspect exists. Creating/Deleting/Removing New Folders and Files For all the commands the relevant arguments will be in [] mkdir: Make Directory (folder) [name_of_folder_to_make; use the -p (for make parent directories) if you want to make multiple nested folders simultaneously] touch: Make an Empty File [name_of_file_to_make] cp: Copy [name_of_file_to_copy; name_of_location_to_copy_to] mv: Move [name_of_file_to_move; name_of_location_to_move_to; can also be used to change a files name if you move it to the same location with a new name] rm: Remove a file [name_of_file_to_remove] Viewing Contents and Editing Files nano: A simple to use text editor. You will likely hear about other editors like vim or emacs. Both are really good, but they have a really hard learning curve, so I don’t reccomend them when you start out. I personally use nvim, which is a modern replacement for vim. [name_of_file_to_edit] cat: Concatenate (prints out files contents) [name_of_file_to_print] less: Less (is more… powerful). Useful for printing out really long docs becuse you can scroll through them [name_of_file_to_print] more: More (of the content on screen) Useful for printing out really long docs but not as good as less [name_of_file_to_print] How to Learn About New Commands These commands are more important to remember because they let you find a command to do perform and actiona as well as learn how to use that command: apropos: à propos (meaning with regard to). This command allows you to search for all commands the perform function/have anything in their name/description about a topic. [descriptiion_or_name you want to search for] If you only remember one command this is the one to remember man: (Pull up the) Manual (for the respective command so you can learn all the options available) [command you want to know more about similar to help() or ?? in most languages] Further Exploration As you can imagine, this is just a taste of the command line. You can do so so much more. Hopefully this was just enough to wet your appetite, and make you eager to explore more. One great place to start is with Modern Unix. This is a project that has upgrades many of the commands we just talked about to fit with the modern world, (e.g., adding colors, speed, etc.). Another way to speed things up is to make alias which you can write short hand for really long commands. Homework Try to make a new folder called git_repos somewhere on your computer and either move or copy a file into. Then make README.md file (for advanced users try nano or vim to edit it and say something). Finally, make a file that can setup a folder structure for all new projects (we didnt discuss how to make workable scripts, but thats ok you can just copy and paste for now). Inside the newly created folder you should you should have a the following structure: my_first_bash_script/ |-- analyses/ |-- plots/ |-- expriment/ |-- data/ |-- lit_review/ |-- supporting_docs/ |-- scales/ |-- irb_docs/ |-- DEVELOPEMENT_DECISIONS.md |-- README.md Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. I highly highly reccommend two separate .md files. The README is for anyone first coming to the project on how/why to run this code and what is found were (this can be updated at the very end of the project when it is read to be published). In contrast the DEVELOPMENT file is a place where you should write down every decision you made for the project. Why did you use this library instead of that on, why did you have 60 trials instead of 90, why did you exclude a subject etc. I personally also leave a ton of links to stack[exchange/overflow] for how I came up with code or to justify certain things to myself. This file can also be private and not actually published anywhere if you prefer, but trust me, especially when writing a methods sections this is invaluable.","headline":"Bash em, I don’t even know em","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cli/bash"},"url":"http://localhost:4000/cli/bash"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
+  
+  <!-- <script type="text/x-mathjax-config">
+      // From: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
+      // MathJax.Hub.Config({
+      // TeX: { equationNumbers: { autoNumber: "AMS" } }
+      // });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true
+        },
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?con
+fig=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+        // Below config from: https://stackoverflow.com/a/54373640
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            config: ["MMLorHTML.js"],
+            jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+            extensions: ["MathMenu.js", "MathZoom.js"]
+        });
+    </script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Bash em, I don&#39;t even know em</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-03T00:00:00-07:00" itemprop="datePublished">Oct 3, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Deshawn Sambrano</span></span>
+      • <span class="read-time"> Estimated Read Time: 10 mins</span>
+       
+      
+      • <span class="page-diff"> Difficulty: <span class="Intermediate">Intermediate</span>
+      </span>
+       
+    </p>
+
+  </header>
+  
+    
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <nav id="sidebar">
+  <div class="toc-wrapper">
+    <h4>Table of Contents</h4>
+    <aside class="toc">
+<ul id="markdown-toc">
+  <li><a href="#takeaways" id="markdown-toc-takeaways">Takeaways</a></li>
+  <li><a href="#apperance-is-important" id="markdown-toc-apperance-is-important">Apperance is Important</a></li>
+  <li><a href="#know-your-os" id="markdown-toc-know-your-os">Know your OS</a></li>
+  <li><a href="#knowing-your-way-around-with-bash" id="markdown-toc-knowing-your-way-around-with-bash">Knowing Your Way Around with <code class="language-plaintext highlighter-rouge">bash</code></a>    <ul>
+      <li><a href="#pwd" id="markdown-toc-pwd"><code class="language-plaintext highlighter-rouge">pwd</code></a></li>
+      <li><a href="#cd" id="markdown-toc-cd"><code class="language-plaintext highlighter-rouge">cd</code></a></li>
+      <li><a href="#ls" id="markdown-toc-ls"><code class="language-plaintext highlighter-rouge">ls</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#the-form-of-commands" id="markdown-toc-the-form-of-commands">The form of Commands</a>    <ul>
+      <li><a href="#creatingdeletingremoving-new-folders-and-files" id="markdown-toc-creatingdeletingremoving-new-folders-and-files">Creating/Deleting/Removing New Folders and Files</a></li>
+      <li><a href="#viewing-contents-and-editing-files" id="markdown-toc-viewing-contents-and-editing-files">Viewing Contents and Editing Files</a></li>
+    </ul>
+  </li>
+  <li><a href="#how-to-learn-about-new-commands" id="markdown-toc-how-to-learn-about-new-commands">How to Learn About New Commands</a></li>
+  <li><a href="#further-exploration" id="markdown-toc-further-exploration">Further Exploration</a></li>
+  <li><a href="#homework" id="markdown-toc-homework">Homework</a></li>
+</ul>
+
+    </aside>
+  </div>
+
+  <aside class="series">
+    <h4>This post is part of the series <em>Command Line Interface (CLIs)</em></h4>
+    <ol start="0">
+    
+    
+    <li>
+      
+      <strong>Bash em, I don't even know em</strong>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/cli">What are Command-Line Interface (CLIs)</a>
+      
+    </li>
+    
+  </ol>
+
+  </aside>
+
+</nav>
+
+<h2 id="takeaways">Takeaways</h2>
+
+<p><strong>[Estimated Read Time 10 mins]</strong></p>
+
+<p>In this blog you will learn basic bash commands. By the end of this you will know:</p>
+<ul>
+  <li>Basic commands to traverse your computer from the terminal</li>
+  <li>The structure or commands, arguments, and options in <code class="language-plaintext highlighter-rouge">bash</code></li>
+  <li>How to edit, create, move and delete files</li>
+  <li>Create a script to make a folder structure for each new project you are working on.</li>
+</ul>
+
+<p>Prerequisites:</p>
+<ul>
+  <li>None; Although it may be helpful to have read through the series <a href="/cli">intro</a></li>
+</ul>
+
+<p>Use this link to set up the Takeaways as a section to have it be bubbly and etc
+https://github.com/jekyll/jekyll/issues/246#issuecomment-583053</p>
+
+<hr />
+
+<h2 id="apperance-is-important">Apperance is Important</h2>
+
+<!-- excerpt-start -->
+<p>Change your Default Terminal Colors <strong>NOW</strong>!</p>
+
+<blockquote>
+  <p>The happier you are when you look at your terminal the happier you will be when coding. 
+More Happy means more coding. 
+More Coding means more practice. 
+More practice means Great Coder!</p>
+</blockquote>
+
+<p>This same principle applies for all text editors/IDEs (integrated developer environment) by the way. 
+It sounds like a joke, but seriously, take some time to have a nice looking coding environment.</p>
+
+<p>In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc.</p>
+
+<h2 id="know-your-os">Know your OS</h2>
+
+<p>Knowing what OS you are on is super important as the commands change across them. 
+Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of <code class="language-plaintext highlighter-rouge">bash</code> before). 
+This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with the shell via using MacOS is very valuable. 
+In contrast, Windows uses CMD or Powershell which has a differnt syntax and command list. 
+Luckily for you, there is a project to give Windows <code class="language-plaintext highlighter-rouge">bash</code> commands called <a href="https://gitforwindows.org/" title="Git for Windows">gitbash</a>, and I highly reccomand you use that to be able to follow along. 
+Most of the time if you get some CLI (command line interface) code it will assume bash, so its just a good skill to have.</p>
+
+<p>Speaking of <code class="language-plaintext highlighter-rouge">bash</code> it stands for Bourne Again SHell. 
+However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to <code class="language-plaintext highlighter-rouge">zsh</code> (or The Z shell). 
+This is, for the most part, entirely compatible with <code class="language-plaintext highlighter-rouge">bash</code> except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. 
+I will say that for Mac users specifically, I would reccomend you check out <a href="https://iterm2.com/" title="iTerm2: Terminal Emulator for MacOS">iTerm2</a> as an alternative to the standard terminal and <a href="https://ohmyz.sh/" title="Oh My Zsh: Prettify you Terminal">oh my zsh</a> to add some amazing color theming for some general improvements. 
+But of course this is not necessary. <em>Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.</em></p>
+
+<h2 id="knowing-your-way-around-with-bash">Knowing Your Way Around with <code class="language-plaintext highlighter-rouge">bash</code></h2>
+
+<p>First, thing open up your terminal. 
+If you are using MacOS or Linux you can expect it to look something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NEED to show example can be replaced with an image
+</code></pre></div></div>
+<p>Explain what each piece means</p>
+
+<p>There are three really important commands to know to navigate around the your file system:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pwd</code>: Print working Directory</li>
+  <li><code class="language-plaintext highlighter-rouge">cd</code>: Change Directory</li>
+  <li><code class="language-plaintext highlighter-rouge">ls</code>: List (Contents)</li>
+</ul>
+
+<p>One analogy for these commands is imaging you are on a random street in a US city that you don’t know. 
+The <code class="language-plaintext highlighter-rouge">pwd</code> command is like looking up your current address. It will tell you were you are. 
+The <code class="language-plaintext highlighter-rouge">ls</code> command would be like looking around the street (or on your map) to see what restruants are on the street. 
+And <code class="language-plaintext highlighter-rouge">cd</code> would be like moving to a new location. 
+In keeping the analogy, you can’t just move to an arbritrary new street because you don’t know this city. 
+Instead you have to give precise directions either from were you are currently or relative to some clearly visable space (say a big colorful building you can see from anywhere in the city). 
+Now let’s see these in action.</p>
+
+<h3 id="pwd"><code class="language-plaintext highlighter-rouge">pwd</code></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ <span class="nb">pwd</span> 
+/user/deshawn
+</code></pre></div></div>
+<p><img src="/assets/imgs/pwd.png" alt="pwd" /></p>
+
+<!-- <img src="assets/imgs/pwd.png" alt="pwd" width="150"/> -->
+
+<p>the <code class="language-plaintext highlighter-rouge">pwd</code> command return where were are currently looking and is equivalent to <code class="language-plaintext highlighter-rouge">getwd()</code> in r or <code class="language-plaintext highlighter-rouge">os.getcwd()</code> in python. 
+As you can see I am in my users home directory. 
+This is a super common place, so it has a shortcut that can be accessed with <code class="language-plaintext highlighter-rouge">~</code> called the tilde and its above tab and to the left of the 1 on the keyboard. 
+<br /><br /></p>
+
+<blockquote>
+  <p><strong>Hint</strong>: Capitalization matters so make sure you keep that in mind. 
+I personally always have my folders names lowercase to make this easier. 
+Simlarly spaces require an espace <code class="language-plaintext highlighter-rouge">\</code>, so I also avoid spaces in repo names (typically using <code class="language-plaintext highlighter-rouge">_</code>’s.</p>
+</blockquote>
+
+<h3 id="cd"><code class="language-plaintext highlighter-rouge">cd</code></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ <span class="nb">cd </span>Desktop
+~/Desktop
+</code></pre></div></div>
+
+<p><img src="/assets/imgs/cd.png" alt="cd" /></p>
+
+<!-- <img src="assets/imgs/cd.png" alt="cd" width="150"/> -->
+
+<p>The <code class="language-plaintext highlighter-rouge">cd</code> command allows you to change your current working directory similar to <code class="language-plaintext highlighter-rouge">os.setwd</code> in R and <code class="language-plaintext highlighter-rouge">os.chdir()</code> in python. 
+Unlike most programming languages you are probably familiar with in <code class="language-plaintext highlighter-rouge">bash</code> you don’t have parentheses. 
+The arguments are just placed after the command separated by a space. 
+For more info about the structure of <code class="language-plaintext highlighter-rouge">bash</code> scripting <a href="#the-form-of-commands" title="The Structure of a Bash Command">see below</a></p>
+
+<blockquote>
+  <p><strong>Hint</strong>: Before finishing the location you want to go, you can hit tab to autocomplete the argument. 
+This is invaluable and will save so much time to working memeory capcity so definitely try it out. 
+Also for <code class="language-plaintext highlighter-rouge">zsh</code> users you can even type out partial directories and have your shell complete e.g., <code class="language-plaintext highlighter-rouge">cd De/git</code> will give <code class="language-plaintext highlighter-rouge">cd</code> to my <code class="language-plaintext highlighter-rouge">Desktop/github_repo</code> directory.</p>
+</blockquote>
+
+<h3 id="ls"><code class="language-plaintext highlighter-rouge">ls</code></h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>➜  <span class="nb">ls </span>git_repos/good_coding_practices
+README.md         git.md            imgs              modeling.md       pwd.png
+cli.md            good_practices.md markdown.md       productivity.md   python.md
+</code></pre></div></div>
+
+<p><img src="/assets/imgs/ls.png" alt="ls" /></p>
+
+<!-- <img src="assets/imgs/ls.png" alt="pwd" width="650"/> -->
+
+<p>The <code class="language-plaintext highlighter-rouge">ls</code> lists all directories and files inside the specified directory (defaults to your current working directory if no directory path is specified). 
+I have mine set up to give different colors to folder, which you can ignore for now.</p>
+<blockquote>
+  <p><strong>Hint</strong>: This command works for me because I have a folder on my computer called <code class="language-plaintext highlighter-rouge">git_repos/good_coding_practices</code>, but you probably do not. You can either make one to follow along or even better use a different folder to see the files there. 
+But separate from that I will teach you about the optional argument <code class="language-plaintext highlighter-rouge">-a</code>:</p>
+</blockquote>
+
+<p><img src="/assets/imgs/ls-a.png" alt="lsa" />
+<!-- <img src="assets/imgs/ls-a.png" alt="pwd" width="650"/> --></p>
+
+<p><code class="language-plaintext highlighter-rouge">ls -a</code> (a for all) shows all hidden files and directories in addition to the nonhidden ones. 
+A hidden file is just one that starts with a <code class="language-plaintext highlighter-rouge">.</code>. 
+In out case, the <code class="language-plaintext highlighter-rouge">.git</code> folder is one example.</p>
+
+<h2 id="the-form-of-commands">The form of Commands</h2>
+
+<p>A command is just a mini program that executes when you call it from  a terminal. 
+But in order to best understand terminal commands its useful to know how they are structured. 
+Every command has 3 basic (potential) parts. 
+The command itself, any options you can apply, and finally any arguments.</p>
+
+<p>As you saw above with the <code class="language-plaintext highlighter-rouge">cd</code> command, we had an argument (the new directory to change to). 
+Again the argument is separated only by a space (no parenteses as you may be used to from other programming languages) and any additional arugment is also separated by a space. 
+For the <code class="language-plaintext highlighter-rouge">ls</code> command we learned about the <code class="language-plaintext highlighter-rouge">-a</code> option again separated by a space. Options in bash start with a <code class="language-plaintext highlighter-rouge">-</code>. 
+It is common practice for single letter options to have a single <code class="language-plaintext highlighter-rouge">-</code> and full word arguments have two <code class="language-plaintext highlighter-rouge">--</code>. 
+Now that you know how commands are structure the next couple sections will list a bunch of useful basic commands before we end by showing you a way to learn the ins and outs of a command (like its options) and how to find a comand to perform a task you suspect exists.</p>
+
+<h3 id="creatingdeletingremoving-new-folders-and-files">Creating/Deleting/Removing New Folders and Files</h3>
+
+<p>For all the commands the relevant arguments will be in <code class="language-plaintext highlighter-rouge">[]</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">mkdir</code>: Make Directory (folder) [<code class="language-plaintext highlighter-rouge">name_of_folder_to_make</code>; use the <code class="language-plaintext highlighter-rouge">-p</code> (for make parent directories) if you want to make multiple nested folders simultaneously]</li>
+  <li><code class="language-plaintext highlighter-rouge">touch</code>: Make an Empty File [<code class="language-plaintext highlighter-rouge">name_of_file_to_make</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">cp</code>: Copy [<code class="language-plaintext highlighter-rouge">name_of_file_to_copy</code>; <code class="language-plaintext highlighter-rouge">name_of_location_to_copy_to</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">mv</code>: Move [<code class="language-plaintext highlighter-rouge">name_of_file_to_move</code>; <code class="language-plaintext highlighter-rouge">name_of_location_to_move_to</code>; can also be used to change a files name if you move it to the same location with a new name]</li>
+  <li><code class="language-plaintext highlighter-rouge">rm</code>: Remove a file [<code class="language-plaintext highlighter-rouge">name_of_file_to_remove</code>]</li>
+</ul>
+
+<h3 id="viewing-contents-and-editing-files">Viewing Contents and Editing Files</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">nano</code>: A simple to use text editor. You will likely hear about other editors like <code class="language-plaintext highlighter-rouge">vim</code> or <code class="language-plaintext highlighter-rouge">emacs</code>. Both are really good, but they have a really hard learning curve, so I don’t reccomend them when you start out. I personally use <code class="language-plaintext highlighter-rouge">nvim</code>, which is a modern replacement for <code class="language-plaintext highlighter-rouge">vim</code>. [<code class="language-plaintext highlighter-rouge">name_of_file_to_edit</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">cat</code>: Concatenate (prints out files contents) [<code class="language-plaintext highlighter-rouge">name_of_file_to_print</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">less</code>: Less (is more… powerful). Useful for printing out really long docs becuse you can scroll through them [<code class="language-plaintext highlighter-rouge">name_of_file_to_print</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">more</code>: More (of the content on screen) Useful for printing out really long docs but not as good as <code class="language-plaintext highlighter-rouge">less</code> [<code class="language-plaintext highlighter-rouge">name_of_file_to_print</code>]</li>
+</ul>
+
+<h2 id="how-to-learn-about-new-commands">How to Learn About New Commands</h2>
+
+<p>These commands are more important to remember because they let you find a command to do perform and actiona as well as learn how to use that command:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">apropos</code>: à propos (meaning with regard to). This command allows you to search for all commands the perform function/have anything in their name/description about a topic. [<code class="language-plaintext highlighter-rouge">descriptiion_or_name</code> you want to search for]
+    <blockquote>
+      <p><strong><em>If you only remember one command this is the one to remember</em></strong></p>
+    </blockquote>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">man</code>: (Pull up the) Manual (for the respective command so you can learn all the options available) [<code class="language-plaintext highlighter-rouge">command</code> you want to know more about similar to <code class="language-plaintext highlighter-rouge">help()</code> or <code class="language-plaintext highlighter-rouge">??</code> in most languages]</li>
+</ul>
+
+<h2 id="further-exploration">Further Exploration</h2>
+
+<p>As you can imagine, this is just a taste of the command line. You can do so so much more. Hopefully this was just enough to wet your appetite, and make you eager to explore more. One great place to start is with <a href="https://github.com/ibraheemdev/modern-unix" title="Modern Unix">Modern Unix</a>. This is a project that has upgrades many of the commands we just talked about to fit with the modern world, (e.g., adding colors, speed, etc.). Another way to speed things up is to make alias which you can write short hand for really long commands.</p>
+
+<h2 id="homework">Homework</h2>
+
+<p>Try to make a new folder called <code class="language-plaintext highlighter-rouge">git_repos</code> somewhere on your computer and either move or copy a file into. 
+Then make <code class="language-plaintext highlighter-rouge">README.md</code> file (for advanced users try <code class="language-plaintext highlighter-rouge">nano</code> or <code class="language-plaintext highlighter-rouge">vim</code> to edit it and say something).</p>
+
+<p>Finally, make a file that can setup a folder structure for all new projects (we didnt discuss how to make workable scripts, but thats ok you can just copy and paste for now). 
+Inside the newly created folder you should you should have a the following structure:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_first_bash_script/
+  |-- analyses/
+      |-- plots/
+  |-- expriment/
+      |-- data/
+  |-- lit_review/
+  |-- supporting_docs/
+      |-- scales/
+      |-- irb_docs/  
+  |-- DEVELOPEMENT_DECISIONS.md
+  |-- README.md
+</code></pre></div></div>
+
+<p>Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. 
+I highly highly reccommend two separate <code class="language-plaintext highlighter-rouge">.md</code> files. 
+The <code class="language-plaintext highlighter-rouge">README</code> is for anyone first coming to the project on how/why to run this code and what is found were (this can be updated at the very end of the project when it is read to be published). 
+In contrast the <code class="language-plaintext highlighter-rouge">DEVELOPMENT</code> file is a place where you should write down every decision you made for the project.
+Why did you use this library instead of that on, why did you have 60 trials instead of 90, why did you exclude a subject etc. 
+I personally also leave a ton of links to stack[exchange/overflow] for how I came up with code or to justify certain things to myself. 
+This file can also be private and not actually published anywhere if you prefer, but trust me, especially when writing a methods sections this is invaluable.</p>
+
+
+  </div>
+    <h4><em>Command Line Interface (CLIs)</em> Series</h4>
+
+
+
+<p>Post <strong>1</strong> of <strong>2</strong>.
+  </p>
+
+
+  
+
+  
+
+  
+
+  
+    <a class="btn" rel="next" href="/cli">Next Post &rarr;</a>
+  
+
+
+  
+
+  <a class="u-url" href="/cli/bash" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your Coding Buddy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your Coding Buddy</li><li><a class="u-email" href="mailto:dsambrano@g.harvard.edu">dsambrano@g.harvard.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li><li><a href="https://youtube.com/Dbrano3"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">Dbrano3</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
