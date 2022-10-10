@@ -186,5 +186,5 @@ Specifically, you will learn how to estimate the parameters of your model instea
 
 ## References
 
-[holt]: assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf "Holt & Laury 2002"
+[holt]: /assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf "Holt & Laury 2002"
 [img]: imgs/cd.png

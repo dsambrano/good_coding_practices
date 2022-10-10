@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-09T12:13:32-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Coding Buddy</title><subtitle>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</subtitle><entry><title type="html">Computation Modeling</title><link href="http://localhost:4000/computational-modeling/" rel="alternate" type="text/html" title="Computation Modeling" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/computational-modeling</id><content type="html" xml:base="http://localhost:4000/computational-modeling/"><![CDATA[<nav id="sidebar">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-09T19:11:21-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Coding Buddy</title><subtitle>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</subtitle><entry><title type="html">Computation Modeling</title><link href="http://localhost:4000/computational-modeling/" rel="alternate" type="text/html" title="Computation Modeling" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/computational-modeling</id><content type="html" xml:base="http://localhost:4000/computational-modeling/"><![CDATA[<nav id="sidebar">
   <div class="toc-wrapper">
     <h4>Table of Contents</h4>
     <aside class="toc">
@@ -52,7 +52,7 @@
 
 <p>Prerequisites:</p>
 <ul>
-  <li>Read through this <a href="assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf" title="Holt &amp; Laury 2002">paper</a> or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)</li>
+  <li>Read through this <a href="/assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf" title="Holt &amp; Laury 2002">paper</a> or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)</li>
 </ul>
 
 <h2 id="what-even-is-a-computational-model">What Even is a Computational Model</h2>
@@ -83,7 +83,7 @@ However, these types of modesl have some significant drawbacks.</p>
   <p><strong>Note</strong>: I will be specifically, critquing the EIC model, but this was incredibly important at the time. I am specifically using it as an example, but all schematic based model have these pitfalls.</p>
 </blockquote>
 
-<p><img src="/assets/imgs/image.png" alt="THIS IS SUPPOSED TO BE AN IMAGE OF A SCHEMATIC BASED MODEL" /></p>
+<p><img src="/assets/imgs/cd.png" alt="THIS IS SUPPOSED TO BE AN IMAGE OF A SCHEMATIC BASED MODEL" /></p>
 
 <p>First, schematic based models do not provide specific hypotheses, making them difficult (if not impossible) to falsify.
 For example, each box on the schematic often represents a plethora of variables.
@@ -176,14 +176,14 @@ Together, these features help improved the scientific discourse.</p>
 
 <p>Prerequisites:</p>
 <ul>
-  <li>Read through this <a href="assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf" title="Holt &amp; Laury 2002">paper</a> or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)</li>
+  <li>Read through this <a href="/assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf" title="Holt &amp; Laury 2002">paper</a> or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)</li>
 </ul>
 
 <h2 id="my-first-model">My First Model</h2>
 
 <!-- excerpt-start -->
 
-<p>In order to give yourself a basic working example, I highly reccomend you read through this <a href="assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf" title="Holt &amp; Laury 2002">paper</a>.
+<p>In order to give yourself a basic working example, I highly reccomend you read through this <a href="/assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf" title="Holt &amp; Laury 2002">paper</a>.
 This is a pretty foundational paper for creating models of decision making and gives a pretty good walkthrough on the process. 
 For example, it describe how/why you typically want to add a noise term when modeling human decisions.
 Its also quite short, only about 13 pages.</p>
