@@ -57,6 +57,10 @@ defaults:
       path: "_posts/computational-modeling"
     values: 
       permalink: /computational-modeling/:title
+  - scope: 
+      path: "_posts/series/"
+    values:
+      permalink: :categories/:title
 
 # Exclude from processing.
 # The following items will not be processed, by default.
