@@ -5,8 +5,9 @@ date: 2022-10-03
 author: Deshawn Sambrano
 tags: Math Computational-Modeling R Python
 time: 20
+category: computational-modeling
 series: computational-modeling
-diff: "{{site.data.difficulty.expert.name}}"
+diff: expert
 excerpt_separator: <!--more-->
 usemathjax: true
 ---
@@ -21,7 +22,7 @@ In this blog you will learn the basics of computational modeling. Specifically y
   - Ammedding a Model to suit your needs
   - Decision Rules
 
-Difficulty: <span class="{{page.diff | flatify}}">{{page.diff | flatify}}</span>
+Difficulty: <span class="{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}">{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}</span>
 
 Prerequisites:
 - Read through this [paper][holt] or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)
