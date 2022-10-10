@@ -12,6 +12,12 @@ series: false
 #part_number: 1
 #series-name: computational-modeling
 ---
+
+
+
+{% include sidebar.html %}
+
+
 ## Takeaways
 
 [Estimated Read Time XX mins]
