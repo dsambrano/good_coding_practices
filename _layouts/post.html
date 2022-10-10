@@ -16,6 +16,10 @@ layout: default
       {% if page.time %}
       • <span class="read-time"> Estimated Read Time: {{page.time}} mins</span>
       {% endif %} 
+      {% if page.diff %}
+      • <span class="page-diff"> Difficulty: <span class="{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}">{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}</span>
+      </span>
+      {% endif %} 
     </p>
 
   </header>

@@ -8,6 +8,7 @@ time:
 permalink: /good-coding-practices
 draft: true
 usemathjax: true
+diff: beginner
 series: false
 #part_number: 1
 #series-name: computational-modeling
