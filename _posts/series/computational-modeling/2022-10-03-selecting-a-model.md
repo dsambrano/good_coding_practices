@@ -14,7 +14,7 @@ usemathjax: true
 
 {% include sidebar.html %}
 
-## Takeaways
+<section class="takeaways">
 
 In this blog you will learn the basics of computational modeling. Specifically you will learn:
 - How to implement a computational model with an example.
@@ -25,6 +25,7 @@ In this blog you will learn the basics of computational modeling. Specifically y
 Prerequisites:
 - Read through this [paper][holt] or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)
 
+</section>
 
 ## My First Model
 

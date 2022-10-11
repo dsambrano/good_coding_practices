@@ -69,17 +69,24 @@ img {
     color: black;
 }
 
-#sidebar {
+section.takeaways {
+    margin-bottom: 2em;
+}
+
+#sidebar, section.takeaways {
     background-color: #eee;
     padding: 1.5em;
     display: block;
     border-radius: .5em;
+    border: 1px solid #ddd;
+}
+
+#sidebar {
     position: fixed;
     top: 120px;
     left: 0%;
     max-width: 15%;
     margin-left: 1em;
-    border: 1px solid #ddd;
     overflow: hidden;
 }
 @media only screen and (max-width: 1350px){

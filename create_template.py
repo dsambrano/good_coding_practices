@@ -47,20 +47,17 @@ usemathjax: true
 
 {% include sidebar.html %}
 
-## Takeaways
-
-**[Estimated Read Time {{{{post.time}}}} mins]**
+<section class="takeaways">
 
 In this blog you will learn the basics of {name}. Specifically you will learn:
 - 
 - 
 -
 
-Difficulty: <span class="{{{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}}}">{{{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}}}</span>
-
 Prerequisites:
 - None
 
+</section>
 
 ## {h2}
 
