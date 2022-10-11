@@ -11,7 +11,7 @@ Still looking for more?!?! Here are a few youtube channels and blog posts that I
 One cautionary tale, especially if you have already reviewed a few tutorials.
 DO NOT LOOK FOR MORE!
 You want to avoid tutorial hell at all cost.
-After one, two at the most, tutorials on a topic, just try to do a project with that.
+After one, two at the absolute most, tutorials on a topic, just try to do a project with that.
 You will NEVER, and I repeat NEVER, feel confident enough to start by looking/watching/reading tutorials.
 That is not how coding works; its much more like math.
 The only way to improve is to do it; try things out, fail, see what works.
