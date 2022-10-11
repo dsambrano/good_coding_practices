@@ -31,6 +31,9 @@ img {
 .{{i['name']}} {
     color: {{i['color']}};
 }
+a > {{i['name']}}{
+    color: black;
+}
 {% endfor %}
 
 
@@ -50,20 +53,27 @@ img {
     border: 1px solid #ddd;
 }
 
-.series {
+.series.bubble {
     background-color: var(--purple);
-    color: white;
     border-color: white;
 }
 
-.time {
+a > .series.bubble {
+    color: white;
+}
+
+a > .tag.bubble {
+    color: black;
+}
+
+.tag.bubble {
+    background-color: #eee;
+}
+
+.time.bubble {
     background-color: #2a7ae2;
     color: white;
     border-color: #1756a9;
-}
-
-.tag {
-    background-color: #eee;
 }
 
 // Adding 'Contents' headline to the TOC
