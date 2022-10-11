@@ -11,6 +11,11 @@
 - about page gets revamped
 - add my website(/CV?) to footer
 - Reassess Skill Level (probs none of what I have so far is beginner, since I assume variables so probs adjust)
+  - Add Loop for the Difficulties
+  - Change order for diff: beginner, intermediate, advanced, expert
+  - figure out better color schemes, cuz they are currently unseeable
+- Change categories.md name and permalink
+- Fix Dates and order
 
 ---
 after launch:

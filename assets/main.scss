@@ -31,6 +31,9 @@ img {
 .{{i['name']}} {
     color: {{i['color']}};
 }
+a > {{i['name']}}{
+    color: black;
+}
 {% endfor %}
 
 
@@ -40,6 +43,7 @@ img {
 }
 
 .bubble {
+    display: inline;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
@@ -49,14 +53,27 @@ img {
     border: 1px solid #ddd;
 }
 
-.time {
+.series.bubble {
+    background-color: var(--purple);
+    border-color: white;
+}
+
+a > .series.bubble {
+    color: white;
+}
+
+a > .tag.bubble {
+    color: black;
+}
+
+.tag.bubble {
+    background-color: #eee;
+}
+
+.time.bubble {
     background-color: #2a7ae2;
     color: white;
     border-color: #1756a9;
-}
-
-.tag {
-    background-color: #eee;
 }
 
 // Adding 'Contents' headline to the TOC
@@ -69,17 +86,24 @@ img {
     color: black;
 }
 
-#sidebar {
+section.takeaways {
+    margin-bottom: 2em;
+}
+
+#sidebar, section.takeaways {
     background-color: #eee;
     padding: 1.5em;
     display: block;
     border-radius: .5em;
+    border: 1px solid #ddd;
+}
+
+#sidebar {
     position: fixed;
     top: 120px;
     left: 0%;
     max-width: 15%;
     margin-left: 1em;
-    border: 1px solid #ddd;
     overflow: hidden;
 }
 @media only screen and (max-width: 1350px){

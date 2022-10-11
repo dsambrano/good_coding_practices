@@ -22,12 +22,12 @@ layout: default
           </a>
         </h3>
         <div class='post-decorations'>
-          {% if post.time %}<span class="time bubble">{{ post.time }} mins</span>{% endif %}{% for tag in post.tags %}<span class='tag bubble'>{{tag | split: "-" | join: " " }}</span>{% endfor %}
+          {% if post.time %}<span class="time bubble">{{ post.time }} mins</span>{% endif %}{% if post.series %}<a href=/{{post.series}}><span class="series bubble">Series</span></a>{% endif %}{% if post.diff %}<a href="/diff/{{post.diff}}"><span class="diff bubble">{{post.diff | capitalize}}</span></a>{% endif %}{% for tag in post.tags %}<a href="{% link categories.md %}#{{tag | downcase}}"><span class='tag bubble'>{{tag | split: "-" | join: " " }}</span></a>{% endfor %}
         </div>
         {%- if site.show_excerpts -%}
           <!-- Taken from: https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html -->
           {% assign excerptParts = post.excerpt | split: "<!-- excerpt-start -->" %}
-          {{ excerptParts[1] | strip_newlines | truncatewords: 50 }}
+          {{ excerptParts[1] | replace: "\n" " "| truncatewords: 50 }}
         {%- endif -%}
       </li>
       {%- endfor -%}

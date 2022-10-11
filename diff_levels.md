@@ -3,13 +3,22 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
-title: Topics
+title: Difficulties
+permalink: /diff
 ---
 
-{% include sidebar.html %}
 
 Below you will find a list of all the Topics I have discussed.
 Of course a blog may cover multiple topics, so they are listed under all relevant sections.
+
+
+## Beginner
+
+## Intermediate
+
+## Advanced
+
+## Expert
 
 {% assign sorted = site.tags | sort %}
 {% for tag in sorted %}
