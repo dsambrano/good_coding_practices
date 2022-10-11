@@ -40,6 +40,7 @@ img {
 }
 
 .bubble {
+    display: inline;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
@@ -47,6 +48,12 @@ img {
     margin-right: 1em;
     border-radius: .5em;
     border: 1px solid #ddd;
+}
+
+.series {
+    background-color: var(--purple);
+    color: white;
+    border-color: white;
 }
 
 .time {
