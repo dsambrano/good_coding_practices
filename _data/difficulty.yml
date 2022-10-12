@@ -4,6 +4,9 @@
 - id: intermediate
   name: Intermediate
   color: yellow
+- id: advanced
+  name: Advanced
+  color: orange
 - id: expert
   name: Expert
   color: red
