@@ -18,6 +18,12 @@
 - Fix Dates and order
 
 
+Add Post types:
+- Blog (productivity)
+- Series (tyipcally long turorial: eg cli/computational modeling)
+- Tutorial (one off tutorial; like when I split up the pythong best practices)
+- Snippets (when I bring over code_samples and have it as a submodule inside a snippets collection folder with each language having their own folder in their); need to make sure they don't all get added to the title bar page
+
 
 ---
 
