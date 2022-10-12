@@ -298,10 +298,6 @@ a > Intermediate { color: black; }
 
 a > Advanced { color: black; }
 
-.Expert { color: red; }
-
-a > Expert { color: black; }
-
 .post-decorations { margin-top: -15px; margin-bottom: 1em; }
 
 .bubble { display: inline; padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px; margin-right: 1em; border-radius: .5em; border: 1px solid #ddd; }

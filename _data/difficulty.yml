@@ -7,7 +7,7 @@
 - id: advanced
   name: Advanced
   color: orange
-- id: expert
-  name: Expert
-  color: red
+#- id: expert
+#  name: Expert
+#  color: red
 
