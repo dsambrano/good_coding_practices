@@ -13,29 +13,12 @@ Of course a blog may cover multiple topics, so they are listed under all relevan
 
 {% for level in site.data.difficulty %}
 ##  {{level.name}}
-{assign}
-site.posts
   <ul>
-    {% for post in tag[1] %}
+{% for post in site.posts %}
+{% if post.diff == level.id %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
+{% endif %}
+{% endfor %}
   </ul>
 {% endfor %}
 
-## Beginner
-
-## Intermediate
-
-## Advanced
-
-## Expert
-
-{% assign sorted = site.tags | sort %}
-{% for tag in sorted %}
-## {{ tag[0] | split: "-" | join: " "}}
-  <ul>
-    {% for post in tag[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endfor %}
