@@ -17,7 +17,13 @@
 - Change categories.md name and permalink
 - Fix Dates and order
 
+
+
 ---
+
+Adding Darkmode toggle
+https://derekkedziora.com/blog/dark-mode-revisited
+
 after launch:
 - Add CSS variables to make this much easier to manage in the future
 - Categories are also links
