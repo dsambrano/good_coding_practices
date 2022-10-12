@@ -276,6 +276,8 @@ table td { border: 1px solid #e8e8e8; }
 
 .highlight .il { color: #099; }
 
+hr { margin-top: 3em; margin-bottom: 3em; }
+
 .footer-col-1 { width: -webkit-calc(35% - (30px / 2)); width: calc(35% - (30px / 2)); }
 
 .footer-col-2 { width: -webkit-calc(30% - (30px / 2)); width: calc(30% - (30px / 2)); }
