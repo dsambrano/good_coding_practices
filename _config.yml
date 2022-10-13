@@ -77,6 +77,7 @@ exclude:
   - add_front_matter.py
   - development.md
   - future_links.md
+  - default_front_matter.py
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
