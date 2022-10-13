@@ -18,6 +18,11 @@
 - Fix Dates and order
 
 
+Before Launch: Also need to split the git post into the series (what is git/Git Example/Branches/Recover Mistakes?/GitHub)
+Same thing but with python (each level two should be its one file)
+Series should have a completed tag in data and that should be reflected in the sidebar
+
+
 Add Post types:
 - Blog (productivity)
 - Series (tyipcally long turorial: eg cli/computational modeling)
