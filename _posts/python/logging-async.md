@@ -5,7 +5,7 @@ date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding Python Best-Practices 
 time: 20
-permalink: /Python-Best-Practices
+category: python
 draft: true
 usemathjax: true
 series: false
