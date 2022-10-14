@@ -229,7 +229,7 @@
 .post-content {
   margin-bottom: $spacing-unit;
 
-  h2 {
+  h2, h2>code, h2>pre {
     @include relative-font-size(2);
 
     @include media-query($on-laptop) {
@@ -237,7 +237,7 @@
     }
   }
 
-  h3 {
+  h3, h3>code, h3>pre {
     @include relative-font-size(1.625);
 
     @include media-query($on-laptop) {
@@ -245,7 +245,7 @@
     }
   }
 
-  h4 {
+  h4, h4>code, h4>pre {
     @include relative-font-size(1.25);
 
     @include media-query($on-laptop) {
