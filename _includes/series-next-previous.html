@@ -8,18 +8,31 @@
       {% assign next_post_index = forloop.index | plus: 1 %}
     {% endif %}
   {% endfor %}
-  <div class='series-nav'>
   <p>Post <strong>{{ curr_post_index }}</strong> of <strong>{{ series-posts.size }}</strong>.
     {% if series-posts.size == 1 %}More posts coming soon!{% endif %}</p>
+  <div class='series-nav'>
   {% for post in series-posts %}
-    {% if prev_post_index == forloop.index %}
+    {% if prev_post_index == 0 and forloop.first %}
+    <div class="series-nav-item prev">
+    </div>
+    {% elsif prev_post_index == forloop.index %}
+    <div class="series-nav-item prev">
       <a class="btn" rel="prev" href="{{ site.baseurl }}{{ post.url }}">&larr; Prev Post</a>
+    </div>
     {% endif %}
-    {% if forloop.index == 1 %}
-      <p>Post <strong>{{ curr_post_index }}</strong> of <strong>{{ series-posts.size }}</strong>.
+    {% if forloop.first %}
+    <div class="series-nav-item current">
+      <p>Post <strong>{{ curr_post_index }}</strong> of <strong>{{ series-posts.size }}</strong>
+    </div>
     {% endif %}
-    {% if next_post_index == forloop.index %}
+    {% if next_post_index > forloop.length and forloop.last %}
+    <div class="series-nav-item next">
+      <p>More posts coming soon!</p>
+    </div>
+    {% elsif next_post_index == forloop.index %}
+    <div class="series-nav-item next">
       <a class="btn" rel="next" href="{{ site.baseurl }}{{ post.url }}">Next Post &rarr;</a>
+    </div>
     {% endif %}
   {% endfor %}
   </div>
