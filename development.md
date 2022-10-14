@@ -1,6 +1,11 @@
 # To Do List:
 
 
+Need to fixe Side: SOme will get to long so I need it have a max height (probs 80%) but just check that it is within the head/foot region.
+Need to add the Full series TOC to series home Page
+
+for CLIs (bash) need to end each command ls/pwd/cd with a reference back to the analogy re-explaining what the command is actually doing
+
 
 # Required for launch
 
