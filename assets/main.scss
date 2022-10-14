@@ -7,6 +7,14 @@
 
 @import "minima";
 
+.skip {
+    position: fixed;
+    translate: 0 -100%;
+}
+
+.skip:focus {
+    translate: 0;
+}
 
 hr {
     margin-top: 3em;
