@@ -11,21 +11,14 @@ permalink: /diff
 Below you will find a list of all the Topics I have discussed.
 Of course a blog may cover multiple topics, so they are listed under all relevant sections.
 
-
-## Beginner
-
-## Intermediate
-
-## Advanced
-
-## Expert
-
-{% assign sorted = site.tags | sort %}
-{% for tag in sorted %}
-## {{ tag[0] | split: "-" | join: " "}}
+{% for level in site.data.difficulty %}
+##  {{level.name}}
   <ul>
-    {% for post in tag[1] %}
+{% for post in site.posts %}
+{% if post.diff == level.id %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
+{% endif %}
+{% endfor %}
   </ul>
 {% endfor %}
+

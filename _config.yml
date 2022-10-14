@@ -46,21 +46,23 @@ minima:
 
 defaults:
   - scope:
-      path: "_posts"
-    values:
-      layout: post
-  - scope:
       path: ""
     values:
       author: "Deshawn Sambrano"
-  - scope: 
-      path: "_posts/computational-modeling"
-    values: 
-      permalink: /computational-modeling/:title
+  - scope:
+      path: "_posts/"
+    values:
+      layout: post
+      permalink: /:categories/:year/:month/:day/:title
+  - scope:
+      path: "_posts/*/"
+    values:
+      layout: post
+      permalink: /:categories/:title
   - scope: 
       path: "_posts/series/"
     values:
-      permalink: :categories/:title
+      permalink: /:categories/:title
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -76,6 +78,8 @@ exclude:
   - speaker_notes.md
   - add_front_matter.py
   - development.md
+  - future_links.md
+  - default_front_matter.py
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

@@ -25,6 +25,8 @@
 </head>
 <body><header class="site-header" role="banner">
 
+    <a href="#main" class="skip skip-main">Jump to Main Content</a>
+
   <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
@@ -35,10 +37,10 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a><a class="page-link" href="/diff">Difficulties</a></div>
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a><a class="page-link" href="/diff">Difficulties</a><a class="page-link" href="/series">Series</a></div>
       </nav></div>
 </header>
-<main class="page-content" aria-label="Content">
+<main class="page-content" aria-label="Content" id="main">
       <div class="wrapper">
         <div class="home">
 <h2 class="post-list-heading">Posts</h2>
@@ -49,7 +51,7 @@
           </a>
         </h3>
         <div class='post-decorations'>
-          <span class="time bubble">20 mins</span><a href=/computational-modeling><span class="series bubble">Series</span></a><a href="/diff/expert"><span class="diff bubble">Expert</span></a><a href="/categories.html#math"><span class='tag bubble'>Math</span></a><a href="/categories.html#computational-modeling"><span class='tag bubble'>Computational Modeling</span></a><a href="/categories.html#r"><span class='tag bubble'>R</span></a><a href="/categories.html#python"><span class='tag bubble'>Python</span></a>
+          <span class="time bubble">20 mins</span><a href=/computational-modeling><span class="series bubble">Series</span></a><a href="/diff/advanced"><span class="diff bubble">Advanced</span></a><a href="/categories.html#math"><span class='tag bubble'>Math</span></a><a href="/categories.html#computational-modeling"><span class='tag bubble'>Computational Modeling</span></a><a href="/categories.html#r"><span class='tag bubble'>R</span></a><a href="/categories.html#python"><span class='tag bubble'>Python</span></a>
         </div><!-- Taken from: https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html -->
           
           <p>In order to give yourself a basic working example, I highly reccomend you read through this <a href="/assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf" title="Holt &amp; Laury 2002">paper</a>. This is a pretty foundational paper for creating models of decision making and gives a pretty good walkthrough on the process. For example, it describe how/why you typically...</li><li><span class="post-meta">Oct 3, 2022</span>
@@ -59,12 +61,12 @@
           </a>
         </h3>
         <div class='post-decorations'>
-          <span class="time bubble">20 mins</span><a href=/computational-modeling><span class="series bubble">Series</span></a><a href="/diff/expert"><span class="diff bubble">Expert</span></a><a href="/categories.html#math"><span class='tag bubble'>Math</span></a><a href="/categories.html#computational-modeling"><span class='tag bubble'>Computational Modeling</span></a><a href="/categories.html#r"><span class='tag bubble'>R</span></a><a href="/categories.html#python"><span class='tag bubble'>Python</span></a>
+          <span class="time bubble">20 mins</span><a href=/computational-modeling><span class="series bubble">Series</span></a><a href="/diff/advanced"><span class="diff bubble">Advanced</span></a><a href="/categories.html#math"><span class='tag bubble'>Math</span></a><a href="/categories.html#computational-modeling"><span class='tag bubble'>Computational Modeling</span></a><a href="/categories.html#r"><span class='tag bubble'>R</span></a><a href="/categories.html#python"><span class='tag bubble'>Python</span></a>
         </div><!-- Taken from: https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html -->
           
           <p>A Computational Model is just a mathematical equation, serving as a hypothesis, for some psychological phenomenon. We use models all the time. Most commonly with the linear model in regression. A computational model just adds flexibility in that it is not predefined so you can adjust it to your specific...</li><li><span class="post-meta">Oct 3, 2022</span>
         <h3>
-          <a class="post-link" href="/cli/base">
+          <a class="post-link" href="/cli/bash">
             Bash em, I don&#39;t even know em
           </a>
         </h3>
@@ -84,17 +86,30 @@
           
           <p>Like with most acronyms its often easiest to understand each word first. For CLIs the first word is Command-line. This refers to your terminal emulator (or just termial for short). And of course the I stands for interface, or just a way for someone to interact with an app/program. So...</li><li><span class="post-meta">Oct 3, 2022</span>
         <h3>
-          <a class="post-link" href="/Python-Best-Practices">
-            Best Practices in Python
+          <a class="post-link" href="/python/virtual-environments">
+            Reproducible Python Code with Virutal Environments
           </a>
         </h3>
         <div class='post-decorations'>
-          <span class="time bubble">20 mins</span><a href="/diff/beginner"><span class="diff bubble">Beginner</span></a><a href="/categories.html#coding"><span class='tag bubble'>Coding</span></a><a href="/categories.html#python"><span class='tag bubble'>Python</span></a><a href="/categories.html#best-practices"><span class='tag bubble'>Best Practices</span></a>
+          <span class="time bubble">20 mins</span><a href="/diff/intermediate"><span class="diff bubble">Intermediate</span></a><a href="/categories.html#coding"><span class='tag bubble'>Coding</span></a><a href="/categories.html#python"><span class='tag bubble'>Python</span></a><a href="/categories.html#best-practices"><span class='tag bubble'>Best Practices</span></a>
         </div><!-- Taken from: https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html -->
           
           <p>Many of the keys to writing good code in python also mean you write reproducible code. Why? Because</p> <blockquote> <p>Code is meant for HUMANS, not machines</p> </blockquote> <p>So making sure you write good code means making sure you write code that you or others can read, understand, and edit your...</li><li><span class="post-meta">Oct 3, 2022</span>
         <h3>
-          <a class="post-link" href="/2022/10/03/productivity.html">
+          <a class="post-link" href="/python/type-hints">
+            Make Readable Functions with Python Type Hints
+          </a>
+        </h3>
+        <div class='post-decorations'>
+          <span class="time bubble">20 mins</span><a href="/diff/intermediate"><span class="diff bubble">Intermediate</span></a><a href="/categories.html#coding"><span class='tag bubble'>Coding</span></a><a href="/categories.html#python"><span class='tag bubble'>Python</span></a><a href="/categories.html#best-practices"><span class='tag bubble'>Best Practices</span></a>
+        </div><!-- Taken from: https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html -->
+          
+          
+<p>Type hints are a tool that can be used in python to improve readability and expectations of code input and output for functions and classes. With type hints you specify the type each argument requires/expects as well as the expected output type.</p>
+
+</li><li><span class="post-meta">Oct 3, 2022</span>
+        <h3>
+          <a class="post-link" href="/2022/10/03/productivity">
             Coding Productivity: How to Improve you Workflow in 5 Minutes
           </a>
         </h3>
@@ -109,32 +124,10 @@
           </a>
         </h3>
         <div class='post-decorations'>
-          <span class="time bubble">5 mins</span><a href="/diff/beginner"><span class="diff bubble">Beginner</span></a><a href="/categories.html#coding"><span class='tag bubble'>Coding</span></a>
+          <span class="time bubble">3 mins</span><a href="/diff/beginner"><span class="diff bubble">Beginner</span></a><a href="/categories.html#coding"><span class='tag bubble'>Coding</span></a>
         </div><!-- Taken from: https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html -->
           
-          
-
-<p>Markdown is a markup language. 
-It is a super easy way to have embedded structure when taking notes or documenting things. 
-This is because it has super simple syntax.</p>
-
-<p>For example all these blogs were created with Markdown. 
-To get started make a make a file name ending in</p>
-</li><li><span class="post-meta">Oct 3, 2022</span>
-        <h3>
-          <a class="post-link" href="/git">
-            Git and GitHub: Whats the Big Deal
-          </a>
-        </h3>
-        <div class='post-decorations'>
-          <span class="time bubble">20 mins</span><a href="/diff/intermediate"><span class="diff bubble">Intermediate</span></a><a href="/categories.html#coding"><span class='tag bubble'>Coding</span></a><a href="/categories.html#git"><span class='tag bubble'>Git</span></a><a href="/categories.html#github"><span class='tag bubble'>GitHub</span></a>
-        </div><!-- Taken from: https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html -->
-          
-          
-
-<p>Git often seems super scary, so let me just start by saying that 85% of the time you will only need to use these three commands.</p>
-
-</li></ul>
+          <p>Markdown is a markup language. It is a super easy way to embedded structure when taking notes or documenting things. Markdown files are super common for taking notes, or perhaps most frequently, as <code class="language-plaintext highlighter-rouge">README.md</code> files for GitHub repos. This is because it has super simple syntax.</p> <p>For example...</li></ul>
 
     <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
 
