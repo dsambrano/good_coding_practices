@@ -38,7 +38,8 @@ Add a Copy code button: https://remarkablemark.org/blog/2021/06/01/add-copy-code
 Add Related posts to bottom of posts by default if they are not a part of a series. (should probably make them similar but distinct also)
 
 Adding Darkmode toggle
-https://derekkedziora.com/blog/dark-mode-revisited
+- https://derekkedziora.com/blog/dark-mode-revisited
+- https://www.ayush.nz/2022/01/practical-light-dark-mode-jekyll-bootstrap5
 
 after launch:
 - Add CSS variables to make this much easier to manage in the future
