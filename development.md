@@ -33,6 +33,8 @@ Upcoming Post option: Check date and only had to home if it is past that date ot
 
 ---
 
+Add a Copy code button: https://remarkablemark.org/blog/2021/06/01/add-copy-code-to-clipboard-button-to-jeyll-site/
+
 Add Related posts to bottom of posts by default if they are not a part of a series. (should probably make them similar but distinct also)
 
 Adding Darkmode toggle
