@@ -16,6 +16,12 @@
     how to take your programming skills to the next level with the terminal. You
     will learn how to create and run your own bash scripts to automate away all 
     the boring things in your life.
+- id: git
+  title: "Git and GitHub: Whats the Big Deal"
+  complete: false
+  description:
+    Version Control Like a pro with git. In this series you will learn how to use
+    git and how to properly collaborate with GitHub.
 - id: python
   title: Python Zero to Hero
   complete: false
