@@ -16,18 +16,45 @@ diff: intermediate
 
 <section class="takeaways">
 
-In this post you will learn about `bash`, `zsh`, and the differences for OSes. Specifically, after this post you will understand:
+In this post you will learn about `bash`, `zsh`, and the different terminals for the various OSes. Specifically, after this post you will understand:
 - What `bash` is and what it stands for
 - Where `bash` is used
+- Install and run the Terminal for your OS
 
 Prerequisites:
 - None; Although it may be helpful to have read through the series [intro][]
 
 </section>
 
-## Apperance is Important
+
+
+## Know your OS
 
 <!-- excerpt-start -->
+
+Knowing what OS you are on is super important as the terminal commands change across them. 
+Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of `bash` before). 
+This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with this shell via using MacOS/linux is very valuable.
+
+<!-- excerpt-end -->
+
+In contrast, Windows uses CMD or Powershell which has a differnt syntax and command list. 
+Luckily though, there are two options to get access to `bash` using Windows.
+The first is a project called [gitbash][], which is designed to give you access to the unix commands and meant to help with git specifically.
+The other option is [Windows Subsystem for Linux (WSL)][wsl], which is built by microsoft to allow you to directly use linux from within your Windows machine.
+I highly reccomand that you use one of these be able to follow along in this series.
+If this is your first time trying this out, I recommend [gitbash][], but if you plan on doing a lot of coding in `bash` or you just want to see what all the linux fuss is about, go for [Windows Subsystem for Linux (WSL)][wsl].
+Most of the time if you get some CLI (command line interface) code it will assume bash, so its just a good skill to have.
+
+Speaking of `bash` it stands for Bourne Again SHell. 
+However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to `zsh` (or The Z shell). 
+This is, for the most part, entirely compatible with `bash` except that it adds some nice quality of life improvements that are beyond the scope of this series, but feel free to explore on your own ([differences bewteen `bash` and `zsh`][shelldiff]).
+I will say that for Mac users specifically, I would reccomend you check out [iTerm2][] as an alternative to the standard terminal and [oh my zsh][ohmyzsh] to add some amazing color theming for some general improvements. 
+But of course this is not necessary. *Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.*
+
+## Apperance is Important
+
+
 Change your Default Terminal Colors **NOW**!
 
 > The happier you are when you look at your terminal the happier you will be when coding.
@@ -40,26 +67,6 @@ It sounds like a joke, but seriously, take some time to have a nice looking codi
 
 In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc.
 
-
-## Know your OS
-
-Knowing what OS you are on is super important as the commands change across them. 
-Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of `bash` before). 
-This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with this shell via using MacOS is very valuable.
-
-In contrast, Windows uses CMD or Powershell which has a differnt syntax and command list. 
-Luckily though, there are two options to get access to `bash` using Windows.
-The first it a project called called [gitbash][], which is designed to give you access to the unix commands and meant to help with git specifically.
-The other option is [Windows Subsystem for Linux (WSL)][wsl], which is built by microsoft to allow you to directly use linux from withing your Windows machine.
-I highly reccomand that you use one of these be able to follow along.
-If this is your first time trying this out, I recommend [gitbash][], but if you plan on doing a lot of coding in `bash` or you just want to see what all the linux fuss is about, go for [Windows Subsystem for Linux (WSL)][wsl].
-Most of the time if you get some CLI (command line interface) code it will assume bash, so its just a good skill to have.
-
-Speaking of `bash` it stands for Bourne Again SHell. 
-However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to `zsh` (or The Z shell). 
-This is, for the most part, entirely compatible with `bash` except that it adds some nice quality of life improvements that are beyond the scope of this series, but feel free to explore on your own ([differences bewteen `bash` and `zsh`][shelldiff]).
-I will say that for Mac users specifically, I would reccomend you check out [iTerm2][] as an alternative to the standard terminal and [oh my zsh][ohmyzsh] to add some amazing color theming for some general improvements. 
-But of course this is not necessary. *Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.*
 
 ## Further Exploration
 
@@ -74,4 +81,8 @@ As you can imagine, this is just a taste of the command line. You can do so so m
 [ohmyzsh]: https://ohmyz.sh/ "Oh My Zsh: Prettify you Terminal"
 [bash-structure]: #the-form-of-commands "The Structure of a Bash Command"
 [intro]: {% link _posts/series/cli/2022-10-03-cli.md %}
+
+
+
+[shelldiff]: {% link future_links.md %}
 
