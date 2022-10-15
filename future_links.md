@@ -18,3 +18,4 @@ Future links:
   - Dotfiles link when talking about custimation
   - probs should add the CV one as well
   - Terminal Customization There is a secion in know your os that wants a link for mac users. (Relatedly need to make it clearn ohmyzsh works on linux too)
+  - Terminal customiation there needs add section to package managers
