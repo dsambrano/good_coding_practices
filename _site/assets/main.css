@@ -324,7 +324,7 @@ section.takeaways { margin-bottom: 2em; }
 
 #sidebar, section.takeaways { background-color: #eee; padding: 1.5em; display: block; border-radius: .5em; border: 1px solid #ddd; }
 
-#sidebar { position: fixed; top: 120px; left: 0%; max-width: 15%; margin-left: 1em; overflow: hidden; }
+#sidebar { position: fixed; top: 120px; left: 0%; max-width: 15%; margin-left: 1em; max-height: 60%; overflow-x: hidden; overflow-y: scroll; }
 
 @media only screen and (max-width: 1350px) { #sidebar { height: 0px; width: 0px; max-width: 40%; visibility: hidden; } #sidebar:hover { height: auto; width: auto; } }
 
