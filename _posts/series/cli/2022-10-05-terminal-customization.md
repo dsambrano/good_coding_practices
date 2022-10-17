@@ -70,7 +70,7 @@ Once you know how to configure the settings for your prefered terminal emulator 
 
 All OSes have some type of terminal emulator, by default by there are some subtle differences between them, so I describe each separately. So read through the section that is relevant to you before skipping to the next [section][customization].
 
-### GUI Customization (iTerm2 and MacOS Default Terminal)
+### GUI Customization (iTerm2 and Default  MacOS/Gnome/KDE Terminal)
 
 Regardless if you choose the default Mac Terminal or iTerm2, they both have the same customization structure.
 First you need to open up the preferences (keyboard shortcut: `⌘` + `,`; or click from the topdown menu).
