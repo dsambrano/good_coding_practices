@@ -18,9 +18,8 @@ diff: intermediate
 
 <section class="takeaways">
 
-In this post you will learn about `bash`, `zsh`, and the different terminals for the various OSes. Specifically, after this post you will understand:
-- What `bash` is, what it stands for, and where to use it
-- How install and run the Terminal for your OS
+This post is all about looking good while coding in the terminal. By the end of it you should: 
+- Know how to set up a Terminal and customize the look and feel
 
 Prerequisites:
 - None; Although it may be helpful to have read through the series [intro][]
@@ -28,21 +27,9 @@ Prerequisites:
 </section>
 
 
-Just customizing terminal: express yourself
-
-
-Bash stuff (e.g., last paragraph, minus the ohmyzsh stuff) stays where it is. Everything else, I think can come here.
-With the ability to jump to customization section for those that already know the basics
-
-
-Actually, it might be valuable to have a short section on the know your OS, because its so beginner, you can have people skip it entirely and just give them customization on a how whole page. (current prefernce, pretty strong actually.)
-
-Gettings Started, what is bash
-Could also replace this with the base em title and make that Bash basics part 1: movement, bash basics part 2: creation
-
-
 ## Apperance is Important
 
+<!-- excerpt-start -->
 
 Change your Default Terminal Colors **NOW**!
 
@@ -56,24 +43,22 @@ It sounds like a joke, but seriously, take some time to have a nice looking codi
 
 In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc.
 
-
-
-
-
-REORG this to be each headers is a Terminal Emulator
+<!-- excerpt-end -->
 
 ## Open Terminal 
 
 Each Terminal Emulator has its own method of configuring its preferences.
 Here I will show you the general struture for how to change them for each of the major types.
-Once you know how to configure the settings for your prefered terminal emulator you can skip to the section about some [reccomended settings][settings] and continue following along with the .
+Once you know how to configure the settings for your prefered terminal emulator you can skip to the section about some [reccomended settings][settings] and continue following along with the tutorial.
 
-All OSes have some type of terminal emulator, by default by there are some subtle differences between them, so I describe each separately. So read through the section that is relevant to you before skipping to the next [section][customization].
+### GUI (iTerm2 / MacOS, Gnome, KDE Terminal)
 
-### GUI Customization (iTerm2 and Default  MacOS/Gnome/KDE Terminal)
-
-Regardless if you choose the default Mac Terminal or iTerm2, they both have the same customization structure.
+Regardless of whether you choose the iTerm2 or any of the default MacOS/Linux Terminals, they all have the same customization structure.
 First you need to open up the preferences (keyboard shortcut: `⌘` + `,`; or click from the topdown menu).
+Mac you need to access the apps preferences by either the keyboard shortcut (keyboard shortcut: `⌘` + `,`) or by clicking the apps name in the title bar and then going to preferences. <!-- ➔ -->
+For Gnome, you need to access preferences from the hamburger menu (`☰`) in the top right. On KDE-Plasma, you need to click setting ➔ Configure Konsole. 
+
+Once you have opened the preferences menu, it should look something like the image below. For brevity, I am only showing the iTerm2 Preferences panel, but they are quite similar in structure.
 
 ![Preferences Image for iTerm2](/assets/imgs/iterm-pref.png)
 
@@ -82,48 +67,111 @@ The next few options are iTerm2 specific if you want to add these customization 
 Option 1: Repeat some steps multiple times (obviously not ideal)
 Option 2: Now that you know how basic customization works, jump down to the general customization suggestions sections.
 
-### Config File Customization (Kitty and Alacritty)
 
-### GitBash Customization
+### Config File (Kitty and Alacritty)
+
+
+[kitty themes][kitty-themes]
+[kitty sample config][kitty-config]
+[alacritty themes][alacritty-themes]
+[alacritty sample config][alacritty-config]
+
+### GitBash
 
 As the name implies, gitbash only lets you use `bash`, so you do not have access to all the niceties for customization as `zsh`.
 As such, you unfortunately, have a bit more complicated customization process.
 It is a bit to much to explain in this simple blog post, so here is a good [post][gitbash-custom] to get you started.
+You could try to use the Starship example below, but I do not know it that works or not for git-bash.
 
 
 ## General Customization
 
+Now that you know how to edit your terminal's preferences, you can get to the real fun.
+Of course the easiest thing to change is the colors, so I would start there.
+My suggestion is to look their the theme options your Terminal emulator provides and use that as a base, and then adjust those accordingly.
+Especially when you are new to customization, it can be overwhelming to decide on all the color options, so having a starting place it very helpful.
+
+It is important to note that there are tons of really great color themes available regardless of your Terminal Emulator, so I recommend doing a quick search with the name of your emulator and `color theme`.
+I tend to use a custom modified version of the [Dracula theme][dracula], so that might be a good place to explore (just search the app you want to add the theme to and then follow the instructions).
+Unfortunately, this is not something I can help to much with because its all a matter of personal preferences.
+So, just open up your preferences and try some colors out!
+
+The next section is where things get really exciting, you get to customize your command prompt!
+As a reminder the command prompt is the information displayed before the command line (the part you can actually time into).
+One that works really well across all the different shells is [Starship][].
+Once installed (with your favorite [package maganger][packagemanager]) or via the [instructions specific to your OS][starship-install], you can apply it to your shell with either `eval "$(starship init bash)"` or `eval "$(starship init zsh)"` depending on your shell.
+Below is an example of what Starship looks by default:
+
+
+
+![Starship Default][starship-default]
+
 ## `Zsh` Specific Customization
 
-Although many Linux distros have switch to `zsh` not all of them have, so make sure you are using `zsh` before using these customization options
+*Mac users can avoid this paragraph.*
+Although many Linux distros have switched to `zsh` not all of them have, so make sure you are using `zsh` before using these customization options. This can be done by first installing zsh with your distros [package manager][packagemanager], then running the following command to chang `zsh` to your default shell:
 
-I will say that for Mac users specifically, I would reccomend you check out [iTerm2][] as an alternative to the standard terminal and [oh my zsh][ohmyzsh] to add some amazing color theming for some general improvements. 
-But of course this is not necessary. *Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.*
+```bash
+chsh -s $(which zsh)
+```
 
-## Customization
-the text there is there now
+*Welcome back Mac peeps.*
+Now that everyone is back on the same page, we can begin with `zsh` specific customizations.
+> Note: I have only personally tested these on MacOS and Linux using iTerm2, kitty, and Gnome Terminal, so your mileable may vary if you are using something else.
 
-### Colors
+The first addon is called [oh my zsh][ohmyzsh], which adds some amazing color theming for some general improvements.
+Out of the box, your experience will already be much better than default. It will add a bunch of aliases, to allow you to use shortcuts for some commands, as well as a plugin for `git` to allow you to know what branch you are using and the changes since last merge/push etc.
 
-Show how to do a few in practice, then talk about color schemes (Dracula, Dracula,... Dracula)
+![Oh My Zsh Default][omz-default]
 
-### Customizing your prompt
+If you want to take this to the next level you can add the [PowerLevels10k theme][p10k] on top of oh my zsh to get really amazing looking prompt sections.
 
-There tons of customization options 
+![powerlevels10k Default][p10-default]
 
-Show one example of changing the prompt from bashrc (link to later files). 
 
-Then point out powerlevels10k and the one from TechCrafted, I dont remember the name
+For the best performance on PowerLevels10k, you will need to install the correct font ([MeslsoLGS][mes-font])
+
+Of course this is not necessary, but I think it adds a lot when you are coding and you are enjoying what you are looking at.
+For those that are interested, I will be uploading a post soon on how I setup my 
+*Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.*
+
+## Further Exploration
+
+As you can imagine, you can go absolutely wide with customizing every last bit of your terminal, especially if you choose a terminal that has a config file. This post really just scratched the surface and if you want to get more into customization, you should check out the reddit thread [r/unixporn][unixporn]. The name sounds a bit odd, but you don't have to worry, its generally quite safe, its just people showing off how cool their unix based systems look after they have done all their customizations. They often leave config files, so they can be replicated! I do want to note that most will be using linux because you have way more customization options, which is a big selling point. But there are a few ones for MacOS, so its not all doom and gloom for the apples fans.
+Below are a few examples of what you can find on [r/unixporn][unixporn]:
+![Darth Vader Theme][vader]
+!
 
 [customization]: #customization
 [settings]: #general-customization
 [linuxtermcustomization]: #terminal-config-files-on-linux
+[dracula]: https://draculatheme.com/ "Dracula Theme Website"
 [iTerm2]: https://iterm2.com/ "iTerm2 Terminal Emulator"
 [ohmyzsh]: https://ohmyz.sh/ "Oh My Zsh: Prettify you Terminal"
+[p10k]: https://github.com/romkatv/powerlevel10k "PowerLevels10k"
+[mes-font]: https://github.com/romkatv/powerlevel10k#manual-font-installation "Install MeslsoLGS"
+[starship]: https://starship.rs/ "Starship Prompt Customization"
+[starship-install]: https://starship.rs/guide/#%F0%9F%9A%80-installation "Install Starship"
 [kitty]: https://sw.kovidgoyal.net/kitty/ "Kitter Terminal Emulator"
+[kitty-themes]: https://github.com/dexpota/kitty-themes "List of Kitty Themes"
+[kitty-config]: https://sw.kovidgoyal.net/kitty/_downloads/433dadebd0bf504f8b008985378086ce/kitty.conf "Kitty Default Config"
 [alacritty]: https://alacritty.org/ "Alacritty Terminal Emulator"
+[alacritty-themes]: https://github.com/eendroroy/alacritty-theme "List of Alacritty themes"
+[alacritty-config]: https://github.com/alacritty/alacritty/blob/master/alacritty.yml "Alacritty Default Config"
 [WSL]: https://learn.microsoft.com/en-us/windows/wsl/install "Windows subsystem for linux"
 [gitbash-custom]: https://blog.devgenius.io/how-to-customize-the-git-bash-shell-prompt-336f6aefcf3f
+[unixporn]: https://www.reddit.com/r/unixporn/ "Reddit: r/unixporn"
+[utsav]: https://youtu.be/0MiGnwPdNGE "Engineering with Utsav: Terminal Setup on Mac"
+
+
+<!-- IMGAGES -->
+[omz-default]: https://user-images.githubusercontent.com/49100982/108254738-764b8700-716c-11eb-9a59-4deb8c8c6193.jpg "Default Oh My Zsh Theme"
+[p10-default]: https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png "Power Levels 10k Default Theme"
+[starship-default]: https://raw.githubusercontent.com/starship/starship/master/media/demo.gif "Starship Theme Gif"
+
+
+
+
 
 [intro]: {% link _posts/series/cli/2022-10-03-cli.md %}
 
