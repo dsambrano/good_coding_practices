@@ -60,7 +60,7 @@ For Gnome, you need to access preferences from the hamburger menu (`☰`) in the
 
 Once you have opened the preferences menu, it should look something like the image below. For brevity, I am only showing the iTerm2 Preferences panel, but they are quite similar in structure.
 
-![Preferences Image for iTerm2](/assets/imgs/iterm-pref.png)
+![Preferences Image for iTerm2](/assets/imgs/iterm-prefs.png)
 
 The next few options are iTerm2 specific if you want to add these customization options. 
 
@@ -162,6 +162,7 @@ Below are a few examples of what you can find on [r/unixporn][unixporn]:
 [gitbash-custom]: https://blog.devgenius.io/how-to-customize-the-git-bash-shell-prompt-336f6aefcf3f
 [unixporn]: https://www.reddit.com/r/unixporn/ "Reddit: r/unixporn"
 [utsav]: https://youtu.be/0MiGnwPdNGE "Engineering with Utsav: Terminal Setup on Mac"
+[pywal]: https://github.com/dylanaraps/pywal "Pywal to get custom Color pallette from your wallpaper"
 
 
 <!-- IMGAGES -->
