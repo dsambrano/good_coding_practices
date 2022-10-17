@@ -7,7 +7,7 @@ tags: Math Computational-Modeling R Python
 time: 20
 category: computational-modeling
 series: computational-modeling
-diff: advanced
+diff: math
 excerpt_separator: <!--more-->
 usemathjax: true
 ---
