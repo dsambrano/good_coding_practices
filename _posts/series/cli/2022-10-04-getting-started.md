@@ -85,6 +85,14 @@ The other option is [Windows Subsystem for Linux (WSL)][wsl], which is built by 
 If this is your first time trying this out, I recommend [gitbash][], but if you plan on doing a lot of coding in `bash` or you just want to see what all the Linux fuss is about, go for [Windows Subsystem for Linux (WSL)][wsl].
 
 
+## Final Thoughts
+
+If you are feeling overwhelmed in the number of chooses I layed out here, don't worry, just pick the first on on the list for your OS.
+You can always change in the future, so you can't make a mistake.
+Also before you move forward I do recommend you option the preferences for your terminal, head to the profiles and change you colors or at least the color theme. 
+Having a good looking terminal WILL ACTUALLY MAKE YOU A BETTER CODER.
+Because having a good looking terminal will make you more likely to code, and that extra practice and motivation can make a world of difference.
+
 
 [wsl]: https://learn.microsoft.com/en-us/windows/wsl/install "Windows Subsystem for Linux"
 [shelldiff]: https://linuxhint.com/differences_between_bash_zsh/ "Differences between Bash and ZSH"
