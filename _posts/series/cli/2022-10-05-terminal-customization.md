@@ -74,7 +74,7 @@ For pretty much all terminals that use a config file, the easiest way is to down
 For most of them, they include all (if not most) of the defaults, and typically have a lot of comments to describe each section.
 Here are the links for [kitty sample config][kitty-config] and the [alacritty sample config][alacritty-config].
 You will want to double check your specific apps config file location, but typically they go in the xdg default config.
-For example, for kitty it would be in `~/.config/kitty` and alacritty would be in `~/.config/alacritty`
+For example, for kitty it would be in `~/.config/kitty/` directory and alacritty would be in `~/.config/alacritty/` directory.
 
 From there, you have total and complete reign to edit your terminal however you see fit, thats sorta the draw with config file style preferences. You have total controll to make something look absolutely amazing (or the power to make them look terrible 😂).
 But to give you some guidance, here are a bunch of nice themes you could implement for [kitty themes][kitty-themes] and [alacritty themes][alacritty-themes].
@@ -141,9 +141,23 @@ For those that are interested, I will be uploading a post soon on how I setup my
 ## Further Exploration
 
 As you can imagine, you can go absolutely wide with customizing every last bit of your terminal, especially if you choose a terminal that has a config file. This post really just scratched the surface and if you want to get more into customization, you should check out the reddit thread [r/unixporn][unixporn]. The name sounds a bit odd, but you don't have to worry, its generally quite safe, its just people showing off how cool their unix based systems look after they have done all their customizations. They often leave config files, so they can be replicated! I do want to note that most will be using linux because you have way more customization options, which is a big selling point. But there are a few ones for MacOS, so its not all doom and gloom for the apples fans.
-Below are a few examples of what you can find on [r/unixporn][unixporn]:
+Below are a few examples of what you can find on [r/unixporn][unixporn] (the last one in particular is pretty cool because they even customized their spotify colors to match their overall aesthetic):
+
+![Cute and Bubbly Theme][bubbly-theme]
 ![Darth Vader Theme][vader]
-!
+![Edgey Gaming Theme][edgy-theme]
+![Purple Theme with Custom Spotify Client][purple-spotify]
+
+
+
+You might notice that they typically have the apps in this tiled like format.
+I will throw one final plug, in that they did not do that by hand. 
+Instead they used whats called a tiling window manager to organize all their open apps into nice little tiles.
+Tiling window managers are amazing for looks, and offer a huge boost to productivity as well.
+So stay tuned for a future post about them and how to set them up.
+
+
+
 
 [customization]: #customization
 [settings]: #general-customization
@@ -172,12 +186,16 @@ Below are a few examples of what you can find on [r/unixporn][unixporn]:
 [omz-default]: https://user-images.githubusercontent.com/49100982/108254738-764b8700-716c-11eb-9a59-4deb8c8c6193.jpg "Default Oh My Zsh Theme"
 [p10-default]: https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png "Power Levels 10k Default Theme"
 [starship-default]: https://raw.githubusercontent.com/starship/starship/master/media/demo.gif "Starship Theme Gif"
+[vader]: https://i.redd.it/1hkekhgd37u91.png "Darth Vader Theme Terminal"
+[bubbly-theme]: https://i.redd.it/5p0k6faqevt91.png "Bubbly Theme Terminal"
+[edgy-theme]: https://i.redd.it/9icft9m71yt91.png "Edgey Gaming Theme"
+[purple-spotify]: https://i.redd.it/uchnhil1txt91.png "Purple Theme with Spotfiy Customization"
 
 
 
 
 
-[intro]: {% link _posts/series/cli/2022-10-03-cli.md %}
+[intro]: {}
 
 
 
