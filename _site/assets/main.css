@@ -286,19 +286,29 @@ img { display: block; margin-left: auto; margin-right: auto; }
 
 .Beginner { color: green; }
 
+a > Beginner { color: black; }
+
 .Intermediate { color: yellow; }
 
+a > Intermediate { color: black; }
+
 .Expert { color: red; }
+
+a > Expert { color: black; }
 
 .post-decorations { margin-top: -15px; margin-bottom: 1em; }
 
 .bubble { display: inline; padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px; margin-right: 1em; border-radius: .5em; border: 1px solid #ddd; }
 
-.series { background-color: var(--purple); color: white; border-color: white; }
+.series.bubble { background-color: var(--purple); border-color: white; }
 
-.time { background-color: #2a7ae2; color: white; border-color: #1756a9; }
+a > .series.bubble { color: white; }
 
-.tag { background-color: #eee; }
+a > .tag.bubble { color: black; }
+
+.tag.bubble { background-color: #eee; }
+
+.time.bubble { background-color: #2a7ae2; color: white; border-color: #1756a9; }
 
 #markdown-toc::before { font-weight: bold; }
 
