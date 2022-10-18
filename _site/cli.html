@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>What are Command-Line Interface (CLIs) | Your Coding Buddy</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="What are Command-Line Interface (CLIs)" />
+<meta name="author" content="Deshawn Sambrano" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Series Takeaways What is a Command-Line Interface/CLI? &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Bash em, I don&#39;t even know em&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;What are Command-Line Interface (CLIs)&lt;/strong&gt; &lt;/li&gt; &lt;/ol&gt; Series Takeaways In this blog you will learn basic bash commands. By the end of this you will know: Basic commands to traverse your computer from the terminal The structure or commands, arguments, and options in bash Creating a script automate boring tasks Prerequisites: None Use this link to set up the Takeaways as a section to have it be bubbly and etc https://github.com/jekyll/jekyll/issues/246#issuecomment-583053 What is a Command-Line Interface/CLI? Like with most acronyms its often easiest to understand each word first. For CLIs the first word is Command-line. This refers to your terminal emulator (or just termial for short). And of course the I stands for interface, or just a way for someone to interact with an app/program. So putting it all together a CLI is simply just a way to interact with different programs or apps from the terminal as opposed to having to open up the GUI (or graphical user interface: the normal way to interact with an app which typically always you to click buttons to use it). CLIs have a ton of benefits, first they are significantly faster. Many programs, especially the big ones take a long time to even start up/open the GUI. If you learn to effectively use CLIs, you can often complete the task from the terminal before you would have been able to open the app. Second, in many cases CLIs are much more powerful then using a GUI because you have access to all the apps functionality, where GUIs need to have made/implemented that button for the feature to be accessed. Finally, and s most importantly, CLIs allow you program your interactions with the application. By programmatically scripting your actions, you automate the whole process. So, let’s imagine you had 50 images that you need to change the name of for an experiment (or just to be more organized). To do this via the GUI you would need to open Finder or Windows Explorer, right click, then click rename, then change the name of that individual image, then rinse and repeat. Even for people who know all the keyboard shortcuts (btw they are enter for MacOS and F2 for Windows), this would take a long time. But with a CLI you can do the whole thing with a few lines of code. This might look scary at first, but over the course of this series you will know exactly what code like this means (btw this will rename a bunch of images for you). i=1 for filename in *.jpg; do new_name = &quot;img_$i.jpg&quot; echo &quot;Change $filname to $new_name&quot; mv filname $new_name; i=$((i + 1)) done Of course this is not an isolated use case, you might need to convert word documents to PDFs or create an entire folder struture for a new project; heck, I even use CLIs to check everytime I update my CV/Resume to autmatically update my website with the changes and automatically link to any new publications or presentations. Some other super cool examples, that I watch Anime from the terminal with a CLI and to download all the apps I used, install all the fonts, and change all my settings to my prefered options on a new computer. Once you have the ability to programmatically control these actions, the world is your osyter, and you are only limited by your imagination. If you are not convinced that CLIs are amazing, then I am not sure what else I can say. But I am sure most of you at this point are truly intrigued. So over the course of this series, I will start you off on how to use CLIs. You will learn how to used the basic commands and how to put them together into a script to run at your own leasure without having to type them all out each time." />
+<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Series Takeaways What is a Command-Line Interface/CLI? &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Bash em, I don&#39;t even know em&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;What are Command-Line Interface (CLIs)&lt;/strong&gt; &lt;/li&gt; &lt;/ol&gt; Series Takeaways In this blog you will learn basic bash commands. By the end of this you will know: Basic commands to traverse your computer from the terminal The structure or commands, arguments, and options in bash Creating a script automate boring tasks Prerequisites: None Use this link to set up the Takeaways as a section to have it be bubbly and etc https://github.com/jekyll/jekyll/issues/246#issuecomment-583053 What is a Command-Line Interface/CLI? Like with most acronyms its often easiest to understand each word first. For CLIs the first word is Command-line. This refers to your terminal emulator (or just termial for short). And of course the I stands for interface, or just a way for someone to interact with an app/program. So putting it all together a CLI is simply just a way to interact with different programs or apps from the terminal as opposed to having to open up the GUI (or graphical user interface: the normal way to interact with an app which typically always you to click buttons to use it). CLIs have a ton of benefits, first they are significantly faster. Many programs, especially the big ones take a long time to even start up/open the GUI. If you learn to effectively use CLIs, you can often complete the task from the terminal before you would have been able to open the app. Second, in many cases CLIs are much more powerful then using a GUI because you have access to all the apps functionality, where GUIs need to have made/implemented that button for the feature to be accessed. Finally, and s most importantly, CLIs allow you program your interactions with the application. By programmatically scripting your actions, you automate the whole process. So, let’s imagine you had 50 images that you need to change the name of for an experiment (or just to be more organized). To do this via the GUI you would need to open Finder or Windows Explorer, right click, then click rename, then change the name of that individual image, then rinse and repeat. Even for people who know all the keyboard shortcuts (btw they are enter for MacOS and F2 for Windows), this would take a long time. But with a CLI you can do the whole thing with a few lines of code. This might look scary at first, but over the course of this series you will know exactly what code like this means (btw this will rename a bunch of images for you). i=1 for filename in *.jpg; do new_name = &quot;img_$i.jpg&quot; echo &quot;Change $filname to $new_name&quot; mv filname $new_name; i=$((i + 1)) done Of course this is not an isolated use case, you might need to convert word documents to PDFs or create an entire folder struture for a new project; heck, I even use CLIs to check everytime I update my CV/Resume to autmatically update my website with the changes and automatically link to any new publications or presentations. Some other super cool examples, that I watch Anime from the terminal with a CLI and to download all the apps I used, install all the fonts, and change all my settings to my prefered options on a new computer. Once you have the ability to programmatically control these actions, the world is your osyter, and you are only limited by your imagination. If you are not convinced that CLIs are amazing, then I am not sure what else I can say. But I am sure most of you at this point are truly intrigued. So over the course of this series, I will start you off on how to use CLIs. You will learn how to used the basic commands and how to put them together into a script to run at your own leasure without having to type them all out each time." />
+<link rel="canonical" href="http://localhost:4000/cli" />
+<meta property="og:url" content="http://localhost:4000/cli" />
+<meta property="og:site_name" content="Your Coding Buddy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="What are Command-Line Interface (CLIs)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Series Takeaways What is a Command-Line Interface/CLI? &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Bash em, I don&#39;t even know em&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;What are Command-Line Interface (CLIs)&lt;/strong&gt; &lt;/li&gt; &lt;/ol&gt; Series Takeaways In this blog you will learn basic bash commands. By the end of this you will know: Basic commands to traverse your computer from the terminal The structure or commands, arguments, and options in bash Creating a script automate boring tasks Prerequisites: None Use this link to set up the Takeaways as a section to have it be bubbly and etc https://github.com/jekyll/jekyll/issues/246#issuecomment-583053 What is a Command-Line Interface/CLI? Like with most acronyms its often easiest to understand each word first. For CLIs the first word is Command-line. This refers to your terminal emulator (or just termial for short). And of course the I stands for interface, or just a way for someone to interact with an app/program. So putting it all together a CLI is simply just a way to interact with different programs or apps from the terminal as opposed to having to open up the GUI (or graphical user interface: the normal way to interact with an app which typically always you to click buttons to use it). CLIs have a ton of benefits, first they are significantly faster. Many programs, especially the big ones take a long time to even start up/open the GUI. If you learn to effectively use CLIs, you can often complete the task from the terminal before you would have been able to open the app. Second, in many cases CLIs are much more powerful then using a GUI because you have access to all the apps functionality, where GUIs need to have made/implemented that button for the feature to be accessed. Finally, and s most importantly, CLIs allow you program your interactions with the application. By programmatically scripting your actions, you automate the whole process. So, let’s imagine you had 50 images that you need to change the name of for an experiment (or just to be more organized). To do this via the GUI you would need to open Finder or Windows Explorer, right click, then click rename, then change the name of that individual image, then rinse and repeat. Even for people who know all the keyboard shortcuts (btw they are enter for MacOS and F2 for Windows), this would take a long time. But with a CLI you can do the whole thing with a few lines of code. This might look scary at first, but over the course of this series you will know exactly what code like this means (btw this will rename a bunch of images for you). i=1 for filename in *.jpg; do new_name = &quot;img_$i.jpg&quot; echo &quot;Change $filname to $new_name&quot; mv filname $new_name; i=$((i + 1)) done Of course this is not an isolated use case, you might need to convert word documents to PDFs or create an entire folder struture for a new project; heck, I even use CLIs to check everytime I update my CV/Resume to autmatically update my website with the changes and automatically link to any new publications or presentations. Some other super cool examples, that I watch Anime from the terminal with a CLI and to download all the apps I used, install all the fonts, and change all my settings to my prefered options on a new computer. Once you have the ability to programmatically control these actions, the world is your osyter, and you are only limited by your imagination. If you are not convinced that CLIs are amazing, then I am not sure what else I can say. But I am sure most of you at this point are truly intrigued. So over the course of this series, I will start you off on how to use CLIs. You will learn how to used the basic commands and how to put them together into a script to run at your own leasure without having to type them all out each time.","headline":"What are Command-Line Interface (CLIs)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cli"},"url":"http://localhost:4000/cli"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
+  
+  <!-- <script type="text/x-mathjax-config">
+      // From: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
+      // MathJax.Hub.Config({
+      // TeX: { equationNumbers: { autoNumber: "AMS" } }
+      // });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true
+        },
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?con
+fig=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+        // Below config from: https://stackoverflow.com/a/54373640
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            config: ["MMLorHTML.js"],
+            jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+            extensions: ["MathMenu.js", "MathZoom.js"]
+        });
+    </script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">What are Command-Line Interface (CLIs)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-03T00:00:00-07:00" itemprop="datePublished">Oct 3, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Deshawn Sambrano</span></span>
+      • <span class="read-time"> Estimated Read Time: 10 mins</span>
+       
+      
+      • <span class="page-diff"> Difficulty: <span class="Intermediate">Intermediate</span>
+      </span>
+       
+    </p>
+
+  </header>
+  
+    
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <nav id="sidebar">
+  <div class="toc-wrapper">
+    <h4>Table of Contents</h4>
+    <aside class="toc">
+<ul id="markdown-toc">
+  <li><a href="#series-takeaways" id="markdown-toc-series-takeaways">Series Takeaways</a></li>
+  <li><a href="#what-is-a-command-line-interfacecli" id="markdown-toc-what-is-a-command-line-interfacecli">What is a Command-Line Interface/CLI?</a></li>
+</ul>
+
+    </aside>
+  </div>
+
+  <aside class="series">
+    <h4>This post is part of the series <em>Command Line Interface (CLIs)</em></h4>
+    <ol start="0">
+    
+    
+    <li>
+      
+      <a href="/cli/bash">Bash em, I don't even know em</a>
+      
+    </li>
+    
+    <li>
+      
+      <strong>What are Command-Line Interface (CLIs)</strong>
+      
+    </li>
+    
+  </ol>
+
+  </aside>
+
+</nav>
+
+<h2 id="series-takeaways">Series Takeaways</h2>
+
+<p>In this blog you will learn basic bash commands. By the end of this you will know:</p>
+<ul>
+  <li>Basic commands to traverse your computer from the terminal</li>
+  <li>The structure or commands, arguments, and options in <code class="language-plaintext highlighter-rouge">bash</code></li>
+  <li>Creating a script automate boring tasks</li>
+</ul>
+
+<p>Prerequisites:</p>
+<ul>
+  <li>None</li>
+</ul>
+
+<p>Use this link to set up the Takeaways as a section to have it be bubbly and etc
+https://github.com/jekyll/jekyll/issues/246#issuecomment-583053</p>
+
+<hr />
+
+<h2 id="what-is-a-command-line-interfacecli">What is a Command-Line Interface/CLI?</h2>
+
+<!-- excerpt-start -->
+
+<p>Like with most acronyms its often easiest to understand each word first. 
+For CLIs the first word is Command-line.
+This refers to your terminal emulator (or just termial for short).
+And of course the I stands for interface, or just a way for someone to interact with an app/program.
+So putting it all together a CLI is simply just a way to interact with different programs or apps from the terminal as opposed to having to open up the GUI (or graphical user interface: the normal way to interact with an app which typically always you to click buttons to use it).</p>
+
+<p>CLIs have a ton of benefits, first they are significantly faster.
+Many programs, especially the big ones take a long time to even start up/open the GUI.
+If you learn to effectively use CLIs, you can often complete the task from the terminal before you would have been able to open the app. Second, in many cases CLIs are much more powerful then using a GUI because you have access to all the apps functionality, where GUIs need to have made/implemented that button for the feature to be accessed.</p>
+
+<p>Finally, and s most importantly, CLIs allow you program your interactions with the application.
+By programmatically scripting your actions, you automate the whole process.
+So, let’s imagine you had 50 images that you need to change the name of for an experiment (or just to be more organized).
+To do this via the GUI you would need to open Finder or Windows Explorer, right click, then click rename, then change the name of that individual image, then rinse and repeat. Even for people who know all the keyboard shortcuts (btw they are <code class="language-plaintext highlighter-rouge">enter</code> for MacOS and <code class="language-plaintext highlighter-rouge">F2</code> for Windows), this would take a long time.
+But with a CLI you can do the whole thing with a few lines of code.
+This might look scary at first, but over the course of this series you will know exactly what code like this means (btw this will rename a bunch of images for you).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">i</span><span class="o">=</span>1
+<span class="k">for </span>filename <span class="k">in</span> <span class="k">*</span>.jpg<span class="p">;</span> <span class="k">do
+  </span>new_name <span class="o">=</span> <span class="s2">"img_</span><span class="nv">$i</span><span class="s2">.jpg"</span>
+  <span class="nb">echo</span> <span class="s2">"Change </span><span class="nv">$filname</span><span class="s2"> to </span><span class="nv">$new_name</span><span class="s2">"</span>
+  <span class="nb">mv </span>filname <span class="nv">$new_name</span><span class="p">;</span>
+  <span class="nv">i</span><span class="o">=</span><span class="k">$((</span>i <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p>Of course this is not an isolated use case, you might need to convert word documents to PDFs or create an entire folder struture for a new project; heck, I even use CLIs to check everytime I update my CV/Resume to autmatically update my website with the changes and automatically link to any new publications or presentations. 
+Some other super cool examples, that I watch Anime from the terminal with a <a href="https://github.com/whoisYoges/anime-terminal" title="CLI: Anime from your Terminal">CLI</a> and to download all the apps I used, install all the fonts, and change all my settings to my prefered options on a new computer. Once you have the ability to programmatically control these actions, the world is your osyter, and you are only limited by your imagination.</p>
+
+<p>If you are not convinced that CLIs are amazing, then I am not sure what else I can say.
+But I am sure most of you at this point are truly intrigued.
+So over the course of this series, I will start you off on how to use CLIs. 
+You will learn how to used the basic commands and how to put them together into a script to run at your own leasure without having to type them all out each time.</p>
+
+<!-- So, let's imagine you had 10 word documents that you wanted to convert to PDFs.
+To do this via a GUI you would need to open each up, go to the file tab, click save as, then change the format, then click PDF, then change the name if applicable -->
+
+
+  </div>
+    <h4><em>Command Line Interface (CLIs)</em> Series</h4>
+
+
+
+<p>Post <strong>2</strong> of <strong>2</strong>.
+  </p>
+
+
+  
+    <a class="btn" rel="prev" href="/cli/bash">&larr; Prev Post</a>
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  <a class="u-url" href="/cli" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your Coding Buddy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your Coding Buddy</li><li><a class="u-email" href="mailto:dsambrano@g.harvard.edu">dsambrano@g.harvard.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li><li><a href="https://youtube.com/Dbrano3"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">Dbrano3</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
