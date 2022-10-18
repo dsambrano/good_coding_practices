@@ -109,7 +109,9 @@ fig=TeX-AMS_HTML-full"></script>
   </li>
   <li><a href="#f-strings" id="markdown-toc-f-strings">f strings</a></li>
   <li><a href="#type-hints" id="markdown-toc-type-hints">Type Hints</a></li>
+  <li><a href="#additional-resources" id="markdown-toc-additional-resources">Additional Resources</a></li>
   <li><a href="#exceptions" id="markdown-toc-exceptions">Exceptions</a></li>
+  <li><a href="#additional-resources-1" id="markdown-toc-additional-resources-1">Additional Resources</a></li>
   <li><a href="#logging" id="markdown-toc-logging">Logging</a></li>
   <li><a href="#asynchronous-code" id="markdown-toc-asynchronous-code">Asynchronous Code</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a>    <ul>
@@ -241,15 +243,14 @@ For example, you can automatically <a href="https://stackoverflow.com/a/45310389
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
 <span class="c1"># A colon indicates formating stuff: period indicates after the decimal
 </span><span class="n">dec_txt</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"Pi is often rounded to two decimals: </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">"</span>
-<span class="k">print</span><span class="p">(</span><span class="n">dec_txt</span><span class="p">)</span>
-<span class="n">Output</span><span class="p">:</span> <span class="s">'Pi is often rounded to two decimals: 3.14'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dec_txt</span><span class="p">)</span> <span class="err">👉️</span> <span class="s">'Pi is often rounded to two decimals: 3.14'</span>
 
 
 <span class="c1"># You can also use underscores to help clarify large numbers
 </span><span class="n">million</span> <span class="o">=</span> <span class="mi">1_000_000</span>
 <span class="c1"># And then have them printed with commas
 </span><span class="n">mill_txt</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"I can count to </span><span class="si">{</span><span class="n">million</span><span class="si">:</span><span class="p">,</span><span class="si">}</span><span class="s">"</span>
-<span class="k">print</span><span class="p">(</span><span class="n">mill_txt</span><span class="p">)</span> <span class="n">Output</span><span class="p">:</span> <span class="n">I</span> <span class="n">can</span> <span class="n">count</span> <span class="n">to</span> <span class="mi">1</span><span class="p">,</span><span class="mi">000</span><span class="p">,</span><span class="mi">000</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mill_txt</span><span class="p">)</span> <span class="err">👉️</span> <span class="n">I</span> <span class="n">can</span> <span class="n">count</span> <span class="n">to</span> <span class="mi">1</span><span class="p">,</span><span class="mi">000</span><span class="p">,</span><span class="mi">000</span>
 </code></pre></div></div>
 
 <p>full details <a href="https://stackoverflow.com/a/50340297" title="SO: f Strings round Detailed">below</a>:</p>
@@ -272,8 +273,7 @@ First you can run any python code inside the <code class="language-plaintext hig
 For example if you wanted to have a string that looks like <code class="language-plaintext highlighter-rouge">____hi____</code>, you could run:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">greet</span><span class="o">=</span><span class="s">"hi"</span>
-<span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">greet</span><span class="si">:</span><span class="n">_</span><span class="o">^</span><span class="mi">10</span><span class="si">}</span><span class="s">"</span>
-<span class="n">Output</span><span class="p">:</span> <span class="n">____hi____</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">greet</span><span class="si">:</span><span class="n">_</span><span class="o">^</span><span class="mi">10</span><span class="si">}</span><span class="s">"</span><span class="p">)</span> <span class="err">👉️</span> <span class="n">____hi____</span>
 </code></pre></div></div>
 
 <p>Again, you can customize this by changing the <code class="language-plaintext highlighter-rouge">_</code> for example, if you wanted whitespace, you could delete that character or if you wanted <code class="language-plaintext highlighter-rouge">====hi====</code>, you could replace it with a <code class="language-plaintext highlighter-rouge">=</code>.
@@ -303,7 +303,8 @@ And as you might expect, using a <code class="language-plaintext highlighter-rou
 
 <p>In this simiple example, you see that both arguments are expected to be floats and the second argument even has a default value of 3. 
 Finally, the expected output is as float. 
-Importantly, python does not actually check to confirm the types are as hinted. 
+Importantly, python does not actually check to confirm the types are as hinted.
+So, you will still need to raise the appropriate exception.
 This is only to make it easier to understand how to properly use the script and/or function. 
 You can use all the primative types for hints:</p>
 <ul>
@@ -319,15 +320,42 @@ You can use all the primative types for hints:</p>
 </ul>
 
 <blockquote>
-  <p><strong>Note</strong>: For all imports you need to change the type hint to capitalize the first letter when using them in functions.</p>
+  <p><strong>Note</strong>: For all type hints that are imported, you need to change the type hint to capitalize the first letter when using them in functions.</p>
 </blockquote>
+
+<p>It is important that you are as specific as possible when creating type hints otherwise they are not that useful.
+For example, it would be a bad idea to have a <code class="language-plaintext highlighter-rouge">str</code> type hint if it really could only be <code class="language-plaintext highlighter-rouge">BEGINNER</code>, <code class="language-plaintext highlighter-rouge">INTERMEDIATE</code>, and <code class="language-plaintext highlighter-rouge">ADVANCED</code>.
+Instead you should create you own custom type hint.
+Luckily, the <code class="language-plaintext highlighter-rouge">Enum</code> function makes this incredibly easy.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="k">class</span> <span class="nc">Difficulties</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="c1"># You can also assign a specific value if needed.
+</span>    <span class="c1">#     E.g., BEGINNER = 1 # or 'b'
+</span>    <span class="n">BEGINNER</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">INTERMEDIATE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ADVANCED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">get_difficulty</span><span class="p">(</span><span class="n">diff</span><span class="p">:</span> <span class="n">Difficulties</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">diff</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">get_difficulty</span><span class="p">(</span><span class="n">Difficulties</span><span class="p">.</span><span class="n">ADVANCED</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="err">👉️</span> <span class="n">ADVANCED</span>
+</code></pre></div></div>
+
+<p>As you can see, type hints make your code much more clear as to what each function/class expects as inputs.
+Using them can help others (including your future self after you forgot this project) understand what your functions need to work.
+By including them in your code, you will significantly increase your codes readability.</p>
+
+<h2 id="additional-resources">Additional Resources</h2>
 
 <p>For more infromation about type hints such as other use cases, using special type hints, or using custom type hints see this <a href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html" title="Type hints cheatsheet">post</a>.</p>
 
 <h2 id="exceptions">Exceptions</h2>
 
 <p>An <a href="https://youtu.be/nlCKrKGHSSk" title="Socratica: Exceptions">exception</a> is a point in the code where an error occured.
-All exceptions have a description of what when wrong as well as a <code class="language-plaintext highlighter-rouge">Traceback</code> of where the exception was encountered. 
+All exceptions have a description of what went wrong as well as a <code class="language-plaintext highlighter-rouge">Traceback</code> of where the exception was encountered. 
 There is a list of common exceptions as well as the hierarchy is on the <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" title="Python Exception Hierarchy">python website</a>
 Some common exceptions include:</p>
 <ul>
@@ -340,28 +368,62 @@ Some common exceptions include:</p>
 
 <p>Whenever possible you should use the builtin <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" title="Python Exception Hierarchy">exceptions</a> but you can create you own custom ones when necessary.</p>
 
-<p>To use exceptions in your code you want to mimic the following structure:</p>
+<p>In your own applications, the most common use case it with a <code class="language-plaintext highlighter-rouge">try/except</code>, to raise an exception. The use the following structure:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="c1"># code that will be attempted first
 </span><span class="k">except</span> <span class="n">e</span> <span class="k">as</span> <span class="nb">ValueError</span><span class="p">:</span>
-    <span class="c1"># Code that will run when the specific expection is encountered, you can have multiple of these to handle different exceptions differently. 
-</span><span class="k">else</span><span class="p">:</span> 
+    <span class="c1"># Code that will run when the specific expection is encountered, 
+</span>    <span class="c1">#     you can have multiple of these to handle different exceptions 
+</span>    <span class="c1">#     differently. 
+</span>    <span class="k">raise</span>
+<span class="k">else</span><span class="p">:</span> 
     <span class="c1"># Additionally code that should be run if it is successful
 </span><span class="k">finally</span><span class="p">:</span> 
-    <span class="c1"># Addition code that should be run regardless if it encountered an exception or not.
+    <span class="c1"># Addition code that should be run regardless 
+</span>    <span class="c1">#     if it encountered an exception or not.
 </span>
 </code></pre></div></div>
+
+<p>The first section, the <code class="language-plaintext highlighter-rouge">try</code> section should really only contain the ONE line you think could raise and exception.
+Often when starting out, I see people putting huge chunks of code here, but this is bad practice.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">except</code> block should only address a single exception, you can have multiple <code class="language-plaintext highlighter-rouge">except</code> clauses if need be.
+Then you typically want to end this clause with <code class="language-plaintext highlighter-rouge">raise</code> to actually raise the exception to the user.
+Other common usecases for this is to log the error for your records and/or provide some helpful hints to the user about what might have gone wrong.
+Also note, the fact that we raise a specific exception, in this case a <code class="language-plaintext highlighter-rouge">ValueError</code>.
+Its important to raise the exception you expect to have 1) so you are explicit and handle each one accordingly, but also 2) that way you are not raising a general exception which will catch anything, even a <code class="language-plaintext highlighter-rouge">KeyboardInterupt</code> meaning they will not be able to (easily) end your program/app.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">else</code> block is code that should be executed only if the <code class="language-plaintext highlighter-rouge">try</code> block was successfully completed without any errors.</p>
+
+<p>Last but not least, the <code class="language-plaintext highlighter-rouge">finally</code> block runs regardless of if the code ran into and exception or not.</p>
+
+<p>Add these <code class="language-plaintext highlighter-rouge">try/except</code> clauses to your code can help you properly deal with error you anticipate you users might encouter.
+And overall can help improve the users experience when used properly.
+However, it is important to use them sparringly.</p>
+
+<h2 id="additional-resources-1">Additional Resources</h2>
+
+<p>If you are looking for more in depth examples, check out:</p>
+
+<ul>
+  <li>This <a href="https://youtu.be/nlCKrKGHSSk" title="Socratica: Exceptions">video</a> for beginner</li>
+  <li>Or this <a href="https://youtu.be/nlCKrKGHSSk" title="Arjan Codes YT: Exception Handling">one</a> for more intermediate use cases</li>
+</ul>
 
 <h2 id="logging">Logging</h2>
 
 <p>When you first start using python and you want to test/debug your code, then you like just add print statements to your code.
-Well that is not the proper way to do it. 
-A much much better way is to use the built in <a href="https://youtu.be/g8nQ90Hk328" title="Socratica: Logging"><code class="language-plaintext highlighter-rouge">logging</code></a></p>
+Which means you likely have to add a bunch of comments to hide and unhide them as you are testing (<em>do you feel called out yet</em>).
+While this technically gets the job done, that is not the proper way to do it.
+A much much better way is to use the built in <a href="https://youtu.be/g8nQ90Hk328" title="Socratica: Logging"><code class="language-plaintext highlighter-rouge">logging</code></a> function.</p>
 
 <h2 id="asynchronous-code">Asynchronous Code</h2>
 
-<p>There are often parts of code that can take a long time to complete, say running a web request. Each web request is independent of one another meaning that the output of one does not affect the other. In these cases you can use the <code class="language-plaintext highlighter-rouge">asyncio</code> package to run multiple web request asynchronously. This can speed up the program quite significantly.</p>
+<p>There are often parts of code that can take a long time to complete, say pull data from different web apis.
+Each web request is independent of one another meaning that the results of what request does not affect any of the others.
+In these cases, you can use the <code class="language-plaintext highlighter-rouge">asyncio</code> package to run multiple web request asynchronously.
+This can speed up the program quite significantly.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">asyncio</span>
 </code></pre></div></div>
