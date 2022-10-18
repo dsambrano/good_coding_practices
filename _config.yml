@@ -29,6 +29,7 @@ twitter_username: DeshawnSambrano
 github_username: dsambrano
 youtube: test
 youtube_channel: hello
+show_excerpts: true
 
 # Build settings
 theme: minima
