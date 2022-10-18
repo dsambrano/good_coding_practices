@@ -2,21 +2,21 @@
   name: Beginner
   color: green
   description: These posts are focused on accessibility. None of these posts
-    assume you have any prior coded experience or knowledge.
+    assume you have any prior coding experience or knowledge.
 - id: intermediate
   name: Intermediate
   color: yellow
   description:
     These posts are also focused on accessibility, but typically assume that you
-    have at least used code before, you might not have created it yourself, but
+    have at least used code before. You might not have created it yourself, but
     you have at least ran some code.
 - id: advanced
   name: Advanced
   color: orange
   description:
     For these posts you are expected to already know how to code. You don't need 
-    to be particularly good at coding however. So if you at least know how to write a 
-    function and implement a for loop you should be alright.
+    to be particularly good at coding, however. So if you at least know how to write a 
+    function and implement a for loop, you should be okay.
 - id: math
   name: Math
   color: red
