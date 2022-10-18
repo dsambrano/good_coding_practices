@@ -138,6 +138,23 @@ Of course this is not necessary, but I think it adds a lot when you are coding a
 For those that are interested, I will be uploading a post soon on how I setup my 
 *Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.*
 
+## Customizing Your Commands
+
+As you saw through the tutorial, I have a lot more icons and colors compared to the default terminal experiences.
+You can add a lot with ...
+I use lsd and exa to replace ls 
+bat to replace cat
+zoxide to replace cd
+tldr to replace man
+
+
+As you can imagine, this is just a taste of the command line. You can do so so much more. Hopefully this was just enough to wet your appetite, and make you eager to explore more. One great place to start is with [Modern Unix][munix]. This is a project that has upgrades many of the commands we just talked about to fit with the modern world, (e.g., adding colors, speed, etc.). Another way to speed things up is to make alias which you can write short hand for really long commands.
+
+### Aliases
+Now that I have changed all my commands to the new modern version, I don't want to mess up my mucsle memory for the old commands, so I make aliases to all of them. For example, I make a alias for `alias ls=exa`
+
+
+
 ## Further Exploration
 
 As you can imagine, you can go absolutely wide with customizing every last bit of your terminal, especially if you choose a terminal that has a config file. This post really just scratched the surface and if you want to get more into customization, you should check out the reddit thread [r/unixporn][unixporn]. The name sounds a bit odd, but you don't have to worry, its generally quite safe, its just people showing off how cool their unix based systems look after they have done all their customizations. They often leave config files, so they can be replicated! I do want to note that most will be using linux because you have way more customization options, which is a big selling point. But there are a few ones for MacOS, so its not all doom and gloom for the apples fans.
