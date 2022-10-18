@@ -19,7 +19,8 @@ diff: advanced
 <section class="takeaways">
 
 This post is all about looking good while coding in the terminal. By the end of it you should: 
-- Know how to set up a Terminal and customize the look and feel
+- Upgrade you terminal experience
+- Know how to set up a terminal and customize the look and feel
 
 Prerequisites:
 - None; Although it may be helpful to have read through the series [intro][]
@@ -45,7 +46,38 @@ In order to change them, you should be able to create a default profile for most
 
 <!-- excerpt-end -->
 
-## Open Terminal 
+## Upgrade Your Terminal
+
+Now that you have gone through this entire series, you might want to consider upgrading your terminal. 
+Here are few options for each OS. Then you get to the fun part, customization.
+
+### Mac
+
+If you were able to successfully make it this far, I would recommend that you upgrade your terminal.
+One really nice option is [iTerm2][], which you can install with your favorite [package manager][packagemanager] (e.g., `brew install iterm2`) or from their website. iTerm2 adds a lot of nice to have [features][iterm-features] over an above the stock terminal. 
+
+Alternatively, if you plan on switching back and forth between Mac and Linux or just want to give Linux a shot, there are a few terminal emulators, that work across both OSes.
+Some good examples, include [kitty][] and [alacritty][] (also works on Windows with [WSL][]), of course both can be installed from the [package manager][packagemanager] as well or via their websites.
+The reason, it might be useful to use these is they have a configuration file, so once you set it up once, it will work identically across all the OSes. Of course, the downside is since you have to edit a file instead of using a GUI to configure, its a little harder for first timers to get something that they like.
+
+### Linux
+
+The `gnome-terminal` and `Konsole` are satisfactory, but not ideal.
+So, many people elect to download another terminal emulator that have more features, once they start using the terminal a lot.
+Some common ones include [alacritty][] and [kitty][]. 
+Linux was built specifically with the terminal in mind, so you really cannot go wrong.
+I would reccomend, you try a few out and see what suits your tastes/preferences.
+But in general, the defaults ones use a GUI to adjust preferences and any one you download will use a config file.
+
+
+### Windows
+
+For morst beginners to intermediate coders, I reccomend [gitbash][], which is designed to give you access to the unix commands and meant to help with git specifically.
+The other option is [Windows Subsystem for Linux (WSL)][wsl], which is built by microsoft to allow you to directly use Linux from within your Windows machine. With [WSL][wsl], you have access to a full Linux distro. One neat feature is you can have access to the [alacritty][] terminal on Windows, so you could use it for all three OSes if you switch between them.
+If this is your first time trying this out, I recommend [gitbash][], but if you plan on doing a lot of coding in `bash` or you just want to see what all the Linux fuss is about, go for [Windows Subsystem for Linux (WSL)][wsl].
+
+
+## How to Customize Your Terminal
 
 Each Terminal Emulator has its own method of configuring its preferences.
 Here I will show you the general struture for how to change them for each of the major types.
