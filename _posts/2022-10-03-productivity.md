@@ -1,3 +1,16 @@
+---
+layout: post
+title:  "Coding Productivity: How to Improve you Workflow in 5 Minutes"
+date: 2022-10-03
+author: Deshawn Sambrano
+categories: 
+permalink: 
+draft: true
+usemathjax: true
+series: false
+#part_number: 1
+#series-name: computational-modeling
+---
 ## Takeaways
 
 [Estimated Read Time 5 mins]
