@@ -72,6 +72,7 @@ This style is comfortable because we are used to it, but it waste a lot of time 
 Tiling window managers on the other hand, automatically adjust where new windows show up. 
 As the name implies they are adjusted in a grid that makes all the windows look like different times. Its truely amazing. 
 It increase my productivity even more than when I got a second monitor (which if you have never had one, they are super helpful). 
+One important caveat, they are not super useful on really small screens such as a 11 inch laptop. However, if you connect to an external monitor, you can take full advantage of them on that second screen.
 
 <!-- Here is a video to show have nice they can be: <iframe width="420" height="315" src="http://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe> -->
 
