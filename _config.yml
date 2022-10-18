@@ -35,6 +35,9 @@ theme: minima
 plugins:
   - jekyll-feed
 
+minima:
+  skin: dark
+
 defaults:
   - scope:
       path: "_posts"
