@@ -41,7 +41,6 @@ series: false
 permalink: 
 diff: "{{site.data.difficulty.expert.name}}"
 draft: true
-excerpt_separator: <!--more-->
 usemathjax: true
 ---
 
@@ -67,7 +66,7 @@ Prerequisites:
 <!-- excerpt-start -->
 
 
-<!--more-->
+<!-- excerpt-end -->
 
 ## Now its Your Turn!
 

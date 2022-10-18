@@ -23,6 +23,9 @@ Prerequisites:
 - None
 
 ## Never Do Anything Twice
+
+<!-- excerpt-start -->
+
 This is probably the most valuable tip here. 
 Honestly, never do things more than once. 
 If you have to do somehting more than once, you should write code to save you the hassle. 
