@@ -6,29 +6,34 @@ categories: jekyll update
 permalink: /additional-resources
 ---
 
-# Additional Resources
-
 Still looking for more?!?! Here are a few youtube channels and blog posts that I trust and have served as a great resource for a variety of languages and principles:
-- Python
-    - YouTube Channels: [Arjan Codes][arjan], [mCoding][], [Tech with Tim][twt], [Python Engineer][pyengin], [Socratica][]
-    - Websites: [Real Python][realpy], [pep8 Style Guide][pep8], [Google Style Guide][gstyle]
-- JavaScript
-    - YouTube Channels: [fireship][fireyt]
-    - Websites: [fireship.io][fireblog]
-- General Coding Principles
-    - YouTube Channels: [Arjan Codes][arjan], 
-    - Websites: [GitHub][gh-pages], [StackOverFlow][], [SuperUser][]
-    - Books: [Design Patterns][dp] ([overview of Design Patterns][dpoverview])
-- Understanding General Computer Hardware/IT
-    - YouTube Channels: [Tech Quickie][techq], [Linus Tech Tips (LTT)][LTT], [Network Chuck][], [Chris Titus Tech][CTT]
-    - Websites: [DigitalOcean][]
-- Linux
-    - YouTube Channels: [Linode][], [Learn Linux TV][linuxtv], [The Linux Experiment][linuxexperiment],[Chris Titus Tech][CTT]
-- Webserver/Webdev
-    - YouTube Channels: [fireship][fireyt], [Network Chuck][]
-    - Websites: [DigitalOcean][]
-- Vim/NVim:
-    - YouTube Channels [primeagen][primeagenyt]
+
+## Python
+- YouTube Channels: [Arjan Codes][arjan], [mCoding][], [Tech with Tim][twt], [Python Engineer][pyengin], [Socratica][]
+- Websites: [Real Python][realpy], [pep8 Style Guide][pep8], [Google Style Guide][gstyle]
+
+## JavaScript
+- YouTube Channels: [fireship][fireyt]
+- Websites: [fireship.io][fireblog]
+
+## General Coding Principles
+- YouTube Channels: [Arjan Codes][arjan], 
+- Websites: [GitHub][gh-pages], [StackOverFlow][], [SuperUser][]
+- Books: [Design Patterns][dp] ([overview of Design Patterns][dpoverview])
+
+## Understanding General Computer Hardware/IT
+- YouTube Channels: [Tech Quickie][techq], [Linus Tech Tips (LTT)][LTT], [Network Chuck][], [Chris Titus Tech][CTT]
+- Websites: [DigitalOcean][]
+
+## Linux
+- YouTube Channels: [Linode][], [Learn Linux TV][linuxtv], [The Linux Experiment][linuxexperiment],[Chris Titus Tech][CTT]
+
+## Webserver/Webdev
+- YouTube Channels: [fireship][fireyt], [Network Chuck][]
+- Websites: [DigitalOcean][]
+
+## Vim/NVim:
+- YouTube Channels [primeagen][primeagenyt]
 
 
 [arjan]: https://www.youtube.com/c/arjancodes "YT: Arjan Codes"
