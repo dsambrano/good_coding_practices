@@ -4,6 +4,23 @@
     }
 </style>
 
+# Computational Modeling
+
+## Takeaways
+
+**[Estimated Read Time 20 mins]**
+
+In this blog you will learn the basics of computational modeling. Specifically you will learn:
+- What is a computational model?
+- Why you should use computational models?
+- How to implement a computational model with an example.
+
+Difficulty: <span style="color:yellow">Intermediate</span>
+
+Prerequisites:
+- Read through this [paper][holt] or have some basic background on behavioral economics / learning literature (e.g., reinforcement learning)
+
+
 ## Why Should You Use A Computational Model
 Pull from Prospectus (Utlity and generalization)
 
@@ -112,4 +129,17 @@ This allows us to be able to predict that people will make choices different fro
 
 </center>
 
-### Estimating Parameters
+### Use the Data: Estimating Parameters
+
+
+## Advanced Topics:
+
+- Simulation
+- Model Comparison
+
+## Homework
+
+
+## References
+
+holt: <papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf> "Holt & Laury 2002"
