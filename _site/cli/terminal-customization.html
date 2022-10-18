@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Customizing Your Terminal | Your Coding Buddy</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Customizing Your Terminal" />
+<meta name="author" content="Deshawn Sambrano" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Apperance is Important Open Terminal GUI Customization (iTerm2 and MacOS Default Terminal) Config File Customization (Kitty and Alacritty) GitBash Customization General Customization Zsh Specific Customization Customization Colors Customizing your prompt &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What are Command-Line Interface (CLIs)&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/getting-started&quot;&gt;Choosing a Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Customizing Your Terminal&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Bash em, I don&#39;t even know em&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this post you will learn about bash, zsh, and the different terminals for the various OSes. Specifically, after this post you will understand: What bash is, what it stands for, and where to use it How install and run the Terminal for your OS Prerequisites: None; Although it may be helpful to have read through the series intro Just customizing terminal: express yourself Bash stuff (e.g., last paragraph, minus the ohmyzsh stuff) stays where it is. Everything else, I think can come here. With the ability to jump to customization section for those that already know the basics Actually, it might be valuable to have a short section on the know your OS, because its so beginner, you can have people skip it entirely and just give them customization on a how whole page. (current prefernce, pretty strong actually.) Gettings Started, what is bash Could also replace this with the base em title and make that Bash basics part 1: movement, bash basics part 2: creation Apperance is Important Change your Default Terminal Colors NOW! The happier you are when you look at your terminal the happier you will be when coding. More Happy means more coding. More Coding means more practice. More practice means Great Coder! This same principle applies for all text editors/IDEs (integrated developer environment) by the way. It sounds like a joke, but seriously, take some time to have a nice looking coding environment. In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc. REORG this to be each headers is a Terminal Emulator Open Terminal Each Terminal Emulator has its own method of configuring its preferences. Here I will show you the general struture for how to change them for each of the major types. Once you know how to configure the settings for your prefered terminal emulator you can skip to the section about some reccomended settings and continue following along with the . All OSes have some type of terminal emulator, by default by there are some subtle differences between them, so I describe each separately. So read through the section that is relevant to you before skipping to the next section. GUI Customization (iTerm2 and MacOS Default Terminal) Regardless if you choose the default Mac Terminal or iTerm2, they both have the same customization structure. First you need to open up the preferences (keyboard shortcut: ⌘ + ,; or click from the topdown menu). The next few options are iTerm2 specific if you want to add these customization options. Option 1: Repeat some steps multiple times (obviously not ideal) Option 2: Now that you know how basic customization works, jump down to the general customization suggestions sections. Config File Customization (Kitty and Alacritty) GitBash Customization As the name implies, gitbash only lets you use bash, so you do not have access to all the niceties for customization as zsh. As such, you unfortunately, have a bit more complicated customization process. It is a bit to much to explain in this simple blog post, so here is a good post to get you started. General Customization Zsh Specific Customization Although many Linux distros have switch to zsh not all of them have, so make sure you are using zsh before using these customization options I will say that for Mac users specifically, I would reccomend you check out iTerm2 as an alternative to the standard terminal and oh my zsh to add some amazing color theming for some general improvements. But of course this is not necessary. Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here. Customization the text there is there now Colors Show how to do a few in practice, then talk about color schemes (Dracula, Dracula,… Dracula) Customizing your prompt There tons of customization options Show one example of changing the prompt from bashrc (link to later files). Then point out powerlevels10k and the one from TechCrafted, I dont remember the name" />
+<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Apperance is Important Open Terminal GUI Customization (iTerm2 and MacOS Default Terminal) Config File Customization (Kitty and Alacritty) GitBash Customization General Customization Zsh Specific Customization Customization Colors Customizing your prompt &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What are Command-Line Interface (CLIs)&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/getting-started&quot;&gt;Choosing a Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Customizing Your Terminal&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Bash em, I don&#39;t even know em&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this post you will learn about bash, zsh, and the different terminals for the various OSes. Specifically, after this post you will understand: What bash is, what it stands for, and where to use it How install and run the Terminal for your OS Prerequisites: None; Although it may be helpful to have read through the series intro Just customizing terminal: express yourself Bash stuff (e.g., last paragraph, minus the ohmyzsh stuff) stays where it is. Everything else, I think can come here. With the ability to jump to customization section for those that already know the basics Actually, it might be valuable to have a short section on the know your OS, because its so beginner, you can have people skip it entirely and just give them customization on a how whole page. (current prefernce, pretty strong actually.) Gettings Started, what is bash Could also replace this with the base em title and make that Bash basics part 1: movement, bash basics part 2: creation Apperance is Important Change your Default Terminal Colors NOW! The happier you are when you look at your terminal the happier you will be when coding. More Happy means more coding. More Coding means more practice. More practice means Great Coder! This same principle applies for all text editors/IDEs (integrated developer environment) by the way. It sounds like a joke, but seriously, take some time to have a nice looking coding environment. In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc. REORG this to be each headers is a Terminal Emulator Open Terminal Each Terminal Emulator has its own method of configuring its preferences. Here I will show you the general struture for how to change them for each of the major types. Once you know how to configure the settings for your prefered terminal emulator you can skip to the section about some reccomended settings and continue following along with the . All OSes have some type of terminal emulator, by default by there are some subtle differences between them, so I describe each separately. So read through the section that is relevant to you before skipping to the next section. GUI Customization (iTerm2 and MacOS Default Terminal) Regardless if you choose the default Mac Terminal or iTerm2, they both have the same customization structure. First you need to open up the preferences (keyboard shortcut: ⌘ + ,; or click from the topdown menu). The next few options are iTerm2 specific if you want to add these customization options. Option 1: Repeat some steps multiple times (obviously not ideal) Option 2: Now that you know how basic customization works, jump down to the general customization suggestions sections. Config File Customization (Kitty and Alacritty) GitBash Customization As the name implies, gitbash only lets you use bash, so you do not have access to all the niceties for customization as zsh. As such, you unfortunately, have a bit more complicated customization process. It is a bit to much to explain in this simple blog post, so here is a good post to get you started. General Customization Zsh Specific Customization Although many Linux distros have switch to zsh not all of them have, so make sure you are using zsh before using these customization options I will say that for Mac users specifically, I would reccomend you check out iTerm2 as an alternative to the standard terminal and oh my zsh to add some amazing color theming for some general improvements. But of course this is not necessary. Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here. Customization the text there is there now Colors Show how to do a few in practice, then talk about color schemes (Dracula, Dracula,… Dracula) Customizing your prompt There tons of customization options Show one example of changing the prompt from bashrc (link to later files). Then point out powerlevels10k and the one from TechCrafted, I dont remember the name" />
+<link rel="canonical" href="http://localhost:4000/cli/terminal-customization" />
+<meta property="og:url" content="http://localhost:4000/cli/terminal-customization" />
+<meta property="og:site_name" content="Your Coding Buddy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Customizing Your Terminal" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Apperance is Important Open Terminal GUI Customization (iTerm2 and MacOS Default Terminal) Config File Customization (Kitty and Alacritty) GitBash Customization General Customization Zsh Specific Customization Customization Colors Customizing your prompt &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What are Command-Line Interface (CLIs)&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/getting-started&quot;&gt;Choosing a Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Customizing Your Terminal&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Bash em, I don&#39;t even know em&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this post you will learn about bash, zsh, and the different terminals for the various OSes. Specifically, after this post you will understand: What bash is, what it stands for, and where to use it How install and run the Terminal for your OS Prerequisites: None; Although it may be helpful to have read through the series intro Just customizing terminal: express yourself Bash stuff (e.g., last paragraph, minus the ohmyzsh stuff) stays where it is. Everything else, I think can come here. With the ability to jump to customization section for those that already know the basics Actually, it might be valuable to have a short section on the know your OS, because its so beginner, you can have people skip it entirely and just give them customization on a how whole page. (current prefernce, pretty strong actually.) Gettings Started, what is bash Could also replace this with the base em title and make that Bash basics part 1: movement, bash basics part 2: creation Apperance is Important Change your Default Terminal Colors NOW! The happier you are when you look at your terminal the happier you will be when coding. More Happy means more coding. More Coding means more practice. More practice means Great Coder! This same principle applies for all text editors/IDEs (integrated developer environment) by the way. It sounds like a joke, but seriously, take some time to have a nice looking coding environment. In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc. REORG this to be each headers is a Terminal Emulator Open Terminal Each Terminal Emulator has its own method of configuring its preferences. Here I will show you the general struture for how to change them for each of the major types. Once you know how to configure the settings for your prefered terminal emulator you can skip to the section about some reccomended settings and continue following along with the . All OSes have some type of terminal emulator, by default by there are some subtle differences between them, so I describe each separately. So read through the section that is relevant to you before skipping to the next section. GUI Customization (iTerm2 and MacOS Default Terminal) Regardless if you choose the default Mac Terminal or iTerm2, they both have the same customization structure. First you need to open up the preferences (keyboard shortcut: ⌘ + ,; or click from the topdown menu). The next few options are iTerm2 specific if you want to add these customization options. Option 1: Repeat some steps multiple times (obviously not ideal) Option 2: Now that you know how basic customization works, jump down to the general customization suggestions sections. Config File Customization (Kitty and Alacritty) GitBash Customization As the name implies, gitbash only lets you use bash, so you do not have access to all the niceties for customization as zsh. As such, you unfortunately, have a bit more complicated customization process. It is a bit to much to explain in this simple blog post, so here is a good post to get you started. General Customization Zsh Specific Customization Although many Linux distros have switch to zsh not all of them have, so make sure you are using zsh before using these customization options I will say that for Mac users specifically, I would reccomend you check out iTerm2 as an alternative to the standard terminal and oh my zsh to add some amazing color theming for some general improvements. But of course this is not necessary. Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here. Customization the text there is there now Colors Show how to do a few in practice, then talk about color schemes (Dracula, Dracula,… Dracula) Customizing your prompt There tons of customization options Show one example of changing the prompt from bashrc (link to later files). Then point out powerlevels10k and the one from TechCrafted, I dont remember the name","headline":"Customizing Your Terminal","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cli/terminal-customization"},"url":"http://localhost:4000/cli/terminal-customization"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/javascript" defer src="/assets/main.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
+  
+  <!-- <script type="text/x-mathjax-config">
+      // From: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
+      // MathJax.Hub.Config({
+      // TeX: { equationNumbers: { autoNumber: "AMS" } }
+      // });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true
+        },
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?con
+fig=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+        // Below config from: https://stackoverflow.com/a/54373640
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            config: ["MMLorHTML.js"],
+            jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+            extensions: ["MathMenu.js", "MathZoom.js"]
+        });
+    </script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+    <a href="#main" class="skip skip-main">Jump to Main Content</a>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a><a class="page-link" href="/diff">Difficulties</a><a class="page-link" href="/future-links">Future Links</a><a class="page-link" href="/series">Series</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content" id="main">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Customizing Your Terminal</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-03T00:00:00-07:00" itemprop="datePublished">Oct 3, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Deshawn Sambrano</span></span>
+      • <span class="read-time"> Estimated Read Time: 10 mins</span>
+       
+      
+      • <span class="page-diff"> Difficulty: <span class="Intermediate">Intermediate</span>
+      </span>
+       
+    </p>
+
+  </header>
+  
+    
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <nav id="sidebar">
+  <div class="toc-wrapper">
+    <h4>Table of Contents</h4>
+    <aside class="toc">
+<ul id="markdown-toc">
+  <li><a href="#apperance-is-important" id="markdown-toc-apperance-is-important">Apperance is Important</a></li>
+  <li><a href="#open-terminal" id="markdown-toc-open-terminal">Open Terminal</a>    <ul>
+      <li><a href="#gui-customization-iterm2-and-macos-default-terminal" id="markdown-toc-gui-customization-iterm2-and-macos-default-terminal">GUI Customization (iTerm2 and MacOS Default Terminal)</a></li>
+      <li><a href="#config-file-customization-kitty-and-alacritty" id="markdown-toc-config-file-customization-kitty-and-alacritty">Config File Customization (Kitty and Alacritty)</a></li>
+      <li><a href="#gitbash-customization" id="markdown-toc-gitbash-customization">GitBash Customization</a></li>
+    </ul>
+  </li>
+  <li><a href="#general-customization" id="markdown-toc-general-customization">General Customization</a></li>
+  <li><a href="#zsh-specific-customization" id="markdown-toc-zsh-specific-customization"><code class="language-plaintext highlighter-rouge">Zsh</code> Specific Customization</a></li>
+  <li><a href="#customization" id="markdown-toc-customization">Customization</a>    <ul>
+      <li><a href="#colors" id="markdown-toc-colors">Colors</a></li>
+      <li><a href="#customizing-your-prompt" id="markdown-toc-customizing-your-prompt">Customizing your prompt</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </aside>
+  </div>
+
+  <aside class="series">
+    <h4>This post is part of the series <em>Bash, Terminals, and Command Line Interface (CLIs)</em></h4>
+    <ol start="0">
+    
+    
+    <li>
+      
+      <a href="/cli">What are Command-Line Interface (CLIs)</a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/cli/getting-started">Choosing a Terminal</a>
+      
+    </li>
+    
+    <li>
+      
+      <strong>Customizing Your Terminal</strong>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/cli/bash">Bash em, I don't even know em</a>
+      
+    </li>
+    
+  </ol>
+
+    <p>More posts coming soon!</p>
+
+  </aside>
+
+</nav>
+
+<section class="takeaways">
+
+  <p>In this post you will learn about <code class="language-plaintext highlighter-rouge">bash</code>, <code class="language-plaintext highlighter-rouge">zsh</code>, and the different terminals for the various OSes. Specifically, after this post you will understand:</p>
+  <ul>
+    <li>What <code class="language-plaintext highlighter-rouge">bash</code> is, what it stands for, and where to use it</li>
+    <li>How install and run the Terminal for your OS</li>
+  </ul>
+
+  <p>Prerequisites:</p>
+  <ul>
+    <li>None; Although it may be helpful to have read through the series <a href="/cli">intro</a></li>
+  </ul>
+
+</section>
+
+<p>Just customizing terminal: express yourself</p>
+
+<p>Bash stuff (e.g., last paragraph, minus the ohmyzsh stuff) stays where it is. Everything else, I think can come here.
+With the ability to jump to customization section for those that already know the basics</p>
+
+<p>Actually, it might be valuable to have a short section on the know your OS, because its so beginner, you can have people skip it entirely and just give them customization on a how whole page. (current prefernce, pretty strong actually.)</p>
+
+<p>Gettings Started, what is bash
+Could also replace this with the base em title and make that Bash basics part 1: movement, bash basics part 2: creation</p>
+
+<h2 id="apperance-is-important">Apperance is Important</h2>
+
+<p>Change your Default Terminal Colors <strong>NOW</strong>!</p>
+
+<blockquote>
+  <p>The happier you are when you look at your terminal the happier you will be when coding.
+More Happy means more coding.
+More Coding means more practice.
+More practice means Great Coder!</p>
+</blockquote>
+
+<p>This same principle applies for all text editors/IDEs (integrated developer environment) by the way.
+It sounds like a joke, but seriously, take some time to have a nice looking coding environment.</p>
+
+<p>In order to change them, you should be able to create a default profile for most terminal emulators and change the color scheme, opacity, font, background image, etc.</p>
+
+<p>REORG this to be each headers is a Terminal Emulator</p>
+
+<h2 id="open-terminal">Open Terminal</h2>
+
+<p>Each Terminal Emulator has its own method of configuring its preferences.
+Here I will show you the general struture for how to change them for each of the major types.
+Once you know how to configure the settings for your prefered terminal emulator you can skip to the section about some <a href="#general-customization">reccomended settings</a> and continue following along with the .</p>
+
+<p>All OSes have some type of terminal emulator, by default by there are some subtle differences between them, so I describe each separately. So read through the section that is relevant to you before skipping to the next <a href="#customization">section</a>.</p>
+
+<h3 id="gui-customization-iterm2-and-macos-default-terminal">GUI Customization (iTerm2 and MacOS Default Terminal)</h3>
+
+<p>Regardless if you choose the default Mac Terminal or iTerm2, they both have the same customization structure.
+First you need to open up the preferences (keyboard shortcut: <code class="language-plaintext highlighter-rouge">⌘</code> + <code class="language-plaintext highlighter-rouge">,</code>; or click from the topdown menu).</p>
+
+<p><img src="/assets/imgs/iterm-pref.png" alt="Preferences Image for iTerm2" /></p>
+
+<p>The next few options are iTerm2 specific if you want to add these customization options.</p>
+
+<p>Option 1: Repeat some steps multiple times (obviously not ideal)
+Option 2: Now that you know how basic customization works, jump down to the general customization suggestions sections.</p>
+
+<h3 id="config-file-customization-kitty-and-alacritty">Config File Customization (Kitty and Alacritty)</h3>
+
+<h3 id="gitbash-customization">GitBash Customization</h3>
+
+<p>As the name implies, gitbash only lets you use <code class="language-plaintext highlighter-rouge">bash</code>, so you do not have access to all the niceties for customization as <code class="language-plaintext highlighter-rouge">zsh</code>.
+As such, you unfortunately, have a bit more complicated customization process.
+It is a bit to much to explain in this simple blog post, so here is a good <a href="https://blog.devgenius.io/how-to-customize-the-git-bash-shell-prompt-336f6aefcf3f">post</a> to get you started.</p>
+
+<h2 id="general-customization">General Customization</h2>
+
+<h2 id="zsh-specific-customization"><code class="language-plaintext highlighter-rouge">Zsh</code> Specific Customization</h2>
+
+<p>Although many Linux distros have switch to <code class="language-plaintext highlighter-rouge">zsh</code> not all of them have, so make sure you are using <code class="language-plaintext highlighter-rouge">zsh</code> before using these customization options</p>
+
+<p>I will say that for Mac users specifically, I would reccomend you check out <a href="https://iterm2.com/" title="iTerm2 Terminal Emulator">iTerm2</a> as an alternative to the standard terminal and <a href="https://ohmyz.sh/" title="Oh My Zsh: Prettify you Terminal">oh my zsh</a> to add some amazing color theming for some general improvements. 
+But of course this is not necessary. <em>Mac users, I will be uploading an install script to match my own setup. And a link to it will be updated here.</em></p>
+
+<h2 id="customization">Customization</h2>
+<p>the text there is there now</p>
+
+<h3 id="colors">Colors</h3>
+
+<p>Show how to do a few in practice, then talk about color schemes (Dracula, Dracula,… Dracula)</p>
+
+<h3 id="customizing-your-prompt">Customizing your prompt</h3>
+
+<p>There tons of customization options</p>
+
+<p>Show one example of changing the prompt from bashrc (link to later files).</p>
+
+<p>Then point out powerlevels10k and the one from TechCrafted, I dont remember the name</p>
+
+
+  </div>
+    <nav class="series">
+  <h4><em>Bash, Terminals, and Command Line Interface (CLIs)</em> Series</h4>
+  
+  
+  <div class='series-nav'>
+  
+    
+    
+    
+  
+    
+    <div class="series-nav-item prev">
+      <a class="btn" rel="prev" href="/cli/getting-started">&larr; Prev Post</a>
+    </div>
+    
+    
+    
+  
+    
+    
+    <div class="series-nav-item current">
+      <p>Post <strong>3</strong> of <strong>4</strong>
+    </div>
+    
+    
+  
+    
+    
+    
+    <div class="series-nav-item next">
+      <a class="btn" rel="next" href="/cli/bash">Next Post &rarr;</a>
+    </div>
+    
+  
+  </div>
+</nav>
+
+  
+
+  <a class="u-url" href="/cli/terminal-customization" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your Coding Buddy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your Coding Buddy</li><li><a class="u-email" href="mailto:dsambrano@g.harvard.edu">dsambrano@g.harvard.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li><li><a href="https://youtube.com/Dbrano3"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">Dbrano3</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

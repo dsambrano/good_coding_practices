@@ -95,8 +95,9 @@ If this is your first time trying this out, I recommend [gitbash][], but if you 
 [bash-structure]: #the-form-of-commands "The Structure of a Bash Command"
 [kitty]: https://sw.kovidgoyal.net/kitty/ "Kitter Terminal Emulator"
 [alacritty]: https://alacritty.org/ "Alacritty Terminal Emulator"
-[intro]: {% link _posts/series/cli/2022-10-03-cli.md %}
 [windowbash]: #windows
+
+[intro]: {% link _posts/series/cli/2022-10-03-cli.md %}
 
 
 [packagemanager]: /future-links
