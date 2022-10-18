@@ -26,6 +26,7 @@ I have personal viewed all of them and can say each are really helpful for diffe
 ## Python
 - YouTube Channels: [Arjan Codes][arjan], [mCoding][], [Tech with Tim][twt], [Python Engineer][pyengin], [Socratica][]
 - Websites: [Real Python][realpy], [pep8 Style Guide][pep8], [Google Style Guide][gstyle]
+- Books: [Learn Python the Hard Way][lpthaw], [Automate the Boring Stuff][automate] (have not personally read, but like the idea and its free so I wanted to add it)
 
 ## JavaScript
 - YouTube Channels: [fireship][fireyt]
@@ -52,6 +53,7 @@ I have personal viewed all of them and can say each are really helpful for diffe
 
 ## Vim/NVim:
 - YouTube Channels [primeagen][primeagenyt]
+- App: [vimbegood][]
 
 
 [arjan]: https://www.youtube.com/c/arjancodes "YT: Arjan Codes"
@@ -86,8 +88,12 @@ I have personal viewed all of them and can say each are really helpful for diffe
 [CTT]: https://www.youtube.com/c/christitustech "YT: Chris Titus Tech"
 
 [primeagenyt]: https://www.youtube.com/c/ThePrimeagen "YT: The Primeagen; Blazingly Fast"
+[vimbegood]: https://github.com/ThePrimeagen/vim-be-good "Nvim plugin: vimbegood"
 [Socratica]: https://www.youtube.com/c/Socratica "YT: Socratica Python Coding"
 [gh-pages]: https://pages.github.com/ "GitHub Pages for Free Webhosting for Static Sites"
 
 [SMDA]: https://stats.oarc.ucla.edu/other/dae/ "UCLA Statical Methods and Data Analytics Examples"
 [uclaR]: https://stats.oarc.ucla.edu/R/ "UCLA SMDA: R Specific Section"
+
+[lpthaw]: https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0321884914 "Learn Python the Hard Way"
+[automate]: https://automatetheboringstuff.com/ "Automate the Boring Stuff"
