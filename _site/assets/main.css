@@ -292,6 +292,10 @@ a > Beginner { color: black; }
 
 a > Intermediate { color: black; }
 
+.Advanced { color: orange; }
+
+a > Advanced { color: black; }
+
 .Expert { color: red; }
 
 a > Expert { color: black; }

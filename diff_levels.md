@@ -11,6 +11,16 @@ permalink: /diff
 Below you will find a list of all the Topics I have discussed.
 Of course a blog may cover multiple topics, so they are listed under all relevant sections.
 
+{% for level in site.data.difficulty %}
+##  {{level.name}}
+{assign}
+site.posts
+  <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
 
 ## Beginner
 
