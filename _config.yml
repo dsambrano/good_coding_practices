@@ -72,6 +72,12 @@ defaults:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+header_pages:
+  - about.md
+  - additional_resources.md
+  - categories.md
+  - diff_levels.md
+  - series.md
 exclude:
   - create_template.py
   - README.md
