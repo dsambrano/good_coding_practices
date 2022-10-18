@@ -18,16 +18,15 @@ diff: beginner
 {% include sidebar.html %}
 
 
-
-## Takeaways
-
-[Estimated Read Time 5 mins]
+<section class="takeaways">
 
 In this blog I will give a hogpodge of miscellanous tips to improve your general productivity. 
 Each are super simple and don't really fit within any of the other posts. So this is the place for them.
 
 Prerequisites:
 - None
+
+</section>
 
 ## Never Do Anything Twice
 

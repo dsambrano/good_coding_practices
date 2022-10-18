@@ -15,7 +15,7 @@ usemathjax: true
 
 {% include sidebar.html %}
 
-## Takeaways
+<section class="takeaways series">
 
 In this blog you will learn the basics of computational modeling. Specifically you will learn:
 - What is a computational model?
@@ -28,6 +28,7 @@ In this blog you will learn the basics of computational modeling. Specifically y
 Prerequisites:
 - Read through this [paper][holt] or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)
 
+</section>
 
 ## What Even is a Computational Model
 <!-- excerpt-start -->
