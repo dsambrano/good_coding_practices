@@ -276,6 +276,10 @@ table td { border: 1px solid #e8e8e8; }
 
 .highlight .il { color: #099; }
 
+.skip { position: fixed; translate: 0 -100%; }
+
+.skip:focus { translate: 0; }
+
 hr { margin-top: 3em; margin-bottom: 3em; }
 
 .footer-col-1 { width: -webkit-calc(33% - (30px / 2)); width: calc(33% - (30px / 2)); }
