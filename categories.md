@@ -5,9 +5,12 @@
 layout: page
 title: Topics
 ---
+
+{% include sidebar.html %}
+
 {% assign sorted = site.tags | sort %}
 {% for tag in sorted %}
-  <h3>{{ tag[0] | split: "-" | join: " "}}</h3>
+## {{ tag[0] | split: "-" | join: " "}}
   <ul>
     {% for post in tag[1] %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
