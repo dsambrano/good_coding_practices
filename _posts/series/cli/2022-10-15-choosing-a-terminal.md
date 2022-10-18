@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "What is Bash: How do I open the Terminal"
+title:  "Choosing a Terminal"
 date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
