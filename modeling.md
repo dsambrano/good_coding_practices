@@ -64,7 +64,7 @@ For the uninitiated, EV is a mathematical formula for determining the value of a
 So if you are acting perfectly rationally, you should choose the lottery with the highest EV. 
 The formula for EV is:
 
-$$EV = \sum{1}{i} p_i \times v_i$$
+$$EV = \sum_{1}^{i} p_i \times v_i$$
 
 where $p$ is the probablity of winning the lottery and $v$ is the value that you get and i potential option of the lottery. So if you have a lottery that was 50:50 and if you win you get $10 and if you lose you get $0 then you could solve with:
 
@@ -86,7 +86,7 @@ And we can add this to the model as well.
 Typically, this is done by adding a exponent to the $v$ term in EV. 
 For example:
 
-$$ SV(p, v) = \sum{1}{i} p_i \times v_i^{\alpha} $$
+$$ SV(p, v) = \sum_{1}^{i} p_i \times v_i^{\alpha} $$
 
 There are a few things I want to point out.
 First I change the function from $EV$ to $SV$.
