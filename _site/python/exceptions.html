@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python Exceptions | Your Coding Buddy</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Python Exceptions" />
+<meta name="author" content="Deshawn Sambrano" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Exceptions &lt;/aside&gt; In this post you will learn some best practices for coding in Python. By the end you will: Learn how to properly log and handle errors in your code Prerequisites: Basic/working knowledge of how to write python code. Does not need to be advance, as long as you know how to write and run a script. Exceptions An exception is a point in the code where an error occured. All exceptions have a description of what went wrong as well as a Traceback of where the exception was encountered. There is a list of common exceptions as well as the hierarchy is on the python website Some common exceptions include: SyntaxError: As described, you messed up the syntax. You will get this a lot when starting out. ValueError: When the value is incorrect like square rooting a negative number. FileNotFound: You guessed it, either the file does not exist OR you spelled it wrong. TypeError: You used the incorrect type, like adding strings and integers. IndexError: Index outside the range of the array." />
+<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Exceptions &lt;/aside&gt; In this post you will learn some best practices for coding in Python. By the end you will: Learn how to properly log and handle errors in your code Prerequisites: Basic/working knowledge of how to write python code. Does not need to be advance, as long as you know how to write and run a script. Exceptions An exception is a point in the code where an error occured. All exceptions have a description of what went wrong as well as a Traceback of where the exception was encountered. There is a list of common exceptions as well as the hierarchy is on the python website Some common exceptions include: SyntaxError: As described, you messed up the syntax. You will get this a lot when starting out. ValueError: When the value is incorrect like square rooting a negative number. FileNotFound: You guessed it, either the file does not exist OR you spelled it wrong. TypeError: You used the incorrect type, like adding strings and integers. IndexError: Index outside the range of the array." />
+<link rel="canonical" href="http://localhost:4000/python/exceptions" />
+<meta property="og:url" content="http://localhost:4000/python/exceptions" />
+<meta property="og:site_name" content="Your Coding Buddy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python Exceptions" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Exceptions &lt;/aside&gt; In this post you will learn some best practices for coding in Python. By the end you will: Learn how to properly log and handle errors in your code Prerequisites: Basic/working knowledge of how to write python code. Does not need to be advance, as long as you know how to write and run a script. Exceptions An exception is a point in the code where an error occured. All exceptions have a description of what went wrong as well as a Traceback of where the exception was encountered. There is a list of common exceptions as well as the hierarchy is on the python website Some common exceptions include: SyntaxError: As described, you messed up the syntax. You will get this a lot when starting out. ValueError: When the value is incorrect like square rooting a negative number. FileNotFound: You guessed it, either the file does not exist OR you spelled it wrong. TypeError: You used the incorrect type, like adding strings and integers. IndexError: Index outside the range of the array.","headline":"Python Exceptions","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/python/exceptions"},"url":"http://localhost:4000/python/exceptions"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/javascript" defer src="/assets/main.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
+  
+  <!-- <script type="text/x-mathjax-config">
+      // From: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
+      // MathJax.Hub.Config({
+      // TeX: { equationNumbers: { autoNumber: "AMS" } }
+      // });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true
+        },
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?con
+fig=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+        // Below config from: https://stackoverflow.com/a/54373640
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            config: ["MMLorHTML.js"],
+            jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+            extensions: ["MathMenu.js", "MathZoom.js"]
+        });
+    </script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a><a class="page-link" href="/diff">Difficulties</a><a class="page-link" href="/series">Series</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python Exceptions</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-03T00:00:00-07:00" itemprop="datePublished">Oct 3, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Deshawn Sambrano</span></span>
+      • <span class="read-time"> Estimated Read Time: 20 mins</span>
+       
+      
+      • <span class="page-diff"> Difficulty: <span class="Intermediate">Intermediate</span>
+      </span>
+       
+    </p>
+
+  </header>
+  
+    
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <nav id="sidebar">
+  <div class="toc-wrapper">
+    <h4>Table of Contents</h4>
+    <aside class="toc">
+<ul id="markdown-toc">
+  <li><a href="#exceptions" id="markdown-toc-exceptions">Exceptions</a></li>
+  <li><a href="#additional-resources" id="markdown-toc-additional-resources">Additional Resources</a></li>
+</ul>
+
+    </aside>
+  </div>
+
+</nav>
+
+<section class="takeaways">
+
+  <p>In this post you will learn some best practices for coding in Python. By the end you will:</p>
+  <ul>
+    <li>Learn how to properly log and handle errors in your code</li>
+  </ul>
+
+  <p>Prerequisites:</p>
+  <ul>
+    <li>Basic/working knowledge of how to write python code. Does not need to be advance, as long as you know how to write and run a script.</li>
+  </ul>
+
+</section>
+
+<h2 id="exceptions">Exceptions</h2>
+
+<!-- excerpt-start -->
+
+<p>An <a href="https://youtu.be/nlCKrKGHSSk" title="Socratica: Exceptions">exception</a> is a point in the code where an error occured.
+All exceptions have a description of what went wrong as well as a <code class="language-plaintext highlighter-rouge">Traceback</code> of where the exception was encountered. 
+There is a list of common exceptions as well as the hierarchy is on the <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" title="Python Exception Hierarchy">python website</a>
+Some common exceptions include:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SyntaxError</code>: As described, you messed up the syntax. You will get this a lot when starting out.</li>
+  <li><code class="language-plaintext highlighter-rouge">ValueError</code>: When the value is incorrect like square rooting a negative number.</li>
+  <li><code class="language-plaintext highlighter-rouge">FileNotFound</code>: You guessed it, either the file does not exist <strong><em>OR</em></strong> you spelled it wrong.</li>
+  <li><code class="language-plaintext highlighter-rouge">TypeError</code>: You used the incorrect type, like adding strings and integers.</li>
+  <li><code class="language-plaintext highlighter-rouge">IndexError</code>: Index outside the range of the array.</li>
+</ul>
+
+<!-- excerpt-end -->
+<p>Whenever possible you should use the builtin <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy" title="Python Exception Hierarchy">exceptions</a> but you can create you own custom ones when necessary.</p>
+
+<p>In your own applications, the most common use case it with a <code class="language-plaintext highlighter-rouge">try/except</code>, to raise an exception. The use the following structure:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># code that will be attempted first
+</span><span class="k">except</span> <span class="n">e</span> <span class="k">as</span> <span class="nb">ValueError</span><span class="p">:</span>
+    <span class="c1"># Code that will run when the specific expection is encountered, 
+</span>    <span class="c1">#     you can have multiple of these to handle different exceptions 
+</span>    <span class="c1">#     differently. 
+</span>    <span class="k">raise</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="c1"># Additionally code that should be run if it is successful
+</span><span class="k">finally</span><span class="p">:</span> 
+    <span class="c1"># Addition code that should be run regardless 
+</span>    <span class="c1">#     if it encountered an exception or not.
+</span>
+</code></pre></div></div>
+
+<p>The first section, the <code class="language-plaintext highlighter-rouge">try</code> section should really only contain the ONE line you think could raise and exception.
+Often when starting out, I see people putting huge chunks of code here, but this is bad practice.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">except</code> block should only address a single exception, you can have multiple <code class="language-plaintext highlighter-rouge">except</code> clauses if need be.
+Then you typically want to end this clause with <code class="language-plaintext highlighter-rouge">raise</code> to actually raise the exception to the user.
+Other common usecases for this is to log the error for your records and/or provide some helpful hints to the user about what might have gone wrong.
+Also note, the fact that we raise a specific exception, in this case a <code class="language-plaintext highlighter-rouge">ValueError</code>.
+Its important to raise the exception you expect to have 1) so you are explicit and handle each one accordingly, but also 2) that way you are not raising a general exception which will catch anything, even a <code class="language-plaintext highlighter-rouge">KeyboardInterupt</code> meaning they will not be able to (easily) end your program/app.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">else</code> block is code that should be executed only if the <code class="language-plaintext highlighter-rouge">try</code> block was successfully completed without any errors.</p>
+
+<p>Last but not least, the <code class="language-plaintext highlighter-rouge">finally</code> block runs regardless of if the code ran into and exception or not.</p>
+
+<p>Add these <code class="language-plaintext highlighter-rouge">try/except</code> clauses to your code can help you properly deal with error you anticipate you users might encouter.
+And overall can help improve the users experience when used properly.
+However, it is important to use them sparringly.</p>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<p>If you are looking for more in depth examples, check out:</p>
+
+<ul>
+  <li>This <a href="https://youtu.be/nlCKrKGHSSk" title="Socratica: Exceptions">video</a> for beginner</li>
+  <li>Or this <a href="https://youtu.be/nlCKrKGHSSk" title="Arjan Codes YT: Exception Handling">one</a> for more intermediate use cases</li>
+</ul>
+
+<!-- ## References -->
+
+<!-- ### Virtual Environmnts -->
+
+<!-- ### f Strings -->
+
+<!-- ### Type hints -->
+
+<!-- ### Exceptions -->
+
+<!-- ### Logging -->
+
+<!-- ### Asynchronous Code -->
+
+
+  </div>
+
+  <a class="u-url" href="/python/exceptions" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your Coding Buddy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your Coding Buddy</li><li><a class="u-email" href="mailto:dsambrano@g.harvard.edu">dsambrano@g.harvard.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li><li><a href="https://youtube.com/Dbrano3"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">Dbrano3</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
