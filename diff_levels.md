@@ -16,6 +16,7 @@ The Advanced Posts discuss some much more high level concepts, typically assume 
 
 {% for level in site.data.difficulty %}
 ##  {{level.name}}
+  <p>{{level.description}}</p>
   <ul>
 {% for post in site.posts %}
 {% if post.diff == level.id %}
