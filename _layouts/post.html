@@ -14,6 +14,10 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
   </header>
+  
+    {% if page.series and page.series != "" and page.series != "false" and page.series != "False" %}
+      {% assign series_conditional = true %}
+    {% endif %}
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
@@ -22,6 +26,11 @@ layout: default
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
+
+
+  {% if series_conditional %}
+    {% include series-next-previous.html %}
+  {% endif %}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
