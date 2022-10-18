@@ -8,10 +8,7 @@ permalink: /additional-resources
 
 Still looking for more?!?! Here are a few youtube channels and blog posts that I trust and have served as a great resource for a variety of languages and principles:
 
-
-* TOC
-{:toc}
-
+{% include sidebar.html %}
 
 ## Python
 - YouTube Channels: [Arjan Codes][arjan], [mCoding][], [Tech with Tim][twt], [Python Engineer][pyengin], [Socratica][]
@@ -22,7 +19,7 @@ Still looking for more?!?! Here are a few youtube channels and blog posts that I
 - Websites: [fireship.io][fireblog]
 
 ## General Coding Principles
-- YouTube Channels: [Arjan Codes][arjan], 
+- YouTube Channels: [Arjan Codes][arjan]
 - Websites: [GitHub][gh-pages], [StackOverFlow][], [SuperUser][]
 - Books: [Design Patterns][dp] ([overview of Design Patterns][dpoverview])
 

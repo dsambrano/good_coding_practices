@@ -292,16 +292,18 @@ img { display: block; margin-left: auto; margin-right: auto; }
 
 .post-decorations { margin-top: -15px; margin-bottom: 1em; }
 
-.time { background-color: #2a7ae2; color: white; }
+.bubble { padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px; margin-right: 1em; border-radius: .5em; border: 1px solid #ddd; }
 
-.tag { background-color: #ddd; }
+.time { background-color: #2a7ae2; color: white; border-color: #1756a9; }
 
-.bubble { padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px; margin-right: 1em; border-radius: .5em; }
+.tag { background-color: #eee; }
 
-#markdown-toc::before { content: "Contents"; font-weight: bold; }
+#markdown-toc::before { font-weight: bold; }
 
 #markdown-toc { color: black; }
 
-#markdown-toc { background-color: #ddd; padding: 1.5em; display: block; border-radius: .5em; margin: auto; width: 50%; margin-bottom: 1em; }
+#sidebar { background-color: #eee; padding: 1.5em; display: block; border-radius: .5em; position: fixed; top: 120px; left: 0%; max-width: 15%; margin-left: 1em; border: 1px solid #ddd; overflow: hidden; }
+
+@media only screen and (max-width: 1300px) { #sidebar { height: 0px; width: 0px; max-width: 40%; visibility: hidden; } #sidebar:hover { height: auto; width: auto; } }
 
 /*# sourceMappingURL=main.css.map */
