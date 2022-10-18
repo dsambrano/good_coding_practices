@@ -14,4 +14,6 @@ Its like packaging together all of the requirements all into a single app that c
 
 ## Docker Example
 
+Execellent resource to understand the [basic concepts](https://youtu.be/gAkwW2tuIqE)
+
 [python docker example](https://docs.docker.com/language/python/build-images/)
