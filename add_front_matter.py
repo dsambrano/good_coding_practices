@@ -20,13 +20,14 @@ layout: post
 title:  "{name.capitalize()}"
 date: {date}
 author: Deshawn Sambrano
-categories: 
-permalink: 
+tags: 
+time: 10
+#category: false
+#series: false
+#permalink: 
+diff: expert
 draft: true
 usemathjax: true
-series: false
-#part_number: 1
-#series-name: computational-modeling
 ---
 '''
     with file.open("w") as f:
