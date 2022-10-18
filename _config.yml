@@ -52,6 +52,11 @@ defaults:
       path: ""
     values:
       author: "Deshawn Sambrano"
+  - scope: 
+      path: "_posts/computational-modeling"
+    values: 
+      permalink: /computational-modeling/:title
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
