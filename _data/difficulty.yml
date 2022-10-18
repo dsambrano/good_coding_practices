@@ -1,0 +1,10 @@
+beginner:
+  name: Beginner
+  color: green
+intermediate:
+  name: Intermediate
+  color: yellow
+expert:
+  name: Expert
+  color: red
+
