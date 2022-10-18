@@ -178,7 +178,10 @@ For more information, you can check out this [video][a1] or this [blog post][a2]
 ## References
 
 [1]: https://youtu.be/woIkysZytSs "Arjan Codes: 8 Python Coding Tips - From The Google Python Style Guide"
-
+[2]: https://youtu.be/LrtnLEkOwFE "Arjan Codes: Code Smells Part 1"
+[3]: https://youtu.be/zmWf_cHyo8s "Arjan Codes: Code Smells Part 2"
+[4]: https://youtu.be/Kl3_Gmn4Ujg "Arjan Codes: Code Smells Part 3"
+[5]: https://www.geeksforgeeks.org/abstract-classes-in-python/ "Abstract Classes in Python"
 
 ### Virtual Environmnts
 
