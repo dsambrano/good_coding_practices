@@ -35,7 +35,7 @@ layout: post
 title:  "{name.capitalize()}"
 date: {date}
 author: Deshawn Sambrano
-categories: 
+tags: 
 permalink: 
 draft: true
 time: {diff_time}
