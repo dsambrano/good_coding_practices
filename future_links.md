@@ -13,3 +13,8 @@ Future links:
 
 - Python Best Practices:
   - Package Mangager to the virtual environments section, replace homebrew to help them install.
+
+- CLIs
+  - Dotfiles link when talking about custimation
+  - probs should add the CV one as well
+  - Terminal Customization There is a secion in know your os that wants a link for mac users. (Relatedly need to make it clearn ohmyzsh works on linux too)
