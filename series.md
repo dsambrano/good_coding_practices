@@ -22,6 +22,7 @@ These are great for long session really honing in a particular topic.
   {% if title %}
   {% assign title=false %}
 ##  {{level.title}}
+  <p>{{level.description}}</p>
   <ol start=0>
   {% endif %}
   {% endif %}
