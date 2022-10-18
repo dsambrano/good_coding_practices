@@ -1,17 +1,16 @@
 ---
 layout: post
-title:  "Git and GitHub: Whats the Big Deal"
+title:  "Taking Git for a Test Drive"
 date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding Git GitHub
 time: 20
-permalink: /git
+category: git
+series: git
 draft: true
 usemathjax: true
-series: false
 diff: intermediate
-#part_number: 1
-#series-name: computational-modeling
+
 ---
 
 {% include sidebar.html %}
@@ -30,108 +29,15 @@ Prerequisites:
 
 </section>
 
-## You Only Need to Know 3 Commands
-
-<!-- excerpt-start -->
-
-Git often seems super scary, so let me just start by saying that 85% of the time you will only need to use these three commands. 
-
-<!-- excerpt-end -->
-
-```
-git add .
-git commit -m "Relevant Message Describing Changes"
-git push
-```
-
-And if you are feeling fancy and want more coverage, adding these six commands will cover 99% of what you need in scientific settings:
-
-```
-git init
-git clone
-git status
-git pull
-git checkout (-b)
-git branch
-```
-
-If, for whatever reason, you are still scared off, there are GUI options to take advantage of to use git (including built into R and VS code and even Desktop app). 
-I won't cover them here; however, this blog will still be useful for you as I will cover the structure of git to help you understand what is happening at a high level. 
-
-# What is Git?
-Git is a Version Control System, thats all. Its sole purpose is to help you (pontentially from your self). 
-And speaking from personal experience, getting comfortable with these commands has saved me from hours of headache. 
-
-Here are a few examples of things that it can save you from:
-- When you try to improve your code (whether its performance, readbility, or just adding a new feature) and somehow everything stops working. 
-- Save you from the hell of having multiple versions of a file, all of which are named: ![Which File](/assets/imgs/which_one.png)
-- Prevent the issue of having different versions on different computers
-- Allow easy collaboration on coding files were everyone can edit the same file and merge any changes when it is convenient. 
-- Have a history of all the changes you have made with the ability to revert back to a point when the code was working. 
-
-Undoubtedly you have experienced several if not all of these problems in the past.
-Well all these problems will be solved when you start incorporating git into your workflow.
-All Git will do is keep track of every file in a folder you tell it to.
-At various points through development, you can make checkpoints that you can return to if something goes wrong.
-If you are working from multiple machines or working with a collaborator, you can all have the must recent code with a shared repo and just  pull the changes as you need them. To get started let's talk about the different stages of git.
-
-
-<!-- ### Story Time 
-
-One time I had a very large project (totally several thousand lines of code all together across maybe 10 or so files). 
-The project was fully functional but is was not very fast (in fact it was quite slow) and it wasn't documented very well. 
-As a result, I decided to fix both problems. 
-I started working on improving both issues and after a couple days I noticed that the code broke. 
-But I had no idea how or why it stopped working. 
-Now if I wasn't using git, I would have been screwed. But luckily, all I had to do was revert back to the previously working commit and I had a fully working version.  -->
-
-
-
-## Git Stages?
-There are 3(4?) basic stages of git. And a file can be in any of these stages. 
-![Stages of Git](/assets/imgs/git_stages.png)
-
-- `Untracked`: The first and easiest to understand is `Untracked` this is simply a file that is not in the directory/folder git is tracking ***OR*** a file you have specifically told git to ignore/not track any changes for it.
-- `Unmodified`: These are files that you asked git to track but they have not changed since you last made a commit (i.e., made a checkpoint/savepoint).
-- `Modified`: These are also files you asked git to track, but these have changed since the last commit.
-- `Staged`: Finally, you have files that you have told git to track, made changes to these files, AND you have already added them to the queue (via `git add FILENAME`) and are waiting for the commit and message (via `git commit -m "REALLY IMPORTANT MESSAGE"`). Once you have committed the changes, the checkpoint is stored and all the selected staged files are now officially `unmodified`. Then the cycle continues. 
 
 ## Git Example Time
 
-### Installation
-First double check if you have git installed already via typing `git -v` in your terminal. 
-If you get a command not found error then you don't have it install if it spits out a version then you are good to go (though you may need to update it). If you already have git installed you can skip the [installation section](#git-basics). Otherwise go to the installation section relavent to your computer's software and continue.
+<!-- excerpt-start -->
 
-_________
+Now its time to finally try out `git` to see what all the fuss is about. In this tutorial you will learn the basics of `git` and how to save commits (checkpoints) for you code along the way. Before we get started make sure you have `git` installed by running `git -v`.
+If you see any errors make sure you follow these [installation instructions][install].
 
-#### Mac OS
-
-Many scientific applications requires `xcode` on Mac which install `git` automatically so you might have it. 
-Double check by using the method described [above](#installation). 
-If you don't that's ok because you will definitely need it in the future. 
-Inside your terminal of choice, type the following command to install `xcode`:
-```
-xcode-select --install
-```
-
-If you know what homebrew or MacPorts are, you can install them via these methods as well.
-
-Finally, you can use the GUI installer go the [Binary installer section](https://git-scm.com/download/mac)
-
->**Hint**: You might want to install homebrew with the following command `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-
-#### Linux
-On most linux distros you can simply use the relavent package manager to install git. 
-For example on debian based distros:
-`sudo apt install git-all`
-
-#### Windows
-
-You can install git via `chocolately` or the [GUI installer](https://git-scm.com/download/win).
-Finally, you can also install git with linux viw the Window's subsystem for Linux pipeline, if you are familiar with that.
-> **Hint**: it might be helpful to install [gitbash](https://gitforwindows.org/), so in addition to get, you can also use all the bash commands. 
-
-_________
+<!-- excerpt-end -->
 
 ### Git Basics
 
@@ -234,9 +140,9 @@ However, there are a few advanced topics that I do think are useful to know, eve
 Might not need since there is more to come and this was the warmup.
 
 
-## Homework
+<!-- ## Homework
 Something about setting up a repo and 
-
+-->
 
 ## Additional Resources:
 
@@ -245,4 +151,5 @@ Something about setting up a repo and
 
 
 [cli]: {%link _posts/series/cli/2022-10-04-bash.md %}
+[install]: {%link _posts/series/git/2022-10-05-git-installation.md %}
 [markdown]: {%link _posts/2022-10-03-markdown.md %}
