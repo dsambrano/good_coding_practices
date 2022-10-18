@@ -303,6 +303,21 @@ Which means you likely have to add a bunch of comments to hide and unhide them a
 While this technically gets the job done, that is not the proper way to do it.
 A much much better way is to use the built in [`logging`][l1] function.
 
+You might be asking yourself, why do I specifically need to use the logging package to print out values, and show errors as they occur.
+Its so you can have a record of these events.
+By using the logging function you actually store all these events, so you know what happened, and don't rely on your memory when it comes time to writing up what went wrong. 
+You have a full history of everything that happened.
+You simply log events as they happen, then you have the full time line.
+When the participant started the experiment, when did they move to this section or that section.
+Everything is recorded for you. 
+
+What about just print/debugging, why should you use loggin then?
+Well there are a few reasons. 
+First its pretty common, that if you are logging a value during testing, it is probably a pretty important value in the end, so might as well just have it stored while the experiment is running. 
+Second, using the print method, you often have a bunch of print statement which clutter up the console output.
+And you ususally solve this problem with by commenting and uncommenting some of the print statements, which then just clutters up the code.
+Having things done using the `logging` makes it easy to just specify what you want to log for a give moment.
+For example you can only log the `DEBUG` messages to the console to see them. 
 
 ## Asynchronous Code
 
