@@ -2,10 +2,16 @@
   <div class="toc-wrapper">
   <h4>Table of Contents</h4>
 <aside markdown="1" class='toc'>
-* 
+* TOC
 {:toc}
 </aside>
   </div>
+
+{% if page.series and page.series != "" and page.series != "false" and page.series != "False" %}
+  {% assign series_conditional = true %}
+{% endif %}
+
+{% if series_conditional %}
 <aside class="series">
   <h4>This post is part of the series <em>{{ site.data.series | where: 'id', page.series | map: 'title' }}</em></h4>
   <ol start=0>
@@ -24,4 +30,5 @@
   <p>More posts coming soon!</p>
   {% endif %}
 </aside>
+{% endif %}
 </nav>
