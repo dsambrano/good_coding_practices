@@ -11,4 +11,5 @@ Future links:
   - Need to add video illustrating the tiling window manager (template already there)
   - Need to add images with fancy colors for terminal in Customizing section
 
-
+- Python Best Practices:
+  - Package Mangager to the virtual environments section, replace homebrew to help them install.
