@@ -1,5 +1,29 @@
 # To Do List:
 
+
+
+# Required for launch
+
+- TOC As sidebar and moves with you (https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp)
+- Categories flushed out to multi-part ones
+  - Meaning permalinks as well as next/previous (could be in sidebar?) ordering required
+- Review content for typos and formatting issues (e.g., image names, line breaks, all links, Date)
+- about page gets revamped
+- add my website(/CV?) to footer
+
+---
+after launch:
+- Add CSS variables to make this much easier to manage in the future
+- Categories are also links
+- difficulty are added to home page and are also links
+- adding coding samples
+- Adding different post types
+  - See text for types. Each type can just change the color of the link, with type color key combo in sidebar? or just in content above posts. The latter being slightly easier, probs
+- Dark Mode (https://medium.com/@derekkedziora/how-to-add-a-dark-mode-toggle-to-a-jekyll-site-a76dac00128d)
+
+
+
+
 - Figure out the ordering of the posts? (Seems like naming order but New Post does not follow that)
 - Figure out why excerpts are not showing for my new ones. (Probably because its a list, if so just add the <!--more--> option)
 - Move the `_includes` and the `_layouts` folders from the theme over (symlink with GH?)
