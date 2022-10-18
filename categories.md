@@ -8,6 +8,9 @@ title: Topics
 
 {% include sidebar.html %}
 
+Below you will find a list of all the Topics I have discussed.
+Of course a blog may cover multiple topics, so they are listed under all relevant sections.
+
 {% assign sorted = site.tags | sort %}
 {% for tag in sorted %}
 ## {{ tag[0] | split: "-" | join: " "}}
