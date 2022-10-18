@@ -29,3 +29,13 @@ Still a little confused here is a [SO post](https://stackoverflow.com/a/16048358
 ## Docker Example
 
 [python docker example](https://docs.docker.com/language/python/build-images/)
+
+
+## Common Docker Commands
+
+```
+docker run
+docker build 
+docker ps
+docker df
+```
