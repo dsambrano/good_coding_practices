@@ -59,7 +59,7 @@ Do this for all 10 lotteries.
 
 
 
-## Selecting a Model
+### Selecting a Model
 
 The first and most important part for computational modeling is the model that you select. 
 You should definitely take some time when selecting a model because this **IS YOUR PREDICTION** for how participants will make decisions in experiment. 
@@ -112,7 +112,7 @@ That is to say pretty much everyone chooses Option A for the first 4 and everyon
 So in reality, it only gets the middle ones wrong. 
 So maybe we can adjust this model to account for that as opposed to come up with a entirely new model. 
 
-## A Story of Individual Differences: Adding Parameters
+### A Story of Individual Differences: Adding Parameters
 
 One thing you might have noticed, is that the EV model expects everyone to make the same choices. 
 The hypothesis is so absurd that is can be rejected outright.

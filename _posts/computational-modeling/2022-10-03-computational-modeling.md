@@ -6,7 +6,7 @@ author: Deshawn Sambrano
 tags: Math Computational-Modeling R Python
 time: 20
 series: computational-modeling
-permalink: /Computational-Modeling/
+permalink: /computational-modeling/
 diff: "{{site.data.difficulty.expert.name}}"
 excerpt_separator: <!--more-->
 usemathjax: true
