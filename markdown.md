@@ -120,4 +120,4 @@ Numbered list work as well (notice you dont even need to number them correctly):
 
 Create a Markdown file describing all the main scientific decisions you made on your most recent project. 
 For example, why did you select that specific stimulus vs another. Why that method?
-> **Hint**: Use links to linke to relevant artcles or to other markdown files containing notes you made.
+> **Hint**: Link to relevant artcles or to other markdown files containing notes you made.
