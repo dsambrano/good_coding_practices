@@ -12,8 +12,9 @@
 {% endif %}
 
 {% if series_conditional %}
+{% assign current_series = site.data.series | where: 'id', page.series %}
 <aside class="series">
-  <h4>This post is part of the series <em>{{ site.data.series | where: 'id', page.series | map: 'title' }}</em></h4>
+  <h4>This post is part of the series <em>{{current_series | map: 'title' }}</em></h4>
   <ol start=0>
     {% assign series-posts = site.posts | reverse | where: 'series', page.series %}
     {% for post in series-posts %}
@@ -26,7 +27,7 @@
     </li>
     {% endfor %}
   </ol>
-  {% if series-posts.size == 1 %}
+  {% if current_series | map: 'complete' %}
   <p>More posts coming soon!</p>
   {% endif %}
 </aside>
