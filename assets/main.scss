@@ -58,6 +58,11 @@ a > {{i['name']}}{
     margin-bottom: 1em;
 }
 
+#clock {
+ height: 1.25em;
+ transform: translate(0, 4px);
+}
+
 .bubble {
     display: inline;
     padding-left: 10px;
@@ -153,3 +158,4 @@ section.takeaways {
     text-align: center;
     border-left: 1px solid #ddd;
 }
+

@@ -308,6 +308,8 @@ a > Math { color: black; }
 
 .post-decorations { margin-top: -15px; margin-bottom: 1em; }
 
+#clock { height: 1.25em; transform: translate(0, 4px); }
+
 .bubble { display: inline; padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px; margin-right: 1em; border-radius: .5em; border: 1px solid #ddd; }
 
 .series.bubble { background-color: var(--purple); border-color: white; }
