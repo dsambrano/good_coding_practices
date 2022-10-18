@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
+import datetime
+
 filename = input("File Name: ").replace(" ", "_")
 name = filename.replace("_", " ")
 name = "_".join(name.split(".")[:-1])
+date = datetime.date.today().strftime("%Y-%m-%d")
 
 difficulty = input("Difficulty level: [Beginner]/Intermediate/Advanced ").lower()
 
@@ -26,7 +29,17 @@ else:
     exit()
 
 
-contents = f'''# {name.capitalize()}
+contents = f'''
+---
+layout: post
+title:  "{name.capitalize()}"
+date: {date}
+author: Deshawn Sambrano
+categories: 
+permalink: 
+usemathjax: true
+---
+
 
 ## Takeaways
 

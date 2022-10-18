@@ -52,7 +52,10 @@ defaults:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+  - create_template.py
+  - README.md
+  - speaker_notes.md
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
