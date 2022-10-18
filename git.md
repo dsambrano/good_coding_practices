@@ -92,7 +92,7 @@ Double check by using the method described [above](####installation).
 If you don't that's ok because you will definitely need it in the future. 
 Inside your terminal type the following command:
 ```
-xcode-select –install
+xcode-select --install
 ```
 
 If you know what homebrew or MacPorts are you can install them via these methods as well. 
@@ -150,6 +150,11 @@ In order to do this you will use `git clone URL TO THE REMOTE REPO`.
 This will clone the repo to your local machine, and importantly, it will also download all the changes that were ever made, so you have a full history of the project (reference back to story time). 
 
 ### GitHub Example
+```
+brew install git gh
+gh auth login 
+```
+>**Hint**: You might need to install brew with the following command `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 #### GitHub Setup
  There are two methods to give yourself GitHub access via git. The first is HTTPS and the second is SSH. These are two security protocols (details on SSH in a future post), but it doesnt really matter which one you pick, but you have to know which one you are using because there are some slight changes depending on which on you choose. 
