@@ -1,14 +1,25 @@
 - id: computational-modeling
   title: Computational Modeling
+  complete: false
   description:
-    Our mobile team applies tools and practices to achieve the desired results of
-    our mobile apps while conserving the user's battery. Our mission is to
-    provide value to our end users while maintaining an undetectable impact to
-    their battery and data usage.
+    In this series you will learn how to create your own custom models for 
+    decision making and/or learning. You will start by learning how to select 
+    a model that is available in the literature, and learn how to customize it 
+    to fit your needs. You will create custom functions for evaluating these 
+    models. Finally, you will end with a tutorial on how to estimate your models
+    parameters and evaluates its effectivness from data.
 - id: cli
   title: Command Line Interface (CLIs)
+  complete: false
   description:
-    Our mobile team applies tools and practices to achieve the desired results of
-    our mobile apps while conserving the user's battery. Our mission is to
-    provide value to our end users while maintaining an undetectable impact to
-    their battery and data usage.
+    Learn how to take advantage of the command line. In this series you will learn
+    how to take your programming skills to the next level with the terminal. You
+    will learn how to create and run your own bash scripts to automate away all 
+    the boring things in your life.
+- id: python
+  title: Python Zero to Hero
+  complete: false
+  description:
+    This Python course will take you from knowing absolutely nothing about Python
+    to being about to create out any project to automate the boring things out of
+    your life.
