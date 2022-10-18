@@ -18,3 +18,10 @@
 - See if you can use variables in CSS
 - Create related posts probably in Front Matter
 - Investigate collectsion as a solution to related posts/the order problem in the yaml
+
+# Solution 
+
+Solved the Clustering (for the perma link)
+- Move everything to a tag then have the groupings be folder clusters exclusively
+- Make a new Page about the clusters which for the layout it only selects the clusters in normal ordering
+- Add page to do the same thing for the sample and symlink it from code samples move all to samples folder and then symlink
