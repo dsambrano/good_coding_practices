@@ -60,7 +60,7 @@ Together, these features help improved the scientific discourse around emotion a
 ### My First Model
 Link to paper I send to RAs
 
-In order to give yourself a basic working example, I highly reccomend you read through this [paper](papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf).
+In order to give yourself a basic working example, I highly reccomend you read through this [paper][holt].
 This is a pretty foundational paper for creating models of decision making and gives a pretty good walkthrough on the process. 
 For example, it describe how/why you typically want to add a noise term when modeling human decisions.
 Its also quick short only about 13 pages.
@@ -142,4 +142,4 @@ This allows us to be able to predict that people will make choices different fro
 
 ## References
 
-holt: <papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf> "Holt & Laury 2002"
+[holt]: papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf "Holt & Laury 2002"
