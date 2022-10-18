@@ -59,6 +59,7 @@ exclude:
   - create_template.py
   - README.md
   - speaker_notes.md
+  - add_front_matter.py
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
