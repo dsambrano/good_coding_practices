@@ -8,13 +8,13 @@ In order to best utilize this resource, I reccommend the following:
 
 Current Topics:
 
-	- [Git/GitHub/GitLab](git.md)
-	- Python:
-		- Reproducible Code
-		- Virtual Environments
-	- Command Line (Bash/zsh)
-	- Good Coding Practices
-	- Computational Modeling
+- [Git/GitHub/GitLab](git.md)
+- Python:
+	- Reproducible Code
+	- Virtual Environments
+- Command Line (Bash/zsh)
+- Good Coding Practices
+- Computational Modeling
 
 Contributions are welcome, especially if they fix my horrible typos :)
 
