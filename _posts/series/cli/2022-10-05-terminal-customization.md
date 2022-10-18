@@ -70,11 +70,14 @@ Option 2: Now that you know how basic customization works, jump down to the gene
 
 ### Config File (Kitty and Alacritty)
 
+For pretty much all terminals that use a config file, the easiest way is to downlown the default config file as a start.
+For most of them, they include all (if not most) of the defaults, and typically have a lot of comments to describe each section.
+Here are the links for [kitty sample config][kitty-config] and the [alacritty sample config][alacritty-config].
+You will want to double check your specific apps config file location, but typically they go in the xdg default config.
+For example, for kitty it would be in `~/.config/kitty` and alacritty would be in `~/.config/alacritty`
 
-[kitty themes][kitty-themes]
-[kitty sample config][kitty-config]
-[alacritty themes][alacritty-themes]
-[alacritty sample config][alacritty-config]
+From there, you have total and complete reign to edit your terminal however you see fit, thats sorta the draw with config file style preferences. You have total controll to make something look absolutely amazing (or the power to make them look terrible 😂).
+But to give you some guidance, here are a bunch of nice themes you could implement for [kitty themes][kitty-themes] and [alacritty themes][alacritty-themes].
 
 ### GitBash
 
