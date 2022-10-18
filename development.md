@@ -30,10 +30,18 @@ Add Post types:
 - Snippets (when I bring over code_samples and have it as a submodule inside a snippets collection folder with each language having their own folder in their); need to make sure they don't all get added to the title bar page
 
 Upcoming Post option: Check date and only had to home if it is past that date otherwise say coming soon (wont autopublish tho, so probs need to have a github workflow to have it recompile every D/W). It check upcoming posts and only shows the most recent option or two
+- https://stackoverflow.com/questions/7087376/comparing-dates-in-liquid
 
 ---
 
 Add Related posts to bottom of posts by default if they are not a part of a series. (should probably make them similar but distinct also)
+https://blog.webjeda.com/jekyll-related-posts/
+
+
+Get UI design tips from this: https://blog.webjeda.com/compress-html-jekyll/
+
+
+Adding Search feature: https://blog.webjeda.com/instant-jekyll-search/
 
 Adding Darkmode toggle
 https://derekkedziora.com/blog/dark-mode-revisited
