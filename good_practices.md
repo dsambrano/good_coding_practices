@@ -21,6 +21,7 @@ Prerequisites:
 
 ## Will you Remember this in XX Months?
 
+<<<<<<< Updated upstream
 ## Use a Syntax Style
 
 e.g., pep8, google style guide, black, etc. 
@@ -47,3 +48,8 @@ Composition over inheritence
 Automate as much of your development (and testing) stack as possible
 
 ## Dependency Injection / Inversion
+=======
+## Conclusion
+
+This is a great start and will significantly improve your codings skill but there are always more things you can do. Once you feel like you got the hang of these tips, move onto the [part 2][good_practice2.md] where you will learn more about automatation, testing code, working in a team, and much more. This is a intermediate section and will take your code to the next level. Some of it is beyond what is necessary for scientific applications, but you will need all of it if you decide to go into industry. 
+>>>>>>> Stashed changes
