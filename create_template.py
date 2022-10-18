@@ -37,9 +37,10 @@ date: {date}
 author: Deshawn Sambrano
 tags: 
 time: {diff_time}
-series: false
-permalink: 
-diff: "{{site.data.difficulty.expert.name}}"
+#category: false
+#series: false
+#permalink: 
+diff: expert
 draft: true
 usemathjax: true
 ---
@@ -48,14 +49,14 @@ usemathjax: true
 
 ## Takeaways
 
-**[Estimated Read Time {{post.time}} mins]**
+**[Estimated Read Time {{{{post.time}}}} mins]**
 
 In this blog you will learn the basics of {name}. Specifically you will learn:
 - 
 - 
 -
 
-Difficulty: {diff_text}
+Difficulty: <span class="{{{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}}}">{{{{ site.data.difficulty | where: 'id', page.diff | map: 'name' }}}}</span>
 
 Prerequisites:
 - None
