@@ -13,11 +13,11 @@ Prerequisites:
 - None; though it may be helpful to skim through the [Command Line (Bash/zsh)](cli.md) post first, especially if you do not know how to use the terminal or how to use a bash command 
 
 # You Only Need to Know 3 Commands
-Git often seems super scary, so let's me just start by saying, for 90% of the time, you will only use the following three commands. 
+Git often seems super scary, so let me just start by saying that 90% of the time you will only use the following three commands. 
 
 ```
 git add .
-git commit -m "Initial Message"
+git commit -m "Relevant Message Describing Changes"
 git push
 ```
 
@@ -29,13 +29,29 @@ git clone
 git status
 ```
 
-If, for whatever reason, you are still scared off, there are GUI options to take advantage of the the uses of git 
+If, for whatever reason, you are still scared off, there are GUI options to take advantage of the uses of git. 
+I won't cover them here; however, this blog will still be useful for you as I will cover the structure of git and help you understand what is happening at a high level. 
 
 ## What is Git?
 Git is a Version Control System. 
-Thats all, its sole purpose is to help you. 
-And speaking from personal experience, if you get comfortable with these commands it has saved me from hours of headache. 
-Story Time: 
+Thats all, its sole purpose is to help you (pontentially from your self). 
+And speaking from personal experience, getting comfortable with these commands has saved me from hours of headache. 
+
+Here are a few examples of things that it can save you from:
+- When you try to improve your codes performance or readbility and somehow everything stops working. 
+- Save you from the hell of having multiple versions of a file, all of which are named `experiment_FINAL_WORKING.py` or `experiment_FINAL_THISONE.py`
+- Prevent the issue of having different versions on different computers
+- All easy collaboration on coding files allowing everyone to edit the same file and merge all the changes when it is convenient. 
+- Have a history of all the changes to revert back to a point when the code was working. 
+
+### Story Time 
+
+One time I had a very large project (totally several thousand lines of code all together across maybe 10 or so files). 
+The project was fully functional but is was not very fast (in fact it was quite slow) and it wasn't documented very well. 
+As a result, I decided to fix both problems. 
+I started working on improving both issues and after a couple days I noticed that the code broke. 
+But I had no idea how or why it stopped working. 
+Now if I wasn't using git, I would have been screwed. But luckily, all I had to do was revert back to the previously working commit and I had a fully working version. 
 
 
 
@@ -49,6 +65,17 @@ There are 3(4?) basic stages of git. And a file can be in any of these stages.
 - `Staged`: Finally, you have files that you have told git to track, made changes to these files, AND you have already added them to the queue (via `git add FILENAME`) and are waiting for the commit and message (via `git commit -m "REALLY IMPORTANT MESSAGE"`). Once you have committed the changes, all staged files are now officially `unmodified`. Then the cycle continues. 
 
 ### Why Can't I Just DropBox (or Google Drive)? Why do I Need Git?
+
+At this point, you might be wondering, ok, if git just adds version control abilities why can't I just use DropBox or Google Drive. 
+What does Git add that I couldn't just get from these sources. 
+
+This is kinda like saying why doesn't a surgeon use a knife instead of a scalpel.
+Sure a knife can do a lot of the job, but they are designed for different things. 
+DropBox/Drive are general purpose storage tools (like a knife) while git is specifically designed for writing code. 
+That being said, let's highlight specific examples: 
+1. While you do get some history of a file on both platforms, neither provides any information about what is different between the different versions. So you would need to remember what changes you personally made on April 23, 2022 at 4:00 pm compared the April 23, 2022 at 4:15 pm. First of all there is no chance that you remember what was different. In contrast, with git you have all the information stored with a message for every commit made. 
+2. But let's pretend you have an insane memory and actually do remeber a general gist of what was differnt. You still won't find the specific differences without opening both files and comparing them. Again, with git, you have a single command to see all the changes made to that file. They can also be easier viewed view GitHub/GitLab. 
+3. Git does Delta changes meaning that it uses a lot less resources in terms of network bandwidth, storage, and general computing resources. 
 
 ### Git Example Time
 
