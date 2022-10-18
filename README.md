@@ -25,4 +25,4 @@ Contributions are welcome, especially if they fix my horrible typos :)
 
 
 ## Thanks 
-Special Thanks to [Haoxue Fan](https://github.com/haoxue-fan/pupilexplore) for helping review/edit these posts!
+Special Thanks to [Haoxue Fan](https://github.com/haoxue-fan/) for helping review/edit these posts!
