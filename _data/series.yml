@@ -9,7 +9,7 @@
     models. Finally, you will end with a tutorial on how to estimate your models
     parameters and evaluates its effectivness from data.
 - id: cli
-  title: Command Line Interface (CLIs)
+  title: Bash, Terminals, and Command Line Interface (CLIs)
   complete: false
   description:
     Learn how to take advantage of the command line. In this series you will learn
