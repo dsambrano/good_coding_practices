@@ -50,6 +50,12 @@ To leave the environment just use:
 conda deactivate
 ```
 
+Using the builtin virutalenv you can use:
+
+```bash
+python3 -m venv name_of_virtual_env # Creation
+. name_of_virtual_env/bin/activate # Activation
+```
 
 ## f strings
 
