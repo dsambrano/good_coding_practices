@@ -124,3 +124,20 @@ section.takeaways {
         width: auto;
     }
 }
+
+
+.series-nav {
+    display: grid;
+    align-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.series-nav-item.next {
+    text-align: right;
+    border-left: 1px solid #ddd;
+}
+
+.series-nav-item.current {
+    text-align: center;
+    border-left: 1px solid #ddd;
+}
