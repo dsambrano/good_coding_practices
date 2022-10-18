@@ -76,6 +76,7 @@ exclude:
   - speaker_notes.md
   - add_front_matter.py
   - development.md
+  - future_links.md
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
