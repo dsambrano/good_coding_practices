@@ -1,3 +1,11 @@
+---
+layout: page
+title:  "Additional Resources"
+date:   2022-10-04
+categories: jekyll update
+permalink: /additional-resources
+---
+
 # Additional Resources
 
 Still looking for more?!?! Here are a few youtube channels and blog posts that I trust and have served as a great resource for a variety of languages and principles:
@@ -9,7 +17,7 @@ Still looking for more?!?! Here are a few youtube channels and blog posts that I
     - Websites: [fireship.io][fireblog]
 - General Coding Principles
     - YouTube Channels: [Arjan Codes][arjan], 
-    - Websites: [GitHub][], [StackOverFlow][], [SuperUser][]
+    - Websites: [GitHub][gh-pages], [StackOverFlow][], [SuperUser][]
     - Books: [Design Patterns][dp] ([overview of Design Patterns][dpoverview])
 - Understanding General Computer Hardware/IT
     - YouTube Channels: [Tech Quickie][techq], [Linus Tech Tips (LTT)][LTT], [Network Chuck][], [Chris Titus Tech][CTT]
@@ -19,6 +27,8 @@ Still looking for more?!?! Here are a few youtube channels and blog posts that I
 - Webserver/Webdev
     - YouTube Channels: [fireship][fireyt], [Network Chuck][]
     - Websites: [DigitalOcean][]
+- Vim/NVim:
+    - YouTube Channels [primeagen][primeagenyt]
 
 
 [arjan]: https://www.youtube.com/c/arjancodes "YT: Arjan Codes"
@@ -26,7 +36,7 @@ Still looking for more?!?! Here are a few youtube channels and blog posts that I
 [twt]: https://www.youtube.com/c/TechWithTim "YT: Tech with Tim"
 [pyengin]: https://www.youtube.com/c/PythonEngineer  "YT: Python Engineer"
 [soractica]: https://www.youtube.com/c/Socratica "YT: Socratic"
-[realypy]: https://realpython.com/ "Blog: Real Python"
+[realpy]: https://realpython.com/ "Blog: Real Python"
 [gstyle]: https://google.github.io/styleguide/pyguide.html "Google Style Guide"
 [pep8]: https://towardsdatascience.com/an-overview-of-the-pep-8-style-guide-5672459c7682 "Pep8 style overview"
 
@@ -51,3 +61,7 @@ Still looking for more?!?! Here are a few youtube channels and blog posts that I
 [linuxtv]: https://www.youtube.com/c/learnlinuxtv "YT: Learn Linux TV"
 [linuxexperiment]: https://www.youtube.com/c/thelinuxexperiment "YT: The Linux Experiment"
 [CTT]: https://www.youtube.com/c/christitustech "YT: Chris Titus Tech"
+
+[primeagenyt]: https://www.youtube.com/c/ThePrimeagen "YT: The Primeagen; Blazingly Fast"
+[Socratica]: https://www.youtube.com/c/Socratica "YT: Socratica Python Coding"
+[gh-pages]: https://pages.github.com/ "GitHub Pages for Free Webhosting for Static Sites"
