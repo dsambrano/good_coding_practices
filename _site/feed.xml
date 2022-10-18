@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-03T21:53:58-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Coding Buddy</title><subtitle>Learning all the gaps in your coding knowledge. You Coding Buddy  is hear to save the day!</subtitle><entry><title type="html">New Post</title><link href="http://localhost:4000/posts/2" rel="alternate" type="text/html" title="New Post" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/New_Post</id><content type="html" xml:base="http://localhost:4000/posts/2"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-03T22:26:04-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Coding Buddy</title><subtitle>Learning all the gaps in your coding knowledge. You Coding Buddy  is hear to save the day!</subtitle><entry><title type="html">New Post</title><link href="http://localhost:4000/posts/2" rel="alternate" type="text/html" title="New Post" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/New_Post</id><content type="html" xml:base="http://localhost:4000/posts/2"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -645,13 +645,11 @@ Then I can specifically link to that with this syntax:</p>
 For example, why did you select that specific stimulus vs another. Why that method?</p>
 <blockquote>
   <p><strong>Hint</strong>: Link to relevant artcles or to other markdown files containing notes you made.</p>
-</blockquote>]]></content><author><name>Deshawn Sambrano</name></author><summary type="html"><![CDATA[Takeaways]]></summary></entry><entry><title type="html">Modeling</title><link href="http://localhost:4000/2022/10/03/modeling.html" rel="alternate" type="text/html" title="Modeling" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/10/03/modeling</id><content type="html" xml:base="http://localhost:4000/2022/10/03/modeling.html"><![CDATA[<style>
+</blockquote>]]></content><author><name>Deshawn Sambrano</name></author><summary type="html"><![CDATA[Takeaways]]></summary></entry><entry><title type="html">Computation Modeling</title><link href="http://localhost:4000/computation-modeling" rel="alternate" type="text/html" title="Computation Modeling" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/modeling</id><content type="html" xml:base="http://localhost:4000/computation-modeling"><![CDATA[<style>
     table {
         width: 100%;
     }
 </style>
-
-<h1 id="computational-modeling">Computational Modeling</h1>
 
 <h2 id="takeaways">Takeaways</h2>
 
@@ -685,7 +683,7 @@ Most commonly with the linear model in regression.
 A computational model just adds flexibility in that it is not predefined so you can adjust it to your specific situation.
 So you can allow it have some non linearity or have only partial linearity.</p>
 <blockquote>
-  <p><strong>Note</strong>: When you use linear (or logitic) regression to prediction choices, you are using a model for how people are making those choices. Whatever you include in this model is all that it knows; and importantly, these models assume a particular structure for how choices are made. Is it the right structure for your data, maybe, maybe not? That is when computational models come in. You get to specific the structure.</p>
+  <p><strong>Note</strong>: When you use linear (or logistic) regression to prediction choices, you are using a model for how people are making those choices. Whatever you include in this model is all that it knows; and importantly, these models assume a particular structure for how choices are made. Is it the right structure for your data, maybe, maybe not? That is when computational models come in. You get to specific the structure.</p>
 </blockquote>
 
 <h2 id="why-should-you-use-a-computational-model">Why Should You Use A Computational Model</h2>
@@ -693,7 +691,7 @@ So you can allow it have some non linearity or have only partial linearity.</p>
 
 <p>Implementing computational models require a lot more work than a standardized, so if you are going to use it over standard stats model you should have a good reason. 
 While there are several reasons one might elect to use a computational model, here I will provide two: Utility and Generalization. 
-Of course if you already are familar with their utility, feel free to skip to the next <a href="#myfirstmodel">section</a>.</p>
+Of course if you already are familar with their utility, feel free to skip to the next <a href="#my-first-model">section</a>.</p>
 
 <p>Computational models are particularly useful when they replace older schematic based models like the one below. 
 Schematic models are a hypothesis or rather series of hypotheses about a particular phenomena. 
@@ -704,7 +702,8 @@ However, these types of modesl have some significant drawbacks.</p>
   <p><strong>Note</strong>: I will be specifically, critquing the EIC model, but this was incredibly important at the time. I am specifically using it as an example, but all schematic based model have these pitfalls.</p>
 </blockquote>
 
-<p><img src="image.png" alt="THIS IS SUPPOSED TO BE AN IMAGE OF A SCHEMATIC BASED MODEL" /></p>
+<p><img src="imgs/image.png" alt="THIS IS SUPPOSED TO BE AN IMAGE OF A SCHEMATIC BASED MODEL" />
+<img src="imgs/cd.png" alt="test" /></p>
 
 <p>First, schematic based models do not provide specific hypotheses, making them difficult (if not impossible) to falsify.
 For example, each box on the schematic often represents a plethora of variables.
@@ -889,7 +888,7 @@ Specifically, you will learn how to estimate the parameters of your model instea
 
 <h2 id="homework">Homework</h2>
 
-<h2 id="references">References</h2>]]></content><author><name>Deshawn Sambrano</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Productivity</title><link href="http://localhost:4000/2022/10/03/productivity.html" rel="alternate" type="text/html" title="Productivity" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/10/03/productivity</id><content type="html" xml:base="http://localhost:4000/2022/10/03/productivity.html"><![CDATA[<h2 id="takeaways">Takeaways</h2>
+<h2 id="references">References</h2>]]></content><author><name>Deshawn Sambrano</name></author><category term="Math" /><category term="Computational-Modeling" /><category term="R" /><category term="Python" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Productivity</title><link href="http://localhost:4000/2022/10/03/productivity.html" rel="alternate" type="text/html" title="Productivity" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/10/03/productivity</id><content type="html" xml:base="http://localhost:4000/2022/10/03/productivity.html"><![CDATA[<h2 id="takeaways">Takeaways</h2>
 
 <p>[Estimated Read Time 5 mins]</p>
 
