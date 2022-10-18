@@ -3,10 +3,10 @@
 	"file": "main.css",
 	"sources": [
 		"main.scss",
-		"vendor/bundle/ruby/3.1.0/gems/minima-2.5.1/_sass/minima.scss",
-		"vendor/bundle/ruby/3.1.0/gems/minima-2.5.1/_sass/minima/_base.scss",
-		"vendor/bundle/ruby/3.1.0/gems/minima-2.5.1/_sass/minima/_layout.scss",
-		"vendor/bundle/ruby/3.1.0/gems/minima-2.5.1/_sass/minima/_syntax-highlighting.scss"
+		"vendor/bundle/ruby/2.6.0/gems/minima-2.5.1/_sass/minima.scss",
+		"vendor/bundle/ruby/2.6.0/gems/minima-2.5.1/_sass/minima/_base.scss",
+		"vendor/bundle/ruby/2.6.0/gems/minima-2.5.1/_sass/minima/_layout.scss",
+		"vendor/bundle/ruby/2.6.0/gems/minima-2.5.1/_sass/minima/_syntax-highlighting.scss"
 	],
 	"sourcesContent": [
 		":root {\n    --purple: #5900b3;\n}\n\n@import \"minima\";\n\n.footer-col-1 {\n    width: -webkit-calc(35% - (30px / 2));\n    width: calc(35% - (30px / 2));\n}\n.footer-col-2 {\n    width: -webkit-calc(30% - (30px / 2));\n    width: calc(30% - (30px / 2));\n}\n.footer-col-3 {\n    width: -webkit-calc(35% - (30px / 2));\n    width: calc(35% - (30px / 2));\n}\n\nimg {\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n// Setting Colors for the Difficulties\n\n\n.Beginner {\n    color: green;\n}\n\n\n.Intermediate {\n    color: yellow;\n}\n\n\n.Expert {\n    color: red;\n}\n\n\n\n.post-decorations{\n    margin-top: -15px;\n    margin-bottom: 1em;\n}\n\n.time {\n    background-color: #2a7ae2;\n    color: white;\n}\n\n.tag {\n    background-color: #ddd;\n}\n\n.bubble {\n    padding-left: 10px;\n    padding-right: 10px;\n    padding-top: 3px;\n    padding-bottom: 3px;\n    margin-right: 1em;\n    border-radius: .5em;\n}\n\n// Adding 'Contents' headline to the TOC\n#markdown-toc::before {\n    content: \"Contents\";\n    font-weight: bold;\n}\n\n// Using numbers instead of bullets for listing\n#markdown-toc {\n    color: black;\n}\n\n#markdown-toc {\n    background-color: #ddd;\n    padding: 1.5em;\n    display: block;\n    border-radius: .5em;\n    margin: auto;\n    width: 50%;\n    margin-bottom: 1em;\n}\n\n",

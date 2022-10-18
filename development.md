@@ -5,7 +5,7 @@
 # Required for launch
 
 - TOC As sidebar and moves with you (https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp) (https://github.com/allejo/jekyll-toc)
-- Categories flushed out to multi-part ones
+- Categories flushed out to multi-part ones [idea1](https://blog.webjeda.com/jekyll-related-posts/) [idea2](https://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/) [idea3](https://www.ayush.nz/2022/02/creating-article-series-posts-navigation-jekyll) [idea4](https://engineering.chrobinson.com/how-to/linking-a-series-of-jekyll-posts/)
   - Meaning permalinks as well as next/previous (could be in sidebar?) ordering required
 - Review content for typos and formatting issues (e.g., image names, line breaks, all links, Date)
 - about page gets revamped
