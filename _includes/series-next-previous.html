@@ -18,7 +18,7 @@
       <a class="btn" rel="prev" href="{{ site.baseurl }}{{ post.url }}">&larr; Prev Post</a>
     </div>
     {% endif %}
-    {% if forloop.first %}
+    {% if forloop.index == curr_post_index %}
     <div class="series-nav-item current">
       <p>Post <strong>{{ curr_post_index }}</strong> of <strong>{{ series-posts.size }}</strong>
     </div>
