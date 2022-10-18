@@ -31,3 +31,27 @@ img {
 }
 {% endfor %}
 
+
+.post-decorations{
+    margin-top: -15px;
+    margin-bottom: 1em;
+}
+
+.tag {
+    background-color: #ddd;
+}
+.bubble {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-right: 1em;
+    border-radius: .5em;
+}
+
+// Adding 'Contents' headline to the TOC
+#markdown-toc::before {
+    content: "Contents";
+    font-weight: bold;
+}
+
