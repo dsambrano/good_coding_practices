@@ -209,13 +209,26 @@ For this tutorial, we will use an inverse logit function:
 
 $$p(Option A, SV_a, SV_b) = \frac{1}{1 + e^{\gamma(SV_b - SV_a)}}$$
 
+Again we have an issue, what is the correct $\gamma$?
+Of course, without looking at the data you would be hard pressed to give a sensible answer.
+So we will use a similar stragey, use a couple and plot them.
 
+![SV Model Predictions](code/plots/sv_prob_plot.png)
 
+This looks incredible!!
+We are having very close predictions to the real data!
+Specifically, when $\gamma=8$ it seems to match the data really well. 
+
+Now that you got the hang of what a computational model is and have they work, you are ready for the next section.
+Before heading to the next section, see the [practice](#homework) shown below to give you some more experience with how these work.
+In the next tutorial you will dive deeper into computational models. 
+Specifically, you will learn how to estimate the parameters of your model instead of guessing and checking. Additionally, you will learn how to evaluate whether its a good model or not.
 
 ## Advanced Topics:
 
 - Param Estimation: Use the Data: Estimating Parameters
 - Simulation
+- degrees of freedom
 - Model Comparison
 
 ## Homework
