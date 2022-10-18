@@ -21,6 +21,8 @@
 
 ---
 
+Add Related posts to bottom of posts by default if they are not a part of a series. (should probably make them similar but distinct also)
+
 Adding Darkmode toggle
 https://derekkedziora.com/blog/dark-mode-revisited
 
