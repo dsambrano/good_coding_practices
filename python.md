@@ -164,6 +164,16 @@ Well that is not the proper way to do it.
 A much much better way is to use the built in [`logging`][l1] 
 
 
+## Asynchronous Code
+
+There are often parts of code that can take a long time to complete, say running a web request. Each web request is independent of one another meaning that the output of one does not affect the other. In these cases you can use the `asyncio` package to run multiple web request asynchronously. This can speed up the program quite significantly.
+
+```python
+import asyncio
+```
+
+For more information, you can check out this [video][a1] or this [blog post][a2]. 
+
 
 ## References
 
@@ -202,3 +212,8 @@ A much much better way is to use the built in [`logging`][l1]
 [l1]: https://youtu.be/g8nQ90Hk328 "Socratica: Logging"
 [l2]: https://www.geeksforgeeks.org/logging-in-python/ "GeeksforGeeks: Python Logging"
 [l3]: https://realpython.com/python-logging-source-code/ "Real Python: Logging"
+
+### Asynchronous Code
+
+[a1]: https://youtu.be/2IW-ZEui4h4 "Arjan Codes: Asynchronous Code with Asyncio"
+[a2]: https://realpython.com/python-async-features/ "Real Python: asyncio"
