@@ -9,13 +9,23 @@ This same principle applies for all text editors/IDEs (integrated developer envi
 
 ## Know your OS
 
-Knowing what OS you are on is super important as the commands change across them. Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of BASH before). This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with the shell via using MacOS is very valuable. In contrast Windows uses CMD or Powershell which has a differtn syntax and command list. Luckily for you, there is a project to give Windows BASH commands called [gitbash](https://gitforwindows.org/) and I highly reccomand you use that to be able to follow along. Most of the time if you get some CLI (command line interface) code it will assume bash so its just a good skill to have. 
+Knowing what OS you are on is super important as the commands change across them. 
+Luckily Linux and MacOS share most of the commands because they use the same shell (you have probably heard of BASH before). 
+This is especially useful to know, because all servers and super computers/computing clusters all run Linux, so having familiarity with the shell via using MacOS is very valuable. 
+In contrast Windows uses CMD or Powershell which has a differtn syntax and command list. 
+Luckily for you, there is a project to give Windows BASH commands called [gitbash](https://gitforwindows.org/) and I highly reccomand you use that to be able to follow along. 
+Most of the time if you get some CLI (command line interface) code it will assume bash so its just a good skill to have. 
 
-Speaking of BASH it stands for Bourne Again SHell. However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z shell). This is essentially entirely compatible with BASH except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. I will say that for Mac users specifically, I would reccomend you check out [iTerm2](https://iterm2.com/) as an alternative to the standard terminal and [oh my zsh](https://ohmyz.sh/) to add some amazing color theming for some general improvements. But of course this is not necessary.
+Speaking of BASH it stands for Bourne Again SHell. 
+However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z shell). 
+This is essentially entirely compatible with BASH except that it adds some nice quality of life improvements that are beyond the scope of this blog, but feel free to explore on your own. 
+I will say that for Mac users specifically, I would reccomend you check out [iTerm2](https://iterm2.com/) as an alternative to the standard terminal and [oh my zsh](https://ohmyz.sh/) to add some amazing color theming for some general improvements. 
+But of course this is not necessary.
 
 ## Knowing Your Way Around with BASH
 
-First, thing open up your terminal. If you are using MacOS or Linux you can expect it to look something like this:
+First, thing open up your terminal. 
+If you are using MacOS or Linux you can expect it to look something like this:
 
 ```
 NEED to show example can be replaced with an image
@@ -27,7 +37,13 @@ There are three really important commands to know to navigate around the your fi
 - `cd`: Change Directory
 - `ls`: List (Contents)
 
-One analogy for these commands is imaging you are on a random street place in a US city that you don't know. The `pwd` command is like looking up your current address. It will tell you were you are. The `ls` command would be like looking around the street (or on your map) to see what restruants are on the street. And `cd` would be like moving to a new location. In keeping the analogy, you can't just be told move to an arbritrary new street because you don't know this city. Instead you have to give precise directions either from were you are currently or relative to some clearly visable space (say a big colorful building you can see from anywhere in the city). Now let's see these in action.
+One analogy for these commands is imaging you are on a random street place in a US city that you don't know. 
+The `pwd` command is like looking up your current address. It will tell you were you are. 
+The `ls` command would be like looking around the street (or on your map) to see what restruants are on the street. 
+And `cd` would be like moving to a new location. 
+In keeping the analogy, you can't just be told move to an arbritrary new street because you don't know this city. 
+Instead you have to give precise directions either from were you are currently or relative to some clearly visable space (say a big colorful building you can see from anywhere in the city). 
+Now let's see these in action.
 
 ```bash
 pwd *instert example* with color if possible*

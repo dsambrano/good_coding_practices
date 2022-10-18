@@ -32,7 +32,9 @@ git status
 If, for whatever reason, you are still scared off, there are GUI options to take advantage of the the uses of git 
 
 ## What is Git?
-Git is a Version Control System. Thats all, its sole purpose is to help you. And speaking from personal experience, if you get comfortable with these commands it has saved me from hours of headache. 
+Git is a Version Control System. 
+Thats all, its sole purpose is to help you. 
+And speaking from personal experience, if you get comfortable with these commands it has saved me from hours of headache. 
 Story Time: 
 
 
@@ -49,11 +51,15 @@ There are 3(4?) basic stages of git. And any final can only be in one of them.
 ### Git Example Time
 
 #### Installation
-First double check if you have git installed already via typing `git -v` in your terminal. If you get a command not found error then you don't have it install if it spits out a version then you are good to go (though you may need to update it) 
+First double check if you have git installed already via typing `git -v` in your terminal. 
+If you get a command not found error then you don't have it install if it spits out a version then you are good to go (though you may need to update it) 
 _________________
 ##### Mac OS
 
-Many scientific applications requires `xcode` on Mac which install `git` automatically so you might have it. Double check by using the method described [above](####installation). If you don't that's ok because you will definitely need it in the future. Inside your terminal type the following command:
+Many scientific applications requires `xcode` on Mac which install `git` automatically so you might have it. 
+Double check by using the method described [above](####installation). 
+If you don't that's ok because you will definitely need it in the future. 
+Inside your terminal type the following command:
 ```
 xcode-select –install
 ```
@@ -63,7 +69,8 @@ If you know what homebrew or MacPorts are you can install them via these methods
 Finally, you can use the GUI installer go the [Binary installer section](https://git-scm.com/download/mac)
 
 ##### Linux
-On most linux distros you can simply use the relavent package manager to install git. For example on debian based distros:
+On most linux distros you can simply use the relavent package manager to install git. 
+For example on debian based distros:
 `sudo apt install git-all`
 
 ##### Windows
@@ -71,7 +78,10 @@ On most linux distros you can simply use the relavent package manager to install
 You can install git via `chocolately` or the [GUI installer](https://git-scm.com/download/win)
 _________________
 
-Now we will follow a super basic example to `git` (pun intended) an understanding. First let's set up the following directory structure. Each of the text files should only contain 1 line of text what is just the same as the name of the file without and extension. So the `hello_world` file can just be have the content `Hello World`. 
+Now we will follow a super basic example to `git` (pun intended) an understanding. 
+First let's set up the following directory structure. 
+Each of the text files should only contain 1 line of text what is just the same as the name of the file without and extension. 
+So the `hello_world` file can just be have the content `Hello World`. 
 
 ```
 my_first_git_project/
@@ -83,7 +93,10 @@ Next we need to create a `README.md` file. These are super important and as the 
 
 >**Hint**: This also means that you should always make a readme file anytime you make a project. 
 
-In this file you will find basic information about how to setup/configure and run the code that you download. It also often describes the basic functionality of the code as this is the first thing anyone will see about the project. On GitHub/GitLab. For our purposes since this is a basic project you can just add the level 1 header and a 1 line description.
+In this file you will find basic information about how to setup/configure and run the code that you download. 
+It also often describes the basic functionality of the code as this is the first thing anyone will see about the project. 
+On GitHub/GitLab. 
+For our purposes since this is a basic project you can just add the level 1 header and a 1 line description.
 ```
 # My first Git Repo
 
@@ -91,13 +104,19 @@ Learning the basics of the a Git!
 ```
 
 ## How Does GitHub/GitLab Factor Into all of This?
-GitHub (and GitLab an open source alternative) are primarly used (for our level of programming) as remote (i.e., cloud-based) repositories/server/storage locations. GitHub used to be open source but was bought out by Microsoft and no longer is (there was also a thing in which Microsoft without the knowledge of its users took thousands of repos and used them to develop and AI so if you hear arguments about it these are the two reasons why). Both GitHub and GitLab have several nice helpful features to make developers communicate and interact with one another more and encourage collaboration etc. However, as I meantioned most of the time, you will simply use them as only repos (repositories) of your own code or as a way to find other people's code. 
+GitHub (and GitLab an open source alternative) are primarly used (for our level of programming) as remote (i.e., cloud-based) repositories/server/storage locations. 
+GitHub used to be open source but was bought out by Microsoft and no longer is (there was also a thing in which Microsoft without the knowledge of its users took thousands of repos and used them to develop and AI so if you hear arguments about it these are the two reasons why). 
+Both GitHub and GitLab have several nice helpful features to make developers communicate and interact with one another more and encourage collaboration etc. 
+However, as I meantioned most of the time, you will simply use them as only repos (repositories) of your own code or as a way to find other people's code. 
 
 Once you have made a GitHub/GitLab account and authorized yourself on your machine, you will be able to add a remote destination (i.e., your GitHub/GitLab account page) to push (via `git push`) all the changes and commits you have made. 
 
-The `git push` commands simply send all the changes that you made locally on your computer to the remote server. No you always have a backup in case something goes wrong with your computer, WAHOO!!
+The `git push` commands simply send all the changes that you made locally on your computer to the remote server. 
+No you always have a backup in case something goes wrong with your computer, WAHOO!!
 
-Very commonly, you will need to download either your own code (to a new computer) or download someone else's code. In order to do this you will use `git clone URL_TO_THE_REMOTE_REPO`. This will clone the repo to your local machine, and importantly, it will also download all the changes that were ever made, so you have a full history of the project (reference back to story time). 
+Very commonly, you will need to download either your own code (to a new computer) or download someone else's code. 
+In order to do this you will use `git clone URL TO THE REMOTE REPO`. 
+This will clone the repo to your local machine, and importantly, it will also download all the changes that were ever made, so you have a full history of the project (reference back to story time). 
 
 ### GitHub Example
 
@@ -106,7 +125,8 @@ Very commonly, you will need to download either your own code (to a new computer
 - 
 
 ## Advanced Topics in Git
-We covered a lot today, thankfully, that is most of the important things you need. However, there are a few advanced topics that I do think are useful to know, even though you might not use them a bunch:
+We covered a lot today, thankfully, that is most of the important things you need. 
+However, there are a few advanced topics that I do think are useful to know, even though you might not use them a bunch:
 - `.gitignore`: I use this the most on the list. This allows you to tell git to ignore specific files. This is super useful if you have a file that contains any sensative information (e.g., SECRETE_KEYS, Identifiable Subject data, etc.). 
 - `git diff `: a function to specifically see what has changed line by line since the last commit
 - Branches: These are when you take your existing project and have a seperate timeline for it. This is super useful to make a branch if you are going to make a major change to it that might break things. Need example
@@ -115,4 +135,5 @@ We covered a lot today, thankfully, that is most of the important things you nee
 
 
 ## Homework
-I want you to take one of your projects and initialize it as a git project and store it remotely. This can be as a private repo if need be
+I want you to take one of your projects and initialize it as a git project and store it remotely. 
+This can be as a private repo if need be
