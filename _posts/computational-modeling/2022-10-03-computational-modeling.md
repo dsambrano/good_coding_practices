@@ -55,7 +55,7 @@ However, these types of modesl have some significant drawbacks.
 > **Note**: I will be specifically, critquing the EIC model, but this was incredibly important at the time. I am specifically using it as an example, but all schematic based model have these pitfalls. 
 
 
-![THIS IS SUPPOSED TO BE AN IMAGE OF A SCHEMATIC BASED MODEL](/assets/imgs/image.png)
+![THIS IS SUPPOSED TO BE AN IMAGE OF A SCHEMATIC BASED MODEL](/assets/imgs/cd.png)
 
 First, schematic based models do not provide specific hypotheses, making them difficult (if not impossible) to falsify.
 For example, each box on the schematic often represents a plethora of variables.
@@ -91,5 +91,5 @@ Together, these features help improved the scientific discourse.
 - Model Comparison
 
 
-[holt]: assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf "Holt & Laury 2002"
-[img]: imgs/cd.png
+[holt]: /assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf "Holt & Laury 2002"
+[img]: /assets/imgs/cd.png
