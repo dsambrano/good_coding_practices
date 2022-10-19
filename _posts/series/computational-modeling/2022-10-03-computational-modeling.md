@@ -86,4 +86,4 @@ Together, these features help improved the scientific discourse.
 [holt]: /assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf "Holt & Laury 2002"
 [img]: /assets/imgs/cd.png
 [schematic]: /assets/imgs/schematic_model.png "EIC an Example Schematic Based Model"
-[myfirstmodel]: {% link _posts/series/computational-modeling/2022-10-03-selecting-a-model.md %}
+[myfirstmodel]: {% post_url /series/computational-modeling/2022-10-03-selecting-a-model %}

@@ -68,5 +68,5 @@ Something about setting up a repo and
 -->
 
 
-[cli]: {%link _posts/series/cli/2022-10-04-bash.md %}
-[markdown]: {%link _posts/2022-10-03-markdown.md %}
+[cli]: {% post_url /series/cli/2022-10-04-bash %}
+[markdown]: {% post_url 2022-10-03-markdown %}
