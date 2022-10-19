@@ -1,3 +1,6 @@
+
+title: Automating Tasks with bash
+
 # Scripting Shell Commands
 
 ## Takeaways
