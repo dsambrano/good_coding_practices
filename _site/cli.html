@@ -2,23 +2,24 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>What are Command-Line Interface (CLIs) | Your Coding Buddy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon_io/favicon.ico"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>What’s Bash &amp; CLIs: Open the Terminal | Your Coding Buddy</title>
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="What are Command-Line Interface (CLIs)" />
+<meta property="og:title" content="What’s Bash &amp; CLIs: Open the Terminal" />
 <meta name="author" content="Deshawn Sambrano" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What is a Command-Line Interface/CLI? &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;What are Command-Line Interface (CLIs)&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/getting-started&quot;&gt;What is Bash: How do I open the Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/choosing-a-terminal&quot;&gt;Choosing a Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this series you will learn basics of using the terminal with bash. By the end of this you will know: Basic commands to traverse your computer from the terminal and how to customize you terminal The structure of commands, arguments, and options in bash Creating a script automate boring tasks What Environment Variables, your Path, and a bashrc file do Prerequisites: None; This Series will assume no prior expeience, but by the end you will cover some more intermediate to advanced topics What is a Command-Line Interface/CLI? Like with most acronyms its often easiest to understand each word first. For CLIs the first word is Command-line. This refers to your terminal emulator (or just termial for short), more specifically the command you enter into your terminal (for more details click the words below)." />
-<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What is a Command-Line Interface/CLI? &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;What are Command-Line Interface (CLIs)&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/getting-started&quot;&gt;What is Bash: How do I open the Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/choosing-a-terminal&quot;&gt;Choosing a Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this series you will learn basics of using the terminal with bash. By the end of this you will know: Basic commands to traverse your computer from the terminal and how to customize you terminal The structure of commands, arguments, and options in bash Creating a script automate boring tasks What Environment Variables, your Path, and a bashrc file do Prerequisites: None; This Series will assume no prior expeience, but by the end you will cover some more intermediate to advanced topics What is a Command-Line Interface/CLI? Like with most acronyms its often easiest to understand each word first. For CLIs the first word is Command-line. This refers to your terminal emulator (or just termial for short), more specifically the command you enter into your terminal (for more details click the words below)." />
+<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What is Bash and Why Does it Matter &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;What&#39;s Bash &amp;amp; CLIs: Open the Terminal&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this series you will learn basics of using the terminal with bash. By the end of this you will know: Basic commands to traverse your computer from the terminal and how to customize you terminal The structure of commands, arguments, and options in bash Creating a script automate boring tasks What Environment Variables, your Path, and a bashrc file do Prerequisites: None; This Series will assume no prior expeience, but by the end you will cover some more intermediate to advanced topics What is Bash and Why Does it Matter Bash stands for Bourne Again SHell, and it has been the default shell for decades. However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z SHell). This is basically entirely compatible with" />
+<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What is Bash and Why Does it Matter &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;What&#39;s Bash &amp;amp; CLIs: Open the Terminal&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this series you will learn basics of using the terminal with bash. By the end of this you will know: Basic commands to traverse your computer from the terminal and how to customize you terminal The structure of commands, arguments, and options in bash Creating a script automate boring tasks What Environment Variables, your Path, and a bashrc file do Prerequisites: None; This Series will assume no prior expeience, but by the end you will cover some more intermediate to advanced topics What is Bash and Why Does it Matter Bash stands for Bourne Again SHell, and it has been the default shell for decades. However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z SHell). This is basically entirely compatible with" />
 <link rel="canonical" href="http://localhost:4000/cli" />
 <meta property="og:url" content="http://localhost:4000/cli" />
 <meta property="og:site_name" content="Your Coding Buddy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-10-03T00:00:00-07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="What are Command-Line Interface (CLIs)" />
+<meta property="twitter:title" content="What’s Bash &amp; CLIs: Open the Terminal" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What is a Command-Line Interface/CLI? &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;What are Command-Line Interface (CLIs)&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/getting-started&quot;&gt;What is Bash: How do I open the Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/choosing-a-terminal&quot;&gt;Choosing a Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this series you will learn basics of using the terminal with bash. By the end of this you will know: Basic commands to traverse your computer from the terminal and how to customize you terminal The structure of commands, arguments, and options in bash Creating a script automate boring tasks What Environment Variables, your Path, and a bashrc file do Prerequisites: None; This Series will assume no prior expeience, but by the end you will cover some more intermediate to advanced topics What is a Command-Line Interface/CLI? Like with most acronyms its often easiest to understand each word first. For CLIs the first word is Command-line. This refers to your terminal emulator (or just termial for short), more specifically the command you enter into your terminal (for more details click the words below).","headline":"What are Command-Line Interface (CLIs)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cli"},"url":"http://localhost:4000/cli"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What is Bash and Why Does it Matter &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;strong&gt;What&#39;s Bash &amp;amp; CLIs: Open the Terminal&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; In this series you will learn basics of using the terminal with bash. By the end of this you will know: Basic commands to traverse your computer from the terminal and how to customize you terminal The structure of commands, arguments, and options in bash Creating a script automate boring tasks What Environment Variables, your Path, and a bashrc file do Prerequisites: None; This Series will assume no prior expeience, but by the end you will cover some more intermediate to advanced topics What is Bash and Why Does it Matter Bash stands for Bourne Again SHell, and it has been the default shell for decades. However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to zsh (or The Z SHell). This is basically entirely compatible with","headline":"What’s Bash &amp; CLIs: Open the Terminal","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cli"},"url":"http://localhost:4000/cli"}</script>
 <!-- End Jekyll SEO tag -->
 <script type="text/javascript" defer src="/assets/main.js"></script>
   <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
@@ -82,7 +83,7 @@ fig=TeX-AMS_HTML-full"></script>
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">What are Command-Line Interface (CLIs)</h1>
+    <h1 class="post-title p-name" itemprop="name headline">What&#39;s Bash &amp; CLIs: Open the Terminal</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2022-10-03T00:00:00-07:00" itemprop="datePublished">Oct 3, 2022
       </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Deshawn Sambrano</span></span>
@@ -104,7 +105,7 @@ fig=TeX-AMS_HTML-full"></script>
 	</g>
 </g>
 </svg>
- 10 mins</span>
+ 5 mins</span>
        
       
       • <span class="page-diff"> Difficulty: <span class="Beginner">Beginner</span>
@@ -122,6 +123,12 @@ fig=TeX-AMS_HTML-full"></script>
     <h4>Table of Contents</h4>
     <aside class="toc">
 <ul id="markdown-toc">
+  <li><a href="#what-is-bash-and-why-does-it-matter" id="markdown-toc-what-is-bash-and-why-does-it-matter">What is <code class="language-plaintext highlighter-rouge">Bash</code> and Why Does it Matter</a>    <ul>
+      <li><a href="#mac" id="markdown-toc-mac">Mac</a></li>
+      <li><a href="#linux" id="markdown-toc-linux">Linux</a></li>
+      <li><a href="#windows" id="markdown-toc-windows">Windows</a></li>
+    </ul>
+  </li>
   <li><a href="#what-is-a-command-line-interfacecli" id="markdown-toc-what-is-a-command-line-interfacecli">What is a Command-Line Interface/CLI?</a></li>
 </ul>
 
@@ -135,13 +142,7 @@ fig=TeX-AMS_HTML-full"></script>
     
     <li>
       
-      <strong>What are Command-Line Interface (CLIs)</strong>
-      
-    </li>
-    
-    <li>
-      
-      <a href="/cli/getting-started">What is Bash: How do I open the Terminal</a>
+      <strong>What's Bash &amp; CLIs: Open the Terminal</strong>
       
     </li>
     
@@ -154,12 +155,6 @@ fig=TeX-AMS_HTML-full"></script>
     <li>
       
       <a href="/cli/bash2">Take your bash Skills to the Next Level</a>
-      
-    </li>
-    
-    <li>
-      
-      <a href="/cli/choosing-a-terminal">Choosing a Terminal</a>
       
     </li>
     
@@ -202,6 +197,51 @@ NEED to show example can be replaced with an image
 ```
 Explain what each piece means
 -->
+
+<h2 id="what-is-bash-and-why-does-it-matter">What is <code class="language-plaintext highlighter-rouge">Bash</code> and Why Does it Matter</h2>
+
+<!-- excerpt-start -->
+
+<p><code class="language-plaintext highlighter-rouge">Bash</code> stands for Bourne Again SHell, and it has been the default shell for decades.
+However, recently (since around 2019 or so) both MacOS and many Linux distros switched the default shell to <code class="language-plaintext highlighter-rouge">zsh</code> (or The Z SHell). 
+This is basically entirely compatible with <!-- excerpt-end --><code class="language-plaintext highlighter-rouge">bash</code> except that it adds some nice quality of life improvements that are beyond the scope of this series, but feel free to explore on your own (<a href="https://linuxhint.com/differences_between_bash_zsh/" title="Differences between Bash and ZSH">differences bewteen <code class="language-plaintext highlighter-rouge">bash</code> and <code class="language-plaintext highlighter-rouge">zsh</code></a>).
+So unless otherwise stated, all the commands in this series will work for both shells.</p>
+
+<!-- excerpt-end -->
+
+<p>Knowing what OS you are on is super important as the terminal commands change across them. 
+Luckily Linux and MacOS share essentially all of the commands because they use the same shell (formerly <code class="language-plaintext highlighter-rouge">bash</code>, now <code class="language-plaintext highlighter-rouge">zsh</code>). 
+In contrast, Windows uses CMD or Powershell which has a differnt syntax and command list. 
+Luckily though, there are two options to get access to <code class="language-plaintext highlighter-rouge">bash</code> using Windows <a href="#windows">see below</a>.
+I highly reccomand that you use one of these projects to be able to follow along in this series if you are on a Windows machine.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Bash</code> is incredibly useful to know because all servers and super computers/computing clusters all run Linux, so having familiarity with this shell via using MacOS/Linux is invaluable, if you want a career involving IT, software engineering, datascience, computer science, etc. Knowing <code class="language-plaintext highlighter-rouge">bash</code> will help in all of those feilds.
+Additionally, most of the time if you get some CLI (command line interface) tutorial or code it will assume bash, so its just a good skill to have even if you are just a general computer tinkerer.</p>
+
+<h3 id="mac">Mac</h3>
+
+<p>If this is your first time I recommend you use the default apple terminal. You can use spotlight search (Keyboard Shortcut: <code class="language-plaintext highlighter-rouge">⌘</code> + <code class="language-plaintext highlighter-rouge">Spacebar</code>) and type terminal to get the default terminal experience. Alternatively, it can be found in the utilities folder inside your applications folder.</p>
+
+<p>Once opened, I highly recommend, you opening up the preferences with <code class="language-plaintext highlighter-rouge">⌘</code> + <code class="language-plaintext highlighter-rouge">,</code> and adjust your colors in the profile tab.
+Once you picked a theme and/or adjusted the colors make sure you save them by clicking the default button at the bottom left.
+You may been to quit and reopen the app for them to take effect permanantly.</p>
+
+<p>This might sound silly, but changing your colors can make huge difference. 
+Having a good looking terminal WILL ACTUALLY MAKE YOU A BETTER CODER.
+The more pleasing you find you terminal the more you will want to use it, and therefore, the more practice you will get. 
+That extra practice and motivation can make a world of difference.</p>
+
+<h3 id="linux">Linux</h3>
+
+<p>Let’s be honest, you know how this works.</p>
+
+<h3 id="windows">Windows</h3>
+
+<p>I <strong><em>HIGHLY</em></strong> reccomand that you use one of these projects to be able to follow along in this series.
+As, I will not discuss the <code class="language-plaintext highlighter-rouge">Powershell</code> shell at all.
+Since its not available by default you will need to download some software.
+If you are a beginner, I would reccomend <a href="https://gitforwindows.org/" title="Git for Windows">gitbash</a>, which is designed to give you access to the unix commands and meant to help with git specifically.
+More advanced user may try the <a href="https://learn.microsoft.com/en-us/windows/wsl/install" title="Windows Subsystem for Linux">Windows Subsystem for Linux (WSL)</a>, which is built by microsoft to allow you to directly use Linux from within your Windows machine.</p>
 
 <h2 id="what-is-a-command-line-interfacecli">What is a Command-Line Interface/CLI?</h2>
 
@@ -286,7 +326,7 @@ To do this via a GUI you would need to open each up, go to the file tab, click s
     
     
     <div class="series-nav-item current">
-      <p>Post <strong>1</strong> of <strong>6</strong>
+      <p>Post <strong>1</strong> of <strong>4</strong>
     </div>
     
     
@@ -295,16 +335,8 @@ To do this via a GUI you would need to open each up, go to the file tab, click s
     
     
     <div class="series-nav-item next">
-      <a class="btn" rel="next" href="/cli/getting-started">Next Post &rarr;</a>
+      <a class="btn" rel="next" href="/cli/bash">Next Post &rarr;</a>
     </div>
-    
-  
-    
-    
-    
-  
-    
-    
     
   
     
