@@ -43,6 +43,7 @@ where language is replaced with the relevant language like `bash` or `python` et
 
 ## What is the `.bashrc`/`.zshrc` and why do I need to know what it is.
 
+## Reading User inputs
 
 ## Homework
 
