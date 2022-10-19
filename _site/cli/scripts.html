@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon_io/favicon.ico"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Automating Tasks with bash | Your Coding Buddy</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Automating Tasks with bash" />
+<meta name="author" content="Deshawn Sambrano" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What are Scripts? Shebang #! Running Scripts Super User (sudo) Arguments Reading User inputs Printing Output (echo) Extra Practice &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What&#39;s Bash &amp;amp; CLIs: Open the Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Automating Tasks with bash&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; This is a intermediate-level follow up to the cli. Specifically you will learn: How to make a bash script (Setting a language with Shebang #!; Changing permissions chmod) Taking in arguments/user input for your script Change your $PATH to run scripts anywhere What is .bashrc / .zshrc Prerequisites: Knowledge of basic shell commands Read through the Command line (Bash/Zsh) What are Scripts? A script is just a combination of commands put into a file so that it can be run all of those commands at once. Scripts also allow you to read in arguments and even read in user inputs in the middle of the script. To start off you need to create a file, feel free to use any of the command line text editors, or your favorite IDE (some examples include: Visual Studio Code, Sublime Text, etc.), you typically want to avoid things like Notepad and TextEdit as they both can sometime add extra unwanted characters that can mess up scripts. You can name it anything, but make sure it has the .sh extension. I will be naming is my_first_script.sh. Shebang #! Once you open your file, on the first line you need to add a shebang #!. Shebangs are use to indicate which interpreter the script should use. In other words, which language should be used. In the vast majority of cases you should use: #!/usr/bin/env LANGUAGE where language is replaced with the relevant language like bash zsh or python etc. To make sure the script will show something, we are going to use the echo function. This is used to print thing to the console. In our case we will add echo &quot;Hello from my first script&quot; to the file. So the full file should look like this: #!/usr/bin/env bash echo &quot;Hello from first script&quot; Running the file should print “Hello from my first script” to the console. But how do you run a script. Running Scripts Now that we have our script ready its time to run it. To do so we need to make sure it has the proper permissions. lets check the permissions with ls -lh: Focus on the text on the left, specifically the rw-r--r--. This is telling you about the permissions for the file you are reading. They are repeated three times, the first set is for the owner of the file (since you made the file thats you), the second is for the users group (beyond the scope of this post), and the final section is for any user on the computer. They stand for read r, write w, and execute x permissions. As you might have guessed, the read permissions means those users can read the file, while write permissions means they can edit the file. Execute permissions means you can run it as a script. Notice currently, we do not have x permissions, so we need to give the file the permission to be run before it will work. For more information on permissions, you can check out this post. We can do this with the chomod command. The chomod command changes the file’s permission based on the options you select. You can either use chomod 755 file_name or chomod +x file_name. The first one specifically assigns read, write and execute permissions for the owner; and assigns read and execute for all other users. The second one, specifically, just adds execution permissions to all users. When you run this command you probably will see and error. This is because you need permission to change the files execution status. This is just like how you are asked to type in your admin password when installing a new application. To do that on the command-line, you need the sudo command. Super User (sudo) sudo stands for Super User DO. The super user is a user on your When you run a command with sudo escalation/priveledges you will also need to type in your password. If your, you setup the computer and have admin rights you will also be able to use sudo. On the other hand if you don’t have admin rights / had your company or university set up your computer, you might need to ask them to give you priveledges (but its worth trying this command first, because they might ahve given you priveledges anyways). When you type in your password in the command-line you should know that it will not show you typing anything. This is normal and is designed to improve security, but it can be confusing for first time users. So just type your password as normal. If you make a mistake, you can always press backspace a bunch of times and type again. Now you can combo the sudo command with the chomod command. As you can see, now we finally have execute permission on this file. One neat trick, is you can actually type sudo !! to say rerun the previously typed command but now with sudo priveledges. In order to actually run the file. All we need to do is type ./file_name. The . means specifically check the current folder because that is not the default place your computer will look for commands (more on that in this post). And since we included the shebang it will run the script in the write language. Here is what is looks like: Now that we got that whole process working, we can run the script anytime as long as we are in the correct working directory or specify how to get there. Luckily, we only have to do that process once, now that is has th proper permissions, it will stay that way! Now we can get to adding more functionality to our script with argumnets. Arguments We have seen so many previous commands have arguments, well now its time to add them to our own script! All argumnets tacted onto the end of the command can be used with$NUMBER, where the number corresponds to the order they were entered into the command-line. So, the $1 is the first argument $2 is the second and so on. Let’s make this clear with an example. Edit your script to look like this: Take now of the quotes, I purposefully put double &quot; instead of single &#39; because in bash, stuff instead double quotes &quot; will be automatically interpretted as with any variables/argumnets you include. In contrast, single quotes &#39; will report back exactly what you include and will not interpret any variables inside them. Running the updated file will give you this output: As you can see, the word one was the first argument passed and was replaced anywhere I had $1. Similarly two was the second argument passed was replaced anywhere the script had $2. Some notable other default arguments: $0 will give you the the path and filename for the script that is running $@ will list out all the arguments included from the command-line For more information of bash arguments and adding options to scripts see this post. Reading User inputs Allowing for input arguments are useful, but they require the user to know in advance what needs to go where and in what order. Alternatively, you could use the read command to read the input from the user. Let’s take a look with another example. I have updated the script to look like this now: The new read line uses the -p option to Prompt the user the with following text and stores whatever they type in a variable called NAME (more of variables in the next post). Then, on the final line, I print out Good Morning and the name that was entered in previously. As you can imagine this is incredibly powerful because you have have your scripts perform slightly different actions depending on how the user responds. Here is a challenge, see if you can adjust the script to use the correct greeting depending on the time of day. This is a bit challenging giving what you know to this point, but definitely worth a shot. If you are struggling to much, the Control the Flow post will help out. Printing Output (echo) As you probably could have told by now the echo command prints things to the console as output. I have talked about the echo command a lot, but wanted to have a single place where you can access all the information I talked about. And here it is. If you have been following along with this tutorial series you dont need to spend much time here, it just summarizes everything you have learned about the echo command. echo can be used to print text with echo TEXT. It can also display variables with echo $VARNAME. You can even combine text and variables automatically so long as you surround them in double quotes &quot; like this echo &quot;Hello $NAME&quot;. Using single quotes &#39; will print exactly whats inside regardless of it is a variable or not. Finally, the echo command can also be used to make files with text or append text to an existing file. To append text make sure you have two greator than symbols &gt;&gt; (e.g., echo &quot;Append this text&quot; &gt;&gt; file_name). If you want to replace the text just use one &gt; like this echo &quot;This text will replace all other text&quot; &gt; file_name. And of course, you can combine these principles, so you could include text to a file based on a variable: echo &quot;Add this var: $VARIABLE&quot; &gt;&gt; file_name. Extra Practice Its really important that I harping on this point. The only way you will improve is by actually doing attempting things. I am giving some examples, but even better would be for you to adapt them to your needs or, better yet, come up with a project on your own. You very likely, at this point still feel like you don’t know enough to start, but that is NOT true. You have learned a lot to this point, so make sure you try things out. If you get stuck that is ok, you can always search for additional things or check out the next few points to gain more skills. For this example, I want you to make a script to set up a new project. The script should take in either an input argumnet and/or read in user input to create a standard folder structure for a new project. Below you will see a sample one, but feel free to adjust it to your needs. For extra practice, try to have the main directories name be based on a user input or argument and include a some text in the README.md file. If you havent worked with md files also know as markdown files, check out my previous post on them. Try to make a new folder called git_repos somewhere on your computer and either move or copy a file into. Then make README.md file (for advanced users try nano or vim to edit it and say something). Inside the newly created folder you should you should have a the following structure: my_first_bash_script/ |-- analyses/ |-- plots/ |-- expriment/ |-- data/ |-- lit_review/ |-- supporting_docs/ |-- scales/ |-- irb_docs/ |-- DEVELOPEMENT_DECISIONS.md |-- README.md Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. I highly highly reccommend two separate .md files. The README is for anyone first coming to the project on how/why to run this code and what is found where (this should be updated as you continue developing the project). In contrast the DEVELOPMENT file is a place where you should write down every decision you made for the project. Why did you use this library instead of that one. Why did you did you select these particular values etc. I personally also leave a ton of links to stackexchange/stackoverflow for how I came up with code or to justify certain things to myself." />
+<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What are Scripts? Shebang #! Running Scripts Super User (sudo) Arguments Reading User inputs Printing Output (echo) Extra Practice &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What&#39;s Bash &amp;amp; CLIs: Open the Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Automating Tasks with bash&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; This is a intermediate-level follow up to the cli. Specifically you will learn: How to make a bash script (Setting a language with Shebang #!; Changing permissions chmod) Taking in arguments/user input for your script Change your $PATH to run scripts anywhere What is .bashrc / .zshrc Prerequisites: Knowledge of basic shell commands Read through the Command line (Bash/Zsh) What are Scripts? A script is just a combination of commands put into a file so that it can be run all of those commands at once. Scripts also allow you to read in arguments and even read in user inputs in the middle of the script. To start off you need to create a file, feel free to use any of the command line text editors, or your favorite IDE (some examples include: Visual Studio Code, Sublime Text, etc.), you typically want to avoid things like Notepad and TextEdit as they both can sometime add extra unwanted characters that can mess up scripts. You can name it anything, but make sure it has the .sh extension. I will be naming is my_first_script.sh. Shebang #! Once you open your file, on the first line you need to add a shebang #!. Shebangs are use to indicate which interpreter the script should use. In other words, which language should be used. In the vast majority of cases you should use: #!/usr/bin/env LANGUAGE where language is replaced with the relevant language like bash zsh or python etc. To make sure the script will show something, we are going to use the echo function. This is used to print thing to the console. In our case we will add echo &quot;Hello from my first script&quot; to the file. So the full file should look like this: #!/usr/bin/env bash echo &quot;Hello from first script&quot; Running the file should print “Hello from my first script” to the console. But how do you run a script. Running Scripts Now that we have our script ready its time to run it. To do so we need to make sure it has the proper permissions. lets check the permissions with ls -lh: Focus on the text on the left, specifically the rw-r--r--. This is telling you about the permissions for the file you are reading. They are repeated three times, the first set is for the owner of the file (since you made the file thats you), the second is for the users group (beyond the scope of this post), and the final section is for any user on the computer. They stand for read r, write w, and execute x permissions. As you might have guessed, the read permissions means those users can read the file, while write permissions means they can edit the file. Execute permissions means you can run it as a script. Notice currently, we do not have x permissions, so we need to give the file the permission to be run before it will work. For more information on permissions, you can check out this post. We can do this with the chomod command. The chomod command changes the file’s permission based on the options you select. You can either use chomod 755 file_name or chomod +x file_name. The first one specifically assigns read, write and execute permissions for the owner; and assigns read and execute for all other users. The second one, specifically, just adds execution permissions to all users. When you run this command you probably will see and error. This is because you need permission to change the files execution status. This is just like how you are asked to type in your admin password when installing a new application. To do that on the command-line, you need the sudo command. Super User (sudo) sudo stands for Super User DO. The super user is a user on your When you run a command with sudo escalation/priveledges you will also need to type in your password. If your, you setup the computer and have admin rights you will also be able to use sudo. On the other hand if you don’t have admin rights / had your company or university set up your computer, you might need to ask them to give you priveledges (but its worth trying this command first, because they might ahve given you priveledges anyways). When you type in your password in the command-line you should know that it will not show you typing anything. This is normal and is designed to improve security, but it can be confusing for first time users. So just type your password as normal. If you make a mistake, you can always press backspace a bunch of times and type again. Now you can combo the sudo command with the chomod command. As you can see, now we finally have execute permission on this file. One neat trick, is you can actually type sudo !! to say rerun the previously typed command but now with sudo priveledges. In order to actually run the file. All we need to do is type ./file_name. The . means specifically check the current folder because that is not the default place your computer will look for commands (more on that in this post). And since we included the shebang it will run the script in the write language. Here is what is looks like: Now that we got that whole process working, we can run the script anytime as long as we are in the correct working directory or specify how to get there. Luckily, we only have to do that process once, now that is has th proper permissions, it will stay that way! Now we can get to adding more functionality to our script with argumnets. Arguments We have seen so many previous commands have arguments, well now its time to add them to our own script! All argumnets tacted onto the end of the command can be used with$NUMBER, where the number corresponds to the order they were entered into the command-line. So, the $1 is the first argument $2 is the second and so on. Let’s make this clear with an example. Edit your script to look like this: Take now of the quotes, I purposefully put double &quot; instead of single &#39; because in bash, stuff instead double quotes &quot; will be automatically interpretted as with any variables/argumnets you include. In contrast, single quotes &#39; will report back exactly what you include and will not interpret any variables inside them. Running the updated file will give you this output: As you can see, the word one was the first argument passed and was replaced anywhere I had $1. Similarly two was the second argument passed was replaced anywhere the script had $2. Some notable other default arguments: $0 will give you the the path and filename for the script that is running $@ will list out all the arguments included from the command-line For more information of bash arguments and adding options to scripts see this post. Reading User inputs Allowing for input arguments are useful, but they require the user to know in advance what needs to go where and in what order. Alternatively, you could use the read command to read the input from the user. Let’s take a look with another example. I have updated the script to look like this now: The new read line uses the -p option to Prompt the user the with following text and stores whatever they type in a variable called NAME (more of variables in the next post). Then, on the final line, I print out Good Morning and the name that was entered in previously. As you can imagine this is incredibly powerful because you have have your scripts perform slightly different actions depending on how the user responds. Here is a challenge, see if you can adjust the script to use the correct greeting depending on the time of day. This is a bit challenging giving what you know to this point, but definitely worth a shot. If you are struggling to much, the Control the Flow post will help out. Printing Output (echo) As you probably could have told by now the echo command prints things to the console as output. I have talked about the echo command a lot, but wanted to have a single place where you can access all the information I talked about. And here it is. If you have been following along with this tutorial series you dont need to spend much time here, it just summarizes everything you have learned about the echo command. echo can be used to print text with echo TEXT. It can also display variables with echo $VARNAME. You can even combine text and variables automatically so long as you surround them in double quotes &quot; like this echo &quot;Hello $NAME&quot;. Using single quotes &#39; will print exactly whats inside regardless of it is a variable or not. Finally, the echo command can also be used to make files with text or append text to an existing file. To append text make sure you have two greator than symbols &gt;&gt; (e.g., echo &quot;Append this text&quot; &gt;&gt; file_name). If you want to replace the text just use one &gt; like this echo &quot;This text will replace all other text&quot; &gt; file_name. And of course, you can combine these principles, so you could include text to a file based on a variable: echo &quot;Add this var: $VARIABLE&quot; &gt;&gt; file_name. Extra Practice Its really important that I harping on this point. The only way you will improve is by actually doing attempting things. I am giving some examples, but even better would be for you to adapt them to your needs or, better yet, come up with a project on your own. You very likely, at this point still feel like you don’t know enough to start, but that is NOT true. You have learned a lot to this point, so make sure you try things out. If you get stuck that is ok, you can always search for additional things or check out the next few points to gain more skills. For this example, I want you to make a script to set up a new project. The script should take in either an input argumnet and/or read in user input to create a standard folder structure for a new project. Below you will see a sample one, but feel free to adjust it to your needs. For extra practice, try to have the main directories name be based on a user input or argument and include a some text in the README.md file. If you havent worked with md files also know as markdown files, check out my previous post on them. Try to make a new folder called git_repos somewhere on your computer and either move or copy a file into. Then make README.md file (for advanced users try nano or vim to edit it and say something). Inside the newly created folder you should you should have a the following structure: my_first_bash_script/ |-- analyses/ |-- plots/ |-- expriment/ |-- data/ |-- lit_review/ |-- supporting_docs/ |-- scales/ |-- irb_docs/ |-- DEVELOPEMENT_DECISIONS.md |-- README.md Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. I highly highly reccommend two separate .md files. The README is for anyone first coming to the project on how/why to run this code and what is found where (this should be updated as you continue developing the project). In contrast the DEVELOPMENT file is a place where you should write down every decision you made for the project. Why did you use this library instead of that one. Why did you did you select these particular values etc. I personally also leave a ton of links to stackexchange/stackoverflow for how I came up with code or to justify certain things to myself." />
+<link rel="canonical" href="http://localhost:4000/cli/scripts" />
+<meta property="og:url" content="http://localhost:4000/cli/scripts" />
+<meta property="og:site_name" content="Your Coding Buddy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Automating Tasks with bash" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; What are Scripts? Shebang #! Running Scripts Super User (sudo) Arguments Reading User inputs Printing Output (echo) Extra Practice &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Bash, Terminals, and Command Line Interface (CLIs)&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/cli&quot;&gt;What&#39;s Bash &amp;amp; CLIs: Open the Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash&quot;&gt;Navigating your File with bash&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Automating Tasks with bash&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/terminal-customization&quot;&gt;Customizing Your Terminal&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/cli/bash2&quot;&gt;Take your bash Skills to the Next Level&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon!&lt;/p&gt; This is a intermediate-level follow up to the cli. Specifically you will learn: How to make a bash script (Setting a language with Shebang #!; Changing permissions chmod) Taking in arguments/user input for your script Change your $PATH to run scripts anywhere What is .bashrc / .zshrc Prerequisites: Knowledge of basic shell commands Read through the Command line (Bash/Zsh) What are Scripts? A script is just a combination of commands put into a file so that it can be run all of those commands at once. Scripts also allow you to read in arguments and even read in user inputs in the middle of the script. To start off you need to create a file, feel free to use any of the command line text editors, or your favorite IDE (some examples include: Visual Studio Code, Sublime Text, etc.), you typically want to avoid things like Notepad and TextEdit as they both can sometime add extra unwanted characters that can mess up scripts. You can name it anything, but make sure it has the .sh extension. I will be naming is my_first_script.sh. Shebang #! Once you open your file, on the first line you need to add a shebang #!. Shebangs are use to indicate which interpreter the script should use. In other words, which language should be used. In the vast majority of cases you should use: #!/usr/bin/env LANGUAGE where language is replaced with the relevant language like bash zsh or python etc. To make sure the script will show something, we are going to use the echo function. This is used to print thing to the console. In our case we will add echo &quot;Hello from my first script&quot; to the file. So the full file should look like this: #!/usr/bin/env bash echo &quot;Hello from first script&quot; Running the file should print “Hello from my first script” to the console. But how do you run a script. Running Scripts Now that we have our script ready its time to run it. To do so we need to make sure it has the proper permissions. lets check the permissions with ls -lh: Focus on the text on the left, specifically the rw-r--r--. This is telling you about the permissions for the file you are reading. They are repeated three times, the first set is for the owner of the file (since you made the file thats you), the second is for the users group (beyond the scope of this post), and the final section is for any user on the computer. They stand for read r, write w, and execute x permissions. As you might have guessed, the read permissions means those users can read the file, while write permissions means they can edit the file. Execute permissions means you can run it as a script. Notice currently, we do not have x permissions, so we need to give the file the permission to be run before it will work. For more information on permissions, you can check out this post. We can do this with the chomod command. The chomod command changes the file’s permission based on the options you select. You can either use chomod 755 file_name or chomod +x file_name. The first one specifically assigns read, write and execute permissions for the owner; and assigns read and execute for all other users. The second one, specifically, just adds execution permissions to all users. When you run this command you probably will see and error. This is because you need permission to change the files execution status. This is just like how you are asked to type in your admin password when installing a new application. To do that on the command-line, you need the sudo command. Super User (sudo) sudo stands for Super User DO. The super user is a user on your When you run a command with sudo escalation/priveledges you will also need to type in your password. If your, you setup the computer and have admin rights you will also be able to use sudo. On the other hand if you don’t have admin rights / had your company or university set up your computer, you might need to ask them to give you priveledges (but its worth trying this command first, because they might ahve given you priveledges anyways). When you type in your password in the command-line you should know that it will not show you typing anything. This is normal and is designed to improve security, but it can be confusing for first time users. So just type your password as normal. If you make a mistake, you can always press backspace a bunch of times and type again. Now you can combo the sudo command with the chomod command. As you can see, now we finally have execute permission on this file. One neat trick, is you can actually type sudo !! to say rerun the previously typed command but now with sudo priveledges. In order to actually run the file. All we need to do is type ./file_name. The . means specifically check the current folder because that is not the default place your computer will look for commands (more on that in this post). And since we included the shebang it will run the script in the write language. Here is what is looks like: Now that we got that whole process working, we can run the script anytime as long as we are in the correct working directory or specify how to get there. Luckily, we only have to do that process once, now that is has th proper permissions, it will stay that way! Now we can get to adding more functionality to our script with argumnets. Arguments We have seen so many previous commands have arguments, well now its time to add them to our own script! All argumnets tacted onto the end of the command can be used with$NUMBER, where the number corresponds to the order they were entered into the command-line. So, the $1 is the first argument $2 is the second and so on. Let’s make this clear with an example. Edit your script to look like this: Take now of the quotes, I purposefully put double &quot; instead of single &#39; because in bash, stuff instead double quotes &quot; will be automatically interpretted as with any variables/argumnets you include. In contrast, single quotes &#39; will report back exactly what you include and will not interpret any variables inside them. Running the updated file will give you this output: As you can see, the word one was the first argument passed and was replaced anywhere I had $1. Similarly two was the second argument passed was replaced anywhere the script had $2. Some notable other default arguments: $0 will give you the the path and filename for the script that is running $@ will list out all the arguments included from the command-line For more information of bash arguments and adding options to scripts see this post. Reading User inputs Allowing for input arguments are useful, but they require the user to know in advance what needs to go where and in what order. Alternatively, you could use the read command to read the input from the user. Let’s take a look with another example. I have updated the script to look like this now: The new read line uses the -p option to Prompt the user the with following text and stores whatever they type in a variable called NAME (more of variables in the next post). Then, on the final line, I print out Good Morning and the name that was entered in previously. As you can imagine this is incredibly powerful because you have have your scripts perform slightly different actions depending on how the user responds. Here is a challenge, see if you can adjust the script to use the correct greeting depending on the time of day. This is a bit challenging giving what you know to this point, but definitely worth a shot. If you are struggling to much, the Control the Flow post will help out. Printing Output (echo) As you probably could have told by now the echo command prints things to the console as output. I have talked about the echo command a lot, but wanted to have a single place where you can access all the information I talked about. And here it is. If you have been following along with this tutorial series you dont need to spend much time here, it just summarizes everything you have learned about the echo command. echo can be used to print text with echo TEXT. It can also display variables with echo $VARNAME. You can even combine text and variables automatically so long as you surround them in double quotes &quot; like this echo &quot;Hello $NAME&quot;. Using single quotes &#39; will print exactly whats inside regardless of it is a variable or not. Finally, the echo command can also be used to make files with text or append text to an existing file. To append text make sure you have two greator than symbols &gt;&gt; (e.g., echo &quot;Append this text&quot; &gt;&gt; file_name). If you want to replace the text just use one &gt; like this echo &quot;This text will replace all other text&quot; &gt; file_name. And of course, you can combine these principles, so you could include text to a file based on a variable: echo &quot;Add this var: $VARIABLE&quot; &gt;&gt; file_name. Extra Practice Its really important that I harping on this point. The only way you will improve is by actually doing attempting things. I am giving some examples, but even better would be for you to adapt them to your needs or, better yet, come up with a project on your own. You very likely, at this point still feel like you don’t know enough to start, but that is NOT true. You have learned a lot to this point, so make sure you try things out. If you get stuck that is ok, you can always search for additional things or check out the next few points to gain more skills. For this example, I want you to make a script to set up a new project. The script should take in either an input argumnet and/or read in user input to create a standard folder structure for a new project. Below you will see a sample one, but feel free to adjust it to your needs. For extra practice, try to have the main directories name be based on a user input or argument and include a some text in the README.md file. If you havent worked with md files also know as markdown files, check out my previous post on them. Try to make a new folder called git_repos somewhere on your computer and either move or copy a file into. Then make README.md file (for advanced users try nano or vim to edit it and say something). Inside the newly created folder you should you should have a the following structure: my_first_bash_script/ |-- analyses/ |-- plots/ |-- expriment/ |-- data/ |-- lit_review/ |-- supporting_docs/ |-- scales/ |-- irb_docs/ |-- DEVELOPEMENT_DECISIONS.md |-- README.md Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. I highly highly reccommend two separate .md files. The README is for anyone first coming to the project on how/why to run this code and what is found where (this should be updated as you continue developing the project). In contrast the DEVELOPMENT file is a place where you should write down every decision you made for the project. Why did you use this library instead of that one. Why did you did you select these particular values etc. I personally also leave a ton of links to stackexchange/stackoverflow for how I came up with code or to justify certain things to myself.","headline":"Automating Tasks with bash","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cli/scripts"},"url":"http://localhost:4000/cli/scripts"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/javascript" defer src="/assets/main.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
+  
+  <!-- <script type="text/x-mathjax-config">
+      // From: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
+      // MathJax.Hub.Config({
+      // TeX: { equationNumbers: { autoNumber: "AMS" } }
+      // });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true
+        },
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?con
+fig=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+        // Below config from: https://stackoverflow.com/a/54373640
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            config: ["MMLorHTML.js"],
+            jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+            extensions: ["MathMenu.js", "MathZoom.js"]
+        });
+    </script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+    <a href="#main" class="skip skip-main">Jump to Main Content</a>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a><a class="page-link" href="/diff">Difficulties</a><a class="page-link" href="/series">Series</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content" id="main">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Automating Tasks with bash</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-03T00:00:00-07:00" itemprop="datePublished">Oct 3, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Deshawn Sambrano</span></span>
+      • <span class="read-time"><?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg id="clock" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 488 488" style="enable-background:new 0 0 488 488;" xml:space="preserve">
+<g transform="translate(0 -540.36)">
+	<g>
+		<g>
+			<path fill="currentColor"  d="M351.1,846.96l-97.1-67.9v-116.7c0-5.5-4.5-10-10-10s-10,4.5-10,10v122c0,3.3,1.6,6.3,4.3,8.2l101.4,70.9
+				c1.7,1.2,3.7,1.8,5.7,1.8v0c3.1,0,6.2-1.5,8.2-4.4C356.7,856.36,355.6,850.16,351.1,846.96z"/>
+			<path fill="currentColor" d="M416.4,611.96L416.4,611.96c-46.2-46.2-107.4-71.6-172.4-71.6s-126.2,25.4-172.4,71.6C25.4,658.16,0,719.36,0,784.36
+				s25.4,126.2,71.6,172.4c46.2,46.2,107.4,71.6,172.4,71.6s126.2-25.4,172.4-71.6s71.6-107.4,71.6-172.4S462.6,658.16,416.4,611.96
+				z M254,1008.16L254,1008.16v-40.8c0-5.5-4.5-10-10-10s-10,4.5-10,10v40.8c-115.6-5.1-208.7-98.2-213.8-213.8H61
+				c5.5,0,10-4.5,10-10s-4.5-10-10-10H20.2c5.1-115.6,98.2-208.7,213.8-213.8v40.8c0,5.5,4.5,10,10,10s10-4.5,10-10v-40.8
+				c115.6,5.1,208.7,98.2,213.8,213.8H427c-5.5,0-10,4.5-10,10s4.5,10,10,10h40.8C462.7,909.96,369.6,1003.06,254,1008.16z"/>
+		</g>
+	</g>
+</g>
+</svg>
+ 10 mins</span>
+       
+      
+      • <span class="page-diff"> Difficulty: <span class="Intermediate">Intermediate</span>
+      </span>
+       
+    </p>
+
+  </header>
+  
+    
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <nav id="sidebar">
+  <div class="toc-wrapper">
+    <h4>Table of Contents</h4>
+    <aside class="toc">
+<ul id="markdown-toc">
+  <li><a href="#what-are-scripts" id="markdown-toc-what-are-scripts">What are Scripts?</a></li>
+  <li><a href="#shebang-" id="markdown-toc-shebang-">Shebang <code class="language-plaintext highlighter-rouge">#!</code></a></li>
+  <li><a href="#running-scripts" id="markdown-toc-running-scripts">Running Scripts</a>    <ul>
+      <li><a href="#super-user-sudo" id="markdown-toc-super-user-sudo">Super User (sudo)</a></li>
+    </ul>
+  </li>
+  <li><a href="#arguments" id="markdown-toc-arguments">Arguments</a></li>
+  <li><a href="#reading-user-inputs" id="markdown-toc-reading-user-inputs">Reading User inputs</a></li>
+  <li><a href="#printing-output-echo" id="markdown-toc-printing-output-echo">Printing Output (<code class="language-plaintext highlighter-rouge">echo</code>)</a></li>
+  <li><a href="#extra-practice" id="markdown-toc-extra-practice">Extra Practice</a></li>
+</ul>
+
+    </aside>
+  </div>
+
+  <aside class="series">
+    <h4>This post is part of the series <em>Bash, Terminals, and Command Line Interface (CLIs)</em></h4>
+    <ol start="0">
+    
+    
+    <li>
+      
+      <a href="/cli">What's Bash &amp; CLIs: Open the Terminal</a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/cli/bash">Navigating your File with bash</a>
+      
+    </li>
+    
+    <li>
+      
+      <strong>Automating Tasks with bash</strong>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/cli/terminal-customization">Customizing Your Terminal</a>
+      
+    </li>
+    
+    <li>
+      
+      <a href="/cli/bash2">Take your bash Skills to the Next Level</a>
+      
+    </li>
+    
+  </ol>
+
+    <p>More posts coming soon!</p>
+
+  </aside>
+
+</nav>
+
+<section class="takeaways">
+
+  <p>This is a intermediate-level follow up to the cli. Specifically you will learn:</p>
+  <ul>
+    <li>How to make a bash script (Setting a language with Shebang <code class="language-plaintext highlighter-rouge">#!</code>; Changing permissions <code class="language-plaintext highlighter-rouge">chmod</code>)</li>
+    <li>Taking in arguments/user input for your script</li>
+    <li>Change your <code class="language-plaintext highlighter-rouge">$PATH</code> to run scripts anywhere</li>
+    <li>What is <code class="language-plaintext highlighter-rouge">.bashrc</code> / <code class="language-plaintext highlighter-rouge">.zshrc</code></li>
+  </ul>
+
+  <p>Prerequisites:</p>
+
+  <ul>
+    <li>Knowledge of basic shell commands</li>
+    <li>Read through the <a href="cli.md">Command line (Bash/Zsh)</a></li>
+  </ul>
+
+</section>
+
+<h2 id="what-are-scripts">What are Scripts?</h2>
+
+<p>A script is just a combination of commands put into a file so that it can be run all of those commands at once. 
+Scripts also allow you to read in arguments and even read in user inputs in the middle of the script.</p>
+
+<p>To start off you need to create a file, feel free to use any of the command line text editors, or your favorite IDE (some examples include: Visual Studio Code, Sublime Text, etc.), you typically want to avoid things like Notepad and TextEdit as they both can sometime add extra unwanted characters that can mess up scripts. 
+You can name it anything, but make sure it has the <code class="language-plaintext highlighter-rouge">.sh</code> extension.
+I will be naming is <code class="language-plaintext highlighter-rouge">my_first_script.sh</code>.</p>
+
+<h2 id="shebang-">Shebang <code class="language-plaintext highlighter-rouge">#!</code></h2>
+
+<p>Once you open your file, on the first line you need to add a shebang <code class="language-plaintext highlighter-rouge">#!</code>.
+Shebangs are use to indicate which interpreter the script should use.
+In other words, which language should be used.
+In the vast majority of cases you should use:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env LANGUAGE</span>
+</code></pre></div></div>
+
+<p>where language is replaced with the relevant language like <code class="language-plaintext highlighter-rouge">bash</code> <code class="language-plaintext highlighter-rouge">zsh</code> or <code class="language-plaintext highlighter-rouge">python</code> etc. 
+To make sure the script will show something, we are going to use the <code class="language-plaintext highlighter-rouge">echo</code> function.
+This is used to print thing to the console.
+In our case we will add <code class="language-plaintext highlighter-rouge">echo "Hello from my first script"</code> to the file.
+So the full file should look like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="nb">echo</span> <span class="s2">"Hello from first script"</span>
+</code></pre></div></div>
+
+<p>Running the file should print “Hello from my first script” to the console.
+But how do you run a script.</p>
+
+<h2 id="running-scripts">Running Scripts</h2>
+
+<p>Now that we have our script ready its time to run it.
+To do so we need to make sure it has the proper permissions.
+lets check the permissions with <code class="language-plaintext highlighter-rouge">ls -lh</code>:</p>
+
+<p><img src="/assets/imgs/rwx.png" alt="" /></p>
+
+<p>Focus on the text on the left, specifically the <code class="language-plaintext highlighter-rouge">rw-r--r--</code>.
+This is telling you about the permissions for the file you are reading.
+They are repeated three times, the first set is for the owner of the file (since you made the file thats you), the second is for the users group (beyond the scope of this post), and the final section is for any user on the computer.</p>
+
+<p>They stand for read <code class="language-plaintext highlighter-rouge">r</code>, write <code class="language-plaintext highlighter-rouge">w</code>, and execute <code class="language-plaintext highlighter-rouge">x</code> permissions.
+As you might have guessed, the read permissions means those users can read the file, while write permissions means they can edit the file.
+Execute permissions means you can run it as a script.
+Notice currently, we do not have <code class="language-plaintext highlighter-rouge">x</code> permissions, so we need to give the file the permission to be run before it will work.
+For more information on permissions, you can check out this <a href="https://linuxcommand.org/lc3_lts0090.php" title="Permissions in Bash">post</a>.</p>
+
+<p>We can do this with the <code class="language-plaintext highlighter-rouge">chomod</code> command.
+The <code class="language-plaintext highlighter-rouge">chomod</code> command changes the file’s permission based on the options you select. 
+You can either use <code class="language-plaintext highlighter-rouge">chomod 755 file_name</code> or <code class="language-plaintext highlighter-rouge">chomod +x file_name</code>.
+The first one specifically assigns read, write and execute permissions for the owner; and assigns read and execute for all other users.
+The second one, specifically, just adds execution permissions to all users.</p>
+
+<p>When you run this command you probably will see and error.</p>
+
+<p><img src="/assets/imgs/chmod-error.png" alt="chomod error" /></p>
+
+<p>This is because you need permission to change the files execution status.
+This is just like how you are asked to type in your admin password when installing a new application.
+To do that on the command-line, you need the <code class="language-plaintext highlighter-rouge">sudo</code> command.</p>
+
+<h3 id="super-user-sudo">Super User (sudo)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">sudo</code> stands for <strong>S</strong>uper <strong>U</strong>ser <strong>DO</strong>.
+The super user is a user on your</p>
+
+<p>When you run a command with <code class="language-plaintext highlighter-rouge">sudo</code> escalation/priveledges you will also need to type in your password.
+If your, you setup the computer and have admin rights you will also be able to use <code class="language-plaintext highlighter-rouge">sudo</code>.
+On the other hand if you don’t have admin rights / had your company or university set up your computer, you might need to ask them to give you priveledges (but its worth trying this command first, because they might ahve given you priveledges anyways).</p>
+
+<p>When you type in your password in the command-line you should know that it will not show you typing anything.
+This is normal and is designed to improve security, but it can be confusing for first time users.
+So just type your password as normal. 
+If you make a mistake, you can always press backspace a bunch of times and type again.</p>
+
+<p>Now you can combo the <code class="language-plaintext highlighter-rouge">sudo</code> command with the <code class="language-plaintext highlighter-rouge">chomod</code> command.</p>
+
+<p><img src="/assets/imgs/sudo-chmod.png" alt="Sudo chmod" /></p>
+
+<p>As you can see, now we finally have execute permission on this file.</p>
+
+<blockquote>
+  <p>One neat trick, is you can actually type <code class="language-plaintext highlighter-rouge">sudo !!</code> to say rerun the previously typed command but now with sudo priveledges.</p>
+</blockquote>
+
+<p>In order to actually run the file.
+All we need to do is type <code class="language-plaintext highlighter-rouge">./file_name</code>.
+The <code class="language-plaintext highlighter-rouge">.</code> means specifically check the current folder because that is not the default place your computer will look for commands (more on that in this <a href="/future_links">post</a>).
+And since we included the shebang it will run the script in the write language.
+Here is what is looks like:</p>
+
+<p><img src="/assets/imgs/first-script.png" alt="My First Script" /></p>
+
+<p>Now that we got that whole process working, we can run the script anytime as long as we are in the correct working directory or specify how to get there.
+Luckily, we only have to do that process once, now that is has th proper permissions, it will stay that way!
+Now we can get to adding more functionality to our script with argumnets.</p>
+
+<h2 id="arguments">Arguments</h2>
+
+<p>We have seen so many previous commands have arguments, well now its time to add them to our own script!
+All argumnets tacted onto the end of the command can be used with<code class="language-plaintext highlighter-rouge">$NUMBER</code>, where the number corresponds to the order they were entered into the command-line.
+So, the <code class="language-plaintext highlighter-rouge">$1</code> is the first argument <code class="language-plaintext highlighter-rouge">$2</code> is the second and so on.
+Let’s make this clear with an example.
+Edit your script to look like this:</p>
+
+<p><img src="/assets/imgs/arguments.png" alt="Script Arguments" /></p>
+
+<p>Take now of the quotes, I purposefully put double <code class="language-plaintext highlighter-rouge">"</code> instead of single <code class="language-plaintext highlighter-rouge">'</code> because in bash, stuff instead double quotes <code class="language-plaintext highlighter-rouge">"</code> will be automatically interpretted as with any variables/argumnets you include.
+In contrast, single quotes <code class="language-plaintext highlighter-rouge">'</code> will report back exactly what you include and will not interpret any variables inside them.
+Running the updated file will give you this output:</p>
+
+<p><img src="/assets/imgs/args-script-output.png" alt="My first script with Arguments" /></p>
+
+<p>As you can see, the word <code class="language-plaintext highlighter-rouge">one</code> was the first argument passed and was replaced anywhere I had <code class="language-plaintext highlighter-rouge">$1</code>.
+Similarly <code class="language-plaintext highlighter-rouge">two</code> was the second argument passed was replaced anywhere the script had <code class="language-plaintext highlighter-rouge">$2</code>.</p>
+
+<p>Some notable other default arguments:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$0</code> will give you the the path and filename for the script that is running</li>
+  <li><code class="language-plaintext highlighter-rouge">$@</code> will list out all the arguments included from the command-line</li>
+</ul>
+
+<p>For more information of bash arguments and adding options to scripts see this <a href="https://www.redhat.com/sysadmin/arguments-options-bash-scripts" title="Bash Arguments and Options">post</a>.</p>
+
+<h2 id="reading-user-inputs">Reading User inputs</h2>
+
+<p>Allowing for input arguments are useful, but they require the user to know in advance what needs to go where and in what order.
+Alternatively, you could use the <code class="language-plaintext highlighter-rouge">read</code> command to read the input from the user.
+Let’s take a look with another example.</p>
+
+<p>I have updated the script to look like this now:</p>
+
+<p><img src="/assets/imgs/user-input-script.png" alt="Read User Inputs" /></p>
+
+<p>The new <code class="language-plaintext highlighter-rouge">read</code> line uses the <code class="language-plaintext highlighter-rouge">-p</code> option to <strong>P</strong>rompt the user the with following text and stores whatever they type in a variable called <code class="language-plaintext highlighter-rouge">NAME</code> (more of <a href="/future_links">variables</a> in the next post).
+Then, on the final line, I print out Good Morning and the name that was entered in previously.</p>
+
+<p>As you can imagine this is incredibly powerful because you have have your scripts perform slightly different actions depending on how the user responds.</p>
+
+<p>Here is a challenge, see if you can adjust the script to use the correct greeting depending on the time of day. This is a bit challenging giving what you know to this point, but definitely worth a shot.
+If you are struggling to much, the <a href="/future_links">Control the Flow</a> post will help out.</p>
+
+<h2 id="printing-output-echo">Printing Output (<code class="language-plaintext highlighter-rouge">echo</code>)</h2>
+
+<p>As you probably could have told by now the <code class="language-plaintext highlighter-rouge">echo</code> command prints things to the console as output.
+I have talked about the <code class="language-plaintext highlighter-rouge">echo</code> command a lot, but wanted to have a single place where you can access all the information I talked about.
+And here it is.
+If you have been following along with this tutorial series you dont need to spend much time here, it just summarizes everything you have learned about the <code class="language-plaintext highlighter-rouge">echo</code> command.</p>
+
+<p><code class="language-plaintext highlighter-rouge">echo</code> can be used to print text with <code class="language-plaintext highlighter-rouge">echo TEXT</code>.
+It can also display variables with <code class="language-plaintext highlighter-rouge">echo $VARNAME</code>.
+You can even combine text and variables automatically so long as you surround them in double quotes <code class="language-plaintext highlighter-rouge">"</code> like this <code class="language-plaintext highlighter-rouge">echo "Hello $NAME"</code>.
+Using single quotes <code class="language-plaintext highlighter-rouge">'</code> will print exactly whats inside regardless of it is a variable or not.
+Finally, the <code class="language-plaintext highlighter-rouge">echo</code> command can also be used to make files with text or append text to an existing file.
+To append text make sure you have two greator than symbols <code class="language-plaintext highlighter-rouge">&gt;&gt;</code> (e.g., <code class="language-plaintext highlighter-rouge">echo "Append this text" &gt;&gt; file_name</code>).
+If you want to replace the text just use one <code class="language-plaintext highlighter-rouge">&gt;</code> like this <code class="language-plaintext highlighter-rouge">echo "This text will replace all other text" &gt; file_name</code>.
+And of course, you can combine these principles, so you could include text to a file based on a variable: <code class="language-plaintext highlighter-rouge">echo "Add this var: $VARIABLE" &gt;&gt; file_name</code>.</p>
+
+<h2 id="extra-practice">Extra Practice</h2>
+
+<p>Its really important that I harping on this point.
+The only way you will improve is by actually doing attempting things.
+I am giving some examples, but even better would be for you to adapt them to your needs or, better yet, come up with a project on your own. 
+You very likely, at this point still feel like you don’t know enough to start, but that is <strong>NOT</strong> true.
+You have learned a lot to this point, so make sure you try things out.
+If you get stuck that is ok, you can always search for additional things or check out the next few points to gain more skills.</p>
+
+<p>For this example, I want you to make a script to set up a new project.
+The script should take in either an input argumnet and/or read in user input to create a standard folder structure for a new project. 
+Below you will see a sample one, but feel free to adjust it to your needs.
+For extra practice, try to have the main directories name be based on a user input or argument and include a some text in the <code class="language-plaintext highlighter-rouge">README.md</code> file.
+If you havent worked with <code class="language-plaintext highlighter-rouge">md</code> files also know as markdown files, check out my previous post on <a href="/markdown">them</a>.</p>
+
+<p>Try to make a new folder called <code class="language-plaintext highlighter-rouge">git_repos</code> somewhere on your computer and either move or copy a file into. 
+Then make <code class="language-plaintext highlighter-rouge">README.md</code> file (for advanced users try <code class="language-plaintext highlighter-rouge">nano</code> or <code class="language-plaintext highlighter-rouge">vim</code> to edit it and say something).</p>
+
+<p>Inside the newly created folder you should you should have a the following structure:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_first_bash_script/
+  |-- analyses/
+      |-- plots/
+  |-- expriment/
+      |-- data/
+  |-- lit_review/
+  |-- supporting_docs/
+      |-- scales/
+      |-- irb_docs/  
+  |-- DEVELOPEMENT_DECISIONS.md
+  |-- README.md
+</code></pre></div></div>
+
+<p>Feel free to mess around with this structure a bit to suit your own needs, but having some basic structure for all projects is very important. 
+I highly highly reccommend two separate <code class="language-plaintext highlighter-rouge">.md</code> files. 
+The <code class="language-plaintext highlighter-rouge">README</code> is for anyone first coming to the project on how/why to run this code and what is found where (this should be updated as you continue developing the project).</p>
+
+<p>In contrast the <code class="language-plaintext highlighter-rouge">DEVELOPMENT</code> file is a place where you should write down every decision you made for the project.
+Why did you use this library instead of that one.
+Why did you did you select these particular values etc. 
+I personally also leave a ton of links to stackexchange/stackoverflow for how I came up with code or to justify certain things to myself.</p>
+
+
+  </div>
+    <nav class="series">
+  <h4><em>Bash, Terminals, and Command Line Interface (CLIs)</em> Series</h4>
+  
+  
+  <div class='series-nav'>
+  
+    
+    
+    
+  
+    
+    <div class="series-nav-item prev">
+      <a class="btn" rel="prev" href="/cli/bash">&larr; Prev Post</a>
+    </div>
+    
+    
+    
+  
+    
+    
+    <div class="series-nav-item current">
+      <p>Post <strong>3</strong> of <strong>5</strong>
+    </div>
+    
+    
+  
+    
+    
+    
+    <div class="series-nav-item next">
+      <a class="btn" rel="next" href="/cli/terminal-customization">Next Post &rarr;</a>
+    </div>
+    
+  
+    
+    
+    
+  
+  </div>
+</nav>
+
+  
+
+  <a class="u-url" href="/cli/scripts" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your Coding Buddy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your Coding Buddy</li><li><a class="u-email" href="mailto:dsambrano@g.harvard.edu">dsambrano@g.harvard.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li><li><a href="https://youtube.com/Dbrano3"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">Dbrano3</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
