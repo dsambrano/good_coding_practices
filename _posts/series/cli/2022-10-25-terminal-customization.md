@@ -23,7 +23,7 @@ This post is all about looking good while coding in the terminal. By the end of 
 - Know how to set up a terminal and customize the look and feel
 
 Prerequisites:
-- None; Although it may be helpful to have read through the series [intro][]
+- Some experience in the command line or having reviewed this [series][]
 
 </section>
 
@@ -229,6 +229,7 @@ So stay tuned for a future post about them and how to set them up.
 [unixporn]: https://www.reddit.com/r/unixporn/ "Reddit: r/unixporn"
 [utsav]: https://youtu.be/0MiGnwPdNGE "Engineering with Utsav: Terminal Setup on Mac"
 [pywal]: https://github.com/dylanaraps/pywal "Pywal to get custom Color pallette from your wallpaper"
+[series]: /cli
 
 
 <!-- IMGAGES -->
@@ -249,3 +250,4 @@ So stay tuned for a future post about them and how to set them up.
 
 
 [packagemanager]: /future-links
+
