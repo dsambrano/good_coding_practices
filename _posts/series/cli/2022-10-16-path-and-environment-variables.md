@@ -33,6 +33,7 @@ Prerequisites:
 
 ## What is a Variable
 
+<!-- excerpt-start -->
 Up until now, I have only tagentially mentioned the concept of a variable.
 A variable is a part of your script that can change either from user input or come other parts of your script.
 Variables are a foundational part of any programmers toolkit because they allow you to write code that is adaptable to the use case instead of having to know all of the details before the project starts. 
@@ -42,6 +43,8 @@ We did not know in advance what is was going to be, but we just knew we wanted t
 Additionally, we use the `read` command to read input from the user and store that as a variable to be used later on in the script.
 So you already have a sense of how variables can be used.
 Here, I am just going to spell out some good practices with variables.
+
+<!-- excerpt-end -->
 
 For example, typically you want to always create/assign all your variables at the top of your script. 
 There are some exceptions, but in general, you should try to stick to this rule.
