@@ -27,8 +27,9 @@
     </li>
     {% endfor %}
   </ol>
-  {% if current_series | map: 'complete' %}
-  <p>More posts coming soon!</p>
+  {% assign test = current_series | map: 'complete' | upcase %}
+  {% if test contains 'FALSE'%}
+  <p>More posts coming soon! </p>
   {% endif %}
 </aside>
 {% endif %}
