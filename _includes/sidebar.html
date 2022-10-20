@@ -13,6 +13,7 @@
 
 {% if series_conditional %}
 {% assign current_series = site.data.series | where: 'id', page.series %}
+{% assign final_post = site.posts | where: "serieslast", page.series %}
 <aside class="series">
   <h4>This post is part of the series <em>{{current_series | map: 'title' }}</em></h4>
   <ol start=0>
@@ -25,6 +26,11 @@
       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
       {% endif %}
     </li>
+    {% if final_post != empty and forloop.last %}
+    <li>
+      <a href="{{ site.baseurl }}{{final_post | map: 'url'}}">{{final_post | map: "title"}}</a>
+    </li>
+    {% endif %}
     {% endfor %}
   </ol>
   {% assign test = current_series | map: 'complete' | upcase %}

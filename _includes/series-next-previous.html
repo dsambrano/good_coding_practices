@@ -1,3 +1,4 @@
+{% assign final_post = site.posts | where: "serieslast", page.series %}
 <nav class="series">
   <h4><em>{{ site.data.series | where: 'id', page.series | map: 'title' }}</em> Series</h4>
   {% assign series-posts = site.posts | reverse | where: 'series', page.series %}
@@ -25,7 +26,11 @@
     {% endif %}
     {% if next_post_index > forloop.length and forloop.last %}
     <div class="series-nav-item next">
+    {% if final_post != empty%}
+      <a href="{{ site.baseurl }}{{final_post | map: 'url'}}">{{final_post | map: "title"}}</a>
+    {% else %}
       <p>More posts coming soon!</p>
+    {% endif %}
     </div>
     {% elsif next_post_index == forloop.index %}
     <div class="series-nav-item next">
