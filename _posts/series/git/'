@@ -4,12 +4,12 @@ title:  "Taking Git for a Test Drive"
 date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding Git GitHub
-time: 20
+time: 5
 category: git
 series: git
 draft: true
 usemathjax: true
-diff: intermediate
+diff: beginner
 
 ---
 
@@ -18,11 +18,9 @@ diff: intermediate
 <section class="takeaways">
 
 In this post you will learn the basics of Git and GitHub/GitLab. By the end you will know: 
-- The 4 stages of the git workflow
+- The git workflow
 - All the commands relevant to initalizing and working with a git project
 - How to set up a Git repository
-- How to set up an online repository (via either GitHub or GitLab)
-- How to collaborate with any other scientist using Git
 
 Prerequisites:
 - None; though it may be helpful to skim through the [Command Line (Bash/zsh)][cli] post first, especially if you do not know how to use the terminal or how to use a bash. 
@@ -35,7 +33,7 @@ Prerequisites:
 <!-- excerpt-start -->
 
 Now its time to finally try out `git` to see what all the fuss is about. In this tutorial you will learn the basics of `git` and how to save commits (checkpoints) for you code along the way. Before we get started make sure you have `git` installed by running `git -v`.
-If you see any errors make sure you follow these [installation instructions][install].
+If you see any errors make sure you follow the [installation instructions][install].
 
 <!-- excerpt-end -->
 
@@ -54,7 +52,7 @@ my_first_git_project/
 ```
 
 Next we need to create a `README.md` file.
-These are super important and as the name implies you should alwasy read this before using some software/code you get online.
+These are super important and as the name implies you should always read this before using some software/code you get online.
 As the extension implies, `README.md`'s are in the `markdown` format.
 If you are not familiar with markdown, check out my [post][markdown].
 
@@ -62,7 +60,7 @@ If you are not familiar with markdown, check out my [post][markdown].
 
 In this file, you will find basic information about how to setup/configure and run the code that you download. 
 It also often describes the basic functionality of the code as this is the first thing anyone will see about the project on GitHub/GitLab. 
-For our purposes since this is a basic project, you can just add the level 1 header and a 1 line description.
+For our purposes since this is a basic project, you can just add a Level 1 header and a simple description.
 
 ```md
 # My first Git Repo
@@ -76,13 +74,14 @@ The follow lines of code assign any changes that you specifically make, to your 
 Kinda like signing off on your work with a signature, that way we can figure out who did what.
 
 ```bash
-git config --global user.name "Deshawn Sambrano"
-git config --global user.email DSambrano@g.harvard.edu
+git config --global user.name "YOUR NAME"
+git config --global user.email YOUR_EMAIL@DOMAIN.COM # Default: github_username@users.noreply.github.com
 ```
 
 Now that that is all taken care of, we can initialize your repo with:
 
 ```bash
+cd DIRECTORY_OF_INTREST
 git init
 ```
 
@@ -150,6 +149,6 @@ Something about setting up a repo and
 
 
 
-[cli]: {% post_url /series/cli/2022-10-04-bash %}
+[cli]: {% post_url /series/cli/2022-10-10-bash %}
 [install]: {% post_url /series/git/2022-10-05-git-installation %}
 [markdown]: {% post_url 2022-10-03-markdown %}
