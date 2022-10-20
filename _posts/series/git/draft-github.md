@@ -94,6 +94,12 @@ I want you to take one of your projects and initialize it as a git project and s
 This can be as a private repo if need be
 
 
+## Recap
+
+If you were just here for the basics, you know them and can effectively use git and github.
+However, if you are looking for a little more, you can check out the rest of the series where I cover git Branches, reviewing previous commits and more
+
+
 ## Additional Resources:
 
 [fireshipio](https://youtu.be/HkdAHXoRtos "Fireshipio: Git and Github")
