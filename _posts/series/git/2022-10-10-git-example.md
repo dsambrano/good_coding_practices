@@ -9,7 +9,7 @@ category: git
 series: git
 draft: true
 usemathjax: true
-diff: beginner
+diff: intermediate
 
 ---
 
@@ -81,7 +81,7 @@ git config --global user.email YOUR_EMAIL@DOMAIN.COM # Default: github_username@
 Now that that is all taken care of, we can initialize your repo with:
 
 ```bash
-cd DIRECTORY_OF_INTREST
+cd DIRECTORY_OF_INTREST # e.g., my_first_git_project
 git init
 ```
 
@@ -136,6 +136,26 @@ If you need to make more changes commit the ones that have already been changed 
 Small incremental `commit`s makes it significantly easier to identify problems in the code because you can always revert the problematic `commit`.
 If you have very large `commit` the bug introduced might have also been committed with a new important feature, making it harder to seperate out the bug.
 
+### Your History
+
+Now that you got the basics down, lets make a few more `commit`s for some additional practice and so I can show you their true power.
+
+Make at least two more `commit`s adding some things to your files or adding new files.
+To follow along, I will make a few `commit`s as well.
+<!--one commit with the message `Print Name to console` and another called `Adding Data Files`. -->
+In these, I just be adding various lines of code and files, it does not really matter what you put. 
+This will give you more practice will adding `commit`s, so try to edit multiple files and only add some of them on a particular `commit`, have some `commit`s where you delete code, etc.
+Essentailly, make a few and explore a long the way.
+Here is what my repo looks like now!
+
+![]()
+
+Now let's look at all the `commit`s I made.
+To do that I will use the `git log` command.
+I typically also add a couple of arguments to make mine look a little nicer, which you are more than welcome to mimic (` `).
+Better yet, I make that command into and alias, so I can just type out `glog`, more on aliases [here][aliases].
+But let's say I need some code I deleted previously.
+How to I get access to it?
 
 ## Common Errors and Hiccups
 

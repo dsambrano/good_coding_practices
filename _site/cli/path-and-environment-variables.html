@@ -128,7 +128,10 @@ fig=TeX-AMS_HTML-full"></script>
     </ul>
   </li>
   <li><a href="#what-is-the-path-variable-and-how-to-we-adjust-it" id="markdown-toc-what-is-the-path-variable-and-how-to-we-adjust-it">What is the <code class="language-plaintext highlighter-rouge">$PATH</code> variable and how to we adjust it</a></li>
-  <li><a href="#what-is-the-bashrczshrc-and-why-do-i-need-to-know-it" id="markdown-toc-what-is-the-bashrczshrc-and-why-do-i-need-to-know-it">What is the <code class="language-plaintext highlighter-rouge">.bashrc</code>/<code class="language-plaintext highlighter-rouge">.zshrc</code> and why do I need to know it</a></li>
+  <li><a href="#what-is-the-bashrczshrc-and-why-do-i-need-to-know-it" id="markdown-toc-what-is-the-bashrczshrc-and-why-do-i-need-to-know-it">What is the <code class="language-plaintext highlighter-rouge">.bashrc</code>/<code class="language-plaintext highlighter-rouge">.zshrc</code> and why do I need to know it</a>    <ul>
+      <li><a href="#aliases" id="markdown-toc-aliases">Aliases</a></li>
+    </ul>
+  </li>
 </ul>
 
     </aside>
@@ -291,7 +294,7 @@ To solve this, you can adjust your <code class="language-plaintext highlighter-r
 
 <h2 id="what-is-the-bashrczshrc-and-why-do-i-need-to-know-it">What is the <code class="language-plaintext highlighter-rouge">.bashrc</code>/<code class="language-plaintext highlighter-rouge">.zshrc</code> and why do I need to know it</h2>
 
-<p>One final thing to note, is the that when assigning an environmental variable with <code class="language-plaintext highlighter-rouge">export</code>, it will only last for that session.
+<p>When assigning an environmental variable with <code class="language-plaintext highlighter-rouge">export</code>, it will only last for that session.
 If you open a new tab/window or if you close this one and open a new one, you will not longer have access to that environment variable.
 This is where you <code class="language-plaintext highlighter-rouge">.bashrc</code> or <code class="language-plaintext highlighter-rouge">.zshrc</code> come into play.
 These files are run everytime you open up a new terminal, so if you add the <code class="language-plaintext highlighter-rouge">export</code> command to your <code class="language-plaintext highlighter-rouge">rc</code> file, it will be available everytime you open up a new terminal/tab.</p>
@@ -308,6 +311,35 @@ They are both located in your home directory, so for <code class="language-plain
 The <code class="language-plaintext highlighter-rouge">zsh</code> one is located at <code class="language-plaintext highlighter-rouge">~/.zshrc</code>.
 Note the <code class="language-plaintext highlighter-rouge">.</code> since these are hidden files.
 Add the relevant export to the end of this file (you learned about appending with <code class="language-plaintext highlighter-rouge">echo</code> or editing with <code class="language-plaintext highlighter-rouge">nano</code>).</p>
+
+<h3 id="aliases">Aliases</h3>
+
+<p>Perhaps the most valuable exports you can have are you <code class="language-plaintext highlighter-rouge">alias</code>es.
+<code class="language-plaintext highlighter-rouge">alias</code>es are alternative shorthands for command.
+You can assign an <code class="language-plaintext highlighter-rouge">alias</code> to any command. 
+Some common examples include <code class="language-plaintext highlighter-rouge">alias</code>ing the <code class="language-plaintext highlighter-rouge">ls -lha</code> to <code class="language-plaintext highlighter-rouge">ll</code>.
+The general structure of an <code class="language-plaintext highlighter-rouge">alias</code> is:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">ALIAS_NAME</span><span class="o">=</span><span class="s2">"LONG OLD COMMAND"</span>
+</code></pre></div></div>
+<p>so for the example above you would do</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">ll</span><span class="o">=</span><span class="s2">"ls -lha"</span>
+</code></pre></div></div>
+
+<p>now, instead of typing out <code class="language-plaintext highlighter-rouge">ls -lha</code>, you can just type <code class="language-plaintext highlighter-rouge">ll</code> to get the same output.
+Here is a list of a few common <code class="language-plaintext highlighter-rouge">alias</code>es, but you should try to make your own, just don’t forget to add them to your <code class="language-plaintext highlighter-rouge">bashrc</code> or <code class="language-plaintext highlighter-rouge">zshrc</code> file or you won’t have permanant access to them.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ll="ls -lha"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">..="cd .."</code></li>
+  <li><code class="language-plaintext highlighter-rouge">...="cd ../.."</code>: I have this repeated a few time so I can go back many directories just with <code class="language-plaintext highlighter-rouge">.....</code></li>
+  <li><code class="language-plaintext highlighter-rouge">g=git</code>: Notice, you don’t need quotes if you do not have any spaces in your command</li>
+  <li><code class="language-plaintext highlighter-rouge">ga="git add"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">gcm="git commit -m"</code></li>
+</ul>
+
+<p>For more common ones, you can check out this <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases" title="Common Aliases">repo</a>.</p>
 
 
   </div>
