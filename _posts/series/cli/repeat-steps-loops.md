@@ -38,3 +38,4 @@ Of course you can combine all the concepts we learned previously, by putting an 
 
 
 [flow-control]: 
+https://www.cyberciti.biz/faq/bash-while-loop/

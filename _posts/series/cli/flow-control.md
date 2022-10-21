@@ -44,3 +44,6 @@ Need to talk about `||` and `&&` in addition to if else and switch case
 
 ## If Statements
 also I have a good meme on my phone
+
+
+https://acloudguru.com/blog/engineering/conditions-in-bash-scripting-if-statements
