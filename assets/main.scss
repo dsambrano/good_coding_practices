@@ -56,6 +56,9 @@ a > {{i['name']}}{
 .post-decorations{
     margin-top: -15px;
     margin-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
 }
 
 #clock {
