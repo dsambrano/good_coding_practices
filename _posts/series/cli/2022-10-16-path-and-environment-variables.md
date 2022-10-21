@@ -123,7 +123,7 @@ To solve this, you can adjust your `.bashrc` or `.zshrc`.
 
 ## What is the `.bashrc`/`.zshrc` and why do I need to know it
 
-One final thing to note, is the that when assigning an environmental variable with `export`, it will only last for that session.
+When assigning an environmental variable with `export`, it will only last for that session.
 If you open a new tab/window or if you close this one and open a new one, you will not longer have access to that environment variable.
 This is where you `.bashrc` or `.zshrc` come into play.
 These files are run everytime you open up a new terminal, so if you add the `export` command to your `rc` file, it will be available everytime you open up a new terminal/tab.
@@ -142,5 +142,34 @@ The `zsh` one is located at `~/.zshrc`.
 Note the `.` since these are hidden files.
 Add the relevant export to the end of this file (you learned about appending with `echo` or editing with `nano`).
 
+### Aliases
+
+Perhaps the most valuable exports you can have are you `alias`es.
+`alias`es are alternative shorthands for command.
+You can assign an `alias` to any command. 
+Some common examples include `alias`ing the `ls -lha` to `ll`.
+The general structure of an `alias` is:
+
+```bash
+alias ALIAS_NAME="LONG OLD COMMAND"
+```
+so for the example above you would do
+
+```bash
+alias ll="ls -lha"
+```
+
+now, instead of typing out `ls -lha`, you can just type `ll` to get the same output.
+Here is a list of a few common `alias`es, but you should try to make your own, just don't forget to add them to your `bashrc` or `zshrc` file or you won't have permanant access to them.
+
+- `ll="ls -lha"`
+- `..="cd .."`
+- `...="cd ../.."`: I have this repeated a few time so I can go back many directories just with `.....`
+- `g=git`: Notice, you don't need quotes if you do not have any spaces in your command
+- `ga="git add"`
+- `gcm="git commit -m"`
+
+For more common ones, you can check out this [repo][common-aliases].
 
 [google-bash-style]: https://google.github.io/styleguide/shellguide.html "Google Shell Style Guide"
+[common-aliases]: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases "Common Aliases"
