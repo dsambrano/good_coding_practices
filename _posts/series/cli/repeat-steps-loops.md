@@ -1,4 +1,5 @@
 
+title: Reusing Code with Loops and Functions
 
 
 You can come a long way since you first started, but you are probably still having to repeat yourself alot.
