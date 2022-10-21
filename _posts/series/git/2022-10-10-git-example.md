@@ -169,9 +169,9 @@ If you are not sure what `cd` is checkout my series on [`bash`][cli].
 The next common mistakes is more of a group of mistakes.
 They all are centered about bad `commit`ting behavior.
 The first, and by far most common, is people not write useful messages when `commit`ting.
-Some examples include `Fixed Bug` or `Added Function`.
+Some examples include `Fixing Typos`, `Fixed Bug`, or `Added Function`.
 These messages give absolutely not information about what changed since the last `commit`.
-Instead, you should make they are more informative like these: `Bug Fix: Updated Screen Issues Prevent Screen to Update` or `Added Function that Allows User to Restart Application`.
+Instead, you should make more informative messages, like these: `Fixing Typos in Instructions`, `Bug Fix: Updated Screen Issues Prevent Screen to Update`, or `Added Function that Allows User to Restart Application`.
 They are more informative for you and anyone else who edits the code to allow them to know what checkout to return to if an issue occurs.
 
 Second is not `commit`ting often enough.
