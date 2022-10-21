@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon_io/favicon.ico"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Taking Git for a Test Drive | Your Coding Buddy</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Taking Git for a Test Drive" />
+<meta name="author" content="Deshawn Sambrano" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Git Example Time &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Git and GitHub: Whats the Big Deal&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/git&quot;&gt;I Don&#39;t... GIT it&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/git/git-installation&quot;&gt;Installing Git&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Taking Git for a Test Drive&lt;/strong&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon! &lt;/p&gt; In this post you will learn the basics of Git and GitHub/GitLab. By the end you will know: The git workflow All the commands relevant to initalizing and working with a git project How to set up a Git repository Prerequisites: None; though it may be helpful to skim through the Command Line (Bash/zsh) post first, especially if you do not know how to use the terminal or how to use a bash. Git Example Time Now its time to finally try out git to see what all the fuss is about. In this tutorial you will learn the basics of git and how to save commits (checkpoints) for you code along the way. Before we get started make sure you have git installed by running git -v. If you see any errors make sure you follow the installation instructions." />
+<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Git Example Time &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Git and GitHub: Whats the Big Deal&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/git&quot;&gt;I Don&#39;t... GIT it&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/git/git-installation&quot;&gt;Installing Git&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Taking Git for a Test Drive&lt;/strong&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon! &lt;/p&gt; In this post you will learn the basics of Git and GitHub/GitLab. By the end you will know: The git workflow All the commands relevant to initalizing and working with a git project How to set up a Git repository Prerequisites: None; though it may be helpful to skim through the Command Line (Bash/zsh) post first, especially if you do not know how to use the terminal or how to use a bash. Git Example Time Now its time to finally try out git to see what all the fuss is about. In this tutorial you will learn the basics of git and how to save commits (checkpoints) for you code along the way. Before we get started make sure you have git installed by running git -v. If you see any errors make sure you follow the installation instructions." />
+<link rel="canonical" href="http://localhost:4000/git/git-example" />
+<meta property="og:url" content="http://localhost:4000/git/git-example" />
+<meta property="og:site_name" content="Your Coding Buddy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Taking Git for a Test Drive" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Git Example Time &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Git and GitHub: Whats the Big Deal&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/git&quot;&gt;I Don&#39;t... GIT it&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/git/git-installation&quot;&gt;Installing Git&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Taking Git for a Test Drive&lt;/strong&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon! &lt;/p&gt; In this post you will learn the basics of Git and GitHub/GitLab. By the end you will know: The git workflow All the commands relevant to initalizing and working with a git project How to set up a Git repository Prerequisites: None; though it may be helpful to skim through the Command Line (Bash/zsh) post first, especially if you do not know how to use the terminal or how to use a bash. Git Example Time Now its time to finally try out git to see what all the fuss is about. In this tutorial you will learn the basics of git and how to save commits (checkpoints) for you code along the way. Before we get started make sure you have git installed by running git -v. If you see any errors make sure you follow the installation instructions.","headline":"Taking Git for a Test Drive","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/git/git-example"},"url":"http://localhost:4000/git/git-example"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/javascript" defer src="/assets/main.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
+  
+  <!-- <script type="text/x-mathjax-config">
+      // From: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
+      // MathJax.Hub.Config({
+      // TeX: { equationNumbers: { autoNumber: "AMS" } }
+      // });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true
+        },
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?con
+fig=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+        // Below config from: https://stackoverflow.com/a/54373640
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            config: ["MMLorHTML.js"],
+            jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+            extensions: ["MathMenu.js", "MathZoom.js"]
+        });
+    </script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+    <a href="#main" class="skip skip-main">Jump to Main Content</a>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a><a class="page-link" href="/diff">Difficulties</a><a class="page-link" href="/series">Series</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content" id="main">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Taking Git for a Test Drive</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-03T00:00:00-07:00" itemprop="datePublished">Oct 3, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Deshawn Sambrano</span></span>
+      • <span class="read-time"><?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg id="clock" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 488 488" style="enable-background:new 0 0 488 488;" xml:space="preserve">
+<g transform="translate(0 -540.36)">
+	<g>
+		<g>
+			<path fill="currentColor"  d="M351.1,846.96l-97.1-67.9v-116.7c0-5.5-4.5-10-10-10s-10,4.5-10,10v122c0,3.3,1.6,6.3,4.3,8.2l101.4,70.9
+				c1.7,1.2,3.7,1.8,5.7,1.8v0c3.1,0,6.2-1.5,8.2-4.4C356.7,856.36,355.6,850.16,351.1,846.96z"/>
+			<path fill="currentColor" d="M416.4,611.96L416.4,611.96c-46.2-46.2-107.4-71.6-172.4-71.6s-126.2,25.4-172.4,71.6C25.4,658.16,0,719.36,0,784.36
+				s25.4,126.2,71.6,172.4c46.2,46.2,107.4,71.6,172.4,71.6s126.2-25.4,172.4-71.6s71.6-107.4,71.6-172.4S462.6,658.16,416.4,611.96
+				z M254,1008.16L254,1008.16v-40.8c0-5.5-4.5-10-10-10s-10,4.5-10,10v40.8c-115.6-5.1-208.7-98.2-213.8-213.8H61
+				c5.5,0,10-4.5,10-10s-4.5-10-10-10H20.2c5.1-115.6,98.2-208.7,213.8-213.8v40.8c0,5.5,4.5,10,10,10s10-4.5,10-10v-40.8
+				c115.6,5.1,208.7,98.2,213.8,213.8H427c-5.5,0-10,4.5-10,10s4.5,10,10,10h40.8C462.7,909.96,369.6,1003.06,254,1008.16z"/>
+		</g>
+	</g>
+</g>
+</svg>
+ 5 mins</span>
+       
+      
+      • <span class="page-diff"> Difficulty: <span class="Beginner">Beginner</span>
+      </span>
+       
+    </p>
+
+  </header>
+  
+    
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <nav id="sidebar">
+  <div class="toc-wrapper">
+    <h4>Table of Contents</h4>
+    <aside class="toc">
+<ul id="markdown-toc">
+  <li><a href="#git-example-time" id="markdown-toc-git-example-time">Git Example Time</a>    <ul>
+      <li><a href="#git-basics" id="markdown-toc-git-basics">Git Basics</a></li>
+    </ul>
+  </li>
+  <li><a href="#common-errors-and-hiccups" id="markdown-toc-common-errors-and-hiccups">Common Errors and Hiccups</a></li>
+  <li><a href="#advanced-topics-in-git" id="markdown-toc-advanced-topics-in-git">Advanced Topics in Git</a></li>
+  <li><a href="#recap" id="markdown-toc-recap">Recap</a></li>
+</ul>
+
+    </aside>
+  </div>
+
+  <aside class="series">
+    <h4>This post is part of the series <em>Git and GitHub: Whats the Big Deal</em></h4>
+    <ol start="0">
+    
+    
+    <li>
+      
+      <a href="/git">I Don't... GIT it</a>
+      
+    </li>
+    
+    
+    <li>
+      
+      <a href="/git/git-installation">Installing Git</a>
+      
+    </li>
+    
+    
+    <li>
+      
+      <strong>Taking Git for a Test Drive</strong>
+      
+    </li>
+    
+    
+  </ol>
+
+    <p>More posts coming soon! </p>
+
+  </aside>
+
+</nav>
+
+<section class="takeaways">
+
+  <p>In this post you will learn the basics of Git and GitHub/GitLab. By the end you will know:</p>
+  <ul>
+    <li>The git workflow</li>
+    <li>All the commands relevant to initalizing and working with a git project</li>
+    <li>How to set up a Git repository</li>
+  </ul>
+
+  <p>Prerequisites:</p>
+  <ul>
+    <li>None; though it may be helpful to skim through the <a href="/cli/bash">Command Line (Bash/zsh)</a> post first, especially if you do not know how to use the terminal or how to use a bash.</li>
+  </ul>
+
+</section>
+
+<h2 id="git-example-time">Git Example Time</h2>
+
+<!-- excerpt-start -->
+
+<p>Now its time to finally try out <code class="language-plaintext highlighter-rouge">git</code> to see what all the fuss is about. In this tutorial you will learn the basics of <code class="language-plaintext highlighter-rouge">git</code> and how to save commits (checkpoints) for you code along the way. Before we get started make sure you have <code class="language-plaintext highlighter-rouge">git</code> installed by running <code class="language-plaintext highlighter-rouge">git -v</code>.
+If you see any errors make sure you follow the <a href="/git/git-installation">installation instructions</a>.</p>
+
+<!-- excerpt-end -->
+
+<h3 id="git-basics">Git Basics</h3>
+
+<p>Now we will follow a super basic example to <code class="language-plaintext highlighter-rouge">git</code>  an understanding (pun intended).
+First let’s set up the following directory structure.
+Make sure each file has some text in them. 
+If you are not sure what to type at least make sure each of the files contain 1 line of text that is just the same as the name of the file without and extension. 
+So the <code class="language-plaintext highlighter-rouge">hello_world</code> file can just be have the content <code class="language-plaintext highlighter-rouge">Hello World</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_first_git_project/
+  |-- hello_world.txt
+  |-- goodbye.txt
+</code></pre></div></div>
+
+<p>Next we need to create a <code class="language-plaintext highlighter-rouge">README.md</code> file.
+These are super important and as the name implies you should always read this before using some software/code you get online.
+As the extension implies, <code class="language-plaintext highlighter-rouge">README.md</code>’s are in the <code class="language-plaintext highlighter-rouge">markdown</code> format.
+If you are not familiar with markdown, check out my <a href="/markdown">post</a>.</p>
+
+<blockquote>
+  <p><strong>Hint</strong>: This also means that you should always make a readme file anytime you make a project.</p>
+</blockquote>
+
+<p>In this file, you will find basic information about how to setup/configure and run the code that you download. 
+It also often describes the basic functionality of the code as this is the first thing anyone will see about the project on GitHub/GitLab. 
+For our purposes since this is a basic project, you can just add a Level 1 header and a simple description.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># My first Git Repo</span>
+
+Learning the basics of the a Git!
+</code></pre></div></div>
+
+<p>Next we are going to set up your username and email for all the changes that you will make. 
+This isn’t required but its super simple so might as well do it.
+The follow lines of code assign any changes that you specifically make, to your name. 
+Kinda like signing off on your work with a signature, that way we can figure out who did what.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"YOUR NAME"</span>
+git config <span class="nt">--global</span> user.email YOUR_EMAIL@DOMAIN.COM <span class="c"># Default: github_username@users.noreply.github.com</span>
+</code></pre></div></div>
+
+<p>Now that that is all taken care of, we can initialize your repo with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>DIRECTORY_OF_INTREST
+git init
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Hint</strong>: Make sure you are already <code class="language-plaintext highlighter-rouge">cd</code>‘d into the correct directory. 
+It is common mistake for people initlized there home folder <code class="language-plaintext highlighter-rouge">/Users/Deshawn/</code> which will track your entire computer 😱! 
+Even I did it when I frist started 😅. But don’t worry you can just remove any <code class="language-plaintext highlighter-rouge">.git</code> dir to stop tracking.</p>
+</blockquote>
+
+<p>You can confirm everything worked correctly with the <code class="language-plaintext highlighter-rouge">ls -a</code> command. 
+If you see an output that shows a <code class="language-plaintext highlighter-rouge">.git</code> file then you have correctly initialized your repo 🎉.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ my_first_git_project <span class="nb">ls</span> <span class="nt">-a</span>
+<span class="c">#.  ..  .git  goodbye.txt  hello_world.txt</span>
+
+</code></pre></div></div>
+
+<p>If you got a warning telling about using master for the inital branch, feel free to follow instructions, but its just a warning and won’t harm anything. If you got another error, go back and make sure that 1. you are in the correct directory, 2. that you haven’t already initalized that directory or one of the parent directories.
+If all else fails, double check that your installation method was successful with <code class="language-plaintext highlighter-rouge">git -v</code>, and if not try to reinstall <code class="language-plaintext highlighter-rouge">git</code> again.</p>
+
+<p>You can also use <code class="language-plaintext highlighter-rouge">git status</code> to see the status of the repo. 
+This is a helpful command that will tell you what branch you are on, and shows all the files in the directory and which stage they are in.</p>
+
+<p><img src="/assets/imgs/git_status_untracked.png" alt="Showing Git Status: Untracked Files" /></p>
+
+<p>As a reminder, <code class="language-plaintext highlighter-rouge">Untracked</code> is one of the stages in which the files have are not currently being tracked by <code class="language-plaintext highlighter-rouge">git</code>.
+So now, we need to tell <code class="language-plaintext highlighter-rouge">git</code> to track all the files.
+Once tracked, <code class="language-plaintext highlighter-rouge">git</code> will take not all every change that occurs to a file.
+We can track files individually with <code class="language-plaintext highlighter-rouge">git add hello_world.txt goodbye.txt</code> or you can use the shortcut to add all files in the current directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>where the <code class="language-plaintext highlighter-rouge">.</code> just means add everything in the current directory (and the subdirectories).
+Once done, the <code class="language-plaintext highlighter-rouge">git status</code> will update letting you know everything is now <code class="language-plaintext highlighter-rouge">Staged</code> and ready for the next commit.</p>
+
+<p><img src="/assets/imgs/git_status_new.png" alt=" Showing Updated Git Status: Staged files " /></p>
+
+<p>The final step is to tell <code class="language-plaintext highlighter-rouge">git</code> to <code class="language-plaintext highlighter-rouge">commit</code> all the changes.
+When you <code class="language-plaintext highlighter-rouge">commit</code> one or a group of files, they will be saved as a checkpoint.
+All the previous <code class="language-plaintext highlighter-rouge">commit</code>s will be saved, so you can always go back to any of them in case something happens.
+So when you <code class="language-plaintext highlighter-rouge">commit</code> some files, you need to write a small message describing what was changed.
+You can commit all <code class="language-plaintext highlighter-rouge">Staged</code> files and write a message with the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -m "Relevant Message"
+</code></pre></div></div>
+<p>Each time we want to save the current state of the repo we need to add all relevant files (most of the time you just add everything with <code class="language-plaintext highlighter-rouge">git add .</code>) and then commit them with a relevant message <code class="language-plaintext highlighter-rouge">git commit -m "Important message"</code>.
+Since this is the first commit <strong><em>Inital Commit</em></strong> works, but for all future commits, I recommend that you write something that concisely explains the changes that are being made.
+<code class="language-plaintext highlighter-rouge">Commit</code>s are most effective when they are small, so it is good practice to have each commit focus on one change.
+If you need to make more changes commit the ones that have already been changed first before starting on the next.
+Small incremental <code class="language-plaintext highlighter-rouge">commit</code>s makes it significantly easier to identify problems in the code because you can always revert the problematic <code class="language-plaintext highlighter-rouge">commit</code>.
+If you have very large <code class="language-plaintext highlighter-rouge">commit</code> the bug introduced might have also been committed with a new important feature, making it harder to seperate out the bug.</p>
+
+<h2 id="common-errors-and-hiccups">Common Errors and Hiccups</h2>
+
+<p>When people first tryout something new, its expected to make a lot of mistakes.
+So, I just wanted to take the time to highlight a few common ones.</p>
+
+<p>The first is for people to inialize their home directory (<code class="language-plaintext highlighter-rouge">~</code>).
+This typically happens by forgetting to <code class="language-plaintext highlighter-rouge">cd</code> into the correct directory before running <code class="language-plaintext highlighter-rouge">git init</code>.
+If you are not sure what <code class="language-plaintext highlighter-rouge">cd</code> is checkout my series on <a href="/cli/bash"><code class="language-plaintext highlighter-rouge">bash</code></a>.</p>
+
+<p>The next common mistakes is more of a group of mistakes.
+They all are centered about bad <code class="language-plaintext highlighter-rouge">commit</code>ting behavior.
+The first, and by far most common, is people not write useful messages when <code class="language-plaintext highlighter-rouge">commit</code>ting.
+Some examples include <code class="language-plaintext highlighter-rouge">Fixed Bug</code> or <code class="language-plaintext highlighter-rouge">Added Function</code>.
+These messages give absolutely not information about what changed since the last <code class="language-plaintext highlighter-rouge">commit</code>.
+Instead, you should make they are more informative like these: <code class="language-plaintext highlighter-rouge">Bug Fix: Updated Screen Issues Prevent Screen to Update</code> or <code class="language-plaintext highlighter-rouge">Added Function that Allows User to Restart Application</code>.
+They are more informative for you and anyone else who edits the code to allow them to know what checkout to return to if an issue occurs.</p>
+
+<p>Second is not <code class="language-plaintext highlighter-rouge">commit</code>ting often enough.
+Again <code class="language-plaintext highlighter-rouge">commit</code>s are intended to be all centered around one small change.
+So let’s say you are making changes to a file and you realize you also need to make a change to other code.
+If the new code is related to the same problem you are tackling, thats ok, but if its focusing on some other thing, stop and <code class="language-plaintext highlighter-rouge">commit</code> the changes you already made before continuing.
+Of course, there will be cases where you will need to edit lots of files for a single <code class="language-plaintext highlighter-rouge">commit</code>; that is ok if the changes in each file are all related, but if not make them separate <code class="language-plaintext highlighter-rouge">commit</code>s.</p>
+
+<h2 id="advanced-topics-in-git">Advanced Topics in Git</h2>
+
+<p>We covered a lot today, thankfully, that is most of the important things you need. 
+However, there are a few advanced topics that I do think are useful to know, even though you might not use them a bunch:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.gitignore</code>: I use this the most on the list. This allows you to tell git to ignore specific files. This is super useful if you have a file that contains any sensative information (e.g., SECRETE_KEYS, Identifiable Subject data, etc.).</li>
+  <li><code class="language-plaintext highlighter-rouge">git diff </code>: a function to specifically see what has changed line by line since the last commit</li>
+  <li><code class="language-plaintext highlighter-rouge">git add -p</code>: patch add in case you make a bunch of changes to a file at once, you can selectively only add parts of the updates to the next commit.</li>
+</ul>
+
+<p>Might not need since there is more to come and this was the warmup.</p>
+
+<h2 id="recap">Recap</h2>
+
+<p>First of all, congratulations 🎉!
+You just learned how to initialize a <code class="language-plaintext highlighter-rouge">git</code> repository and make a few commits.
+You are off to a new future of version control!
+No more worries about losing code or transferring.
+In the next section you are going to learn about GitHub.
+You will learn how to connect your GitHub account to your terminal and save all your commits on GitHub.</p>
+
+<!-- Need to either have a nice summary can be after the next to sections, or provide a touch more say, adding like two or three commits and showing them how to got back to check old ones -->
+
+<!-- ## Homework
+Something about setting up a repo and 
+
+## Additional Resources:
+
+[fireshipio](https://youtu.be/HkdAHXoRtos "Fireshipio: Git and Github")
+-->
+
+
+  </div>
+    <hr>
+
+<nav class="series">
+  <h4><em>Git and GitHub: Whats the Big Deal</em> Series</h4>
+  
+  
+  <div class='series-nav'>
+  
+    
+    
+    
+  
+    
+    <div class="series-nav-item prev">
+      <a class="btn" rel="prev" href="/git/git-installation">&larr; Prev Post</a>
+    </div>
+    
+    
+    
+  
+    
+    
+    <div class="series-nav-item current">
+      <p>Post <strong>3</strong> of <strong>3</strong>
+    </div>
+    
+    
+    <div class="series-nav-item next">
+    
+      <p>More posts coming soon!</p>
+    
+    </div>
+    
+  
+  </div>
+</nav>
+
+  
+
+  <a class="u-url" href="/git/git-example" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your Coding Buddy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your Coding Buddy</li><li><a class="u-email" href="mailto:dsambrano@g.harvard.edu">dsambrano@g.harvard.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li><li><a href="https://youtube.com/Dbrano3"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">Dbrano3</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

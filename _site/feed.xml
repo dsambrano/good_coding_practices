@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-19T18:52:28-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Coding Buddy</title><subtitle>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</subtitle><entry><title type="html">Computation Modeling</title><link href="http://localhost:4000/computational-modeling/" rel="alternate" type="text/html" title="Computation Modeling" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/computational-modeling</id><content type="html" xml:base="http://localhost:4000/computational-modeling/"><![CDATA[<nav id="sidebar">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-21T08:44:17-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your Coding Buddy</title><subtitle>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</subtitle><entry><title type="html">Computation Modeling</title><link href="http://localhost:4000/computational-modeling/" rel="alternate" type="text/html" title="Computation Modeling" /><published>2022-10-03T00:00:00-07:00</published><updated>2022-10-03T00:00:00-07:00</updated><id>http://localhost:4000/computational-modeling</id><content type="html" xml:base="http://localhost:4000/computational-modeling/"><![CDATA[<nav id="sidebar">
   <div class="toc-wrapper">
     <h4>Table of Contents</h4>
     <aside class="toc">
@@ -21,15 +21,17 @@
       
     </li>
     
+    
     <li>
       
       <a href="/computational-modeling/selecting-a-model">Selecting a Model</a>
       
     </li>
     
+    
   </ol>
 
-    <p>More posts coming soon!</p>
+    <p>More posts coming soon! </p>
 
   </aside>
 
@@ -132,15 +134,17 @@ Together, these features help improved the scientific discourse.</p>]]></content
       
     </li>
     
+    
     <li>
       
       <strong>Selecting a Model</strong>
       
     </li>
     
+    
   </ol>
 
-    <p>More posts coming soon!</p>
+    <p>More posts coming soon! </p>
 
   </aside>
 

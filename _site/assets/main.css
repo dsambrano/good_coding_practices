@@ -306,7 +306,7 @@ a > Advanced { color: black; }
 
 a > Math { color: black; }
 
-.post-decorations { margin-top: -15px; margin-bottom: 1em; }
+.post-decorations { margin-top: -15px; margin-bottom: 1em; display: flex; flex-wrap: wrap; gap: .5em; }
 
 #clock { height: 1.25em; transform: translate(0, 4px); }
 

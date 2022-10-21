@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon_io/favicon.ico"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Installing Git | Your Coding Buddy</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Installing Git" />
+<meta name="author" content="Deshawn Sambrano" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Installation &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Git and GitHub: Whats the Big Deal&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/git&quot;&gt;I Don&#39;t... GIT it&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Installing Git&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/git/git-example&quot;&gt;Taking Git for a Test Drive&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon! &lt;/p&gt; In this post you will learn how to install Git. By the end of the post you will: Know how to install git on your computer Prerequisites: None; though it may be helpful to skim through the Command Line (Bash/zsh) post first, especially if you do not know how to use the terminal or how to use a bash. Installation First double check if you have git installed already via typing git -v in your terminal. If you get a command not found error then you don’t have it install if it spits out a version then you are good to go (though you may need to update it). If you already have git installed you can skip the installation section. Otherwise go to the installation section relavent to your computer’s software and continue." />
+<meta property="og:description" content="&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Installation &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Git and GitHub: Whats the Big Deal&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/git&quot;&gt;I Don&#39;t... GIT it&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Installing Git&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/git/git-example&quot;&gt;Taking Git for a Test Drive&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon! &lt;/p&gt; In this post you will learn how to install Git. By the end of the post you will: Know how to install git on your computer Prerequisites: None; though it may be helpful to skim through the Command Line (Bash/zsh) post first, especially if you do not know how to use the terminal or how to use a bash. Installation First double check if you have git installed already via typing git -v in your terminal. If you get a command not found error then you don’t have it install if it spits out a version then you are good to go (though you may need to update it). If you already have git installed you can skip the installation section. Otherwise go to the installation section relavent to your computer’s software and continue." />
+<link rel="canonical" href="http://localhost:4000/git/git-installation" />
+<meta property="og:url" content="http://localhost:4000/git/git-installation" />
+<meta property="og:site_name" content="Your Coding Buddy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Installing Git" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Deshawn Sambrano"},"dateModified":"2022-10-03T00:00:00-07:00","datePublished":"2022-10-03T00:00:00-07:00","description":"&lt;h4&gt;Table of Contents&lt;/h4&gt; &lt;aside class=&quot;toc&quot;&gt; Installation &lt;/aside&gt; &lt;h4&gt;This post is part of the series &lt;em&gt;Git and GitHub: Whats the Big Deal&lt;/em&gt;&lt;/h4&gt; &lt;ol start=&quot;0&quot;&gt; &lt;li&gt; &lt;a href=&quot;/git&quot;&gt;I Don&#39;t... GIT it&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;strong&gt;Installing Git&lt;/strong&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;/git/git-example&quot;&gt;Taking Git for a Test Drive&lt;/a&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;More posts coming soon! &lt;/p&gt; In this post you will learn how to install Git. By the end of the post you will: Know how to install git on your computer Prerequisites: None; though it may be helpful to skim through the Command Line (Bash/zsh) post first, especially if you do not know how to use the terminal or how to use a bash. Installation First double check if you have git installed already via typing git -v in your terminal. If you get a command not found error then you don’t have it install if it spits out a version then you are good to go (though you may need to update it). If you already have git installed you can skip the installation section. Otherwise go to the installation section relavent to your computer’s software and continue.","headline":"Installing Git","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/git/git-installation"},"url":"http://localhost:4000/git/git-installation"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/javascript" defer src="/assets/main.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your Coding Buddy" /><!-- for mathjax support -->
+  
+  <!-- <script type="text/x-mathjax-config">
+      // From: http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
+      // MathJax.Hub.Config({
+      // TeX: { equationNumbers: { autoNumber: "AMS" } }
+      // });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true
+        },
+        config: ["MMLorHTML.js"],
+        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+        extensions: ["MathMenu.js", "MathZoom.js"]
+    });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?con
+fig=TeX-AMS_HTML-full"></script>
+    <script type="text/x-mathjax-config">
+        // Below config from: https://stackoverflow.com/a/54373640
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            config: ["MMLorHTML.js"],
+            jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+            extensions: ["MathMenu.js", "MathZoom.js"]
+        });
+    </script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+    <a href="#main" class="skip skip-main">Jump to Main Content</a>
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your Coding Buddy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/additional-resources">Additional Resources</a><a class="page-link" href="/categories.html">Topics</a><a class="page-link" href="/diff">Difficulties</a><a class="page-link" href="/series">Series</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content" id="main">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Installing Git</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-03T00:00:00-07:00" itemprop="datePublished">Oct 3, 2022
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Deshawn Sambrano</span></span>
+      • <span class="read-time"><?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg id="clock" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 488 488" style="enable-background:new 0 0 488 488;" xml:space="preserve">
+<g transform="translate(0 -540.36)">
+	<g>
+		<g>
+			<path fill="currentColor"  d="M351.1,846.96l-97.1-67.9v-116.7c0-5.5-4.5-10-10-10s-10,4.5-10,10v122c0,3.3,1.6,6.3,4.3,8.2l101.4,70.9
+				c1.7,1.2,3.7,1.8,5.7,1.8v0c3.1,0,6.2-1.5,8.2-4.4C356.7,856.36,355.6,850.16,351.1,846.96z"/>
+			<path fill="currentColor" d="M416.4,611.96L416.4,611.96c-46.2-46.2-107.4-71.6-172.4-71.6s-126.2,25.4-172.4,71.6C25.4,658.16,0,719.36,0,784.36
+				s25.4,126.2,71.6,172.4c46.2,46.2,107.4,71.6,172.4,71.6s126.2-25.4,172.4-71.6s71.6-107.4,71.6-172.4S462.6,658.16,416.4,611.96
+				z M254,1008.16L254,1008.16v-40.8c0-5.5-4.5-10-10-10s-10,4.5-10,10v40.8c-115.6-5.1-208.7-98.2-213.8-213.8H61
+				c5.5,0,10-4.5,10-10s-4.5-10-10-10H20.2c5.1-115.6,98.2-208.7,213.8-213.8v40.8c0,5.5,4.5,10,10,10s10-4.5,10-10v-40.8
+				c115.6,5.1,208.7,98.2,213.8,213.8H427c-5.5,0-10,4.5-10,10s4.5,10,10,10h40.8C462.7,909.96,369.6,1003.06,254,1008.16z"/>
+		</g>
+	</g>
+</g>
+</svg>
+ 20 mins</span>
+       
+      
+      • <span class="page-diff"> Difficulty: <span class="Beginner">Beginner</span>
+      </span>
+       
+    </p>
+
+  </header>
+  
+    
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <nav id="sidebar">
+  <div class="toc-wrapper">
+    <h4>Table of Contents</h4>
+    <aside class="toc">
+<ul id="markdown-toc">
+  <li><a href="#installation" id="markdown-toc-installation">Installation</a>    <ul>
+      <li><a href="#mac-os" id="markdown-toc-mac-os">Mac OS</a></li>
+      <li><a href="#linux" id="markdown-toc-linux">Linux</a></li>
+      <li><a href="#windows" id="markdown-toc-windows">Windows</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </aside>
+  </div>
+
+  <aside class="series">
+    <h4>This post is part of the series <em>Git and GitHub: Whats the Big Deal</em></h4>
+    <ol start="0">
+    
+    
+    <li>
+      
+      <a href="/git">I Don't... GIT it</a>
+      
+    </li>
+    
+    
+    <li>
+      
+      <strong>Installing Git</strong>
+      
+    </li>
+    
+    
+    <li>
+      
+      <a href="/git/git-example">Taking Git for a Test Drive</a>
+      
+    </li>
+    
+    
+  </ol>
+
+    <p>More posts coming soon! </p>
+
+  </aside>
+
+</nav>
+
+<section class="takeaways">
+
+  <p>In this post you will learn how to install Git. By the end of the post you will:</p>
+  <ul>
+    <li>Know how to install <code class="language-plaintext highlighter-rouge">git</code> on your computer</li>
+  </ul>
+
+  <p>Prerequisites:</p>
+  <ul>
+    <li>None; though it may be helpful to skim through the <a href="/cli/bash">Command Line (Bash/zsh)</a> post first, especially if you do not know how to use the terminal or how to use a bash.</li>
+  </ul>
+
+</section>
+
+<h2 id="installation">Installation</h2>
+
+<!-- excerpt-start -->
+<p>First double check if you have git installed already via typing <code class="language-plaintext highlighter-rouge">git -v</code> in your terminal. 
+If you get a command not found error then you don’t have it install if it spits out a version then you are good to go (though you may need to update it). If you already have git installed you can skip the <a href="#git-basics">installation section</a>. Otherwise go to the installation section relavent to your computer’s software and continue.</p>
+
+<!-- excerpt-end -->
+
+<h3 id="mac-os">Mac OS</h3>
+
+<p>Many scientific applications requires <code class="language-plaintext highlighter-rouge">xcode</code> on Mac which install <code class="language-plaintext highlighter-rouge">git</code> automatically so you might have it. 
+Double check by using the method described <a href="#installation">above</a>. 
+If you don’t that’s ok because you will definitely need it in the future. 
+Inside your terminal of choice, type the following command to install <code class="language-plaintext highlighter-rouge">xcode</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select --install
+</code></pre></div></div>
+
+<p>If you know what homebrew or MacPorts are, you can install them via these methods as well.</p>
+
+<p>Finally, you can use the GUI installer go the <a href="https://git-scm.com/download/mac">Binary installer section</a></p>
+
+<blockquote>
+  <p><strong>Hint</strong>: You might want to install homebrew with the following command <code class="language-plaintext highlighter-rouge">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></p>
+</blockquote>
+
+<h3 id="linux">Linux</h3>
+<p>On most linux distros you can simply use the relavent package manager to install <code class="language-plaintext highlighter-rouge">git</code>. 
+For example on debian based distros: <code class="language-plaintext highlighter-rouge">sudo apt install git-all</code>. But in most many cases its installed by default or with the standard dev tools.</p>
+
+<h3 id="windows">Windows</h3>
+
+<p>You can install git via <code class="language-plaintext highlighter-rouge">chocolately</code> or the <a href="https://git-scm.com/download/win">GUI installer</a>.
+Finally, you can also install git with linux viw the Window’s subsystem for Linux pipeline, if you are familiar with that.</p>
+<blockquote>
+  <p><strong>Hint</strong>: it might be helpful to install <a href="https://gitforwindows.org/">gitbash</a>, so in addition to get, you can also use all the bash commands.</p>
+</blockquote>
+
+<!-- ## Homework
+Something about setting up a repo and 
+-->
+
+
+  </div>
+    <hr>
+
+<nav class="series">
+  <h4><em>Git and GitHub: Whats the Big Deal</em> Series</h4>
+  
+  
+  <div class='series-nav'>
+  
+    
+    <div class="series-nav-item prev">
+      <a class="btn" rel="prev" href="/git">&larr; Prev Post</a>
+    </div>
+    
+    
+    
+  
+    
+    
+    <div class="series-nav-item current">
+      <p>Post <strong>2</strong> of <strong>3</strong>
+    </div>
+    
+    
+  
+    
+    
+    
+    <div class="series-nav-item next">
+      <a class="btn" rel="next" href="/git/git-example">Next Post &rarr;</a>
+    </div>
+    
+  
+  </div>
+</nav>
+
+  
+
+  <a class="u-url" href="/git/git-installation" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your Coding Buddy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your Coding Buddy</li><li><a class="u-email" href="mailto:dsambrano@g.harvard.edu">dsambrano@g.harvard.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/dsambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">dsambrano</span></a></li><li><a href="https://www.twitter.com/DeshawnSambrano"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DeshawnSambrano</span></a></li><li><a href="https://youtube.com/Dbrano3"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">Dbrano3</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Learning all the gaps in your coding knowledge. Your Coding Buddy  is here to save the day!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
