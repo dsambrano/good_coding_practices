@@ -168,6 +168,7 @@ Here is a list of a few common `alias`es, but you should try to make your own, j
 - `g=git`: Notice, you don't need quotes if you do not have any spaces in your command
 - `ga="git add"`
 - `gcm="git commit -m"`
+- `myip="curl ipinfo.io/ip"`: Prints your public ip address
 
 For more common ones, you can check out this [repo][common-aliases].
 
