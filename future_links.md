@@ -21,3 +21,6 @@ Future links:
   - Terminal customiation there needs add section to package managers
   - Linux Linux Linux: Should add a full linux one, a what is a distro, what is a DE, how to choose a distro, and ...
   - For Termina customization I hint about talking about Tiling Window Managers
+
+- Git-example
+  - Need to add a link to the aliases section in CLI when it is done.
