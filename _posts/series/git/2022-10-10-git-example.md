@@ -65,7 +65,7 @@ For our purposes since this is a basic project, you can just add a Level 1 heade
 ```md
 # My first Git Repo
 
-Learning the basics of the a Git!
+Learning the basics of Git!
 ```
 
 Next we are going to set up your username and email for all the changes that you will make. 
@@ -94,7 +94,7 @@ If you see an output that shows a `.git` file then you have correctly initialize
 
 ```bash
 ~ my_first_git_project ls -a
-#.  ..  .git  goodbye.txt  hello_world.txt
+#.  ..  .git  goodbye.txt  hello_world.txt README.md
 
 ```
 
@@ -118,7 +118,7 @@ git add .
 where the `.` just means add everything in the current directory (and the subdirectories).
 Once done, the `git status` will update letting you know everything is now `Staged` and ready for the next commit.
 
-![ Showing Updated Git Status: Staged files ](/assets/imgs/git_status_new.png)
+![ Showing Updated Git Status: Staged files ](/assets/imgs/git_status_staged.png)
 
 The final step is to tell `git` to `commit` all the changes.
 When you `commit` one or a group of files, they will be saved as a checkpoint.
@@ -131,10 +131,16 @@ git commit -m "Relevant Message"
 ```
 Each time we want to save the current state of the repo we need to add all relevant files (most of the time you just add everything with `git add .`) and then commit them with a relevant message `git commit -m "Important message"`.
 Since this is the first commit ***Inital Commit*** works, but for all future commits, I recommend that you write something that concisely explains the changes that are being made.
+Once you make the `commit` you will see a log of everything that changed and you `git status` will be clean, since now, nothing has changed since the last commit.
+Here is what mine looks like:
+
+![Showing Git Commit and Clean Status ](/assets/imgs/git_status_clean.png)
+
 `Commit`s are most effective when they are small, so it is good practice to have each commit focus on one change.
 If you need to make more changes commit the ones that have already been changed first before starting on the next.
 Small incremental `commit`s makes it significantly easier to identify problems in the code because you can always revert the problematic `commit`.
 If you have very large `commit` the bug introduced might have also been committed with a new important feature, making it harder to seperate out the bug.
+
 
 ### Your History
 
@@ -148,14 +154,20 @@ This will give you more practice will adding `commit`s, so try to edit multiple 
 Essentailly, make a few and explore a long the way.
 Here is what my repo looks like now!
 
-![]()
+![Repo with Multiple Commits]()
 
 Now let's look at all the `commit`s I made.
 To do that I will use the `git log` command.
-I typically also add a couple of arguments to make mine look a little nicer, which you are more than welcome to mimic (` `).
+I typically also add a couple of arguments to make mine look a little nicer, which you are more than welcome to mimic it by adding the following options (`--oneline --decorate --graph --all`; while you are there remove them one by one, so you know what each does).
 Better yet, I make that command into and alias, so I can just type out `glog`, more on aliases [here][aliases].
-But let's say I need some code I deleted previously.
-How to I get access to it?
+Here is how my history looks:
+
+![Repo History]()
+
+This log shows me the whole history of this `git` repo.
+Since you have the whole history, you are completely safe. 
+If you every make a mistake you can always roll back to the previous commit (or even old).
+That's a little bit more advanced (simply because all of the options available depending on precisely what you want to do), plus you already learned a lot today, so I will add it to a future post in the series.
 
 ## Common Errors and Hiccups
 
@@ -179,18 +191,6 @@ Again `commit`s are intended to be all centered around one small change.
 So let's say you are making changes to a file and you realize you also need to make a change to other code.
 If the new code is related to the same problem you are tackling, thats ok, but if its focusing on some other thing, stop and `commit` the changes you already made before continuing.
 Of course, there will be cases where you will need to edit lots of files for a single `commit`; that is ok if the changes in each file are all related, but if not make them separate `commit`s.
-
-
-## Advanced Topics in Git
-
-We covered a lot today, thankfully, that is most of the important things you need. 
-However, there are a few advanced topics that I do think are useful to know, even though you might not use them a bunch:
-- `.gitignore`: I use this the most on the list. This allows you to tell git to ignore specific files. This is super useful if you have a file that contains any sensative information (e.g., SECRETE_KEYS, Identifiable Subject data, etc.). 
-- `git diff `: a function to specifically see what has changed line by line since the last commit
-- `git add -p`: patch add in case you make a bunch of changes to a file at once, you can selectively only add parts of the updates to the next commit.
-
-Might not need since there is more to come and this was the warmup.
-
 
 ## Recap
 
@@ -216,3 +216,4 @@ Something about setting up a repo and
 [cli]: {% post_url /series/cli/2022-10-10-bash %}
 [install]: {% post_url /series/git/2022-10-05-git-installation %}
 [markdown]: {% post_url 2022-10-03-markdown %}
+[aliases]: https://linuxize.com/post/how-to-create-bash-aliases/
