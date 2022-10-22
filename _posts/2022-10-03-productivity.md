@@ -83,6 +83,8 @@ You can just search them up, but here is my favorite for Mac OS and Linux below:
 - Mac OS: [Amethyst](https://github.com/ianyh/Amethyst)
 - Linux: [Awesomewm](https://github.com/awesomeWM/awesome)
 
+> Note: One important caveat, they are not super useful on really small screens such as a 11 inch laptop. However, if you connect to an external monitor, you can take full advantage of them on that second screen.
+
 ## Customize Your Software
 
 This sounds silly, but if you find what you are looking at aethethically pleasing, then you are more likely to use it. 

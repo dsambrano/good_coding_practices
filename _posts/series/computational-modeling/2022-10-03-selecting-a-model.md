@@ -7,7 +7,7 @@ tags: Math Computational-Modeling R Python
 time: 20
 category: computational-modeling
 series: computational-modeling
-diff: advanced
+diff: math
 excerpt_separator: <!--more-->
 usemathjax: true
 ---
@@ -16,14 +16,14 @@ usemathjax: true
 
 <section class="takeaways">
 
-In this blog you will learn the basics of computational modeling. Specifically you will learn:
-- How to implement a computational model with an example.
-  - Model Selection
-  - Ammedding a Model to suit your needs
-  - Decision Rules
+In this post you will learn the basics of computational modeling. Specifically you will learn how to implement a computational model with an example.
+- Selecting a Model
+- Ammedding a Model to suit your needs
+- Implementing Decision Rules to implement choices in the model
 
 Prerequisites:
 - Read through this [paper][holt] or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)
+- Basic experience in data analysis
 
 </section>
 
@@ -34,14 +34,14 @@ Prerequisites:
 In order to give yourself a basic working example, I highly reccomend you read through this [paper][holt].
 This is a pretty foundational paper for creating models of decision making and gives a pretty good walkthrough on the process. 
 For example, it describe how/why you typically want to add a noise term when modeling human decisions.
-Its also quite short, only about 13 pages.
+Its also quite short, only a few pages.
 
 ... Don't worry I 'll wait. 😂
 
 Now that you have finished reading through that, we can go through <!--2--> an example<!--s--> for implementing a computational model on simulated data.
-The data will be generated from an experiment were the participant need to decide between two lotteries.
+The data will be generated from an experiment were the participants need to decide between two lotteries.
 The lotteries are shown below in the table. 
-I want you to look at each lottery and without looking at the column on the right, decided which lottery you would choose: Option A or Option B.
+I want you to look at each lottery and without looking at the far right column, decide which lottery you would choose: Option A or Option B.
 Do this for all 10 lotteries.
 
 
@@ -69,7 +69,7 @@ With that in mind, I will go through a really basic example for adjusting models
 This should give you a sense of how this process works, such that you can do it on your own when the time requires it. 
 
 Our example data is going to come from people making choices between different lotteries involving money.
-As such, expected value (EV) is quite literally an optimal starting point.
+As such, expected value (EV) is definitionally, an optimal starting point.
 For the uninitiated, EV is a mathematical formula for determining the value of a risking lottery. 
 So if you are acting perfectly rationally, you should choose the lottery with the highest EV. 
 The formula for EV is:
@@ -84,7 +84,7 @@ $$ EV = 5 + 0 $$
 
 $$ EV = 5 $$
 
-which is to simply say that, if you played this lottery an infinite number of times, we would expect you to, on average, earn <span>$</span>5.
+Another way to say this is if you played this lottery an infinite number of times, we would expect you to, on average, earn <span>$</span>5.
 This should make intuitive sense giving the options of the lottery.
 This formula is useful because it works no matter what the probabilities or winning amount are, and it doesnt matter how many of them their are. 
 
@@ -92,7 +92,7 @@ We can apply that same formula to all the lottery options shown in the table abo
 And then we will take the difference in EV between the two options (see right most column).
 Finally, we can implement a decision rule, that is a rule to decide which option to pick. 
 For EV, you should pick the option that has a higher expected value. 
-In the figure below, we plotted the probability of choosing the first option (Option A) against the different options. 
+In the figure below, we plotted the probability of choosing the first option (Option A) against the different lotteries, given our model/decision rule combo. 
 
 ![EV Model Predictions](/assets/code/plots/ev_plot.png)
 
@@ -104,12 +104,12 @@ Which did you choose when you picked between them?
 Here is some simulated data to use as a comparison:
 ![EV Model Predictions with Simulated Data](/assets/code/plots/part_data_plot.png)
 
-Again the dotted line indicates that EV models predictions, and the new solid line with dots indicates the average response for 50 simulated people. 
+Again the dotted line indicates the EV models predictions, and the new solid line with dots indicates the average response for 50 simulated people. 
 What are your thoughts? 
 Is this model any good?
-You might think, no, its pretty bad, which it is, but there is something important that it gets right.
+You might think, no, its pretty bad, which it is..., but there are some important that it gets right.
 Notice that the simulated data has a similar structure as the prediction.
-That is to say pretty much everyone chooses Option A for the first 4 and everyone selects Option B for the final 3.
+That is, pretty much everyone chooses Option A for the first 4 and everyone selects Option B for the final 3.
 So in reality, it only gets the middle ones wrong. 
 So maybe we can adjust this model to account for that as opposed to come up with a entirely new model. 
 
@@ -128,21 +128,26 @@ $$ SV(p, v) = \sum_{i=1}^{k} p_i \times v_i^{\alpha} $$
 There are a few things I want to point out.
 First I changed the function from $EV$ to $SV$.
 This is to signify, that this is no longer an equation for expected value, but rather, for **subjective value**, or the value a individual places on that lottery. 
-The second is that I have made it more clear that $p$ and $v$ are inputs to the model by including them in the parentheses on the left side. Finally, you can see the new term $\alpha$ which is unique to each individual.
-This allows us to be able to predict that people will make choices different from one another; however, importantly, we expect everyone to make choices with this specific structure in mind. 
+The second is that I have made it more clear that $p$ and $v$ are inputs to the model by including them in the parentheses on the left side.
+Finally, you can see the new term $\alpha$ (pronounced alpha) which is unique to each individual.
+
+The new parameter ($\alpha$) allows us to be able to predict that people will make choices different from one another; however, importantly, we expect everyone to make choices with this specific structure in mind.
+So, although people differs on what they consider a reasonable lottery, we expect them to way the probabilityby the amount they could win. The $\alpha$'s allow us to adjust for each person what their specific threshold is for what makes a good lottery. While this is a bit simplified, hopefully it gives you a general intuition for the formula.
 >**Note**: Traditionally, individual specific parameters typically use greek letters. This can help you identify what parts of the model is an input versus participant specific. 
 
 Now we can use this model to predict the participants decisions.
 But which $\alpha$ should we use?
 Well since we are just exploring, let's pick a few to see which ones look more accurate.
+Since we are plotting the average data, these plotted $\alpha$'s are really a meteric of the average $\alpha$.
 
 
 ![SV Model Predictions](/assets/code/plots/sv_plot.png)
 
 Now we added the colored lines.
 What you should notice is that it seems like that blue (.7) and green (.5) lines seem to improve on the EV model in that it gets the threshold a littel bit more accurate. 
-This is a good sign, it lets us know we are on the right track. 
-> **Note**: These are similated data and not necessarily representive of real data. Some values have been intensionally exaggerated for pedogological reasons.
+This is a good sign.
+It lets us know we are on the right track. 
+> **Note**: These are simulated data and not necessarily representive of real data. Some values have been intensionally exaggerated for pedogological reasons.
 
 But there is something still bothering me, and hopefully you as well. 
 The thresholds are really sharp; the data has a gradual decline as a opposed to be completely instantaneous. 
@@ -156,9 +161,15 @@ So instead of simply choosing the option with the higher EV or SV we will have a
 As with most things, there are a few different equations you could use. 
 For this tutorial, we will use an inverse logit function: 
 
-$$p(Option_A| SV_a, SV_b) = \frac{1}{1 + e^{\gamma(SV_b - SV_a)}}$$
+$$p(Option_A\mid SV_a, SV_b) = \frac{1}{1 + e^{\gamma(SV_b - SV_a)}}$$
 
-Again we have an issue, what is the correct $\gamma$?
+Here, the function is for the probability of choosing option A for a particular lottery (the probability of choosing option B is just $1-p$).
+And to calculate this probability, you need the subjective value for both option A ($SV_A$) and B ($SV_B$), which implies we also need that person's $\alpha$ to calculate their $SV$'s.
+Additionally, we introduced a new parameter $\gamma$ (pronounced gamma).
+This is commonly described as a noise term because it allows for people to be noisey in their decisions, in other words they are not always consistent.
+
+
+But again we have an issue, what is the correct $\gamma$?
 Of course, without looking at the data you would be hard pressed to give a sensible answer.
 So we will use a similar stragey, use a couple and plot them.
 
@@ -168,11 +179,13 @@ This looks incredible!!
 We are having very close predictions to the real data!
 Specifically, when $\gamma=8$ it seems to match the data really well. 
 
-Now that you got the hang of what a computational model is and have they work, you are ready for the next section.
-Before heading to the next section, see the [practice](#homework) shown below to give you some more experience with how these work.
-In the next tutorial you will dive deeper into computational models. 
-Specifically, you will learn how to estimate the parameters of your model instead of guessing and checking. Additionally, you will learn how to evaluate whether its a good model or not.
+Now that you got the hang of what a computational model is and how they work, you are ready for the next section.
+<!-- Before heading to the next section, see the [practice](#homework) shown below to give you some more experience with how these work. -->
+In the next tutorial you will dive deeper into computational models.
+Specifically, you will learn how to estimate the parameters of your model instead of guessing and checking.
+Additionally, you will learn how to evaluate whether its a good model or not.
 
+<!--
 ## Advanced Topics:
 
 - Param Estimation: Use the Data: Estimating Parameters
@@ -181,10 +194,10 @@ Specifically, you will learn how to estimate the parameters of your model instea
 - Model Comparison
 
 ## Homework
+-->
 
 
-
-## References
+<!-- ## References -->
 
 [holt]: /assets/papers/Holt2002_RiskAversionIncentives_enhanced_opt.pdf "Holt & Laury 2002"
 [img]: imgs/cd.png

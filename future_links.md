@@ -13,3 +13,14 @@ Future links:
 
 - Python Best Practices:
   - Package Mangager to the virtual environments section, replace homebrew to help them install.
+
+- CLIs
+  - Dotfiles link when talking about custimation
+  - probs should add the CV one as well
+  - Terminal Customization There is a secion in know your os that wants a link for mac users. (Relatedly need to make it clearn ohmyzsh works on linux too)
+  - Terminal customiation there needs add section to package managers
+  - Linux Linux Linux: Should add a full linux one, a what is a distro, what is a DE, how to choose a distro, and ...
+  - For Termina customization I hint about talking about Tiling Window Managers
+
+- Git-example
+  - Need to add a link to the aliases section in CLI when it is done.

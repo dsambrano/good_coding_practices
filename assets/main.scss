@@ -9,7 +9,7 @@
 
 .skip {
     position: fixed;
-    translate: 0 -100%;
+    translate: 0 -110%;
 }
 
 .skip:focus {
@@ -34,10 +34,12 @@ hr {
     width: calc(35% - (30px / 2));
 }
 
-img {
+video, img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 3em;
+    margin-top: 2em;
 }
 
 // Setting Colors for the Difficulties
@@ -54,6 +56,14 @@ a > {{i['name']}}{
 .post-decorations{
     margin-top: -15px;
     margin-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em 1.5em;
+}
+
+#clock {
+ height: 1.25em;
+ transform: translate(0, 4px);
 }
 
 .bubble {
@@ -62,7 +72,6 @@ a > {{i['name']}}{
     padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
-    margin-right: 1em;
     border-radius: .5em;
     border: 1px solid #ddd;
 }
@@ -118,7 +127,9 @@ section.takeaways {
     left: 0%;
     max-width: 15%;
     margin-left: 1em;
-    overflow: hidden;
+    max-height: 60%;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 @media only screen and (max-width: 1350px){
     #sidebar {
@@ -149,3 +160,4 @@ section.takeaways {
     text-align: center;
     border-left: 1px solid #ddd;
 }
+

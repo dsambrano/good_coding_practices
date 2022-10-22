@@ -1,3 +1,5 @@
+<hr>
+{% assign final_post = site.posts | where: "serieslast", page.series %}
 <nav class="series">
   <h4><em>{{ site.data.series | where: 'id', page.series | map: 'title' }}</em> Series</h4>
   {% assign series-posts = site.posts | reverse | where: 'series', page.series %}
@@ -8,8 +10,6 @@
       {% assign next_post_index = forloop.index | plus: 1 %}
     {% endif %}
   {% endfor %}
-  <p>Post <strong>{{ curr_post_index }}</strong> of <strong>{{ series-posts.size }}</strong>.
-    {% if series-posts.size == 1 %}More posts coming soon!{% endif %}</p>
   <div class='series-nav'>
   {% for post in series-posts %}
     {% if prev_post_index == 0 and forloop.first %}
@@ -20,14 +20,18 @@
       <a class="btn" rel="prev" href="{{ site.baseurl }}{{ post.url }}">&larr; Prev Post</a>
     </div>
     {% endif %}
-    {% if forloop.first %}
+    {% if forloop.index == curr_post_index %}
     <div class="series-nav-item current">
       <p>Post <strong>{{ curr_post_index }}</strong> of <strong>{{ series-posts.size }}</strong>
     </div>
     {% endif %}
     {% if next_post_index > forloop.length and forloop.last %}
     <div class="series-nav-item next">
+    {% if final_post != empty%}
+      <a href="{{ site.baseurl }}{{final_post | map: 'url'}}">{{final_post | map: "title"}}</a>
+    {% else %}
       <p>More posts coming soon!</p>
+    {% endif %}
     </div>
     {% elsif next_post_index == forloop.index %}
     <div class="series-nav-item next">
