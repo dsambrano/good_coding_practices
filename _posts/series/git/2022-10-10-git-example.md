@@ -97,6 +97,7 @@ If you see an output that shows a `.git` file then you have correctly initialize
 #.  ..  .git  goodbye.txt  hello_world.txt README.md
 
 ```
+> All the magic is stored in this `.git` folder. If at any time you want to end the `git` repo and erase the history (but not the content currently in the folder) you can just delete this directory.
 
 If you got a warning telling about using master for the inital branch, feel free to follow instructions, but its just a warning and won't harm anything. If you got another error, go back and make sure that 1. you are in the correct directory, 2. that you haven't already initalized that directory or one of the parent directories.
 If all else fails, double check that your installation method was successful with `git -v`, and if not try to reinstall `git` again.
@@ -154,7 +155,7 @@ This will give you more practice will adding `commit`s, so try to edit multiple 
 Essentailly, make a few and explore a long the way.
 Here is what my repo looks like now!
 
-![Repo with Multiple Commits]()
+![Repo with Multiple Commits](/assets/imgs/git_with_commits.png)
 
 Now let's look at all the `commit`s I made.
 To do that I will use the `git log` command.
@@ -162,12 +163,21 @@ I typically also add a couple of arguments to make mine look a little nicer, whi
 Better yet, I make that command into and alias, so I can just type out `glog`, more on aliases [here][aliases].
 Here is how my history looks:
 
-![Repo History]()
+![Repo History](/assets/imgs/git_log.png)
 
 This log shows me the whole history of this `git` repo.
-Since you have the whole history, you are completely safe. 
-If you every make a mistake you can always roll back to the previous commit (or even old).
+And for those who like a little more detail you can always add `--stat` to see which files were changed and by how much.
+
+
+![Repo History with Stat](/assets/imgs/git_log_stat.png)
+
+For example, the second line says that 3 lines were added to the file that commit, you can see a little lower (about half way) that I added one line and deleted one line to the `main.py` and renamed the `hello_world.txt` file to `instructions.txt`.
+Since you have the whole history, you are completely safe.
+All of your data/changed are store, ready for you any time you need them.
+If you ever make a mistake you can always roll back to the previous commit (or even older ones).
 That's a little bit more advanced (simply because all of the options available depending on precisely what you want to do), plus you already learned a lot today, so I will add it to a future post in the series.
+But before I got, I do want to highlight a few common mistakes people tend to make when they first start off.
+
 
 ## Common Errors and Hiccups
 
