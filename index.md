@@ -3,9 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: Welcome!
 ---
-
-# Welcome!
 
 Welcome to my Coding Blog!
 I am your Coding Buddy, and I plan to share all the things I learned about Coding (and Technology) over the past 10 years.
