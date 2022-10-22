@@ -9,6 +9,10 @@ Here is what my repo looks like now!
 
 In your next co
 
+But let's say I need some code I deleted previously.
+How to I get access to it?
+For that we can use the 
+
 
 ## Merge Conflicts
 
