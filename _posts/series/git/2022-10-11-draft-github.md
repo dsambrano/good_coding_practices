@@ -179,13 +179,48 @@ I am going to have you
 
 To gain practice with these skills, let's go through an example.
 First we need to clone the repo.
-For simplicity, I am 
+For simplicity, I am going to place these repos next to each other in a `git_repos` directory.
 
 ```
 git_repos/
-├── my_first_git_project # The original
+├── my_first_git_project # The original repo
 └── git_workshop # The clone from GitHub
 ```
+
+To actaully clone the repo, first you need to cd to the directory wher you would like to keep the repo.
+In this case that would be `git_repos`.
+Then we need to type
+
+```bash
+git clone GIT_REPO_URL
+```
+
+To get the `GIT_REPO_URL` you can go to GitHub and click the green `code` button.
+Make sure you click your preferred protocol (either `HTML` or `SSH`), for the proper url.
+
+![Git Clone Example](/assets/imgs/gh_clone.png)
+
+So with this example, it would be:
+
+```bash
+git clone https://github.com/dsambrano/git_workshop.git # For HTML
+git clone git@github.com:dsambrano/git_workshop.git # For SSH
+gh repo clone dsambrano/git_repos # Is a third option using the GH CLI
+```
+
+Now you should have the same repo in two locations.
+For our purposes this can simulate you on two different computers (either the office and home or your computer and the experiment pc) or it can simulate you and a collaborator working on the same code.
+Next we can demonstrate how to share changes across the "two" computers.
+
+Start by opening one of the repos, I'll open the new one downloaded from GitHub.
+And we need to edit a file, I will edit the `goodbye.txt` replace the only line with `Thank you for participating! Have a great day!`.
+Then of course, we need to use `git add` to add the file and `git commit` to commit the changes.
+Again, `git commit` only stores the changes locally, now we can use `git push` to send the to the cloud.
+
+Next we will move back to the other repo (the original one) and make a change to the `instructions.txt` file adding `Welcome` to the first line.
+Again, we will add and commit these changes, but if we try to push we will see this error.
+
+![Push Error](/assets/imgs/gh_error.png)
 
 #### Merge conflicts
 
