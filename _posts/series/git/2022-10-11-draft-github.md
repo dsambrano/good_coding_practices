@@ -4,7 +4,7 @@ title: "So whats the deal with GitHub/Gitlab"
 date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding Git GitHub
-time: 10
+time: 20
 category: git
 series: git
 draft: true
