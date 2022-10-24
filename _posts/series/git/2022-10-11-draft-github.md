@@ -203,13 +203,14 @@ Make sure you click your preferred protocol (either `HTML` or `SSH`), for the pr
 So with this example, it would be:
 
 ```bash
+# Only choose 1 of the following options
 git clone https://github.com/dsambrano/git_workshop.git # For HTML
 git clone git@github.com:dsambrano/git_workshop.git # For SSH
 gh repo clone dsambrano/git_repos # Is a third option using the GH CLI
 ```
 
 Now you should have the same repo in two locations.
-For our purposes this can simulate you on two different computers (either the office and home or your computer and the experiment pc) or it can simulate you and a collaborator working on the same code.
+For our purposes, this will simulate you on two different computers (either the office and home or your computer and the experiment pc) or it can simulate you and a collaborator working on the same code.
 Next we can demonstrate how to share changes across the "two" computers.
 
 Start by opening one of the repos, I'll open the new one downloaded from GitHub.
@@ -222,45 +223,72 @@ Again, we will add and commit these changes, but if we try to push we will see t
 
 ![Push Error](/assets/imgs/gh_error.png)
 
-#### Merge conflicts
+This error is telling us that we tried to update the main GitHub repo, but our current files are out old.
+So, to fix this we must first pull down the changes from the remote repo (`git` will automagically integrate them with the changes we already made), then we can push all of the changes back up the GitHub.
+
+![GitHub Pull and Push](assets/imgs/gh_pl_push.png)
+
+Now, our collaborator (the new repo) can `git pull` to also incorporate the changes, so that everyone has the most up to date things.
+This is how you can easily collaborate with others or yourself (on different machines) and make sure every machine always has the most up to date versions of every file.
+No need to using a flash drive or sending google drive links, or even sending emails updating them with the changes.
+Whenever they are ready to incorporate the changes all the have to do is run `git pull` and if they are working on something, they can just hold off.
+All this comes from the magic of `git` keeping track of exactly what lines in what files have been changed.
+When different lines have been altered `git` intellegently integrates these changes.
+But what happens when two people edit the same line?
+How does `git` handle these situations.
+When two people edit the same line of a file, `git` informs the developer that there was a conflict when it tried to merge the two verions.
+It will never remove or edit things, unless you tell it to, so you have to resolve the conflict.
+
+
+#### Merge Conflicts
 
 Merge conflicts occur when you are trying to update code that someone else has already updated.
 Because of this, `git` is not sure which is the correct version, so it asks you to fix it.
 Let's simulate a merge conflict so we can see them in action, and you can learn how to resolve them.
 
-We will simulate another person editing the code by opening the repo on GitHub and making changes from there.
-When in a GitHub repo you can press `.` to get acces to and editor. 
-Here I will make a simple change to ...
-And change the same line in my local repo, but to something a little different.
+Just like before we are going to use the two repos to simulate two different computers.
+But this time, instead of editing two different lines, we are going to edit the same line.
+Specifically, I will change the first line of the instructions to say `Hello from the OG repo` in the original and `Hello from the Clone` from the cloned repo.
 
+> Hint: If you want to try something new, you can actually edit files directly from GitHub.
+When in a GitHub repo you can press `.` to get access to the Visual Code Studio IDE. 
+From there you can make all the changes you want and save them with a message, just like you would if you were using VCS from your local computer.
 
-## Common Errors and Hiccups
+Now when I pull down the changes, I will get a merge conflict.
 
-- Trying to download a HTML file from GitHub 
+![GitHub Merge Conflict](assets/imgs/gh_merge_conflict.png)
 
-
-## Advanced Topics in GitHub
-We covered a lot today, thankfully, that is most of the important things you need. 
-However, there are a few advanced topics that I do think are useful to know, even though you might not use them a bunch:
-- Fork: A fork is when another person takes your existing projects and adds their own spin or flavor on top and then stores it on their own repo. 
-- Pull Request: This is a mechanism to allow either other team members or other developers to update your code and merge it with the main branch. 
-
-
-## Homework
-I want you to take one of your projects and initialize it as a git project and store it remotely. 
-This can be as a private repo if need be
-
+As the error message indicates, we can either ... or ...
+You can also run `git status` to get some more information on the problematic file/files.
+Here, you can see it was the instructions file.
+And if we open that file up for editings we can see that `git` helpfully altered the file to let us know what the problemactic line(s) were.
+Here is specifically what mine looks like.
 
 ## Recap
 
+First of all, give yourself a pat on the back, you just learned how to use GitHub to collaborate with others and remotely store your coding projects.
 Combine that with the skills you learned in the previous post you have a great foundation.
-If you were going through this series just to get the basics of `git` and GitHub,just here for the basics, you know them and can effectively use git and github.
-However, if you are looking for a little more, you can check out the rest of the series where I cover git Branches, reviewing previous commits and more
+If you were going through this series just to get the basics of `git` and GitHub, you know them now and can effectively use `git` and GitHub.
+However, if you are looking for a little more, you can check out the rest of the series where I cover Branches, reviewing previous commits and more!
+Also before you go, below are some tips on common mistakes and advanced GitHub topics and extra practice.
+Check them out before heading to the next post.
 
+### Extra Practice
 
-## Additional Resources:
+Its really important you implement your new skills.
+This is why I had you go through all the examples along side the tutorial.
+To get even more practice, I reccomend taking one of your existing projects and initializing it as a git repo and upload it to GitHub.
+I want you to take one of your projects and initialize it as a git project and store it remotely.
+This can be as a private repo, if you want, but just getting the practice to have everything stored with an extra backup is a good idea.
 
-[fireshipio](https://youtu.be/HkdAHXoRtos "Fireshipio: Git and Github")
+### Advanced Topics in GitHub
+
+We covered a lot today, thankfully, that was the most important things you need. 
+However, there are a few advanced topics that I do think are useful to know, even though you might not use them a bunch:
+- Fork: A fork is when another person takes your existing projects and adds their own spin or flavor on top and then stores it on their own repo. However, unlike a `clone` any changes that made to the fork will not affect the origial project.
+- Pull Request: This is a mechanism to allow either other team members or other developers to update your code and merge it with the main branch even though they may not be associated with the project. They are requesting that you pull the changes they made into your main repo. Not very common in Scientific programming but will come up if you explore general software engineering.
+
+Looking for more on the `git`/GitHub, you can check out this video from [fireshipio][fireshipio].
 
 
 
@@ -273,3 +301,4 @@ However, if you are looking for a little more, you can check out the rest of the
 [gl]: https://gitlab.com/users/sign_up "GitLab Signup"
 [git-clone]: #github-clone-repo
 [authorization]: #github-authorization
+[fireshipio]: https://youtu.be/HkdAHXoRtos "Fireshipio: Git and Github"
