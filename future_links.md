@@ -24,3 +24,4 @@ Future links:
 
 - Git-example
   - Need to add a link to the aliases section in CLI when it is done.
+  - Github future posts about SSH
