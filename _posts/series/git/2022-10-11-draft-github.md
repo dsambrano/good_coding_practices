@@ -8,7 +8,7 @@ time: 20
 category: git
 series: git
 draft: true
-usemathjax: true
+usemathjax: false
 diff: intermediate
 
 ---
@@ -213,27 +213,31 @@ Now you should have the same repo in two locations.
 For our purposes, this will simulate you on two different computers (either the office and home or your computer and the experiment pc) or it can simulate you and a collaborator working on the same code.
 Next we can demonstrate how to share changes across the "two" computers.
 
-Start by opening one of the repos, I'll open the new one downloaded from GitHub.
+Start by opening one of the repos, I'll open the new one cloned from GitHub.
 And we need to edit a file, I will edit the `goodbye.txt` replace the only line with `Thank you for participating! Have a great day!`.
 Then of course, we need to use `git add` to add the file and `git commit` to commit the changes.
 Again, `git commit` only stores the changes locally, now we can use `git push` to send the to the cloud.
 
-Next we will move back to the other repo (the original one) and make a change to the `instructions.txt` file adding `Welcome` to the first line.
+Next we will move back to the other repo (the original one) and make a change
+to the `instructions.txt` file replace `World` with `Participant` int eh
+first line.
 Again, we will add and commit these changes, but if we try to push we will see this error.
 
 ![Push Error](/assets/imgs/gh_error.png)
 
-This error is telling us that we tried to update the main GitHub repo, but our current files are out old.
-So, to fix this we must first pull down the changes from the remote repo (`git` will automagically integrate them with the changes we already made), then we can push all of the changes back up the GitHub.
+This error is telling us that we tried to update the main GitHub repo, but our
+current files are out of date/old.
+So, to fix this we must first pull down (`git pull`) the changes from the remote repo (`git` will automagically integrate them with the changes we already made), then we can push all of the changes back up the GitHub.
 
-![GitHub Pull and Push](assets/imgs/gh_pl_push.png)
+![GitHub Pull and Push](/assets/imgs/gh_pl_push.png)
 
-Now, our collaborator (the new repo) can `git pull` to also incorporate the changes, so that everyone has the most up to date things.
+Now, our collaborator (the new repo) can `git pull` to also incorporate the changes, so that everyone has the most up to date code.
 This is how you can easily collaborate with others or yourself (on different machines) and make sure every machine always has the most up to date versions of every file.
 No need to using a flash drive or sending google drive links, or even sending emails updating them with the changes.
 Whenever they are ready to incorporate the changes all the have to do is run `git pull` and if they are working on something, they can just hold off.
 All this comes from the magic of `git` keeping track of exactly what lines in what files have been changed.
 When different lines have been altered `git` intellegently integrates these changes.
+
 But what happens when two people edit the same line?
 How does `git` handle these situations.
 When two people edit the same line of a file, `git` informs the developer that there was a conflict when it tried to merge the two verions.
@@ -242,7 +246,7 @@ It will never remove or edit things, unless you tell it to, so you have to resol
 
 #### Merge Conflicts
 
-Merge conflicts occur when you are trying to update code that someone else has already updated.
+Merge conflicts occur when you are trying to update code that someone else has already been updated.
 Because of this, `git` is not sure which is the correct version, so it asks you to fix it.
 Let's simulate a merge conflict so we can see them in action, and you can learn how to resolve them.
 
@@ -256,13 +260,28 @@ From there you can make all the changes you want and save them with a message, j
 
 Now when I pull down the changes, I will get a merge conflict.
 
-![GitHub Merge Conflict](assets/imgs/gh_merge_conflict.png)
+![GitHub Merge Conflict](/assets/imgs/gh_merge_conflict.png)
 
 As the error message indicates, we can either ... or ...
 You can also run `git status` to get some more information on the problematic file/files.
 Here, you can see it was the instructions file.
 And if we open that file up for editings we can see that `git` helpfully altered the file to let us know what the problemactic line(s) were.
 Here is specifically what mine looks like.
+
+![GitHub Merge Conflict](/assets/imgs/gh_merge_conflict_text.png)
+
+The text between `<<<<<<< HEAD` and `=======` is what was changed in the repo you are currently in.
+The text between the `=======` and `>>>>>>> HASH` is what was changed in the remote repo and the corresponding `HASH` where that line was changed.
+So in our case, since I was currently in the cloned repo, the top section was the line that was changed in the clone and the bottom was what was changed in the original.
+The rest of the file was not changed, so it does not have these same markings.
+All we need to do now, is choose one (by deleting all the unwanted text, et.g., `====`, `>>> HASH`, and `<< HEAD`) or erase both and replace it with something else.
+In my case, I will replace the first line with `Hello, I edited this line in both the clone and the OG repo`.
+Now, we can add this file with the new changes commit them and push them to GitHub.
+
+Wahoo!
+We just resolved the merge conflict!
+If you want to check out what I did here, feel free to go to the [GitHub repo][myrepo].
+You can even check the commit [history][myrepo-history] to see exactly what was changed and when.
 
 ## Recap
 
@@ -302,3 +321,5 @@ Looking for more on the `git`/GitHub, you can check out this video from [fireshi
 [git-clone]: #github-clone-repo
 [authorization]: #github-authorization
 [fireshipio]: https://youtu.be/HkdAHXoRtos "Fireshipio: Git and Github"
+[myrepo]: https://github.com/dsambrano/git_workshop "GitHub Workshop Repo"
+[myrepo-history]: https://github.com/dsambrano/git_workshop/commits/main "My GitHub Workshop Repo's History"
