@@ -5,6 +5,7 @@ title: You Need to Learn Package Managers, Right Now
 
 Let's say I asked you to install R and Rstudio, what would you do.
 First you would Google them one by one and then click on the link, then go to the downloads page, go to the section for your OS and then finally download it.
+Once that is done, you have to go to your download folder and double click the installer (on Mac move the app to the Applications folder), follow through the steps waiting to hit confirm each time while it asks you were to install and for your passwords.
 But there is a simpler way, just use a package manager!
 You can install both on a Mac with `brew install --cask R rstudio`, and you are done!
 Want to update them to the latest version, just run `brew upgrade`.
