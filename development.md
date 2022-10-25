@@ -4,8 +4,10 @@
 Not before launch: 
 - social media share thing
 - Copy code thing button
+- Button to autolink to section
 - Search
 - darkmode
+- related posts (just for non series?)
 
 Need to fixe Side: SOme will get to long so I need it have a max height (probs 80%) but just check that it is within the head/foot region.
 Need to add the Full series TOC to series home Page
