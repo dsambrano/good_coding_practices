@@ -12,7 +12,7 @@ time: {diff_time}
 #permalink: 
 diff: expert
 draft: true
-usemathjax: true
+usemathjax: false
 ---
 
 {% include sidebar.html %}
