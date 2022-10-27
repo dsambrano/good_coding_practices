@@ -332,6 +332,7 @@ However, there are a few advanced topics that I do think are useful to know, eve
 - Pull Request: This is a mechanism to allow either other team members or other developers to update your code and merge it with the main branch even though they may not be associated with the project. They are requesting that you pull the changes they made into your main repo. Not very common in Scientific programming but will come up if you explore general software engineering.
 
 Looking for more on the `git`/GitHub, you can check out this video from [fireshipio][fireshipio].
+Also feel free to check out this [cheatsheet][].
 
 
 
@@ -348,3 +349,4 @@ Looking for more on the `git`/GitHub, you can check out this video from [fireshi
 [myrepo]: https://github.com/dsambrano/git_workshop "GitHub Workshop Repo"
 [myrepo-history]: https://github.com/dsambrano/git_workshop/commits/main "My GitHub Workshop Repo's History"
 [example]: #github-example
+[cheatsheet]: https://training.github.com/downloads/github-git-cheat-sheet.pdf "Git/GitHub Cheatsheet"
