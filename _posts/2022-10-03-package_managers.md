@@ -1,11 +1,35 @@
+---
+layout: post
 title: You Need to Learn Package Managers, Right Now
+date: 2022-10-03
+author: Deshawn Sambrano
+tags: Coding
+time: 3
+permalink: /packaging-managers
+draft: true
+usemathjax: false
+series: false
+diff: beginner
 
+---
+
+{% include sidebar.html %}
+
+<section class="takeaways">
+
+In this blog you will learn the basics of packaging managers.
+If you already know why its useful/already implement it, feel free to jump around. 
+
+Prerequisites:
+- None
+
+</section>
 
 ## What Even Are Package Mangers
 
 Let's say I asked you to install R and Rstudio, what would you do.
-First you would Google them one by one and then click on the link, then go to the downloads page, go to the section for your OS and then finally download it.
-Once that is done, you have to go to your download folder and double click the installer (on Mac move the app to the Applications folder), follow through the steps waiting to hit confirm each time while it asks you were to install and for your passwords.
+You would Google them one by one and then click on the link, then go to the downloads page, go to the section for your OS and then finally download it.
+Once that is done, you have to go to your download folder and double click the installer (on Mac move the app to the Applications folder), follow through the steps waiting to hit confirm each time while it asks you where it should be installed and for your passwords.
 But there is a simpler way, just use a package manager!
 You can install both on a Mac with `brew install --cask R rstudio`, and you are done!
 Want to update them to the latest version, just run `brew upgrade`.
@@ -18,11 +42,52 @@ A package manager deals with all these issues.
 If you have ever used `install.packages` in R or `pip` in Python these are sorta the same thing, but they only manage packages for that specific language (and to worse effect because neither deal with conflicting dependencies well).
 
 In contrast a general purpose package manager, handles all the apps on your computer.
-So never again will you need to Google `Anaconda download` and find the correct OS and install.
-Instead you just type `brew install anaconda` and everything will be downloaded for you.
+So never again will you need to Google `Spotify download` and find the correct OS and install.
+Instead you just type `brew install --cask spotify` and everything will be downloaded for you.
 Uh-oh you got some updates, well `brew update` will handle all of them all at once.
 They are a huge time saver, and since they work from the command-line, you programmatically set them to run whenever you want.
 So for example, I have a script that installs all my apps whenever I get a new computer, which uses a package manager.
+
+
+## General Syntax
+
+In general, all the package managers have the following syntaxt.
+To install a package use
+
+```bash
+MANAGER install package_name
+# May need sudo privileges
+sudo MANAGER install package_name
+```
+removing a package is just as easy, typically with:
+
+```bash
+MANAGER uninstall package_name
+# or in some cases
+MANAGER remove package_name
+```
+
+If you are not sure what a package is called, you can always just search for it:
+
+```bash
+MANAGER search query
+```
+
+updating is just as simple:
+
+```bash
+MANAGER update # updates your list of what is the newest app version numbers
+MANAGER upgrade # actually updates the apps to the latest versions on your list
+# Some automatically do both steps at once but not all so I listed it here
+
+MANAGER upgrade package_name # Only updates the specific package.
+```
+
+
+Many package managers, will require you to either confirm what you are installing or confirm that you can install the necessary dependencies along with them.
+This confirmation can occur automatically by adding the `-y` option.
+Of course, not all package managers are the same, so yours may have slightly different syntax, so feel free to check online to see if yours has anything wierd going on (looking at you `pacman`).
+But in general this structure should work for `apt`, `brew`, `dnf`, `chocolatey` and `winget`.
 
 ## Which Package Manager to Use?
 
@@ -49,7 +114,7 @@ And for people who like to add more work to their life, you can install [App Ima
 MacOS has a few different options.
 My preferred one is [`homebrew`][homebrew], which uses the `brew` command.
 This along with all MacOS package managers require Xcode command line tools.
-And it can be installed with the following command:
+And they can be installed with the following commands:
 
 ```bash
 # Requires Xcode, so install that first
@@ -58,8 +123,9 @@ xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-`brew` uses a slightly different syntax depending if the app is just for the command line or if its installs a GUI.
-To install a CLI app (e.g., Python, R, git), use `brew install app_name` and to install a GUI app (e.g., RStudio, Visual Code Studio, Spotify) use `brew install --caske app_name`. Other than that, it is pretty much the same as the rest of them.
+`brew` uses a slightly different syntax depending if the app is just exclusively for the command line or if its installs a GUI.
+To install a CLI app (e.g., Python, R, git), use `brew install app_name` and to install a GUI app (e.g., RStudio, Visual Code Studio, Spotify) use `brew install --cask app_name`.
+Other than that, it is pretty much the same as the rest of them.
 
 If you are looking for something a little different, you can always try out [`macports`][macports].
 
@@ -71,17 +137,8 @@ Windows also has a few different options, but I will mention up front, I do not 
 First off is [chocolatey][], which I have used in the past.
 Additionally, there is winget which is installed by default.
 
----
 
-## General Syntax
 
-In general, all the package managers have the following syntaxt.
-To install a package use `MANAGER install package_name` (you may need to run with `sudo` privileges for some package managers).
-Removing a package is typically `MANAGER uninstall package_name`, though some use `MANAGER remove package_name`.
-If you are not sure what a package is called, you can always use `MANAGER search query`.
-Of course, you will want to update the list dectating what the most recent versions of packages are with `MANAGER update`, and then actually update the packages to them to the most recent version with `MANAGER upgrade`.
-Many package managers, will require you to either confirm what you are installing, which can typically be automated with the `-y` option.
-Of course, not all package managers are the same, so yours may have slightly different syntax, so feel free to check online to see if yours has anything wierd going on (looking at you `pacman`). But in general this structure should work for `apt`, `brew`, `dnf`, `chocolatey` and `winget`.
 
 
 
