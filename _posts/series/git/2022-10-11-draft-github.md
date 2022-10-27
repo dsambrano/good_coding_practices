@@ -44,35 +44,57 @@ Once you have made a GitHub/GitLab account and authorized yourself on your machi
 The `git push` commands simply send all the changes that you made locally on your computer to the remote server. 
 That way you always have a backup in case something goes wrong with your computer, WAHOO!!
 
-Very commonly, you may need to download either someone else's code or your own code (to a new computer). 
-In order to do this, you need the `git clone` command. 
-This will clone the repo to your local machine, and importantly, it will also download all the changes that were ever made, so you have a full history of the project. 
+Very commonly, you may need to download either someone else's code or your own code (to a new computer).
+In order to do this, you need the `git clone` command.
+This will clone the repo to your local machine, and importantly, it will also download all the changes that were ever made, so you have a full history of the project.
 
 ## Why Can't I Just Use DropBox? Why do I ***Need*** Git/GitHub?
 
-At this point, you might be wondering, ok, if GitHub just adds cloud storage to `git`s version control abilities why can't I just use DropBox or Google Drive. 
-What does the `git`/GitHub combo add that I couldn't just get from these resources. 
+At this point, you might be wondering, ok, if GitHub just adds cloud storage to `git`s version control abilities why can't I just use DropBox or Google Drive.
+What does the `git`/GitHub combo add that I couldn't just get from these resources.
 
 This is kinda like saying why doesn't a surgeon use a knife instead of a scalpel.
-Sure a knife can do a lot of the job, but they are designed for different things. 
+Sure a knife can do a lot of the job, but they are designed for different things.
 DropBox/Drive are general purpose storage tools (like a knife) while git is specifically designed for writing code. 
-That being said, let's highlight specific examples: 
-1. While you do get some history of a file on both platforms, neither provides any information about what is different between the different versions. So you would need to remember what changes you personally made on April 23, 2022 at 4:00 pm compared the April 23, 2022 at 4:15 pm. First of all there is no chance that you remember what was different. In contrast, with git you have all the information stored with a message for every commit made. 
-2. But let's pretend you have an insane memory and actually do remeber a general gist of what was different. You still won't find the specific differences without opening both files and comparing them. Again, with git, you have a single command to see all the changes made to that file. They can also be easier viewed view GitHub/GitLab. 
-3. Git does Delta changes meaning that it uses a lot less resources in terms of network bandwidth, storage, and general computing resources. 
-4. Similar to the previous example, This requires you to store all of the data. What if you computer doesnt have enough storage. Instead using Git and GitHub, you will only need to download and store the relevant components and you can delete them at any time to reclaim your storage. 
-5. And perhaps the most relatable example is, when you want to change code (and you are using DropBox/Google Drive) what do you do. My bet, is that you comment out the old code and create the new code (that way if something breaks you can always go back). But what if something doesn't break right away. What if it takes a while to realize that this caused a problem. Are you just going to leave the old commented version in there for ever? If you do then you won't have very maintainable code, because the amount of comments are quickly going to explode. In constrast, with git, you just save the version as a commit make the changes, and if *anything* goes wrong, just rewind back to the problematic commit. 
-6. You know every change that has ever happened to a file
+That being said, let's highlight specific examples/reasons for both.
+If you already are convinced of the benefits, feel free to jump to the [example][].
 
-Make it more clear when `git` is done a thing (version history/tracking all changes) vs GitHub.
 
-Git
-- version control/history
-- you can work on the files at the same time
+### Reasons for Git
 
-Github
-- Future collabs don't require you to be active
-- if another person sees an error they can fix it for you
+One of the most relatable example is, when you want to change code (and you are using DropBox/Drive) what do you do.
+My bet, is that you comment out the old code and create the new code (that way if something breaks you can always go back).
+But what if something doesn't break right away.
+What if it takes a while to realize that this caused a problem.
+Are you just going to leave the old commented version in there for ever?
+If you do then you won't have very maintainable code, because the amount of comments are quickly going to explode.
+In constrast, with git, you just save the version as a commit make the changes, and if *anything* goes wrong, just rewind back to before the issue occured.
+You have peace of mind because you know you have every change that has ever happened to a file.
+
+Additionally, while you do get some history for a file on DropBox/Drive, neither provides any information about what is different between the different versions.
+So you would need to remember what changes you personally made on April 23, 2022 at 4:00 pm compared the April 23, 2022 at 4:15 pm.
+There is obviously, no chance that you remember what was different.
+In contrast, with git you have all the information stored with a message for every commit made, and with a single command, you know exactly what files and lines were specifically changed. 
+
+DropBox/Drive have some mechanisms for multiple people editing a single file, but they don't work on all file types.
+Not to mention that even if they code, having your code update while you are trying to test things would not be an effectively system.
+Instead, you can work on changes without them affecting anyone else, and only once your changes work, then you can send them for everyone to review.
+When it comes to coding, this system is simply better.
+
+### Reasons for GitHub
+
+One of the primarly purposes for GitHub for scientific programming, is to have a remote repository for your project.
+Of course DropBox/Drive can do this as well, but GitHub adds a few extra benefits that these don't.
+First, GitHub was designed to work seemlessly with git.
+So you have full access to all your repo's history in a easily viewable way.
+In line with this, it has built in ways to allow people to make comments and changes to your code.
+
+Additionally, if someone else needs to see your code and its on DropBox/Drive, you need to add their email to grant them access (of course sometimes there are mishaps and you don't give them edit access so there is back and forth). Now if this happens on a relatively recent project, you are likely to still have access to your email, but what if you moved and don't have that email anymore? Or what if your extra storage was tied to the fact that you your DropBox/Drive was connected to your school account? Well then all the collaborators have to be moved over to still have access.
+
+In contrast, on GitHub, your account is independent of your instituition, so you will always have access, so there is no need to deal with this headache. And if someone else wants to download the code, they can just do it. No need to ask you for permission they simpley find the repo (either from GitHub directly or from your publication) and download the repo. No asking for permission and waiting for a response, which let's be honest is already outdated anyways, they just download it.
+
+To be clear, I am not saying you should never use DropBox/Drive, they have their use cases.
+I'm simply noting that, when it comes to code, `git`/GitHub were designed to handle this issues and the clear best choice.
 
 ## GitHub Example
 
@@ -100,7 +122,7 @@ This is a one time process and can be done with `gh auth login`.
 Follow the on screen prompts to complete the autorization.
 Here are some good default options for first timers.
 - Account type: `GitHub.com`
-- Prefered Protocol: `HTML`, reccomended for beginners, but `SSH` is great as well (my preference). Regardless of choice, make sure that you remember which one it will come up in the next section.
+- Preferred Protocol: `HTML`, reccomended for beginners, but `SSH` is great as well (my preference). 
 - `SSH` key (if applicable): leave default unless you are familiar with `ssh` keys.
 - Authentication: `Login with web browser` You will need to copy the code in the terminal before accessing the link, holding control while pressing the link in the terminal should open it automatically. Login as usual and paste the code to authenticate, then read and accept the prompt.
 
@@ -140,10 +162,12 @@ Once you click create repository, then you will see the follow screen.
 
 ![](/assets/imgs/gh_p2.png)
 
+<!--
 As you can see there are a few options, first and most important, you need to select your protocol either `HTML` or `SSH` based on what you selected in the [authorization][authorization] section.
 Make sure you selected the correct one, because it will change the url.
+-->
 
-Next you can see there is an option for creating a new repo and one for pushing an existing repo.
+As you can see there is an option for creating a new repo and one for pushing an existing repo.
 Basically, if you already ran `git init` on a repo that you want to upload to GitHub, use the second one, if not, use the first.
 
 
@@ -323,3 +347,4 @@ Looking for more on the `git`/GitHub, you can check out this video from [fireshi
 [fireshipio]: https://youtu.be/HkdAHXoRtos "Fireshipio: Git and Github"
 [myrepo]: https://github.com/dsambrano/git_workshop "GitHub Workshop Repo"
 [myrepo-history]: https://github.com/dsambrano/git_workshop/commits/main "My GitHub Workshop Repo's History"
+[example]: #github-example
