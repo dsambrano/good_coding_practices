@@ -93,14 +93,16 @@ But in general this structure should work for `apt`, `brew`, `dnf`, `chocolatey`
 
 To install a package manager you need to first know what OS you are running.
 Go to the appropriate section depending on your OS before continuing.
+For several of the package managers I have an install script on [github][] for you to check out.
+Just go to the `package_installs.sh` script for the relevant OS.
 
 ### Linux
 
 Linux is where package managers came from, so its no wonder that they have some of the best, and also explains why they come with your distro by default.
 It does depend on you distro, and if you are using Linux, you are probably already familiar, but just in case here are the main ones.
 
-- For Debian/Ubuntu and all the distros based on either of these, you will use `apt`, which is definitely the most common. Pretty much every tutorial will assume `apt`
-- For Red Hat Enterprise Linux (RHEL) based distros, you are looking at `dnf`.
+- For Debian/Ubuntu and all the distros based on either of these, you will use `apt`, which is definitely the most common. Pretty much every tutorial will assume `apt` ([my sample apt install script][linux-apt])
+- For Red Hat Enterprise Linux (RHEL) based distros, you are looking at `dnf` ([my sample dnf install script][linux-dnf]).
 - And for all Arch based distros, you will have `pacman` this one has funky syntax with `pacman -S` to install things. So you should checkout the [Arch Linux Wiki][archwiki] for where yours may differ.
 
 Of course there is [flatpak][] which has been all the rage since the SteamDeck and is quickly becoming the new favorite universal package manager on Linux.
@@ -126,6 +128,7 @@ xcode-select --install
 `brew` uses a slightly different syntax depending if the app is just exclusively for the command line or if its installs a GUI.
 To install a CLI app (e.g., Python, R, git), use `brew install app_name` and to install a GUI app (e.g., RStudio, Visual Code Studio, Spotify) use `brew install --cask app_name`.
 Other than that, it is pretty much the same as the rest of them.
+For an example, you can check out my [install script][mac-brew] using `homebrew`.
 
 If you are looking for something a little different, you can always try out [`macports`][macports].
 
@@ -149,3 +152,7 @@ Additionally, there is winget which is installed by default.
 [flatpak]: https://flatpak.org/setup/ "Flatpak Install"
 [snaps]: https://codeburst.io/how-to-install-and-use-snap-on-ubuntu-18-04-9fcb6e3b34f9 "Install Snaps"
 [appimages]: https://appimage.org/ "App Images"
+[mac-brew]: https://github.com/dsambrano/dotfiles/blob/main/mac/package_installs.sh "Mac Installs with HomeBrew"
+[github]: https://github.com/dsambrano/dotfiles/ "Dotfiles Installs"
+[linux-dnf]: https://github.com/dsambrano/dotfiles/blob/main/linux/fedora/package_installs.sh "Fedora DNF install"
+[linux-apt]: https://github.com/dsambrano/dotfiles/blob/main/linux/ubuntu/package_installs.sh "Ubuntu Apt installs"
