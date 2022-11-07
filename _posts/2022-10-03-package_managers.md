@@ -18,7 +18,11 @@ diff: beginner
 <section class="takeaways">
 
 In this blog you will learn the basics of packaging managers.
-If you already know why its useful/already implement it, feel free to jump around. 
+If you already know why its useful/already implement it, feel free to jump around.
+By the end you will learn:
+
+- What a Package Manager is
+- How to use them to install all your software on your computer
 
 Prerequisites:
 - None
@@ -27,13 +31,15 @@ Prerequisites:
 
 ## What Even Are Package Mangers
 
-Let's say I asked you to install R and Rstudio, what would you do.
+<!-- excerpt-start -->
+Let's say I asked you to install R and Rstudio on a new computer, what would you do.
 You would Google them one by one and then click on the link, then go to the downloads page, go to the section for your OS and then finally download it.
 Once that is done, you have to go to your download folder and double click the installer (on Mac move the app to the Applications folder), follow through the steps waiting to hit confirm each time while it asks you where it should be installed and for your passwords.
 But there is a simpler way, just use a package manager!
 You can install both on a Mac with `brew install --cask R rstudio`, and you are done!
 Want to update them to the latest version, just run `brew upgrade`.
 It may sound to good to be true, but I promise you its not.
+<!-- excerpt-end -->
 
 Package managers are tools to properly manager all the applications on your computer.
 Every app has certain dependencies and websites to download the apps etc.
@@ -45,13 +51,13 @@ In contrast a general purpose package manager, handles all the apps on your comp
 So never again will you need to Google `Spotify download` and find the correct OS and install.
 Instead you just type `brew install --cask spotify` and everything will be downloaded for you.
 Uh-oh you got some updates, well `brew update` will handle all of them all at once.
-They are a huge time saver, and since they work from the command-line, you programmatically set them to run whenever you want.
-So for example, I have a script that installs all my apps whenever I get a new computer, which uses a package manager.
+They are a huge time saver, and since they work from the command-line, you can programmatically set them to run whenever you want.
+So for example, I have a script that installs all my apps whenever I get a new computer, which uses a package manager ([check out the script here][github]).
 
 
 ## General Syntax
 
-In general, all the package managers have the following syntaxt.
+In general, all the package managers have the following syntax.
 To install a package use
 
 ```bash
@@ -78,7 +84,7 @@ updating is just as simple:
 ```bash
 MANAGER update # updates your list of what is the newest app version numbers
 MANAGER upgrade # actually updates the apps to the latest versions on your list
-# Some automatically do both steps at once but not all so I listed it here
+# Some automatically do both steps at once but not all so I listed them here
 
 MANAGER upgrade package_name # Only updates the specific package.
 ```
@@ -94,7 +100,7 @@ But in general this structure should work for `apt`, `brew`, `dnf`, `chocolatey`
 To install a package manager you need to first know what OS you are running.
 Go to the appropriate section depending on your OS before continuing.
 For several of the package managers I have an install script on [github][] for you to check out.
-Just go to the `package_installs.sh` script for the relevant OS.
+Just go to the `package_installs.sh` script in the folder for the relevant OS.
 
 ### Linux
 
@@ -105,7 +111,7 @@ It does depend on you distro, and if you are using Linux, you are probably alrea
 - For Red Hat Enterprise Linux (RHEL) based distros, you are looking at `dnf` ([my sample dnf install script][linux-dnf]).
 - And for all Arch based distros, you will have `pacman` this one has funky syntax with `pacman -S` to install things. So you should checkout the [Arch Linux Wiki][archwiki] for where yours may differ.
 
-Of course there is [flatpak][] which has been all the rage since the SteamDeck and is quickly becoming the new favorite universal package manager on Linux.
+Of course there is [flatpak][] which has been all the rage since the SteamDeck and is quickly becoming the new favorite universal package manager on Linux (meaning it works across all linux distros).
 Ubuntu also created [snaps][], but those are notoriously slow.
 And for people who like to add more work to their life, you can install [App Images][appimages]
 
@@ -122,6 +128,7 @@ And they can be installed with the following commands:
 # Requires Xcode, so install that first
 xcode-select --install
 
+# Installs homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
@@ -137,6 +144,7 @@ If you are looking for something a little different, you can always try out [`ma
 ### Windows
 
 Windows also has a few different options, but I will mention up front, I do not find them as useful compared to their MacOS, and especially Linux, counterparts.
+They are still worth trying out, especially because application management on Windows is a nightmare and viruses are plentiful, but I just wanted to set you expectations up front.
 First off is [chocolatey][], which I have used in the past.
 Additionally, there is winget which is installed by default.
 
