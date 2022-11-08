@@ -186,6 +186,12 @@ As you can imagine, this is just a taste of the command line. You can do so so m
 Now that I have changed all my commands to the new modern version, I don't want to mess up my mucsle memory for the old commands, so I make aliases to all of them. For example, I make a alias for `alias ls=exa`
 
 
+### Pywal
+
+I would be remise, if I did not tell you about [pywal][].
+[Pywal][] is a python tool that can take a image, like your wallpaper, and create a terminal color pallete to match.
+This is super helpful in making nice cohesive color themes with your wallpaper and terminal, so its definitely something to check out.
+
 
 ## Further Exploration
 
@@ -249,5 +255,7 @@ So stay tuned for a future post about them and how to set them up.
 
 
 
-[packagemanager]: /future-links
+[packagemanager]: /package-managers
+
+[pywal]: https://github.com/dylanaraps/pywal "Pywal for custom terminal themes"
 
