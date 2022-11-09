@@ -25,10 +25,11 @@ Prerequisites:
 
 </section>
 
-## Type Hints
+## What are Type Hints?
 
 <!-- excerpt-start -->
-Type hints are a tool that can be used in python to improve readability and expectations of code input and output for functions and classes. With type hints you specify the type each argument requires/expects as well as the expected output type.
+Type hints are a python tool that can be used improve readability by list the expectations for code input and output for functions and classes.
+With type hints you specify the type each argument requires/expects as well as the expected output type.
 
 <!-- excerpt-end -->
 
@@ -38,13 +39,19 @@ def add(a: float, b: float=3.1) -> float:
 ```
 
 In this simiple example, you see that both arguments expect float values and the second argument even has a default value of `3.1`.
-Finally, the expected output is also a float.
+Additionally, the expected output is also a float.
+As you can see the syntax is pretty simple.
+After a parameter, just add a `:` and then the type hint to use. 
+If you want to have a default value, just use an `=` as per usually.
+And finally, you use an `->` between the closing `)` and the final `:` to indicate the return type hint.
 
-In the image below shows how linters use type hints to help you when writing code.
-Since I include the `int` type hint for the value parameter, when I use the function with a `str`, it gives me the linting warning.
+The image below shows how linters use type hints to help you when writing code.
+Since I included the `int` type hint for my function's value parameter, when I use the function with a `str`, it gives me the linting warning.
 As you can imagine, this can help a ton for improving the usability of your code.
 
 ![Linter Example with Type Hints](/assets/imgs/type_hints.png)
+
+## Type Hint Options
 
 Importantly, python does not actually check to confirm the types are as hinted.
 So, you will still need to raise the appropriate exception.
@@ -64,6 +71,8 @@ As of python 3.9+ you can use the `list`, `dict`, `tuple`, and `set` natively.
 However, previous versions of python require you to import them from the typing module (e.g., `from typing impor Dict`).
 Additionally for all these sequences, you can specify what type are expected inside the sequence with the `[]` notation.
 > **Note**: For all type hints that are imported, you need to change the type hint to capitalize the first letter when using them in functions.
+
+## Custom Type Hints Example
 
 When creating type hints, it is important that you are as specific as possible, otherwise they are not that useful.
 For example, it would be a bad idea to have a `str` type hint if it really could only be `BEGINNER`, `INTERMEDIATE`, and `ADVANCED`.
