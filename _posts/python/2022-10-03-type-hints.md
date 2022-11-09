@@ -9,7 +9,7 @@ category: python
 draft: true
 usemathjax: true
 series: false
-diff: advanced
+diff: intermediate
 ---
 
 
@@ -21,60 +21,72 @@ In this post you will learn some best practices for coding in Python. By the end
 - Learn how write readable/usable functions with type hints
 
 Prerequisites:
-- Basic/working knowledge of how to write python code. Does not need to be advance, as long as you know how to write and run a script.
+- Basic/working knowledge of how to write python code (e.g., write a function).
 
 </section>
 
 ## Type Hints
 
 <!-- excerpt-start -->
-Type hints are a tool that can be used in python to improve readability and expectations of code input and output for functions and classes. With type hints you specify the type each argument requires/expects as well as the expected output type. 
+Type hints are a tool that can be used in python to improve readability and expectations of code input and output for functions and classes. With type hints you specify the type each argument requires/expects as well as the expected output type.
 
 <!-- excerpt-end -->
 
 ```python
-def add(a: float, b: float=3) -> float:
+def add(a: float, b: float=3.1) -> float:
     return(a + b)
 ```
 
-In this simiple example, you see that both arguments are expected to be floats and the second argument even has a default value of 3. 
-Finally, the expected output is as float. 
+In this simiple example, you see that both arguments expect float values and the second argument even has a default value of `3.1`.
+Finally, the expected output is also a float.
+
+In the image below shows how linters use type hints to help you when writing code.
+Since I include the `int` type hint for the value parameter, when I use the function with a `str`, it gives me the linting warning.
+As you can imagine, this can help a ton for improving the usability of your code.
+
+![Linter Example with Type Hints](/assets/imgs/type_hints.png)
+
 Importantly, python does not actually check to confirm the types are as hinted.
 So, you will still need to raise the appropriate exception.
-This is only to make it easier to understand how to properly use the script and/or function. 
+This is only to make it easier to understand how to properly use the script and/or function.
+And it will dramatically improve your ability to develop and use the code when you have a linter (when you IDE tells you when you have coding mistakes).
 You can use all the primative types for hints:
 - `int`
 - `str`
 - `float`
 - `bool`
-- `bytes`
-- `list[int or str]`: As of 3.9+ otherwise need to import: `from typing import List`
-- `dict`: As of 3.9+ or need import: `from typing import Dict`
-- `set`: As of 3.9+ or need import: `from typing import Set`
-- `tuple`: As of 3.9+ or need import: `from typing import Tuple`
+- `list[int or str or float]` (`[]` indicates what type are expected inside the list)
+- `dict[str, str]` (for a dictionary with both the key and value as strings): 
+- `tuple[str, int]` (for a tuple of size 2 with a string then int): 
+- `set`
 
+As of python 3.9+ you can use the `list`, `dict`, `tuple`, and `set` natively.
+However, previous versions of python require you to import them from the typing module (e.g., `from typing impor Dict`).
+Additionally for all these sequences, you can specify what type are expected inside the sequence with the `[]` notation.
 > **Note**: For all type hints that are imported, you need to change the type hint to capitalize the first letter when using them in functions.
 
-It is important that you are as specific as possible when creating type hints otherwise they are not that useful.
+When creating type hints, it is important that you are as specific as possible, otherwise they are not that useful.
 For example, it would be a bad idea to have a `str` type hint if it really could only be `BEGINNER`, `INTERMEDIATE`, and `ADVANCED`.
 Instead you should create you own custom type hint.
 Luckily, the `Enum` function makes this incredibly easy.
+You just need to create a class, which inherits from `Enum` and contains all the options for your specific use case.
+For example,
 
 ```python
 from enum import Enum
 
-class Difficulties(Enum):
+class Difficulty(Enum):
     # You can also assign a specific value if needed.
     #     E.g., BEGINNER = 1 # or 'b'
     BEGINNER = auto()
     INTERMEDIATE = auto()
     ADVANCED = auto()
 
-def get_difficulty(diff: Difficulties):
+def get_difficulty(diff: Difficulty) -> Difficulty:
     return(diff.name)
 
-result = get_difficulty(Difficulties.ADVANCED)
-print(result) 👉️ ADVANCED
+result = get_difficulty(Difficulty.ADVANCED)
+print(result)  # 👉️ ADVANCED
 ```
 
 As you can see, type hints make your code much more clear as to what each function/class expects as inputs.
@@ -84,7 +96,7 @@ By including them in your code, you will significantly increase your codes reada
 
 ## Additional Resources
 
-For more infromation about type hints such as other use cases, using special type hints, or using custom type hints see this [post][th1].
+For more information about type hints such as other use cases, using special type hints, or using custom type hints see this [post][th1].
 
 <!-- ## References -->
 
