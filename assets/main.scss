@@ -133,14 +133,14 @@ section.takeaways {
 }
 @media only screen and (max-width: 1350px){
     #sidebar {
-        height: 0px;
-        width: 0px;
-        max-width: 40%;
-        visibility: hidden;
-    }
-    #sidebar:hover {
-        height: auto;
-        width: auto;
+    position: auto;
+    top: auto;
+    left: auto;
+    max-width: auto;
+    margin-left: auto;
+    max-height: auto;
+    overflow-x: auto;
+    overflow-y: auto;
     }
 }
 
