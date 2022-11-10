@@ -126,21 +126,22 @@ section.takeaways {
     top: 120px;
     left: 0%;
     max-width: 15%;
-    margin-left: 1em;
     max-height: 60%;
     overflow-x: hidden;
     overflow-y: scroll;
+    margin-left: 1em;
 }
 @media only screen and (max-width: 1350px){
     #sidebar {
-    position: auto;
+    position: inherit;
     top: auto;
     left: auto;
-    max-width: auto;
-    margin-left: auto;
-    max-height: auto;
+    max-width: inherit;
+    max-height: inherit;
     overflow-x: auto;
     overflow-y: auto;
+    margin-left: auto;
+    margin-bottom: 2em;
     }
 }
 
