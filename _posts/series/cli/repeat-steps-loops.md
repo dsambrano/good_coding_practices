@@ -21,6 +21,8 @@ while [condition]; do
 done
 ```
 
+`⌃` + `C`, where `⌃` is the Control key (`CTRL`) on your board.
+
 where `condition` could be replaced with anything you learned in the [flow control][flow-control] post.
 a while loop will keep running the stuff inside until the condition is no longer `true`. These can be a bit dangerous
 

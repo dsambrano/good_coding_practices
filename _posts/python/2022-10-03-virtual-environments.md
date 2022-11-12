@@ -38,7 +38,8 @@ Why? Because
 
 So making sure you write good code means making sure you write code that you or others can read, understand, and edit without much hassle.
 The better you get at that skill, the better coder you will become, but simultaneously, you will also have more flexible and reproducible code.
-In this post, we will start by making an environment that can be recreated so anyone can replicated your code on their machine.
+In this post, we will focus on the last part, reproducability.
+We will do this by making an environment that can be recreated so anyone can replicated your code on their machine.
 
 <!-- excerpt-end -->
 
@@ -47,8 +48,8 @@ In this post, we will start by making an environment that can be recreated so an
 
 Virtual Environments are a mechanism used to prevent dependency issues across your python project.
 This is designed to solve the problem that occurs when one project might need `numpy 1.23.0`, while another one might need `0.97`.
-If you installed all the packages then each project can produce undisired results.
-To solve this, virtual environments create isolated environments to install packages for a specific project.
+<!-- If you installed all the packages then each project can produce undisired results. -->
+To solve this issue, virtual environments create isolated environments to install packages for a specific project.
 That way, the packages installed for one project won't affect any other projects.
 There are several tools for implementing virtual environments:
 
@@ -61,10 +62,10 @@ There are several tools for implementing virtual environments:
 
 ### Anaconda
 
-For beginners and data scientist, I would say [anaconda environments][condaenv] are the easiest to use.
+For beginners and data scientist, I would say [anaconda environments][condaenv] are the easiest to use because they also allow you to specify a python version.
 So I would recommend using those, and switching to one of the others if the project needs it or you learn the basics because conda environments can take a lot of space and are quite heavy.
 
-After installing (you can use your favorite [package manager][packagemanager], e.g., homebrew `brew install --cask anaconda` or download from the [website][anaconda]).
+After installing (with a [package manager][packagemanager], e.g., homebrew `brew install --cask anaconda` or download it from the [website][anaconda]).
 You can create a [`conda env`][condaenv] with the following command:
 
 ```bash
@@ -80,6 +81,8 @@ conda activate NAME_OF_ENVIRONMENT
 > Note: When active, you will see the name of the environment in parentheses before your terminal prompt (e.g., `(my-env) ~`).
 
 now everything that you install with `pip install` or `conda install` will be completely isolated from the rest of your python environments so you don't need to worry about dependency incompatabilities.
+> Note: `conda` also always you to install packages with `conda install`, but they are not always the most up to date, so I tend to stick with the `pip` versions, unless its necessary.
+
 To leave the environment just use:
 
 ```bash
@@ -92,7 +95,9 @@ Using the builtin `venv` method is pretty common online for github projects, so 
 
 ```bash
 python3 -m venv NAME_OF_VIRTUAL_ENV # Creation
-. NAME_OF_VIRTUAL_ENV/bin/activate # Activation
+source ./NAME_OF_VIRTUAL_ENV/bin/activate # Activation Mac and linux
+# venv\Scripts\activate # Activate on Windows
+deactivate  # Deactivates the environment
 ```
 
 Now that you have a working (and active) virtual environment, you can install all the packages that you want, and they will not affect any other proejcts that you have.
@@ -100,9 +105,11 @@ Now that you have a working (and active) virtual environment, you can install al
 
 ## Freeze the Packages!
 
-Now, that you know what a virtual environment is, you can learn how to recreate virutal environments on new machines to be able to reproduce your code elsewhere.
-The first step to reproduce some code is to make sure that you have all the correct packages.
-In python, you can save all the packages that you are currently using along with the version numbers of the current virtual environment with the following command:
+Now, that you know what a virtual environment is and how to set them up, you can learn how to replicate previous virtual environment on new machines.
+We just need to make sure the new machine has all the same packages and version numbers as the previous machine, but how do we do that?
+<!-- Well the first step is to figure out all the packages we have installed in the current virtual environment.
+The first step to reproduce some code is to make sure that you have all the correct packages. -->
+In python, you can save all the installed packages in your current virutal environment along with their version numbers following command:
 
 ```bash
 pip freeze > requirements.txt
@@ -115,7 +122,7 @@ Then on a new system you can install all those packages into your environment wi
 pip install -r /path/to/requirements.txt
 ```
 
-Now, whenever you make a new project, after you install all the packages, you can run the `pip freeze` command to save them and the install them in your [virutal environment][ve] on your new machine.
+Now, whenever you make a new project, after you install all the packages, you can run the `pip freeze` command to save them and the install them in your [virutal environment][ve] on your new machine with `pip install -r`.
 Now, you have a replicated virtual environment and can run the code on the new machine with the same results!
 
 <!-- ## References -->
@@ -136,7 +143,7 @@ Now, you have a replicated virtual environment and can run the code on the new m
 [anaconda]: https://www.anaconda.com/products/distribution "Anaconda"
 [pyenv]: https://github.com/pyenv/pyenv "Pyenv for simple VE in python"
 [venv]: https://docs.python.org/3/library/venv.html "Venv: Python Builtin Virtual Environment Creator"
-
+[real-ve]: https://realpython.com/python-virtual-environments-a-primer/
 
 <!-- ### f Strings -->
 
