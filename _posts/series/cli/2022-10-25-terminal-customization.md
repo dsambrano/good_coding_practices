@@ -76,6 +76,18 @@ For morst beginners to intermediate coders, I reccomend [gitbash][], which is de
 The other option is [Windows Subsystem for Linux (WSL)][wsl], which is built by microsoft to allow you to directly use Linux from within your Windows machine. With [WSL][wsl], you have access to a full Linux distro. One neat feature is you can have access to the [alacritty][] terminal on Windows, so you could use it for all three OSes if you switch between them.
 If this is your first time trying this out, I recommend [gitbash][], but if you plan on doing a lot of coding in `bash` or you just want to see what all the Linux fuss is about, go for [Windows Subsystem for Linux (WSL)][wsl].
 
+## Upgrade Your Functions
+
+One of the biggest things you can to to improve your terminal experiences, is upgrade your functions.
+Basically all the standard command line utilities are decades old, and were developed before color was commonplace on monitors.
+To that end, there has been an attempt to update them to the modern age making them faster, more user friendly, and of course adding lots of colors and customization options.
+One great place to start is with [Modern Unix][munix].
+This is a repo that highlights a bunch of the most popular replacements.
+
+### Aliases
+
+Another way to speed things up is to make alias which you can write short hand for really long commands.
+
 
 ## How to Customize Your Terminal
 

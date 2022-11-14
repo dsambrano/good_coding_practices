@@ -32,6 +32,10 @@ aliases # Does it need its own page? Nah I just add to the end of the export sec
 
 See variables section from scripts and path env
 
+## Further Exploration
+
+As you can imagine, this is just a taste of the command line. You can do so so much more. Hopefully this was just enough to wet your appetite, and make you eager to explore more. One great place to start is with [Modern Unix][munix]. This is a project that has upgrades many of the commands we just talked about to fit with the modern world, (e.g., adding colors, speed, etc.). Another way to speed things up is to make alias which you can write short hand for really long commands.
+
 ## Additional Resources
 
 [parameter expansion][]
