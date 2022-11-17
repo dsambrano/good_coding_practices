@@ -17,6 +17,12 @@ A microcontroller is just designed to repeatedly do a task.
 These can be designed to sense changes in the environment and do something (mini robot).
 For example, you might use one to measure the water level for your plants soil and change an LEDs color depending on the amount.
 
+Honestly, let that sink in, you can get a full computer for as cheap as $35, and if you are willing to compromize all the way down to $10.
+You can mess with it til your hearts content and if it breaks, that is totally fine!
+One thing I forgot to mention is that these are also quite effecient, so they are not going to be wasting a lot of energy.
+In fact, you can even run them off of solar power (though, its far more effective on the pico and zero than the standard model)!
+> **Note**: Solar power is far more effective for the pico and zero because they consume less energy.
+
 To some, Raspberry Pis are amazing little electronic computers that can be used as a low cost way to teach electronic/computers/coding or just as a general hobby project. 
 No matter what you choose you are bound to have a blast trying things out.
 The rest of this post will help you get started by showing you how set up 
@@ -29,8 +35,8 @@ So once you learn the basics from this post, you will have the foundation you ne
 So to get you started you are going to need to now a little bit
 
 Voltage:
-Current
-Ampre
+Current:
+Ampre:
 
 Postitive: typically black for wired electronics (Not true for wires in HOMES)
 Negative: typically red for wired electronics
