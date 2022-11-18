@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Final Thoughts: Last Minute Bash Tips"
+title:  "Final Thoughts: Discover New Commands and Inspiration for More"
 date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
@@ -73,6 +73,33 @@ Try it out!
 
 Of course if you are still struggling either with understanding the command or finding a command to do a particular thing, do a quick search online or phone a friend!
 
+
+## Building your Knowledge
+
+
+<!-- excerpt-start -->
+
+After you have gone through the last section its time to remove the training wheels.
+To learn to code, you need
+
+1. to try to implement the skills that you have learned and
+2. the space to come up with creative solutions to your problems.
+
+So my goal, here, is to motivate you by showing you fun useful ideas/commands to spark your creativity to inspire you to create something.
+I just want to scaffold you just enough so that you can figure things out on your own and solve problems that are important/useful to you.
+The best way to learn is for you to come up with creative ways to combine the commands I showed you and others that I did not, to solve problems that are unique to you.
+So going into explicit details on all the commands would only slow you down because I would inevitably end up teaching you a lot of commands that are not useful for your problems.
+To that end, I am intentionally not going to list through all the commands and explain them in great detail like I did before because that is just not a good way to learn how to code.
+Instead, throughout this post I will:
+<!-- excerpt-end -->
+- Show you how to view and edit files
+- Show you the general structure of shell commands
+- Show you how to find and learn about new commands
+- List off a bunch of commands that are generally good to know (without much details so you can pick and choose which are worth you exploring further)
+- Finally end off with some examples to inspire you to create your own projects
+
+
+
 ### Additional Commands
 
 These are some more commands that are either super useful or are just really neat!
@@ -140,10 +167,6 @@ Currently not only recap, so decide to either remove or state that they are ther
 [prime]: https://www.youtube.com/c/ThePrimeagen "The Primeagen YT"
 [prime-vim]: https://youtu.be/H3o4l4GVLW0 "Primeagen Vim Playlist"
 
-[bash]: {% post_url /series/cli/2022-10-10-bash %}
-[packagemanager]: /future-links
-[list]: creatingdeleting-folder-and-files
-
 <!--packages-->
 [brew]: https://brew.sh/ "Homebrew"
 [matrix]: https://github.com/abishekvashok/cmatrix "C the Matrix"
@@ -158,3 +181,8 @@ Currently not only recap, so decide to either remove or state that they are ther
 [cheatsheet]: https://cheat.sh/ "Cheat Sheet website"
 [cheatsheetls]: https://cheat.sh/ls "Cheat Sheet website"
 [modern-unix]: https://github.com/ibraheemdev/modern-unix "Modern Unix"
+
+<!--Internal Links-->
+[bash]: {{site.data.links["bash"]["file-navigation"]}}
+[packagemanager]: {{site.data.links["general"]["package-managers"]}}
+[list]: #creatingdeleting-folders-and-files
