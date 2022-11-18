@@ -28,6 +28,9 @@ aliases # Does it need its own page? Nah I just add to the end of the export sec
 
 || and && in control flow:
 
+
+what does `>` and `>>` really mean. (separate futuer post? maybe with examples like ls or the like)
+
 ## Best Practices
 
 See variables section from scripts and path env
