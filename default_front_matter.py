@@ -15,7 +15,7 @@ draft: true
 usemathjax: false
 ---
 
-{% include sidebar.html %}
+{{% include sidebar.html %}}
 
 <section class="takeaways">
 
@@ -28,3 +28,12 @@ Prerequisites:
 - None
 
 </section>
+
+
+<!--REFERENCES-->
+
+
+<!--Internal Links-->
+[bash]: {{site.data.links["bash"]["file-navigation"]}}
+[packagemanager]: {{site.data.links["general"]["package-managers"]}}
+'''
