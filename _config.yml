@@ -63,6 +63,10 @@ defaults:
       path: "_posts/series/"
     values:
       permalink: /:categories/:title
+  - scope: 
+      path: "_posts/*/series/"
+    values:
+      permalink: /:categories/series/:title
 
 # Exclude from processing.
 # The following items will not be processed, by default.
