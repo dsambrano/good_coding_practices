@@ -1,1 +1,8 @@
-file-navigation: 10-10-25-bash2.md
+general:
+  package-managers: /package-managers
+bash:
+  file-navigation: /cli/bash
+  terminal-custom: /cli/terminal-customization
+series:
+  bash-basics: /cli/cli
+  bash-scripting: /bash/series/bash-scripting
