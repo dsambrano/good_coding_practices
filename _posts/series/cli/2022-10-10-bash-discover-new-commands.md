@@ -73,6 +73,46 @@ Try it out!
 
 Of course if you are still struggling either with understanding the command or finding a command to do a particular thing, do a quick search online or phone a friend!
 
+### Additional Commands
+
+These are some more commands that are either super useful or are just really neat!
+All commands that are not installed by default will have a link to download, but of course they can also be downloaded from your favorite [package manager][packagemanager].
+They default to the homebrew package manager if a general download link is not available, so feel free to swtich to your preferred one.
+
+- `curl` and `wget` both are used to access websites from the command line
+- [`brew`][brew] is a [package manager][packagemanager] for MacOS that allows you to download pretty much any app from your terminal
+- `diff` finds the differences between two files
+- `git` allows you to version control your software projects
+- `alias` shorts long command by making your own alternative command name
+- `grep` find every file and the specific line number that [`"SOME RANDOM TEXT"`] appears
+- `sed` can be used to replace text in a file. Really helpful in combination with `grep`
+- `cal` and `date` give you a calendar and the date, respectively
+- `wc` gets the word count of a file (note, I dont think this works on .docx files)
+- `which` shows you where a command lives on your system
+- `ip` and `ifconfig` to get your ip address
+- [`netcat`][netcat] for all things networking
+- `ufw` setting up a firewall
+- `ssh` allows you to access another computer
+- `sudo` allows you run as super user, essentailly having complete access. You will learn more about this command later
+- [`cmatrix`][matrix] to look like you a hacker in the matrix
+- `top`, [`htop`][htop], [`btop`][btop], [`gtop`][gtop] etc. are all different programs to monitor your system
+- [`neofetch`][neofetch] just looks super kool
+- [`telnet towel.blinkenlights.nl`][telnet] watch an ascii based replication of star wars (no sound, but still super fun)
+- [`ani-cli`][anicli] and [`anime-terminal`][anime-terminal] allow you to stream or download full fledge anime from the terminal and even save your watch history
+
+
+## Inspiration
+
+Of course we only touched the surface here, I only really showed you commands that allow you to navigate your file systems, but there are loads other commands as well. For example, there are command to access content from the internet `curl` commands that lets you access other computers `ssh` and `vlc`. My goal here was not have a complete bash tutorial, but rather to get you to a position where you can be dangers and importantly, hopefully show you just enough to spark your ideas on how valuable this is. The next step is for you to apply this knowledge. Make some small app that automates away boring things you have to do all the time. You might not now all the commands necessary to complete the task, but that is ok, you can google a command or better yet, try to search for it with `apropos`.
+
+Some examples my RAs have done in the past include:
+
+If you are looking for a place to spruce up your terminal, you can check out the modern unix project, where they attempt to update all the old commands to fit the modern age, so they will have lots more colors and
+
+## Further Exploration
+
+As you can imagine, this is just a taste of the command line. You can do so so much more. Hopefully this was just enough to wet your appetite, and make you eager to explore more. One great place to start is with [Modern Unix][munix]. This is a project that has upgrades many of the commands we just talked about to fit with the modern world, (e.g., adding colors, speed, etc.). Another way to speed things up is to make alias which you can write short hand for really long commands.
+
 ## Recap
 
 You learned a lot in the post, so 
@@ -104,7 +144,7 @@ Currently not only recap, so decide to either remove or state that they are ther
 [packagemanager]: /future-links
 [list]: creatingdeleting-folder-and-files
 
-
+<!--packages-->
 [brew]: https://brew.sh/ "Homebrew"
 [matrix]: https://github.com/abishekvashok/cmatrix "C the Matrix"
 [htop]: https://github.com/htop-dev/htop#prerequisite "Htop sys monitoring"
