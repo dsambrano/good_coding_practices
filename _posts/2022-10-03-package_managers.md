@@ -5,7 +5,7 @@ date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding
 time: 3
-permalink: /packaging-managers
+permalink: /package-managers
 draft: true
 usemathjax: false
 series: false
