@@ -1,7 +1,9 @@
+# These are specifically internal links
 general:
   package-managers: /package-managers
 bash:
   file-navigation: /cli/bash
+  terminal: /cli/terminal-bash
   terminal-custom: /cli/terminal-customization
 series:
   bash-basics: /cli/cli
