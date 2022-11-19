@@ -7,15 +7,15 @@ tags: Coding Unix Bash Shell
 time: 10
 draft: true
 usemathjax: true
-category: cli
-series: cli
+category: bash-scripting
+series: bash-scripting
 diff: intermediate
 
 ---
 
 {% include sidebar.html %}
 
-<section class="takeaways">
+<section class="series takeaways">
 
 In this blog you will learn basic bash commands. By the end of this you will know:
 
