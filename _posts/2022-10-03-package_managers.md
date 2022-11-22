@@ -102,6 +102,8 @@ Go to the appropriate section depending on your OS before continuing.
 For several of the package managers I have an install script on [github][] for you to check out.
 Just go to the `package_installs.sh` script in the folder for the relevant OS.
 
+---
+
 ### Linux
 
 Linux is where package managers came from, so its no wonder that they have some of the best, and also explains why they come with your distro by default.
@@ -114,6 +116,8 @@ It does depend on you distro, and if you are using Linux, you are probably alrea
 Of course there is [flatpak][] which has been all the rage since the SteamDeck and is quickly becoming the new favorite universal package manager on Linux (meaning it works across all linux distros).
 Ubuntu also created [snaps][], but those are notoriously slow.
 And for people who like to add more work to their life, you can install [App Images][appimages]
+
+P.S. I just discovered [`nix`][nix], which is a really powerful cross platform solution, for more info check out [Chris Titus Tech's Video][ctt-nix]
 
 ---
 
@@ -164,3 +168,6 @@ Additionally, there is winget which is installed by default.
 [github]: https://github.com/dsambrano/dotfiles/ "Dotfiles Installs"
 [linux-dnf]: https://github.com/dsambrano/dotfiles/blob/main/linux/fedora/package_installs.sh "Fedora DNF install"
 [linux-apt]: https://github.com/dsambrano/dotfiles/blob/main/linux/ubuntu/package_installs.sh "Ubuntu Apt installs"
+
+[nix]: https://github.com/NixOS/nix "Nix Package Manager"
+[ctt-nix]: https://www.youtube.com/watch?v=Ty8C2B910EI "Chris Titus Tech: Nix Package Manager"
