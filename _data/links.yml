@@ -5,6 +5,7 @@ bash:
   file-navigation: /cli/bash
   terminal: /cli/terminal-bash
   terminal-custom: /cli/terminal-customization
+  bash-scripts:  /bash-scripting/scripts  # /bash/series/scripts
 series:
-  bash-basics: /cli/cli
-  bash-scripting: /bash/series/bash-scripting
+  bash-basics: /cli/
+  bash-scripting:  /bash-scripting/series-start  # /bash/series/bash-scripting

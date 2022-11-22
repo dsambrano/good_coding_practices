@@ -250,7 +250,7 @@ So stay tuned for a future post about them and how to set them up.
 [series]: /cli
 
 
-<!-- IMGAGES -->
+<!-- IMAGES -->
 [omz-default]: https://user-images.githubusercontent.com/49100982/108254738-764b8700-716c-11eb-9a59-4deb8c8c6193.jpg "Default Oh My Zsh Theme"
 [p10-default]: https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png "Power Levels 10k Default Theme"
 [starship-default]: https://raw.githubusercontent.com/starship/starship/master/media/demo.gif "Starship Theme Gif"
@@ -271,3 +271,4 @@ So stay tuned for a future post about them and how to set them up.
 
 [pywal]: https://github.com/dylanaraps/pywal "Pywal for custom terminal themes"
 
+[munix]: https://github.com/ibraheemdev/modern-unix "Modern Unix"
