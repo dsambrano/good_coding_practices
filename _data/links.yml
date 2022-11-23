@@ -6,6 +6,8 @@ bash:
   terminal: /cli/terminal-bash
   terminal-custom: /cli/terminal-customization
   bash-scripts:  /bash-scripting/scripts  # /bash/series/scripts
+  bash-aliases: /bash-scripting/path-and-environment-variables#aliases  # Evenetually will be its own full post
+  bash-path: /future-links  # /bash-scripting/path-and-environment-variables  # Eventually will be its own extended dive also describing local path and all that
 series:
   bash-basics: /cli/
   bash-scripting:  /bash-scripting/series-start  # /bash/series/bash-scripting

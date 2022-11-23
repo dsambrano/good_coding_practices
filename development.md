@@ -1,6 +1,16 @@
 # To Do List:
 
 
+---
+
+Important mental reminder to myself (11/23/2022)
+The Series are not entended to be all incompassing, they are supposed to get you up and running idealling also giving you inspriation for more.
+Where do you get more, well each of the sections could be long drown out posts themselves going into great detail how this work etc.
+Perfect example is in bash scripts the user permission section both sudo and chmod could be their own dedicated post, and probs should be in the future.
+
+---
+
+
 Not before launch: 
 - social media share thing
 - Copy code thing button (line numbers for code, not really needed need multiple types instead probs, eg., R vs Python, pick one)
