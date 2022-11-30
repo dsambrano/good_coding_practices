@@ -63,7 +63,8 @@ By the end of this series, you should be able create full applications like the 
 [bash-structure]: #the-form-of-commands "The Structure of a Bash Command"
 
 <!--INTERNAL-->
-[bash]: {% post_url /series/cli/2022-10-10-bash %}
 [bash-basics]: {{site.data.links["series"]["bash-basics"]}}
 [packagemanager]: {{site.data.links["general"]["package-managers"]}}
 [intro]: /future-links
+[installation]: #installing-git
+[packagemanager]: {{site.data.links["general"]["package-managers"]}}
