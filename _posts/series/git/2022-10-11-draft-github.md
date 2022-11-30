@@ -17,13 +17,13 @@ diff: intermediate
 
 <section class="takeaways">
 
-In this post you will learn the basics of GitHub. By the end you will know: 
+In this post you will learn the basics of GitHub. By the end you will know:
 - How to set up a Git repository on GitHub to store changes
 - How to pull content from a GitHub repo and continue editing it
 - How to collaborate with any other scientist using GitHub solving basic merge conflicts
 
 Prerequisites:
-- None; though it may be helpful to skim through the [Command Line (Bash/zsh)][cli] post first, especially if you do not know how to use the terminal or how to use a bash. 
+- None; though it may be helpful to skim through the [Command Line (Bash/zsh)][cli] post first, especially if you do not know how to use the terminal or how to use a bash.
 
 </section>
 
@@ -31,33 +31,35 @@ Prerequisites:
 
 ## How Does GitHub/GitLab Factor Into all of This?
 
+By now
 <!-- excerpt-start -->
-GitHub and GitLab (an open source alternative) are primarly used (for scientific programming) as remote (i.e., cloud-based) repositories/server/storage location. 
-Both GitHub and GitLab have several nice helpful features to make developers communicate and interact with one another more and encourage collaboration etc. 
-However, as I meantioned most of the time, when you start out, you will only use them as repos (repositories) to store your own code, or as a way to find other people's code.
+GitHub and GitLab (an open source alternative) are primarly used (for scientific programming) as remote (i.e., cloud-based) repositories/server/storage location.
+Both GitHub and GitLab have several nice, helpful features to make developers communicate and interact with one another more and encourage collaboration etc.
+However, as I meantioned, most of the time when you start out, you will only use them as repos (repositories) to store your own code or as a way to find other people's code.
 <!-- excerpt-end -->
-> Microsoft bought Github in 2018 and there was a thing in which Microsoft without the knowledge of its users took thousands of repos and used them to develop and AI so if you hear arguments about it this plus Microsoft's general disdain for Open Source Software are the two reasons why. 
+> Microsoft bought Github in 2018 and there was a situation where Microsoft, without the knowledge of its users, took thousands of repos and used them to develop the Codepilot AI.
+So, if you hear arguments against GitHub, it likely this in addition to Microsoft's general disdain for Open Source Software.
 
 
-Once you have made a GitHub/GitLab account and authorized yourself on your machine, you will be able to add a remote destination (i.e., your GitHub/GitLab account page) to push (via `git push`) all the commits you have made. 
-
-The `git push` commands simply send all the changes that you made locally on your computer to the remote server. 
+Once you have made a GitHub/GitLab account and authorized yourself on your machine, you will be able to add a remote destination (i.e., your GitHub/GitLab account page) to send all the commits you have made (via `git push`).
+The `git push` commands simply send all the changes that you made locally on your computer to the remote server.
 That way you always have a backup in case something goes wrong with your computer, WAHOO!!
 
 Very commonly, you may need to download either someone else's code or your own code (to a new computer).
-In order to do this, you need the `git clone` command.
+If you already have the `git` repo on your computer, you can simply download the new changes that you don't already have with `git pull`.
+And Finally, if you don't have the repo on your computer, you need the `git clone` command.
 This will clone the repo to your local machine, and importantly, it will also download all the changes that were ever made, so you have a full history of the project.
 
 ## Why Can't I Just Use DropBox? Why do I ***Need*** Git/GitHub?
 
-At this point, you might be wondering, ok, if GitHub just adds cloud storage to `git`s version control abilities why can't I just use DropBox or Google Drive.
-What does the `git`/GitHub combo add that I couldn't just get from these resources.
+At this point, you might be wondering, "*ok, if GitHub just adds cloud storage to `git`'s version control abilities why can't I just use DropBox or Google Drive.
+What does the `git`/GitHub combo add that I couldn't just get from these resources?*"
+If you already are convinced of the benefits, feel free to jump to the [example][].
 
 This is kinda like saying why doesn't a surgeon use a knife instead of a scalpel.
 Sure a knife can do a lot of the job, but they are designed for different things.
-DropBox/Drive are general purpose storage tools (like a knife) while git is specifically designed for writing code. 
+DropBox/Drive are general purpose storage tools (like a knife) while `git` is specifically designed for writing code.
 That being said, let's highlight specific examples/reasons for both.
-If you already are convinced of the benefits, feel free to jump to the [example][].
 
 
 ### Reasons for Git
@@ -67,21 +69,22 @@ My bet, is that you comment out the old code and create the new code (that way i
 But what if something doesn't break right away.
 What if it takes a while to realize that this caused a problem.
 Are you just going to leave the old commented version in there for ever?
-If you do then you won't have very maintainable code, because the amount of comments are quickly going to explode.
-In constrast, with git, you just save the version as a commit make the changes, and if *anything* goes wrong, just rewind back to before the issue occured.
+If you do, then you won't have very maintainable code because the amount of comments are quickly going to explode.
+In contrast, with `git`, you just save the version as a commit make the changes, and if *ANYTHING* goes wrong, undo that commit or rewind back to before the issue occured.
 You have peace of mind because you know you have every change that has ever happened to a file.
 
 Additionally, while you do get some history for a file on DropBox/Drive, neither provides any information about what is different between the different versions.
-So you would need to remember what changes you personally made on April 23, 2022 at 4:00 pm compared the April 23, 2022 at 4:15 pm.
+So you would need to remember what changes you personally made on April 23, 2022 at 4:00 PM compared the April 23, 2022 at 4:15 PM.
 There is obviously, no chance that you remember what was different.
-In contrast, with git you have all the information stored with a message for every commit made, and with a single command, you know exactly what files and lines were specifically changed. 
+In contrast, with `git` you have all the information stored with a message for every commit made, and with a single command, you know exactly what files and lines were specifically changed.
 
-DropBox/Drive have some mechanisms for multiple people editing a single file, but they don't work on all file types.
-Not to mention that even if they code, having your code update while you are trying to test things would not be an effectively system.
-Instead, you can work on changes without them affecting anyone else, and only once your changes work, then you can send them for everyone to review.
-When it comes to coding, this system is simply better.
 
 ### Reasons for GitHub
+
+DropBox/Drive have some mechanisms for multiple people editing a single file, but they don't work on all file types.
+But the bigger issue is even if they did work for code files, having your code updated while you are trying to test things would be a horrible system.
+Instead with GitHub, you can work on changes without them affecting anyone else, and only once your changes work, then you can send them for everyone to review.
+When it comes to coding, this system is simply better.
 
 One of the primarly purposes for GitHub for scientific programming, is to have a remote repository for your project.
 Of course DropBox/Drive can do this as well, but GitHub adds a few extra benefits that these don't.
@@ -89,12 +92,17 @@ First, GitHub was designed to work seemlessly with git.
 So you have full access to all your repo's history in a easily viewable way.
 In line with this, it has built in ways to allow people to make comments and changes to your code.
 
-Additionally, if someone else needs to see your code and its on DropBox/Drive, you need to add their email to grant them access (of course sometimes there are mishaps and you don't give them edit access so there is back and forth). Now if this happens on a relatively recent project, you are likely to still have access to your email, but what if you moved and don't have that email anymore? Or what if your extra storage was tied to the fact that you your DropBox/Drive was connected to your school account? Well then all the collaborators have to be moved over to still have access.
+Additionally, if someone else needs to see your code and its on DropBox/Drive, you need to add their email to grant them access (of course sometimes there are mishaps and you don't give them full access so there is back and forth).
+Now if this happens on a relatively recent project, you are likely to still have access to your email, but what if you moved and don't have that email anymore?
+Or what if your extra storage was tied to the fact that you your DropBox/Drive was connected to your school account? Well then all the collaborators have to be moved over to still have access.
 
-In contrast, on GitHub, your account is independent of your instituition, so you will always have access, so there is no need to deal with this headache. And if someone else wants to download the code, they can just do it. No need to ask you for permission they simpley find the repo (either from GitHub directly or from your publication) and download the repo. No asking for permission and waiting for a response, which let's be honest is already outdated anyways, they just download it.
+In contrast, on GitHub, your account is independent of your instituition, so you will always have access, so there is no need to deal with this headache.
+And if someone else wants to download the code, they can just do it.
+No need to ask you for permission they simpley find the repo (either from GitHub directly or from your publication) and download the repo.
+No asking for permission and waiting for a response, which let's be honest is already outdated anyways, they just download it.
 
 To be clear, I am not saying you should never use DropBox/Drive, they have their use cases.
-I'm simply noting that, when it comes to code, `git`/GitHub were designed to handle this issues and the clear best choice.
+I'm simply noting that, when it comes to code, `git`/GitHub were designed to handle this issues and are by far the clear best choice.
 
 ## GitHub Example
 
@@ -116,22 +124,22 @@ Below is an example for MacOS users with homebrew.
 brew install git gh
 ```
 
-Alternatively, you can install the github command line tools from there [website](https://cli.github.com). 
+Alternatively, you can install the github command line tools from there [website](https://cli.github.com).
 Once done, you will need to authorize yourself.
 This is a one time process and can be done with `gh auth login`.
 Follow the on screen prompts to complete the autorization.
 Here are some good default options for first timers.
 - Account type: `GitHub.com`
-- Preferred Protocol: `HTML`, reccomended for beginners, but `SSH` is great as well (my preference). 
+- Preferred Protocol: `HTML`, reccomended for beginners, but `SSH` is great as well (my preference).
 - `SSH` key (if applicable): leave default unless you are familiar with `ssh` keys.
 - Authentication: `Login with web browser` You will need to copy the code in the terminal before accessing the link, holding control while pressing the link in the terminal should open it automatically. Login as usual and paste the code to authenticate, then read and accept the prompt.
 
 Once you have completed the setup, you should have a screen that looks similar to mine (depending on your selected options of course).
 
 <!-- ```
-gh auth login 
+gh auth login
 ``` -->
- 
+
 ![](/assets/imgs/gh_auth.png)
 
 Congrats🎉!
@@ -142,8 +150,8 @@ Next we will learn how to link your local repo with your GitHub account so you c
 <!--
 ### GitHub CLI Protocol
 
-There are two methods to give yourself GitHub access via git. The first is `HTTPS` and the second is `SSH`. 
-These are two security protocols (details on `SSH` in a future post), but it doesnt really matter which one you pick, but you have to know which one you are using because there are some slight changes depending on which on you choose. 
+There are two methods to give yourself GitHub access via git. The first is `HTTPS` and the second is `SSH`.
+These are two security protocols (details on `SSH` in a future post), but it doesnt really matter which one you pick, but you have to know which one you are using because there are some slight changes depending on which on you choose.
 I personally use `SSH`, but again it doesnt matter.
 -->
 
@@ -153,12 +161,12 @@ The easiest way to get started is to first head over to [GitHub.com](github.com)
 
 ![](/assets/imgs/gh_add_repo.png)
 
-When you create a new repo on Github you will be prompted with the following options. Fill them as needed until you get the next section. 
+When you create a new repo on Github you will be prompted with the following options. Fill them as needed until you get the next section.
 
 ![](/assets/imgs/gh_p1.png)
 
 Here we don't need to add a `README.md`, `.gitignore` or `license`, if you did you can restart to follow along or follow the [git clone][git-clone] section.
-Once you click create repository, then you will see the follow screen. 
+Once you click create repository, then you will see the follow screen.
 
 ![](/assets/imgs/gh_p2.png)
 
@@ -174,15 +182,15 @@ Basically, if you already ran `git init` on a repo that you want to upload to Gi
 Following these prompts are pretty straight forward, but I do want to highlight what each line is doing, so you do not need to follow them each time. (Note that the final 3 lines are equivalent across both options):
 
 - The `echo` line creates a `README` file with a title header.
-- Next we had the `git init` which initializes a repo as we did in [Taking Git for a Test Drive][git-example]. 
+- Next we had the `git init` which initializes a repo as we did in [Taking Git for a Test Drive][git-example].
 - Next we are asked to add the `README` file and `git commit` again, just like in [Taking Git for a Test Drive][git-example].
-- Afterwards it uses the `git branch -M main` to rename to current branch to `main` which is the default branch naming scheme for GitHub (not required if you already add this to your config when warned). 
-- Then, we use `git remote add` to add the newly created GitHub repo as the remote repo for this project, and we give it a nickname called `origin`. 
-- Finally, we push the all local commits with `git push` to the new GitHub repo, and the `-u orign main` option/arguments tell `git` to always use this particular GitHub repo for this branch. 
+- Afterwards it uses the `git branch -M main` to rename to current branch to `main` which is the default branch naming scheme for GitHub (not required if you already add this to your config when warned).
+- Then, we use `git remote add` to add the newly created GitHub repo as the remote repo for this project, and we give it a nickname called `origin`.
+- Finally, we push the all local commits with `git push` to the new GitHub repo, and the `-u orign main` option/arguments tell `git` to always use this particular GitHub repo for this branch.
 
 >**Hint**: You can actually store different branches on different repos (or the same repo, which is the most common).
 
-When you complete all the commands you should be able to refresh GitHub and to see your repo. 
+When you complete all the commands you should be able to refresh GitHub and to see your repo.
 
 ![Completed GitHub Repo](/assets/imgs/gh_p3.png)
 
@@ -199,7 +207,7 @@ Importantly, it also downloads all the history so you can view and if they ever 
 `git pull` is basically the opposite of `git push`. `git push` sends local changes to the remote and `git pull` retreives any changes on the remote repo to your computer.
 
 Let's see an example.
-I am going to have you 
+I am going to have you
 
 To gain practice with these skills, let's go through an example.
 First we need to clone the repo.
@@ -279,7 +287,7 @@ But this time, instead of editing two different lines, we are going to edit the 
 Specifically, I will change the first line of the instructions to say `Hello from the OG repo` in the original and `Hello from the Clone` from the cloned repo.
 
 > Hint: If you want to try something new, you can actually edit files directly from GitHub.
-When in a GitHub repo you can press `.` to get access to the Visual Code Studio IDE. 
+When in a GitHub repo you can press `.` to get access to the Visual Code Studio IDE.
 From there you can make all the changes you want and save them with a message, just like you would if you were using VCS from your local computer.
 
 Now when I pull down the changes, I will get a merge conflict.
@@ -326,7 +334,7 @@ This can be as a private repo, if you want, but just getting the practice to hav
 
 ### Advanced Topics in GitHub
 
-We covered a lot today, thankfully, that was the most important things you need. 
+We covered a lot today, thankfully, that was the most important things you need.
 However, there are a few advanced topics that I do think are useful to know, even though you might not use them a bunch:
 - Fork: A fork is when another person takes your existing projects and adds their own spin or flavor on top and then stores it on their own repo. However, unlike a `clone` any changes that made to the fork will not affect the origial project.
 - Pull Request: This is a mechanism to allow either other team members or other developers to update your code and merge it with the main branch even though they may not be associated with the project. They are requesting that you pull the changes they made into your main repo. Not very common in Scientific programming but will come up if you explore general software engineering.

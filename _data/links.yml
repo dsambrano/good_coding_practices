@@ -1,6 +1,11 @@
 # These are specifically internal links
 general:
   package-managers: /package-managers
+  markdown: /markdown
+git:
+  git-install: /git#installing-git
+  git-config: /git#git-config
+  git-stages: /git#four-stages-of-git
 bash:
   file-navigation: /cli/bash
   terminal: /cli/terminal-bash
