@@ -50,6 +50,223 @@ If you already have the `git` repo on your computer, you can simply download the
 And Finally, if you don't have the repo on your computer, you need the `git clone` command.
 This will clone the repo to your local machine, and importantly, it will also download all the changes that were ever made, so you have a full history of the project.
 
+
+
+## GitHub Example
+
+Of course, you need to have a GitHub/GitLab account for this to work.
+They have similar structures, but I will specifically focus on GitHub in this tutorial.
+So, head over to [GitHub][gh] or [GitLab][gl] and create your free account.
+
+### GitHub Authorization
+
+If you have not done so already, make sure you install `gh` the [GitHub command line tools][gh-cli].
+It is available in all the standard [package managers][packagemanager].
+Below is an example for MacOS users with homebrew.
+
+```bash
+# Installs homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Installs git and github command line tools
+brew install git gh
+```
+
+Alternatively, you can install the github command line tools from there [website](https://cli.github.com).
+Once done, you will need to authorize yourself.
+This is a one time process and can be done with `gh auth login`.
+Follow the on screen prompts to complete the autorization.
+Here are some good default options for first timers.
+- Account type: `GitHub.com`
+- Preferred Protocol: `HTML`, reccomended for beginners, but `SSH` is great as well (my preference).
+- `SSH` key (*if applicable*): leave default unless you are familiar with `ssh` keys.
+- Authentication: `Login with web browser` You will need to copy the code in the terminal before accessing the link, holding control while pressing the link in the terminal should open it automatically. Login as usual and paste the code to authenticate, then read and accept the prompt.
+
+Once you have completed the setup, you should have a screen that looks similar to mine (depending on your selected options of course).
+
+<!-- ```
+gh auth login
+``` -->
+
+![](/assets/imgs/gh_auth.png)
+
+Congrats🎉!
+You have now successfully connected your terminal to your GitHub account.
+Next we will learn how to link your local repo with your GitHub account so you can store all your changes.
+
+
+<!--
+### GitHub CLI Protocol
+
+There are two methods to give yourself GitHub access via git. The first is `HTTPS` and the second is `SSH`.
+These are two security protocols (details on `SSH` in a future post), but it doesnt really matter which one you pick, but you have to know which one you are using because there are some slight changes depending on which on you choose.
+I personally use `SSH`, but again it doesnt matter.
+-->
+
+### GitHub Repo Setup
+
+The easiest way to get started is to first head over to [GitHub.com](github.com) and create a new repository by clicking the `+` in the top right:
+
+![](/assets/imgs/gh_add_repo.png)
+
+When you create a new repo on Github you will be prompted with the following options. Fill them as needed until you get the next section.
+Here we don't need to add a `README.md`, `.gitignore` or `license`, if you did you can restart to follow along or follow the [git clone][git-clone] section.
+
+![](/assets/imgs/gh_p1.png)
+
+Once you click create repository, then you will see the follow screen.
+
+![](/assets/imgs/gh_p2.png)
+
+<!--
+As you can see there are a few options, first and most important, you need to select your protocol either `HTML` or `SSH` based on what you selected in the [authorization][authorization] section.
+Make sure you selected the correct one, because it will change the url.
+-->
+
+As you can see there is an option for creating a new repo and one for pushing an existing repo.
+Basically, if you already ran `git init` on a repo that you want to upload to GitHub, use the second one, if not, use the first.
+
+
+Following these prompts are pretty straight forward, but I do want to highlight what each line is doing, so you it will be easier to remember them next time. (Note that the final 3 lines are equivalent across both options):
+
+- The `echo` line creates a `README` file with a title header.
+- Next we use `git init` to initializes a repo as we did in [Taking Git for a Test Drive][git-example].
+- Next we are asked to add the `README` file and make the repos first `git commit`, just like in [Taking Git for a Test Drive][git-example].
+- Afterwards it uses the `git branch -M main` to rename to current branch to `main` which is the default branch naming scheme for GitHub (not required if you already add this to your config in the [series intro][git-config] or when warned).
+- Then, we use `git remote add` to add the newly created GitHub repo as the remote repo for this project, and we give it a nickname called `origin`.
+- Finally, we push all local commits (with `git push`) to the new GitHub repo, and the `-u orign main` option/argument tells `git` to always use this particular GitHub repo for this branch.
+
+>**Hint**: You can actually store different branches on different repos (or the same repo, which is the most common).
+
+When you complete all the commands you should be able to refresh GitHub and to see your repo.
+
+![Completed GitHub Repo](/assets/imgs/gh_p3.png)
+
+
+Congrats🎉!
+You successfully uploaded your repo to GitHub, now anytime you want to upload all your commits you simply need to use the `git push` command to send all your changes to the remote repo.
+I typically do this once at the end of the day, so I make a bunch of commits throughout the day and then upload them all at once, but that may very depending on the needs of the project or if I am collaborating with someone who would constantly need the most up to date version.
+
+### GitHub Clone Repo
+
+So far, we have shown you have to update and modify code for a repo that is already on your computer.
+The other common situation that will happen is you will need to get someone else's code (either for a collaboration or just because its freely available to help solve your problem) or your own on a new computer (that did not already have the repo).
+This can be done with `git clone`, which as the name implies, clones the repo from GitHub to your local computer.
+Importantly, it also downloads all the history so you can view, and if they ever make any changes you can also have access to them with `git pull`, to pull the changes down from the server.
+`git pull` is basically the opposite of `git push`. `git push` sends local changes to the remote and `git pull` retreives any changes on the remote repo to your computer.
+
+<!-- Let's see an example.
+I am going to have you -->
+
+To gain practice with these skills, let's go through an example.
+First we need to clone the repo.
+For simplicity, I am going to place these repos next to each other in a `git_repos` directory.
+
+```
+git_repos/
+├── my_first_git_project # The original repo
+└── git_workshop # The clone from GitHub
+```
+
+To actaully clone the repo, first you need to cd to the directory where you would like to keep the repo.
+In this case, that would be `git_repos`.
+Then we need to type
+
+```bash
+git clone GIT_REPO_URL
+```
+
+To get the `GIT_REPO_URL` you can go to GitHub and click the green `code` button.
+There are three cloning protocols (either `HTML` or `SSH`), but all do the exact same thing.
+
+![Git Clone Example](/assets/imgs/gh_clone.png)
+
+So with this example, you could use any of the following 3 lines:
+
+```bash
+# Only choose 1 of the following options
+git clone https://github.com/dsambrano/git_workshop.git # For HTML
+git clone git@github.com:dsambrano/git_workshop.git # For SSH
+gh repo clone dsambrano/git_repos # Is a third option using the GH CLI
+```
+
+Now you should have the same repo in two locations.
+For our purposes, this will simulate you and a collaborator working on the same code or it can simulate you on two different computers (either the office and home or your computer and the experiment pc), whichever is most likely given your workflow.
+Next we can demonstrate how to share changes across the multiple computers.
+
+Start by opening one of the repos, I'll open the new one cloned from GitHub.
+And we need to edit a file, I will edit the `goodbye.txt` replace the only line with `Thank you for participating! Have a great day!`.
+Then of course, we need to use `git add` to add the file and `git commit` to commit the changes.
+Again, `git commit` only stores the changes locally, now we can use `git push` to send them to the cloud.
+
+> Hint: If you want to try something new, you can actually edit files directly from GitHub.
+When in a GitHub repo, you can press `.` to get access to the Visual Code Studio IDE.
+From there, you can make all the changes you want and save them with a message, just like you would if you were using VCS from your local computer.
+
+Next we will move back to the other repo (the original one) and make a change to the `instructions.txt` file replace `World` with `Participant` in the first line.
+As per usual, we will add and commit these changes.
+Again, this is similatuate you and someone else both made changes to the same project, so now its time to try to share those changes.
+To do so we need to send our local changes to GitHub, so that our collaborator can pull them down.
+But if we try to `git push`, we will see this error.
+
+![Push Error](/assets/imgs/gh_error.png)
+
+This error is telling us that we tried to update the main GitHub repo, but our
+current files are out of date/old.
+So, to fix this we must first pull down (`git pull`) the changes from the remote repo (`git` will automagically integrate them with the changes we already made), then we can push all of the changes back up the GitHub.
+
+![GitHub Pull and Push](/assets/imgs/gh_pl_push.png)
+
+Now, our collaborator (the new repo) can `git pull` to also incorporate the changes, so that everyone has the most up to date code.
+This is how you can easily collaborate with others or yourself (on different machines) and make sure every machine always has the most up to date versions of every file.
+No need to use a flash drive or send google drive links, or even send emails updating them with the changes.
+Whenever they are ready to incorporate the changes, all the have to do is run `git pull`, but if they are working on something, they can just hold off.
+All this comes from the magic of `git` keeping track of exactly what lines in what files have been changed.
+When different lines have been altered `git` intellegently integrates these changes.
+
+But what happens when two people edit the same line?
+How does `git` handle these situations.
+When two people edit the same line of a file, `git` informs the developer that there was a conflict when it tried to merge the two verions.
+`git` will **NEVER** remove or edit things, unless someone asks it to, so you have to resolve the conflict.
+
+
+#### Merge Conflicts
+
+Merge conflicts occur when you are trying to update code that someone else has already updated.
+Because of this, `git` is not sure which is the correct version, so it asks you to fix it.
+Let's simulate a merge conflict so we can see them in action, and you can learn how to resolve them.
+
+To start, first make sure both `git` repos are up to date by using `git pull` to get all the changes.
+Just like before we are going to use the two repos to simulate two different computers.
+But this time, instead of editing two different lines, we are going to edit the same line of the same file in the repo.
+Specifically, I will change the first line of the instructions to say `Hello from the OG repo` in the original and `Hello from the Clone` from the cloned repo.
+First, I will edit the original repo, `git add`, `git commit`, and finally `git push`, the changes.
+Next, I will edit the cloned repo, `git add`, and `git commit` the changes.
+But this time, when I pull down the changes, I will get a merge conflict because we both edited the same line of the same file.
+
+![GitHub Merge Conflict](/assets/imgs/gh_merge_conflict.png)
+
+As the error message indicates, we have a merge conflict and must deal with it in order to continue.<!-- we can either ... or ...-->
+You can also run `git status` to get some more information on the problematic file/files.
+Here, you can see it was the instructions file, and `git` tells us that it was modified both locally and in GitHub.
+If we open that file up for to edit it, we can see that `git` helpfully altered the file to let us know what the problemactic line(s) were.
+Here is specifically what mine looks like.
+
+![GitHub Merge Conflict](/assets/imgs/gh_merge_conflict_text.png)
+
+The text between `<<<<<<< HEAD` and `=======` is what was changed in the local repo you are currently in (in our case the clone).
+The text between the `=======` and `>>>>>>> HASH` is what was changed in the remote repo and the corresponding `HASH` where that line was changed.
+So in our case, since I was currently in the cloned repo, the top section was the line that was changed in the clone and the bottom was what was changed in the original.
+The rest of the file was not changed, so it does not have these same markings.
+All we need to do now, is choose one (by deleting all the unwanted text, e.g., `====`, `>>> HASH`, and `<< HEAD`) or erase both and replace it with something else.
+In my case, I will replace the first line with `Hello, I edited this line in both the clone and the OG repo`.
+Now, we can add this file with the new changes commit them and push them to GitHub.
+
+Wahoo!
+We just resolved the merge conflict!
+If you want to check out what I did here, feel free to go to the [GitHub repo][myrepo].
+You can even check the commit [history][myrepo-history] to see exactly what was changed and when.
+
 ## Why Can't I Just Use DropBox? Why do I ***Need*** Git/GitHub?
 
 At this point, you might be wondering, "*ok, if GitHub just adds cloud storage to `git`'s version control abilities why can't I just use DropBox or Google Drive.
@@ -104,221 +321,10 @@ No asking for permission and waiting for a response, which let's be honest is al
 To be clear, I am not saying you should never use DropBox/Drive, they have their use cases.
 I'm simply noting that, when it comes to code, `git`/GitHub were designed to handle this issues and are by far the clear best choice.
 
-## GitHub Example
-
-Of course, you need to have a GitHub/GitLab account for this to work.
-They have similar structures, but I will specifically focus on GitHub in this tutorial.
-So, head over to [GitHub][gh] or [GitLab][gl] and create your free account.
-
-### GitHub Authorization
-
-If you have not done so already, make sure you install `gh` the GitHub command line tools.
-The are available in all the standard [package managers][packagemanager].
-Below is an example for MacOS users with homebrew.
-
-```bash
-# Installs homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Installs git and github command line tools
-brew install git gh
-```
-
-Alternatively, you can install the github command line tools from there [website](https://cli.github.com).
-Once done, you will need to authorize yourself.
-This is a one time process and can be done with `gh auth login`.
-Follow the on screen prompts to complete the autorization.
-Here are some good default options for first timers.
-- Account type: `GitHub.com`
-- Preferred Protocol: `HTML`, reccomended for beginners, but `SSH` is great as well (my preference).
-- `SSH` key (if applicable): leave default unless you are familiar with `ssh` keys.
-- Authentication: `Login with web browser` You will need to copy the code in the terminal before accessing the link, holding control while pressing the link in the terminal should open it automatically. Login as usual and paste the code to authenticate, then read and accept the prompt.
-
-Once you have completed the setup, you should have a screen that looks similar to mine (depending on your selected options of course).
-
-<!-- ```
-gh auth login
-``` -->
-
-![](/assets/imgs/gh_auth.png)
-
-Congrats🎉!
-You have now successfully connected your terminal to your GitHub account.
-Next we will learn how to link your local repo with your GitHub account so you can store all your changes.
-
-
-<!--
-### GitHub CLI Protocol
-
-There are two methods to give yourself GitHub access via git. The first is `HTTPS` and the second is `SSH`.
-These are two security protocols (details on `SSH` in a future post), but it doesnt really matter which one you pick, but you have to know which one you are using because there are some slight changes depending on which on you choose.
-I personally use `SSH`, but again it doesnt matter.
--->
-
-### GitHub Repo Setup
-
-The easiest way to get started is to first head over to [GitHub.com](github.com) and create a new repository by clicking the `+` in the top right:
-
-![](/assets/imgs/gh_add_repo.png)
-
-When you create a new repo on Github you will be prompted with the following options. Fill them as needed until you get the next section.
-
-![](/assets/imgs/gh_p1.png)
-
-Here we don't need to add a `README.md`, `.gitignore` or `license`, if you did you can restart to follow along or follow the [git clone][git-clone] section.
-Once you click create repository, then you will see the follow screen.
-
-![](/assets/imgs/gh_p2.png)
-
-<!--
-As you can see there are a few options, first and most important, you need to select your protocol either `HTML` or `SSH` based on what you selected in the [authorization][authorization] section.
-Make sure you selected the correct one, because it will change the url.
--->
-
-As you can see there is an option for creating a new repo and one for pushing an existing repo.
-Basically, if you already ran `git init` on a repo that you want to upload to GitHub, use the second one, if not, use the first.
-
-
-Following these prompts are pretty straight forward, but I do want to highlight what each line is doing, so you do not need to follow them each time. (Note that the final 3 lines are equivalent across both options):
-
-- The `echo` line creates a `README` file with a title header.
-- Next we had the `git init` which initializes a repo as we did in [Taking Git for a Test Drive][git-example].
-- Next we are asked to add the `README` file and `git commit` again, just like in [Taking Git for a Test Drive][git-example].
-- Afterwards it uses the `git branch -M main` to rename to current branch to `main` which is the default branch naming scheme for GitHub (not required if you already add this to your config when warned).
-- Then, we use `git remote add` to add the newly created GitHub repo as the remote repo for this project, and we give it a nickname called `origin`.
-- Finally, we push the all local commits with `git push` to the new GitHub repo, and the `-u orign main` option/arguments tell `git` to always use this particular GitHub repo for this branch.
-
->**Hint**: You can actually store different branches on different repos (or the same repo, which is the most common).
-
-When you complete all the commands you should be able to refresh GitHub and to see your repo.
-
-![Completed GitHub Repo](/assets/imgs/gh_p3.png)
-
-
-Congrats🎉!
-You successfully uploaded your repo to GitHub, now anytime you want to upload all your commits you simply need to use the `git push` command to send all your changes to the remote repo.
-I typically do this once at the end of the day, so I make a bunch of commits throughout the day and then upload them all at once, but that make very depending on the needs of the project or if I am collaborating with someone who would constantly need the most up to date version.
-
-### GitHub Clone Repo
-
-The other common thing that will happen, is you need to get someone else's code (either for a collaboration or just because its freely available to help solve your problem) or your own on a new computer.
-This can be done with `git clone`, which as the name implies, clones the repo from GitHub to your local computer.
-Importantly, it also downloads all the history so you can view and if they ever make any changes you can also have access to them with `git pull`, to pull the changes down from the server.
-`git pull` is basically the opposite of `git push`. `git push` sends local changes to the remote and `git pull` retreives any changes on the remote repo to your computer.
-
-Let's see an example.
-I am going to have you
-
-To gain practice with these skills, let's go through an example.
-First we need to clone the repo.
-For simplicity, I am going to place these repos next to each other in a `git_repos` directory.
-
-```
-git_repos/
-├── my_first_git_project # The original repo
-└── git_workshop # The clone from GitHub
-```
-
-To actaully clone the repo, first you need to cd to the directory wher you would like to keep the repo.
-In this case that would be `git_repos`.
-Then we need to type
-
-```bash
-git clone GIT_REPO_URL
-```
-
-To get the `GIT_REPO_URL` you can go to GitHub and click the green `code` button.
-Make sure you click your preferred protocol (either `HTML` or `SSH`), for the proper url.
-
-![Git Clone Example](/assets/imgs/gh_clone.png)
-
-So with this example, it would be:
-
-```bash
-# Only choose 1 of the following options
-git clone https://github.com/dsambrano/git_workshop.git # For HTML
-git clone git@github.com:dsambrano/git_workshop.git # For SSH
-gh repo clone dsambrano/git_repos # Is a third option using the GH CLI
-```
-
-Now you should have the same repo in two locations.
-For our purposes, this will simulate you on two different computers (either the office and home or your computer and the experiment pc) or it can simulate you and a collaborator working on the same code.
-Next we can demonstrate how to share changes across the "two" computers.
-
-Start by opening one of the repos, I'll open the new one cloned from GitHub.
-And we need to edit a file, I will edit the `goodbye.txt` replace the only line with `Thank you for participating! Have a great day!`.
-Then of course, we need to use `git add` to add the file and `git commit` to commit the changes.
-Again, `git commit` only stores the changes locally, now we can use `git push` to send the to the cloud.
-
-Next we will move back to the other repo (the original one) and make a change
-to the `instructions.txt` file replace `World` with `Participant` int eh
-first line.
-Again, we will add and commit these changes, but if we try to push we will see this error.
-
-![Push Error](/assets/imgs/gh_error.png)
-
-This error is telling us that we tried to update the main GitHub repo, but our
-current files are out of date/old.
-So, to fix this we must first pull down (`git pull`) the changes from the remote repo (`git` will automagically integrate them with the changes we already made), then we can push all of the changes back up the GitHub.
-
-![GitHub Pull and Push](/assets/imgs/gh_pl_push.png)
-
-Now, our collaborator (the new repo) can `git pull` to also incorporate the changes, so that everyone has the most up to date code.
-This is how you can easily collaborate with others or yourself (on different machines) and make sure every machine always has the most up to date versions of every file.
-No need to using a flash drive or sending google drive links, or even sending emails updating them with the changes.
-Whenever they are ready to incorporate the changes all the have to do is run `git pull` and if they are working on something, they can just hold off.
-All this comes from the magic of `git` keeping track of exactly what lines in what files have been changed.
-When different lines have been altered `git` intellegently integrates these changes.
-
-But what happens when two people edit the same line?
-How does `git` handle these situations.
-When two people edit the same line of a file, `git` informs the developer that there was a conflict when it tried to merge the two verions.
-It will never remove or edit things, unless you tell it to, so you have to resolve the conflict.
-
-
-#### Merge Conflicts
-
-Merge conflicts occur when you are trying to update code that someone else has already been updated.
-Because of this, `git` is not sure which is the correct version, so it asks you to fix it.
-Let's simulate a merge conflict so we can see them in action, and you can learn how to resolve them.
-
-Just like before we are going to use the two repos to simulate two different computers.
-But this time, instead of editing two different lines, we are going to edit the same line.
-Specifically, I will change the first line of the instructions to say `Hello from the OG repo` in the original and `Hello from the Clone` from the cloned repo.
-
-> Hint: If you want to try something new, you can actually edit files directly from GitHub.
-When in a GitHub repo you can press `.` to get access to the Visual Code Studio IDE.
-From there you can make all the changes you want and save them with a message, just like you would if you were using VCS from your local computer.
-
-Now when I pull down the changes, I will get a merge conflict.
-
-![GitHub Merge Conflict](/assets/imgs/gh_merge_conflict.png)
-
-As the error message indicates, we can either ... or ...
-You can also run `git status` to get some more information on the problematic file/files.
-Here, you can see it was the instructions file.
-And if we open that file up for editings we can see that `git` helpfully altered the file to let us know what the problemactic line(s) were.
-Here is specifically what mine looks like.
-
-![GitHub Merge Conflict](/assets/imgs/gh_merge_conflict_text.png)
-
-The text between `<<<<<<< HEAD` and `=======` is what was changed in the repo you are currently in.
-The text between the `=======` and `>>>>>>> HASH` is what was changed in the remote repo and the corresponding `HASH` where that line was changed.
-So in our case, since I was currently in the cloned repo, the top section was the line that was changed in the clone and the bottom was what was changed in the original.
-The rest of the file was not changed, so it does not have these same markings.
-All we need to do now, is choose one (by deleting all the unwanted text, et.g., `====`, `>>> HASH`, and `<< HEAD`) or erase both and replace it with something else.
-In my case, I will replace the first line with `Hello, I edited this line in both the clone and the OG repo`.
-Now, we can add this file with the new changes commit them and push them to GitHub.
-
-Wahoo!
-We just resolved the merge conflict!
-If you want to check out what I did here, feel free to go to the [GitHub repo][myrepo].
-You can even check the commit [history][myrepo-history] to see exactly what was changed and when.
-
 ## Recap
 
 First of all, give yourself a pat on the back, you just learned how to use GitHub to collaborate with others and remotely store your coding projects.
-Combine that with the skills you learned in the previous post you have a great foundation.
+Combine that with the skills you learned in the previous post and you have a great foundation.
 If you were going through this series just to get the basics of `git` and GitHub, you know them now and can effectively use `git` and GitHub.
 However, if you are looking for a little more, you can check out the rest of the series where I cover Branches, reviewing previous commits and more!
 Also before you go, below are some tips on common mistakes and advanced GitHub topics and extra practice.
@@ -358,3 +364,6 @@ Also feel free to check out this [cheatsheet][].
 [myrepo-history]: https://github.com/dsambrano/git_workshop/commits/main "My GitHub Workshop Repo's History"
 [example]: #github-example
 [cheatsheet]: https://training.github.com/downloads/github-git-cheat-sheet.pdf "Git/GitHub Cheatsheet"
+
+[gh-cli]: https://cli.github.com/ "GitHub Command Line Tools"
+[git-config]: {{site.data.links["git"]["git-config"]}}
