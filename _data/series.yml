@@ -28,7 +28,7 @@
     Cloud Server.
 - id: git
   title: "Git and GitHub: Whats the Big Deal"
-  complete: false
+  complete: true
   description:
     Version Control Like a pro with git. In this series you will learn how to use
     git and how to properly collaborate with GitHub.
