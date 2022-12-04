@@ -4,7 +4,7 @@ title:  "Make Readable Functions with Python Type Hints"
 date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding Python Best-Practices
-time: 20
+time: 7
 category: python
 draft: true
 usemathjax: true
@@ -17,20 +17,22 @@ diff: intermediate
 
 <section class="takeaways">
 
-In this post you will learn some best practices for coding in Python. By the end you will:
+In this post you will learn some best practices for creating readable Python code.
+Specifically, you will learn how to use type hints to allow others know what your functions, classes, and variables expect as inputs and outputs.
+By the end you will:
 - Learn how write readable/usable functions with type hints
 - Learn how to make custom type hints to increase readability
 - Learn some advanced type hint options
 
 Prerequisites:
-- Basic/working knowledge of how to write python code (e.g., write a function).
+- Basic/working knowledge of how to write python code (i.e., know how to write a function).
 
 </section>
 
 ## What are Type Hints?
 
 <!-- excerpt-start -->
-Type hints are a python tool that can be used improve readability by list the expectations for code input and output for functions and classes.
+Type hints are a python tool that can be used improve readability by listing the expectations for code input and output for functions and classes.
 With type hints you specify the type each argument requires/expects as well as the expected output type.
 
 <!-- excerpt-end -->

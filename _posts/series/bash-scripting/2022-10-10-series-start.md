@@ -17,13 +17,16 @@ diff: intermediate
 
 <section class="series takeaways">
 
-In this blog you will learn basic bash commands. By the end of this you will know how to:
+This is a intermediate-level follow up to my [bash basics][bash-basics] series.
+In this series you will take your bash abilities to the next level.
+By the end of this you will know:
 
-- Create a script to run multiple commands in sequence
-- Edit your `PATH` to run scripts from anywhere
-- Control the flow of applications with `if` statements
-- Repeat steps with functions and loops
-- Create Aliases to increase efficiency
+- How to create a script to automate boring tasks
+- What Environment Variables, your `PATH`, and a `bashrc` file do
+- How to edit your `PATH` to run scripts from anywhere
+- How to control the flow of applications with `if` statements
+- How to repeat steps with functions and loops
+- How to create aliases to increase efficiency
 
 Prerequisites:
 
@@ -31,11 +34,12 @@ Prerequisites:
 
 </section>
 
-This series is designed to build your foundation as a `bash` programmer.
+<!-- excerpt-start -->
+This series is designed to help you build a foundation as a `bash` programmer.
 We will cover topics that you would expect to see in all programming languages (e.g., scripts, functions, if statements, loops, etc.) as well as some that are specific to `bash` (e.g., `PATH`, aliases, etc.).
 So, if you have no prior experience with `bash` it is probably a good idea to run through my [`bash` basics][bash-basics] tutorial to get you started then come back here to build on those skills.
 By the end of this series, you should be able create full applications like the amazing [`ani-cli`][anicli].
-
+<!-- excerpt-end -->
 
 
 [wsl]: https://learn.microsoft.com/en-us/windows/wsl/install "Windows Subsystem for Linux"
@@ -65,6 +69,5 @@ By the end of this series, you should be able create full applications like the 
 <!--INTERNAL-->
 [bash-basics]: {{site.data.links["series"]["bash-basics"]}}
 [packagemanager]: {{site.data.links["general"]["package-managers"]}}
-[intro]: /future-links
 [installation]: #installing-git
 [packagemanager]: {{site.data.links["general"]["package-managers"]}}

@@ -4,7 +4,7 @@ title:  "Final Thoughts: Discover New Commands and Inspiration for More"
 date: 2022-10-03
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
-time: 10
+time: 12
 draft: true
 usemathjax: true
 category: cli
