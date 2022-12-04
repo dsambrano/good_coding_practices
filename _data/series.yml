@@ -18,7 +18,7 @@
     in your life.
 - id: cli
   title: Bash, Terminals, and Command Line Interface (CLIs)
-  complete: false
+  complete: true
   description:
     Learn how to take advantage of the command line. In this series you will learn
     the basics of the termial and bash. By the end you will be able to navigate 
