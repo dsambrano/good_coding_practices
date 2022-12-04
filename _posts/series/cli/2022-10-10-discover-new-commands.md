@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Final Thoughts: Discover New Commands and Inspiration for More"
-date: 2022-10-03
+date: 2022-11-02
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
 time: 12

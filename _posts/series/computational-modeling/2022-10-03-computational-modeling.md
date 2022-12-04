@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Computation Modeling"
-date: 2022-10-03
+date: 2023-02-01
 author: Deshawn Sambrano
 tags: Computational-Modeling R Python
 time: 7

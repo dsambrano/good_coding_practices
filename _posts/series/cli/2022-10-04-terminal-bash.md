@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What is Bash and How do I Open the Terminal?"
-date: 2022-10-03
+date: 2022-10-12
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
 time: 5

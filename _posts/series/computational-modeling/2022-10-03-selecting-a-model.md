@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Selecting a Model"
-date: 2022-10-03
+date: 2023-02-08
 author: Deshawn Sambrano
-tags: Math Computational-Modeling R Python
+tags: Computational-Modeling R Python
 time: 12
 category: computational-modeling
 series: computational-modeling

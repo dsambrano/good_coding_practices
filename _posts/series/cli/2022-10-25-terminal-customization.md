@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Customizing Your Terminal"
-date: 2022-10-03
+date: 2022-11-09
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
 time: 18

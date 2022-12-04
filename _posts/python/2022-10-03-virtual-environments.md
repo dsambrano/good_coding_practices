@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Reproducible Python Code with Virutal Environments"
-date: 2022-10-03
+date: 2022-09-14
 author: Deshawn Sambrano
 tags: Coding Python Best-Practices
 time: 5

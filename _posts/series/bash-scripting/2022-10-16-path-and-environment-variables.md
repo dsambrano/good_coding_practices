@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What is the PATH and Environment Variables"
-date: 2022-10-03
+date: 2023-01-04
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
 time: 10

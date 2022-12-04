@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Make Readable Functions with Python Type Hints"
-date: 2022-10-03
+date: 2022-09-21
 author: Deshawn Sambrano
 tags: Coding Python Best-Practices
 time: 7
