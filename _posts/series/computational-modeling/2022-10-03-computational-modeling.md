@@ -3,7 +3,7 @@ layout: post
 title:  "Computation Modeling"
 date: 2022-10-03
 author: Deshawn Sambrano
-tags: Math Computational-Modeling R Python
+tags: Computational-Modeling R Python
 time: 7
 category: computational-modeling
 series: computational-modeling
