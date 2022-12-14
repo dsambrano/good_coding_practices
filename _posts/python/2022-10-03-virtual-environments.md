@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "Reproducible Python Code with Virutal Environments"
-date: 2022-10-03
+date: 2022-09-14
 author: Deshawn Sambrano
 tags: Coding Python Best-Practices
-time: 20
+time: 5
 category: python
 draft: true
 usemathjax: true
@@ -18,13 +18,15 @@ diff: beginner
 
 <section class="takeaways">
 
-In this post you will learn some best practices for coding in Python. By the end you will:
+In this post you will learn some best practices for coding in Python.
+Specifically, you will learn how to create different virtual environments to prevent the dependencies of one project from interferring with another.
+By the end you will:
 - Learn how to create virtual environments to isolate python packages for each project
-- Learn how to save all your projects dependencies to a file to use on other machine
+- Learn how to save all your projects dependencies to a file to use on another machine
 - Learn how to import a `requirements.txt` file to reproduce an virtual environment and run code on a new machine
 
 Prerequisites:
-- Basic/working knowledge of how to write python code. Does not need to be advance, as long as you know how to write and run a script.
+- Basic/working knowledge of how to write python code. Does not need to be advance, as long as you know how to write and run a module (script).
 
 </section>
 
@@ -178,4 +180,4 @@ Now, you have a replicated virtual environment and can run the code on the new m
 [a2]: https://realpython.com/python-async-features/ "Real Python: asyncio"
 
 
-[packagemanager]: /package-managers
+[packagemanager]: {{site.data.links["general"]["package-managers"]}}

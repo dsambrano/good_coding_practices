@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "Customizing Your Terminal"
-date: 2022-10-03
+date: 2022-11-09
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
-time: 10
+time: 18
 draft: true
 usemathjax: true
 category: cli
@@ -18,8 +18,10 @@ diff: advanced
 
 <section class="takeaways">
 
-This post is all about looking good while coding in the terminal. By the end of it you should:
-- Upgrade you terminal experience
+This post is all about looking good while coding in the terminal.
+By the end of it you should:
+
+- Upgrade you terminal experience with a beautiful color scheme and a fancy theme with git integration
 - Know how to set up a terminal and customize the look and feel
 
 Prerequisites:

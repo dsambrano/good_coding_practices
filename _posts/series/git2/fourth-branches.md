@@ -7,6 +7,10 @@ need to add infor about the `.gitignore`
 
 ---
 
+takeaways:
+
+- Managing software versions with Branches
+
 ### Git Banches and Merging
 
 

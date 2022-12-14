@@ -32,7 +32,7 @@
   <p>Bonus: <a href="{{ site.baseurl }}{{final_post | map: 'url'}}">{{final_post | map: "title"}}</a></p>
   {% endif %}
   {% assign test = current_series | map: 'complete' | upcase %}
-  {% if test contains 'FALSE'%}
+  {% if test contains 'FALSE' %}
   <p>More posts coming soon! </p>
   {% endif %}
 </aside>

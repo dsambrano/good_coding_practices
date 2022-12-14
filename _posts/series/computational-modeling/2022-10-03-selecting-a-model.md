@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "Selecting a Model"
-date: 2022-10-03
+date: 2023-02-08
 author: Deshawn Sambrano
-tags: Math Computational-Modeling R Python
-time: 20
+tags: Computational-Modeling R Python
+time: 12
 category: computational-modeling
 series: computational-modeling
 diff: math
@@ -16,10 +16,13 @@ usemathjax: true
 
 <section class="takeaways">
 
-In this post you will learn the basics of computational modeling. Specifically you will learn how to implement a computational model with an example.
-- Selecting a Model
-- Ammedding a Model to suit your needs
-- Implementing Decision Rules to implement choices in the model
+In this post you will learn the basics of computational modeling.
+Specifically you will learn how to implement a computational model with an example.
+By the end you will:
+
+- Learn how to select a Model
+- Learn how to ammed a Model to suit your needs
+- Learn how to implement a decision rule to predict choices in the model
 
 Prerequisites:
 - Read through this [paper][holt] or have some basic background in behavioral economics / learning literature (e.g., reinforcement learning)

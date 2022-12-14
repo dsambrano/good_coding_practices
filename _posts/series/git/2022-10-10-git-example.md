@@ -1,14 +1,13 @@
 ---
 layout: post
 title:  "Taking Git for a Test Drive"
-date: 2022-10-03
+date: 2022-11-23
 author: Deshawn Sambrano
 tags: Coding Git GitHub
-time: 5
+time: 15
 category: git
 series: git
-draft: true
-usemathjax: true
+usemathjax: false
 diff: intermediate
 
 ---
@@ -18,12 +17,16 @@ diff: intermediate
 <section class="takeaways">
 
 In this post you will learn the basics of Git and GitHub/GitLab. By the end you will know:
+
 - The git workflow
 - All the commands relevant to initalizing and working with a git project
-- How to set up a Git repository
+- How to set up a git repository
+- How to check through the history of your git repo
 
 Prerequisites:
-- None; though it may be helpful to skim through the [Command Line (Bash/zsh)][cli] post first, especially if you do not know how to use the terminal or how to use a bash.
+
+- Have read through my series on the [basics of `bash`][cli] or have a general understanding of how to move around edit files in `bash`
+<!--- None; though it may be helpful to skim through the [Command Line (Bash/zsh)][cli] post first, especially if you do not know how to use the terminal or how to use a bash.-->
 
 </section>
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What is Bash and How do I Open the Terminal?"
-date: 2022-10-03
+date: 2022-10-12
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
 time: 5
@@ -16,14 +16,15 @@ diff: beginner
 
 <section class="takeaways">
 
-In this series you will learn basics of using the terminal with `bash`. By the end of this you will know:
-- Basic commands to traverse your computer from the terminal and how to customize your terminal
-- The structure of commands, arguments, and options in `bash`
-- Creating a script automate boring tasks
-- What Environment Variables, your Path, and a `bashrc` file do
+In this post you will learn basics of using the terminal with `bash`.
+By the end of this you will know:
+
+- What `bash` is and why it is important
+- How to open the terminal for your OS
 
 Prerequisites:
-- None; This Series will assume no prior expeience, but by the end you will cover some more intermediate to advanced topics
+
+- None; Although it may be helpful to have read through the series [intro][]
 
 </section>
 
@@ -103,3 +104,4 @@ To do this via a GUI you would need to open each up, go to the file tab, click s
 [windowbash]: #windows
 [ahead]: #prepare-for-adventure
 [terminal-customization]: {{site.data.links["bash"]["terminal-custom"]}}
+[intro]: {{site.data.links["series"]["bash-basics"]}}

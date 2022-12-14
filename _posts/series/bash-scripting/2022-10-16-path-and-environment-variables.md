@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "What is the PATH and Environment Variables"
-date: 2022-10-03
+date: 2023-01-04
 author: Deshawn Sambrano
 tags: Coding Unix Bash Shell
-time: 5
+time: 10
 draft: true
 usemathjax: true
 category: bash-scripting
@@ -17,15 +17,17 @@ diff: intermediate
 
 <section class="takeaways">
 
-This is a intermediate-level follow up to the cli. Specifically you will learn:
-- How to make a bash script (Setting a language with Shebang `#!`; Changing permissions `chmod`)
-- Taking in arguments and user inputs for your script
-- Change your `$PATH` to run scripts anywhere
-- What is `.bashrc` / `.zshrc`
+In this post, you will learn how creating a script in bash as well as how to edit your `PATH` to allow you to run in from anywhere.
+Specifically you will:
+
+- Learn about Evironment Variables
+- Learn how to change your `$PATH` to run scripts anywhere
+- Learn what is a `.bashrc` / `.zshrc` file
+- Learn about aliases
 
 Prerequisites:
 
-- Have read through the previous series on the [basics of `bash`][bash-basics] or have a general understanding of how to move around edit files in `bash`
+- Have read through my series on the [basics of `bash`][bash-basics] or have a general understanding of how to move around edit files in `bash`
 
 </section>
 
@@ -33,9 +35,12 @@ Prerequisites:
 
 ## Environment Variables
 
+<!-- excerpt-start -->
 Environment Variables are a special type of variable that are always accessible.
 They are available in every script on your computer and can even be used from the command line.
 One example is the `HOME`, which is your home folder:
+
+<!-- excerpt-end -->
 
 ```bash
 echo $HOME  #  👉️ /home/buddy/  # Note, yours will be different
@@ -106,7 +111,7 @@ If you close it, everything resets.
 To solve this, you can adjust your `.bashrc` or `.zshrc` to make them permanant.
 
 
-## What is the `.bashrc`/`.zshrc` and why do I need to know it
+## What is the `.bashrc`/`.zshrc` and Why do I Need to Know it
 
 When assigning an environmental variable with `export`, it will only last for that session.
 If you open a new tab/window or if you close this one and open a new one, you will not longer have access to that environment variable.

@@ -3,6 +3,7 @@
 <nav class="series">
   <h4><em>{{ site.data.series | where: 'id', page.series | map: 'title' }}</em> Series</h4>
   {% assign series-posts = site.posts | reverse | where: 'series', page.series %}
+  {% assign complete = site.data.series | where: 'id', page.series | map: 'complete' | upcase %}
   {% for post in series-posts %}
     {% if post.url == page.url %}
       {% assign prev_post_index = forloop.index | minus: 1 %}
@@ -29,7 +30,7 @@
     <div class="series-nav-item next">
     {% if final_post != empty%}
       Bonus: <a href="{{ site.baseurl }}{{final_post | map: 'url'}}">{{final_post | map: "title"}}</a>
-    {% else %}
+    {% elsif complete contains 'FALSE' %}
       <p>More posts coming soon!</p>
     {% endif %}
     </div>

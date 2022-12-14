@@ -1,12 +1,11 @@
 ---
 layout: post
-title: You Need to Learn Package Managers, Right Now
-date: 2022-10-03
+title: You Need to Learn Package Managers, Right Now!
+date: 2022-09-07
 author: Deshawn Sambrano
 tags: Coding
-time: 3
+time: 5
 permalink: /package-managers
-draft: true
 usemathjax: false
 series: false
 diff: beginner
@@ -18,11 +17,14 @@ diff: beginner
 <section class="takeaways">
 
 In this blog you will learn the basics of packaging managers.
+Package Managers are a developers best tool to install and update all the apps on your system.
+Gone are the days of searching online for an app and clicking through the install, here comes the almighty Package Manager.
 If you already know why its useful/already implement it, feel free to jump around.
 By the end you will learn:
 
 - What a Package Manager is
-- How to use them to install all your software on your computer
+- What are the differences between package managers
+- How to use them to install and update all your software on your computer
 
 Prerequisites:
 - None

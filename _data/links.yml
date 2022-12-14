@@ -6,6 +6,7 @@ git:
   git-install: /git#installing-git
   git-config: /git#git-config
   git-stages: /git#four-stages-of-git
+  git-example: /git/git-example
 bash:
   file-navigation: /cli/bash
   terminal: /cli/terminal-bash

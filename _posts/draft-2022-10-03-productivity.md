@@ -3,25 +3,25 @@ layout: post
 title:  "Coding Productivity: How to Improve you Workflow in 5 Minutes"
 date: 2022-10-03
 author: Deshawn Sambrano
-tags: 
+tags: Coding
 time: 5
-permalink: 
-draft: true
 usemathjax: true
 series: false
 diff: beginner
-#part_number: 1
-#series-name: computational-modeling
 ---
 
+<!--Notes: Dry should go last and needs and intro. Also need to cut text a bit to actually be 5 minutes or change title-->
 
 {% include sidebar.html %}
 
 
 <section class="takeaways">
 
-In this blog I will give a hogpodge of miscellanous tips to improve your general productivity.
+This blog contains a hogpodge of miscellanous tips to improve your general coding productivity.
 Each are super simple and don't really fit within any of the other posts. So this is the place for them.
+By the end you will:
+
+- Improve you productivity
 
 Prerequisites:
 - None

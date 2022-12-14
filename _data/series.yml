@@ -1,39 +1,44 @@
 - id: computational-modeling
   title: Computational Modeling
+  short-title: Computation Modeling
   complete: false
   description:
-    In this series you will learn how to create your own custom models for 
-    decision making and/or learning. You will start by learning how to select 
-    a model that is available in the literature, and learn how to customize it 
-    to fit your needs. You will create custom functions for evaluating these 
+    In this series you will learn how to create your own custom models for
+    decision making and/or learning. You will start by learning how to select
+    a model that is available in the literature, and learn how to customize it
+    to fit your needs. You will create custom functions for evaluating these
     models. Finally, you will end with a tutorial on how to estimate your models
     parameters and evaluates its effectivness from data.
 - id: bash-scripting
   title: Taking your Bash Skills to the Next Level
+  short-title: Bash Scripting
   complete: false
   description:
     Take your Bash skills to the next level. In this series you will learn
     to script bash commands, create functions, control the flow of applications
-    and much much more! Use the termianl  to automate away all the boring things 
+    and much much more! Use the termianl  to automate away all the boring things
     in your life.
 - id: cli
   title: Bash, Terminals, and Command Line Interface (CLIs)
-  complete: false
+  short-title: Basic Basics
+  complete: true
   description:
     Learn how to take advantage of the command line. In this series you will learn
-    the basics of the termial and bash. By the end you will be able to navigate 
+    the basics of the termial and bash. By the end you will be able to navigate
     your filesystem and learn how to create, edit, and delete files all from the
     terminal without ever opening a GUI. These skill are very helpful if you are
-    learning basic programming and/or are planning to use a Super Computer or 
+    learning basic programming and/or are planning to use a Super Computer or
     Cloud Server.
 - id: git
   title: "Git and GitHub: Whats the Big Deal"
-  complete: false
+  short-title: Git and GitHub
+  complete: true
   description:
     Version Control Like a pro with git. In this series you will learn how to use
     git and how to properly collaborate with GitHub.
 - id: python
   title: Python Zero to Hero
+  short-title: Python Zero to Hero
   complete: false
   description:
     This Python course will take you from knowing absolutely nothing about Python
