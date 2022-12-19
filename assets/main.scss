@@ -3,6 +3,7 @@
 ---
 :root {
     --purple: #5900b3;
+    --background-color: #fdfdfd;
 }
 
 @import "minima";
@@ -192,3 +193,19 @@ section.takeaways {
     width: 80%;
 }
 
+#results-container{
+  color: purple;
+  list-style-type: none;
+  margin-left: 0em;
+  position: absolute;
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  width: inherit;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#results-container > li > a{
+    color: purple;
+}
