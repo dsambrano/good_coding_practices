@@ -155,7 +155,7 @@ Instead, I will just highlight a few imports you they you may come across.
 - If you need to type hint a function use `Callable` from the `typing` module
 - If you need either a list, tuple, etc. You can import `Sequence`
 
-<div class="info">
+<div class="tip">
 
   In some situations, you may want to specifically get quick access to the value of the `Enum` for those situations you can use this:
 

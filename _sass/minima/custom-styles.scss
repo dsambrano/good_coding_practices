@@ -2,55 +2,102 @@
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
 
-.error::before {
-    content: "Error: ";
+$border-color-success: #6c0;
+$border-color-info: #56ADEC;
+$border-color-warning: #ffc107;
+$border-color-error: #F20;
+
+@function lighten-color($color, $color-to-mix-with, $percentage) {
+  @return mix($color-to-mix-with, $color, $percentage);
 }
 
-.info::before {
-    content: "Info: ";
-}
+@mixin note-card($border-color, $background-color) {
+  border-left: 5px solid $border-color;
+  padding: 10px 15px;
+  margin-left: -20px;
+  margin-right: -15px;
+  background-color: $background-color;
+  border-radius: 0px 10px 10px 0px;
 
-.success::before {
-    content: "Success: ";
-}
-
-.warning::before {
-    content: "Warning: ";
-}
-
-.error::before, .info::before, .success::before, .warning::before {
+  &::before {
+    content: "#{to-upper-case(str-slice(&+'', 2, -9))}\A\A";
+    white-space: pre;
     font-weight: bold;
-    margin-right: 10px;
-}
-
-
-.error, .info, .success, .warning {
-    border-left: 5px solid #FD0;
-    padding: 10px 15px;
-    margin-left: -20px;
-    margin-right: -15px;
-    background-color: #FAFAFA;
-    border-radius: 5px;
-}
-
-.success {
-    border-color: #6c0;
-    background-color: #e2f5e2;
-}
-
-.info {
-    border-color: #56ADEC;
-    background-color: #D1E8FA;
-}
-
-.warning {
-    border-color: #ffc107;
-    background-color: #FFF6D5;
+    color: $border-color;
+  }
 }
 
 .error {
-    border-color: #F20;
-    background-color: #FADADA;
+  @include note-card($border-color-error, lighten-color($border-color-error, white, 85%));
 }
+
+.tip{
+  @include note-card($border-color-info, lighten-color($border-color-info, white, 90%));
+}
+
+.info {
+  @include note-card($border-color-info, lighten-color($border-color-info, white, 90%));
+}
+
+.warning {
+  @include note-card($border-color-warning, lighten-color($border-color-warning, white, 90%));
+}
+
+.success {
+  @include note-card($border-color-success, lighten-color($border-color-success, white, 90%));
+}
+
+
+// .error::before {
+    // content: "Error: \A";
+// }
+
+// .info::before {
+    // content: "Info: \A";
+// }
+
+// .success::before {
+    // content: "Success: \A";
+// }
+
+// .warning::before {
+    // content: "Warning: \A";
+    // color:;
+// }
+
+// .error::before, .info::before, .success::before, .warning::before {
+    // font-weight: bold;
+    // margin-right: 10px;
+// }
+
+
+// .error, .info, .success, .warning {
+    // border-left: 5px solid #FD0;
+    // padding: 10px 15px;
+    // margin-left: -20px;
+    // margin-right: -15px;
+    // background-color: #FAFAFA;
+    // border-radius: 5px;
+// }
+
+// .success {
+    // border-color: #6c0;
+    // background-color: #e2f5e2;
+// }
+
+// .info {
+    // border-color: #56ADEC;
+    // background-color: #D1E8FA;
+// }
+
+// .warning {
+    // border-color: #ffc107;
+    // background-color: #FFF6D5;
+// }
+
+// .error {
+    // border-color: #F20;
+    // background-color: #FADADA;
+// }
 
 
