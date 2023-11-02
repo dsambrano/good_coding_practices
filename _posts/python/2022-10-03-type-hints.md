@@ -155,6 +155,26 @@ Instead, I will just highlight a few imports you they you may come across.
 - If you need to type hint a function use `Callable` from the `typing` module
 - If you need either a list, tuple, etc. You can import `Sequence`
 
+<div class="info">
+
+  In some situations, you may want to specifically get quick access to the value of the `Enum` for those situations you can use this:
+
+```python
+# Setting default comparison behavior to be the value
+class Key(Enum):
+    RIGHT_ARROW = 83
+    LEFT_ARROW = 81
+
+    def __eq__(self, other):
+        if isinstance(other, Key):
+            return super().__eq__(other)
+        return self.value == other
+
+```
+This dunder method (`__eq__`) will allow you to use the shorthand `Key.RIGHT_ARROW` instead of `Key.RIGHT_ARROW.value`. This is specific to comparisons and the printing behavior will be the same.
+
+</div>
+
 
 ## Recap
 
