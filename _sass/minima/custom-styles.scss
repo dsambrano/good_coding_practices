@@ -1,2 +1,56 @@
 //Placeholder to allow deginin custom styles that override everythin else
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+
+.error::before {
+    content: "Error: ";
+}
+
+.info::before {
+    content: "Info: ";
+}
+
+.success::before {
+    content: "Success: ";
+}
+
+.warning::before {
+    content: "Warning: ";
+}
+
+.error::before, .info::before, .success::before, .warning::before {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+.error, .info, .success, .warning {
+    border-left: 5px solid #FD0;
+    padding: 10px 15px;
+    margin-left: -20px;
+    margin-right: -15px;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+}
+
+.success {
+    border-color: #6c0;
+    background-color: #e2f5e2;
+}
+
+.info {
+    border-color: #56ADEC;
+    background-color: #D1E8FA;
+}
+
+.warning {
+    border-color: #ffc107;
+    background-color: #FFF6D5;
+}
+
+.error {
+    border-color: #F20;
+    background-color: #FADADA;
+}
+
+
