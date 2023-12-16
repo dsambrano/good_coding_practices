@@ -13,3 +13,7 @@ If you are looking for something in particular, check out the various topics I c
 I also have posts separated by difficulty level if you are interested.
 Don't forget to share these posts if you find them helpful!
 
+Not sure where to start?
+Check out the topics or the series tab on top!
+Still not sure? 
+Why not start from the [beginning](#you-need-to-learn-package-managers-right-now)!
