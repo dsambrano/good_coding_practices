@@ -1,6 +1,33 @@
 # To Do List:
 
 
+----
+(12/15/2023) Updates:
+
+Ok, my new goal is to do at least 3 but preferably 5 days a week for 1 hour working on this and to start preping these to turn into actual videos (as well as shorts definitely shorts). 
+
+The previous versions took a long time to curate, so I need to fix that. Once I get things prepped, which they mostly are now, I want to spend 2-3 of the days working on new content (forcing me to limit how long each post takes will have drastic improvements for me, at least I am hoping that. 
+
+For the remaining 2-3 hours, this will be dedicated to planning new content, like what posts should be upcoming (this is helpful in case there is long one, I can pair it new a short one so I am not spending too much time overall). 
+I think I need to really learn how to be ok with close enough but avoid spending so much time, it will come in handy as I transition to industry. 
+The final days should be spent planning videos ideas, this includes scheduling recording and editing windows (again, I want to be strict here on time, limit it, by only allowing one cool thing each time, then they are forces to prioritize reusable things etc.) and of course why kind of videos/posts to make (e.g., shorts versus long form). Having a balance will be valuable.
+
+Attached to this idea is that I need to prepare for adding images to each post including YT thumbnails when available (and of course need to get on the preps for search ideally with the thumbnails).
+
+Finally, I should start to think about how to get these on medium, it could give me a little more cash as well as help me force myself to be efficient as well as design a process for finding typos.
+
+Ok with that out of the way here are important ideas to get out:
+
+- Intro video should be short sweet and to the point highlighting Harvard, and why they want to learning from me, I studied learning, I am the expert. I can show you how to code like a pro etc!
+- Easy/obvious posts:
+  - I want to add (ruby environment, I basically just made it already, and will be easy to link in the future as I talk about other points e.g., how to make a good looking website.
+  - Second obvious one: Why you can't learn how to code/the problem with videos/tutorial hell
+
+----
+
+
+
+
 ---
 
 Important mental reminder to myself (11/23/2022)
