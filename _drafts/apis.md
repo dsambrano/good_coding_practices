@@ -5,7 +5,7 @@
 **[Estimated Read Time 20 mins]**
 
 In this blog you will learn the basics of APIs. Specifically you will learn:
-- What is an API
+- What an API is
 - How to you use APIs
 - API Keys/Authentication
 
@@ -14,24 +14,25 @@ Difficulty: <span style="color:yellow">Intermediate</span>
 Prerequisites:
 - Basic Familiarity with Python (or JavaScript)
 
-
 ## What are APIs?
 
-[APIs][real] or Application Programming Interface are a way for a client (either some code you have written or an App or a website) to access data from a server. For example, every morning you might check the weather. Obviously, your phone does not actually know what the weather is going to be. Instead your phones sends an API request to the Weather Channel server to request the data. The Weather App on your phone then has extra code to visualize the data in an interesting way with animations etc. The web API is this interaction between your phone and the Weather Channel server. And as you can imagine there is a specific *interface* (or structure) the communication should take place. 
+[APIs][real] or Application Programming Interface are a way for a client (an App/website or some code that you have written) to access data from a server. For example, every morning you might check the weather. Obviously, your phone does not actually know what the weather is going to be. Instead your phones sends an API request to the Weather Channel server to request the data. The Weather App on your phone then has extra code to visualize the data in an interesting way with animations etc. The web API is this interaction between your phone and the Weather Channel server. And as you can imagine there is a specific *interface* (or structure) the communication should take place.
 
-> **Note**: This is specific to web API which are by far the most common, but nearly everything that is coded is an API as well. For example, the Python language has APIs to perform actions (these are called functions). They are shorthand for you to have the machine do something in a programmatic way. 
+> **Note**: This is specific to web API which are by far the most common, but nearly everything that is coded is an API as well. For example, the Python language has APIs to perform actions (these are called functions). They are shorthand for you to have the machine do something in a programmatic way.
 
 There are hundreds and hundreds of public APIs. These are APIs that anyone can access free of charge. Some examples include [The Dog API][dogs], [The Cat API][cats], and the [Random User Data Generator API][randomuser].
 
 Since web APIs are really just websites, you can access them yourself just by going to the url. For example, go to `/breeds/` endpoints of the [The Dog API][breeds]. If you do you will see a wall of text in the form of a json file that lists out every dog breed:
 
-```
-[{"weight":{"imperial":"6 - 13","metric":"3 - 6"},"height":{"imperial":"9 ...
+```json
+[{"weight":{"imperial":"6 - 13","metric":"3 - 6"},"height":{"imperial": ...}}]
 ```
 
-But remember the P in API stands for programming, meaning that we can programatically access and use this data. For example, we can use this data, which includes information about the personality, size, and weight of the breeds, in conjunction with some personality questions to help people decide what is the best type of dog for them. Even in this silly example, it really shows how fun APIs can be; they just really on someone have some really creative usecase or way to visualize that data, and you have a million dollar idea on your hands. Or at least something cool to talk about next time you are at the bar with friends. 
+But remember the P in API stands for programming, meaning that we can programatically access and use this data. For example, we can use this data, which includes information about the personality, size, and weight of the breeds, in conjunction with some personality questions to help people decide what is the best type of dog for them.
+Even in this silly example, it really shows how fun APIs can be; they just rely on someone having some really creative use case or way to visualize that data, and you have a million dollar idea on your hands.
+Or at least something cool to talk about next time you are at the bar with friends.
 
-Now that you know have a sense of what an API is, let's figure out how to use them. P.S. if you are still feeling confused here are several links to videos and blogs to help you get a better grasp of the concept, just remember at their core, APIs are just urls used to access data, its what you do with that data that makes it special. 
+Now that you know have a sense of what an API is, let's figure out how to use them. P.S. if you are still feeling confused here are several links to videos and blogs to help you get a better grasp of the concept, just remember at their core, APIs are just urls used to access data, its what you do with that data that makes it special.
 
 <!--
 ## RESTful APIs
